@@ -1,0 +1,6 @@
+{
+  "name": "html-css-course",
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  }
+}

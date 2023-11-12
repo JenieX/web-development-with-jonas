@@ -1,4 +1,9 @@
 {
-  "files.exclude": {}
+  "files.exclude": {
+    ".prettierrc.json": true,
+    "node_modules": true,
+    "package-lock.json": true,
+    "package.json": true
+  }
   // "cSpell.enabled": false
 }
