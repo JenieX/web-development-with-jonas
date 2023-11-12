@@ -1,0 +1,64 @@
+/* 
+
+- An id should be used for one element only.
+- Always use classes instead of ids, to be prepared
+for when you want to add similar elements in the future. 
+
+*/
+
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  /* h2 does not always mean a smaller font than h1 */
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* article header p {..} */
+#author {
+  font-size: 18px;
+}
+
+/* footer p {..} */
+#copyright {
+  font-size: 16px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+ul.related {
+  list-style: none;
+}
