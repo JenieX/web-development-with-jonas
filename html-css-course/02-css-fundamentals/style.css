@@ -77,23 +77,29 @@ li:first-child {
   font-weight: bold;
 }
 
-li:last-child {
+/* li:last-child {
   text-decoration: line-through;
-}
+} */
 
-li:nth-child(even) {
+/* li:nth-child(even) {
   color: rgb(0, 157, 229);
-}
+} */
 
-a {
+/* a {
   color: red;
-}
+} */
 
-a:link {
-  color: #1098ad;
-}
-
+a:link,
 a:visited {
-  /* color: gray; */
   color: #1098ad;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(21, 255, 29);
+  text-decoration: underline wavy orangered;
+}
+
+a:active {
+  background-color: black;
 }
