@@ -28,4 +28,10 @@
   - Declaration block with a class/pseudo class
   - Declaration block with a element selector
   - Declaration block with the universal selector (\*)
+  - Inherited properties from direct parent element
+  - Inherited properties from parent elements
 - If there are multiple declaration blocks that are of the same type, then the last one will be applied.
+
+## Inheritance
+
+When an element has some specific properties (mostly related to text), they will be passed to its children. E.g. `color` and `font-family`.
