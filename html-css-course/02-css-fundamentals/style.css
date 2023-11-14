@@ -72,6 +72,10 @@ aside {
   border-bottom: 5px solid #1098ad;
 }
 
+/* ------------------------ */
+
+/* Pseudo Classes */
+
 /* li:nth-child(1), */
 li:first-child {
   font-weight: bold;
@@ -103,3 +107,31 @@ a:hover {
 a:active {
   background-color: black;
 }
+
+/* ------------------------ */
+
+/* Conflicting Selectors */
+
+/* #copyright.copyright {
+  color: orange;
+}
+
+#copyright {
+  color: red;
+}
+
+.text.copyright {
+  color: purple;
+}
+
+.copyright {
+  color: blue;
+}
+
+.text {
+  color: yellow;
+}
+
+footer p {
+  color: green !important;
+} */
