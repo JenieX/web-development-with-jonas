@@ -10,7 +10,7 @@
 
 ## Pseudo Classes
 
-- The`:nth-child` pseudo class, matches elements based on the index of the elements starting from 1, e.g. `:nth-child(2)` would match the second element. Keywords like `odd` and `even` can be used instead of a number.
+- The `:nth-child` pseudo class, matches elements based on the index of the elements starting from 1, e.g. `:nth-child(2)` would match the second element. Keywords like `odd` and `even` can be used instead of a number.
 - The `:first-child` pseudo class, same as `:nth-child(1)`, represents an element that is the first child of some other element. It should be noted that it is to be used on elements that has the same type of children, e.g. `ul` and `ol`.
 - The `:link` pseudo class for `a` elements, applies to links that have not yet been visited, and only if they have `href` attributes.
 - The `:visited` pseudo class for `a` elements, applies once the link has been visited by the user. It is not commonly used, therefor, visited links should be styled the same as the not visited links.
@@ -35,3 +35,21 @@
 ## Inheritance
 
 When an element has some specific properties (mostly related to text), they will be passed to its children. E.g. `color` and `font-family`.
+
+## Box Model
+
+- The `border` is a line around an element, which is a part of it.
+- `padding` is the space between the content of an element and its border.
+- `margin` is the space outside the element (beyond its border).
+- By default, the total element width (the same goes for total height) consists of:
+  - Left border
+  - Left padding
+  - Specified/Implied width
+  - Right padding
+  - Right border
+- To create vertical space between elements, use either margin top or margin bottom. Usually margin bottom is used.
+- The top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the individual margins (or just one of them, if they are equal), a behavior known as margin collapsing.
+
+## Global Reset
+
+- Many elements have default `margin` and `padding` values, to override that behavior, we use the universal selector to do that, which is very common.

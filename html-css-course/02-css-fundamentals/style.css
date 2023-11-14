@@ -1,3 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------ */
+
+/* Inheritance */
+
+body {
+  font-family: sans-serif;
+  color: #444;
+  font-size: 29px;
+}
+
+nav {
+  font-size: 18px;
+}
+
+/* ------------------------ */
+
+.main-header {
+  background-color: #f7f7f7;
+  padding: 20px;
+  margin-bottom: 60px;
+}
+
+.post-header {
+  margin-bottom: 40px;
+}
+
+article {
+  margin-bottom: 60px;
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  padding: 50px 0;
+}
+
+ul.related {
+  list-style: none;
+}
+
+/* To bring back the bullet points that are hidden due to no margin */
+ol,
+ul {
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
 /* h1,
 h2,
 h3,
@@ -23,10 +76,13 @@ h1 {
 h2 {
   /* h2 does not always mean a smaller font than h1 */
   font-size: 40px;
+  margin-bottom: 30px;
 }
 
 h3 {
   font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 h4 {
@@ -37,10 +93,16 @@ h4 {
 p {
   font-size: 22px;
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 li {
   font-size: 20px;
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
 }
 
 /* article header p {..} */
@@ -56,34 +118,6 @@ li {
 .related-author {
   font-size: 18px;
   font-weight: bold;
-}
-
-ul.related {
-  list-style: none;
-}
-
-header.main-header {
-  background-color: #f7f7f7;
-}
-
-aside {
-  background-color: #f7f7f7;
-  border-top: 5px solid #1098ad;
-  border-bottom: 5px solid #1098ad;
-}
-
-/* ------------------------ */
-
-/* Inheritance */
-
-body {
-  font-family: sans-serif;
-  color: #444;
-  font-size: 29px;
-}
-
-nav {
-  font-size: 18px;
 }
 
 /* ------------------------ */
