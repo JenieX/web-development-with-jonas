@@ -59,3 +59,18 @@ When an element has some specific properties (mostly related to text), they will
 - The `width` and `height` when set in external/internal CSS style, **do** override the `width` and `height` HTML attributes on the element.
 - When `width` and `height` HTML attributes **both** are set on an element, you will have to specify the value of either `width` and `height` to `auto`, to resolve the aspect ratio of an image element.
 - Usually for width/height measurement, the percentage in `width`/`height` is the percentage of the container element.
+
+## Types of Boxes
+
+- Inline boxes: boxes that only occupy the space that they need for their content. These elements do not start on a new line. Examples:
+
+  - <a>
+  - <img>
+  - <span>
+  - <em>
+  - <strong>
+  - <button>
+  - <input>
+  - <textarea>
+
+An inline element cannot contain a block-level element.
