@@ -53,3 +53,9 @@ When an element has some specific properties (mostly related to text), they will
 ## Global Reset
 
 - Many elements have default `margin` and `padding` values, to override that behavior, we use the universal selector to do that, which is very common.
+
+## Dimensions
+
+- The `width` and `height` when set in external/internal CSS style, **do** override the `width` and `height` HTML attributes on the element.
+- When `width` and `height` HTML attributes **both** are set on an element, you will have to specify the value of either `width` and `height` to `auto`, to resolve the aspect ratio of an image element.
+- Usually for width/height measurement, the percentage in `width`/`height` is the percentage of the container element.
