@@ -64,13 +64,13 @@ When an element has some specific properties (mostly related to text), they will
 
 - Inline boxes: boxes that only occupy the space that they need for their content. These elements do not start on a new line. Examples:
 
-  - <a>
-  - <img>
-  - <span>
-  - <em>
-  - <strong>
-  - <button>
-  - <input>
-  - <textarea>
+  - \<a>
+  - \<img>
+  - \<span>
+  - \<em>
+  - \<strong>
+  - \<button>
+  - \<input>
+  - \<textarea>
 
 An inline element cannot contain a block-level element.
