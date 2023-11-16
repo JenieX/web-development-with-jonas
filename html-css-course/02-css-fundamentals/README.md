@@ -62,34 +62,34 @@ When an element has some specific properties (mostly related to text), they will
 
 ## Types of Boxes
 
-1. Inline boxes: boxes that only occupy the space they need for their content. These elements do not start on a new line. Examples:
+- Inline boxes: boxes that only occupy the space they need for their content. These elements do not start on a new line. Examples:
 
-- \<a>
-- \<img>
-- \<span>
-- \<em>
-- \<strong>
-- \<button>
-- \<input>
-- \<textarea>
+  - \<a>
+  - \<img>
+  - \<span>
+  - \<em>
+  - \<strong>
+  - \<button>
+  - \<input>
+  - \<textarea>
 
-2. Block-level boxes: boxes that always takes up the full width available. These element always starts on a new line. Examples:
+- Block-level boxes: boxes that always takes up the full width available. These element always starts on a new line. Examples:
 
-- \<body\>
-- \<div\>
-- \<p\>
-- \<ul\>
-- \<li\>
-- \<h1>-<h6\>
-- \<video\>
-- \<table\>
-- \<form\>
-- \<main\>
-- \<header\>
-- \<nav\>
-- \<article\>
-- \<aside\>
-- \<footer\>
+  - \<body\>
+  - \<div\>
+  - \<p\>
+  - \<ul\>
+  - \<li\>
+  - \<h1>-<h6\>
+  - \<video\>
+  - \<table\>
+  - \<form\>
+  - \<main\>
+  - \<header\>
+  - \<nav\>
+  - \<article\>
+  - \<aside\>
+  - \<footer\>
 
 ### Notes
 
