@@ -67,40 +67,38 @@ When an element has some specific properties (mostly related to text), they will
 - Only occupy the space they need for their content.
 - Do not start on a new line.
 - `padding` and `margin` only apply to the left and right.
+- Examples:
 
-### Examples:
-
-- \<a>
-- \<img>
-- \<span>
-- \<em>
-- \<strong>
-- \<button>
-- \<input>
-- \<textarea>
+  - \<a>
+  - \<img>
+  - \<span>
+  - \<em>
+  - \<strong>
+  - \<button>
+  - \<input>
+  - \<textarea>
 
 2. Block-level boxes
 
 - boxes that always takes up the full width available.
 - Always starts on a new line.
+- Examples:
 
-### Examples:
-
-- \<body\>
-- \<div\>
-- \<p\>
-- \<ul\>
-- \<li\>
-- \<h1>-<h6\>
-- \<video\>
-- \<table\>
-- \<form\>
-- \<main\>
-- \<header\>
-- \<nav\>
-- \<article\>
-- \<aside\>
-- \<footer\>
+  - \<body\>
+  - \<div\>
+  - \<p\>
+  - \<ul\>
+  - \<li\>
+  - \<h1>-<h6\>
+  - \<video\>
+  - \<table\>
+  - \<form\>
+  - \<main\>
+  - \<header\>
+  - \<nav\>
+  - \<article\>
+  - \<aside\>
+  - \<footer\>
 
 ### Notes
 
