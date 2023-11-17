@@ -62,7 +62,7 @@ When an element has some specific properties (mostly related to text), they will
 
 ## Types of Boxes
 
-1. Inline boxes
+#### 1. Inline boxes
 
 - Only occupy the space they need for their content.
 - Do not start on a new line.
@@ -78,7 +78,7 @@ When an element has some specific properties (mostly related to text), they will
   - \<input>
   - \<textarea>
 
-2. Block-level boxes
+#### 2. Block-level boxes
 
 - boxes that always takes up the full width available.
 - Always starts on a new line.
