@@ -62,37 +62,49 @@ When an element has some specific properties (mostly related to text), they will
 
 ## Types of Boxes
 
-- Inline boxes: boxes that only occupy the space they need for their content. These elements do not start on a new line. Examples:
+1. Inline boxes
 
-  - \<a>
-  - \<img>
-  - \<span>
-  - \<em>
-  - \<strong>
-  - \<button>
-  - \<input>
-  - \<textarea>
+- Only occupy the space they need for their content.
+- Do not start on a new line.
+- `padding` and `margin` only apply to the left and right.
 
-- Block-level boxes: boxes that always takes up the full width available. These element always starts on a new line. Examples:
+### Examples:
 
-  - \<body\>
-  - \<div\>
-  - \<p\>
-  - \<ul\>
-  - \<li\>
-  - \<h1>-<h6\>
-  - \<video\>
-  - \<table\>
-  - \<form\>
-  - \<main\>
-  - \<header\>
-  - \<nav\>
-  - \<article\>
-  - \<aside\>
-  - \<footer\>
+- \<a>
+- \<img>
+- \<span>
+- \<em>
+- \<strong>
+- \<button>
+- \<input>
+- \<textarea>
+
+2. Block-level boxes
+
+- boxes that always takes up the full width available.
+- Always starts on a new line.
+
+### Examples:
+
+- \<body\>
+- \<div\>
+- \<p\>
+- \<ul\>
+- \<li\>
+- \<h1>-<h6\>
+- \<video\>
+- \<table\>
+- \<form\>
+- \<main\>
+- \<header\>
+- \<nav\>
+- \<article\>
+- \<aside\>
+- \<footer\>
 
 ### Notes
 
-- An inline element cannot contain a block-level element
+- An inline element can not contain a block-level element.
 - Most elements are Block-level elements.
 - Box model applies to block-level elements, while the same is not true for inline elements.
+- We can enforce one of these type on any element by using `display: inline-block;` and `display: block;`.
