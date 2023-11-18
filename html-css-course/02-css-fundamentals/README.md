@@ -103,9 +103,27 @@ When an element has some specific properties (mostly related to text), they will
 
 - An inline element can not contain a block-level element.
 - Most elements are Block-level elements.
-- Box model applies to block-level elements, while applied differently to inline elements, e.g.:
-  - The `height` and `width` properties do not work on some elements like `<a>` and `<span>`.
-  - `<img>` are actually `inline-block` boxes.
+- Box Model applies to block-level elements, while applied differently to inline elements, e.g.:
   - `padding` and `margin` only apply to the left and right.
+  - The `height` and `width` properties do not work on some elements like `<a>` and `<span>`.
+  - `<img>` (and `<button>` as it seems) elements acts like `inline-block` boxes.
 - We can enforce one of these type on any element by using `display: inline;` and `display: block;`.
-- `display: inline-block;` is a mix of Inline and Block-level types. It is basically the same as the Inline type, plus that it allows for the normal behavior of the Box model.
+- `display: inline-block;` is a mix of Inline and Block-level types. It is basically the same as the Inline type, plus that it allows for the normal behavior of the Box Model.
+
+## Positioning
+
+#### 1. Normal Flow (in flow) aka `position: relative;`
+
+- It is the default positioning for elements.
+- Elements are simply laid out according to their order in the HTML code.
+
+#### 2. Absolute Positioning (out of flow) aka `position: absolute;`
+
+- No impact on surrounding elements, and can overlap them.
+- We use `top`, `bottom`, `left`, or/and `right` properties to offset the element from its relatively positioned container.
+- By default, it is positioned in relation to the viewport (visible part of the browser). To have it positioned in relation to an element, you have to explicitly set `position: relative;` on that element. If multiple parents have that set already, it will be in relation to the closest parent element.
+- Should not be use to build the layout because it will make it very complex.
+
+## Bugs
+
+- `div` elements inhering `font-size` property from `body`, as a margin at its bottom.
