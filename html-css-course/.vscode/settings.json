@@ -5,5 +5,8 @@
     "package-lock.json": true,
     "package.json": true
   },
-  "cSpell.words": ["rgba"]
+  "cSpell.words": [
+    "Combinators",
+    "rgba"
+  ]
 }

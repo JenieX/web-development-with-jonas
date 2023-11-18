@@ -122,8 +122,21 @@ When an element has some specific properties (mostly related to text), they will
 - No impact on surrounding elements, and can overlap them.
 - We use `top`, `bottom`, `left`, or/and `right` properties to offset the element from its relatively positioned container.
 - By default, it is positioned in relation to the viewport (visible part of the browser). To have it positioned in relation to an element, you have to explicitly set `position: relative;` on that element. If multiple parents have that set already, it will be in relation to the closest parent element.
-- Should not be use to build the layout because it will make it very complex.
+- Should not be use to build the layout, because it will make it very complex.
+
+## Pseudo Elements
+
+- `::first-letter` represents the first letter of an element.
+- `::after` creates a pseudo-element that is the last child of the selected element. It is inline by default. If the content property is not specified, has an invalid value, or has `normal` or `none` as a value, then the ::after pseudo-element is not rendered.
+- `::before` is exactly like `::after` except that it will the first child of the selected element.
+
+## Combinators
+
+#### 1. Next-sibling combinator
+
+The next-sibling combinator (+) separates two selectors and matches the second element only if it immediately follows the first element, and both are children of the same parent element. E.g. `img + p ` selects paragraphs that come immediately after any image.
 
 ## Bugs
 
-- `div` elements inhering `font-size` property from `body`, as a margin at its bottom.
+- `div` elements inhering `font-size` property from `body` as a margin at its bottom.
+- ~~The `::after` pseudo-element is inline by default, but seems to allow for `margin` and `padding`!~~

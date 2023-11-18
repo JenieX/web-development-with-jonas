@@ -9,6 +9,7 @@ body {
   font-family: sans-serif;
   color: #444;
   font-size: 29px;
+  position: relative;
 }
 
 nav {
@@ -18,7 +19,7 @@ nav {
 .container {
   width: 800px;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .main-header {
@@ -30,7 +31,7 @@ nav {
 
 .post-header {
   margin-bottom: 40px;
-  position: relative;
+  /* position: relative; */
 }
 
 article {
@@ -69,10 +70,32 @@ h1 {
   font-style: italic;
 }
 
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+
 h2 {
   /* h2 does not always mean a smaller font than h1 */
   font-size: 40px;
   margin-bottom: 30px;
+  /* background-color: #101010; */
+  position: relative;
+}
+
+h2::after {
+  content: 'TOP';
+  background-color: #ffe70e;
+  color: #444;
+  font-size: 16px;
+  font-weight: bold;
+
+  display: inline-block;
+  padding: 5px 10px;
+
+  position: absolute;
+  top: -10px;
+  right: -25px;
 }
 
 h3 {
@@ -91,6 +114,10 @@ p {
   line-height: 1.5;
   margin-bottom: 15px;
 }
+
+/* h3 + p::first-line {
+  color: red;
+} */
 
 li {
   font-size: 20px;
