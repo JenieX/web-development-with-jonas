@@ -66,7 +66,6 @@ When an element has some specific properties (mostly related to text), they will
 
 - Only occupy the space they need for their content.
 - Do not start on a new line.
-- `padding` and `margin` only apply to the left and right.
 - Examples:
 
   - \<a>
@@ -104,5 +103,9 @@ When an element has some specific properties (mostly related to text), they will
 
 - An inline element can not contain a block-level element.
 - Most elements are Block-level elements.
-- Box model applies to block-level elements, while the same is not true for inline elements.
-- We can enforce one of these type on any element by using `display: inline-block;` and `display: block;`.
+- Box model applies to block-level elements, while applied differently to inline elements, e.g.:
+  - The `height` and `width` properties do not work on some elements like `<a>` and `<span>`.
+  - `<img>` are actually `inline-block` boxes.
+  - `padding` and `margin` only apply to the left and right.
+- We can enforce one of these type on any element by using `display: inline;` and `display: block;`.
+- `display: inline-block;` is a mix of Inline and Block-level types. It is basically the same as the Inline type, plus that it allows for the normal behavior of the Box model.

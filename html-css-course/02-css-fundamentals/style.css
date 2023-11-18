@@ -3,9 +3,7 @@
   padding: 0;
 }
 
-/* ------------------------ */
-
-/* Inheritance */
+/* Containers Elements */
 
 body {
   font-family: sans-serif;
@@ -17,12 +15,8 @@ nav {
   font-size: 18px;
 }
 
-/* ------------------------ */
-
 .container {
   width: 800px;
-  /* margin-left: auto;
-  margin-right: auto; */
   margin: 0 auto;
 }
 
@@ -53,22 +47,13 @@ ul.related {
   list-style: none;
 }
 
-/* To bring back the bullet points that are hidden due to no margin */
 ol,
 ul {
   margin-left: 50px;
   margin-bottom: 20px;
 }
 
-/* h1,
-h2,
-h3,
-h4,
-p,
-li {
-  font-family: sans-serif;
-  color: #444;
-} */
+/* Elements */
 
 h1,
 h2,
@@ -114,12 +99,14 @@ li:last-child {
   margin-bottom: 0;
 }
 
-/* article header p {..} */
+li:first-child {
+  font-weight: bold;
+}
+
 #author {
   font-size: 18px;
 }
 
-/* footer p {..} */
 #copyright {
   font-size: 16px;
 }
@@ -133,27 +120,6 @@ li:last-child {
   width: 100%;
   height: auto;
 }
-
-/* ------------------------ */
-
-/* Pseudo Classes */
-
-/* li:nth-child(1), */
-li:first-child {
-  font-weight: bold;
-}
-
-/* li:last-child {
-  text-decoration: line-through;
-} */
-
-/* li:nth-child(even) {
-  color: rgb(0, 157, 229);
-} */
-
-/* a {
-  color: red;
-} */
 
 a:link,
 a:visited {
@@ -170,7 +136,21 @@ a:active {
   background-color: black;
 }
 
-/* ------------------------ */
+nav a:link,
+nav a:visited {
+  /* background-color: rgb(200, 200, 200); */
+  /* margin: 10px; */
+  /* display: block; */
+
+  margin-right: 30px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+nav a:link:last-child,
+nav a:visited:last-child {
+  margin-right: 0;
+}
 
 /* Conflicting Selectors */
 
