@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.product {
+  border: 5px solid #000;
+  width: 600px;
+  margin: 50px auto 0 auto;
+  position: relative;
+}
+
+.product-title {
+  background-color: #d6d6d6;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.price {
+  font-size: 24px;
+}
+
+.shipping {
+  color: #777;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sale {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #ff0000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 7px 15px;
+
+  display: inline-block;
+
+  position: absolute;
+  top: -17px;
+  left: -35px;
+
+  letter-spacing: 2px;
+}
+
+.product-title::after {
+  content: 'Sale';
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  display: inline-block;
+  padding: 7px 15px;
+
+  position: absolute;
+  top: 30px;
+  left: -35px;
+}
+
+.more-info:link,
+.more-info:visited {
+  color: black;
+
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.more-info:hover,
+.more-info:active {
+  text-decoration: none;
+}
+
+.details-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.details-list {
+  list-style: square;
+  margin-left: 35px;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+.add-cart {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  text-transform: uppercase;
+  width: 100%;
+  padding: 10px;
+  border-top: 5px solid #000;
+}
+
+.add-cart:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.colors {
+  /* background-color: greenyellow; */
+  height: 25px;
+}
+
+.color {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+
+  margin-right: 10px;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.black {
+  background-color: black;
+}
+
+.green {
+  background-color: green;
+}
+
+.orange {
+  background-color: orange;
+}

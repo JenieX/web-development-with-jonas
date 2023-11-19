@@ -129,7 +129,7 @@ When an element has some specific properties (mostly related to text), they will
 
 - `::first-letter` represents the first letter of an element.
 - `::first-line` applies styles to the first line of a block container.
-- `::after` creates a pseudo-element that is the last child of the selected element. It is inline by default. If the content property is not specified, has an invalid value, or has `normal` or `none` as a value, then the ::after pseudo-element is not rendered.
+- `::after` creates a pseudo-element that is the last child of the selected element. It is inline by default. If the content property is not specified, has an invalid value, or has `normal` or `none` as a value, then the `::after` pseudo-element is not rendered.
 - `::before` is exactly like `::after` except that it will the first child of the selected element.
 
 ## Combinators
