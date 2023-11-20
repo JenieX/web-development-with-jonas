@@ -48,7 +48,7 @@ When an element has some specific properties (mostly related to text), they will
   - Specified/Implied width
   - Right padding
   - Right border
-- We can override the default behavior of the total element width by using `box-sizing: border-box;`, which tells the browser to account for any border and padding in the values you specify for an element's width and height.
+- We can override that default behavior of the total element width/height by using `box-sizing: border-box;`, which tells the browser to account for any border and padding in the values you specify for an element's width and height.
 - To create vertical space between elements, use either margin top or margin bottom. Usually margin bottom is used.
 - The top and bottom margins of blocks are sometimes combined (collapsed) into a single margin whose size is the largest of the individual margins (or just one of them, if they are equal), a behavior known as margin collapsing.
 

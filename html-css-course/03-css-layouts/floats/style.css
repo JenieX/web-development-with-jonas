@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Containers Elements */
@@ -18,16 +19,16 @@ nav {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
   /* position: relative; */
 }
 
 .main-header {
-  background-color: #f7f7f7;
+  background-color: #d3d3d3;
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 .post-header {
@@ -43,12 +44,13 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
+  /* width: 500px; */
 }
 
-ul.related {
+.related {
   list-style: none;
+  margin-left: 0;
 }
 
 ol,
@@ -108,6 +110,7 @@ h3 {
 h4 {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -172,7 +175,7 @@ nav a:visited {
   /* margin: 10px; */
   /* display: block; */
 
-  margin-right: 30px;
+  margin-right: 10px;
   margin-top: 10px;
   display: inline-block;
 }
@@ -217,3 +220,55 @@ button {
 footer p {
   color: green !important;
 } */
+
+/* ------------------------ floats */
+
+.author-img {
+  float: left;
+  margin-bottom: 20px;
+}
+
+.author {
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+h1 {
+  float: left;
+}
+
+nav {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear-fix::after {
+  content: '';
+
+  /* display: inline-block; */
+  display: block;
+
+  clear: both;
+}
+
+article {
+  float: left;
+  width: 825px;
+  /* background-color: #34009d; */
+}
+
+aside {
+  float: right;
+  width: 300px;
+
+  /* background-color: #35ad10; */
+}
+
+footer {
+  /* background-color: #a2ad10; */
+  clear: both;
+}
