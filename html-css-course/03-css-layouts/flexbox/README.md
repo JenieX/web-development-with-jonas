@@ -49,6 +49,8 @@ The CSS justify-content property defines how the browser distributes space betwe
 - `space-between`
 - `space-evenly`
 
+`justify-content` does not take `baseline` value.
+
 ## `align-items`
 
 The CSS align-items property sets the `align-self` value on all direct children as a group. In **Flexbox**, it controls the alignment of items on the Cross Axis. Possible values include:
@@ -67,6 +69,8 @@ This property is a shorthand for the following CSS properties:
 
 - `column-gap`
 - `row-gap`
+
+Using `gap` is a better solution than to use `margin` (`margin-right` for default) to all element, then excluding the last item.
 
 ## `flex-direction`
 
@@ -149,6 +153,7 @@ This property is a shorthand for the following CSS properties:
 
 #### Value
 
+- 0 1 auto (default)
 - Keyword values:
   - auto
   - initial
@@ -161,4 +166,9 @@ This property is a shorthand for the following CSS properties:
 
 ## `order`
 
-The order CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order. Items not given an explicit order value are assigned the default value of `0`.
+The order CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order. Items not given an explicit order value are assigned the **default** value of `0`.
+
+Values \<integer\>
+Represents the ordinal group to be used by the item. Negative values are also valid.
+
+Can be very helpful when we are adapting a bigger layout to a small layout for mobile screens.
