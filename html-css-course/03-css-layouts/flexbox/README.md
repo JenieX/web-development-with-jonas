@@ -119,7 +119,7 @@ The property doesn't apply to block-level boxes, or to table cells. If a flexbox
 
 The flex-grow CSS property sets the flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
 
-The flex-grow property is specified as a single \<number\>. Negative values are invalid. Defaults to 0 (not allowed to grow).
+The flex-grow property is specified as a single \<number\>. Negative values are invalid. Defaults to `0` (not allowed to grow).
 
 When the flex-container's main size is larger than the combined main sizes of the flex items, the extra space is distributed among the flex items, with each item growth being their growth factor value as a proportion of the sum total of all the container's items' flex grow factors.
 
@@ -127,12 +127,34 @@ When the flex-container's main size is larger than the combined main sizes of th
 
 The flex-shrink CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
 
-The flex-shrink property is specified as a single \<number\>. Negative values are invalid. Defaults to 1 (allowed to shrink).
+The flex-shrink property is specified as a single \<number\>. Negative values are invalid. Defaults to `1` (allowed to shrink).
 
-## `flex-basis` [read more](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
+## `flex-basis` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
 
 The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
 
 The flex-basis property is specified as either the keyword ~~`content`~~ `auto` (default) or a <'width'>.
 
 Note: In case both flex-basis (other than auto) and width (or height in case of flex-direction: column) are set for an element, flex-basis has priority.
+
+## `flex` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
+
+The flex CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
+
+This property is a shorthand for the following CSS properties:
+
+- `flex-grow`
+- `flex-shrink`
+- `flex-basis`
+
+Value notes
+
+- Keyword values:
+  - auto
+  - initial
+  - none
+- One value, unit-less number => `flex-grow`. `flex-basis` is then equal to `0`.
+- One value, width/height => `flex-basis`
+- Two values => flex-grow | flex-shrink
+- Two values, second (width/height) => flex-grow | flex-basis
+- Three values => flex-grow | flex-shrink | flex-basis
