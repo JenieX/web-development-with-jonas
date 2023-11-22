@@ -101,3 +101,38 @@ The CSS align-content property sets the distribution of space between and around
 This property has no effect on single line flex containers (i.e. ones with `flex-wrap: nowrap`).
 
 ---
+
+## `align-self`
+
+The align-self CSS property overrides a grid or flex item's `align-items` value. In Flexbox, it aligns the item on the cross axis. Possible values include:
+
+- `auto` (default)
+- `stretch`
+- `flex-start`
+- `flex-end`
+- `center`
+- `baseline`
+
+The property doesn't apply to block-level boxes, or to table cells. If a flexbox item's cross-axis margin is auto, then align-self is ignored.
+
+## `flex-grow`
+
+The flex-grow CSS property sets the flex grow factor, which specifies how much of the flex container's remaining space should be assigned to the flex item's main size.
+
+The flex-grow property is specified as a single \<number\>. Negative values are invalid. Defaults to 0 (not allowed to grow).
+
+When the flex-container's main size is larger than the combined main sizes of the flex items, the extra space is distributed among the flex items, with each item growth being their growth factor value as a proportion of the sum total of all the container's items' flex grow factors.
+
+## `flex-shrink`
+
+The flex-shrink CSS property sets the flex shrink factor of a flex item. If the size of all flex items is larger than the flex container, items shrink to fit according to flex-shrink.
+
+The flex-shrink property is specified as a single \<number\>. Negative values are invalid. Defaults to 1 (allowed to shrink).
+
+## `flex-basis` [read more](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
+
+The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+
+The flex-basis property is specified as either the keyword ~~`content`~~ `auto` (default) or a <'width'>.
+
+Note: In case both flex-basis (other than auto) and width (or height in case of flex-direction: column) are set for an element, flex-basis has priority.
