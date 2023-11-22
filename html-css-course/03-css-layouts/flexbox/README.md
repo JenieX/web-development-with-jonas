@@ -153,22 +153,23 @@ This property is a shorthand for the following CSS properties:
 
 #### Value
 
-- 0 1 auto (default)
+- `0 1 auto` (default)
 - Keyword values:
-  - auto
-  - initial
-  - none
+  - `auto`
+  - `initial`
+  - `none`
 - One value, unit-less number => `flex-grow`. `flex-basis` is then equal to `0`.
 - One value, width/height => `flex-basis`
-- Two values => flex-grow | flex-shrink
-- Two values, second (width/height) => flex-grow | flex-basis
-- Three values => flex-grow | flex-shrink | flex-basis
+- Two values => `flex-grow` | `flex-shrink`
+- Two values, second (width/height) => `flex-grow` | `flex-basis`
+- Three values => `flex-grow` | `flex-shrink` | `flex-basis`
 
 ## `order`
 
 The order CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order. Items not given an explicit order value are assigned the **default** value of `0`.
 
-Values \<integer\>
+#### Value \<integer\>
+
 Represents the ordinal group to be used by the item. Negative values are also valid.
 
 Can be very helpful when we are adapting a bigger layout to a small layout for mobile screens.
