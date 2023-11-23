@@ -142,10 +142,10 @@ The `flex-basis` property is specified as either the keyword ~~`content`~~ `auto
 #### Notes
 
 - When we want to size flex items, and in particular the `width`, then we usually do not use the `width` property, but instead we use `flex-basis`.
-- In case both `flex-basis` (other than auto) and width (or height in case of flex-direction: column) are set for an element, **`flex-basis` has priority**.
-- In case of `flex-grow` is enabled for all flex items with the same value, and these items have different width (or height in case of `flex-direction: column;`), there are two possibilities:
+- In case both `flex-basis` (other than auto) and width (or `height` in case of `flex-direction: column;`) are set for an element, **`flex-basis` has priority**.
+- In case of `flex-grow` is enabled for all flex items with the same value, and these items have different width (or `height` in case of `flex-direction: column;`), there are two possibilities:
   - If `flex-basis` is set on these flex items with the same value, they will grow equally.
-  - If not, they will grow according to their width (or height in case of `flex-direction: column;`).
+  - If not, `flex-basis` will defaults to `auto` and they will grow according to their width (or `height` in case of `flex-direction: column;`).
 
 ## `flex` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
 
