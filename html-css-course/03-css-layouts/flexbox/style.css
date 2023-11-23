@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Containers Elements */
@@ -18,16 +19,16 @@ nav {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   margin: 0 auto;
   /* position: relative; */
 }
 
 .main-header {
-  background-color: #f7f7f7;
+  background-color: #d3d3d3;
   padding: 20px 40px;
   margin-bottom: 60px;
-  height: 80px;
+  /* height: 80px; */
 }
 
 .post-header {
@@ -43,12 +44,13 @@ aside {
   background-color: #f7f7f7;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  padding: 50px 0;
-  width: 500px;
+  padding: 50px 40px;
+  /* width: 500px; */
 }
 
-ul.related {
+.related {
   list-style: none;
+  margin-left: 0;
 }
 
 ol,
@@ -69,6 +71,7 @@ h1 {
   font-size: 26px;
   text-transform: uppercase;
   font-style: italic;
+  /* line-height: 1px; */
 }
 
 h1::first-letter {
@@ -108,6 +111,7 @@ h3 {
 h4 {
   font-size: 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -172,8 +176,8 @@ nav a:visited {
   /* margin: 10px; */
   /* display: block; */
 
-  margin-right: 30px;
-  margin-top: 10px;
+  margin-right: 10px;
+  /* margin-top: 10px; */
   display: inline-block;
 }
 
@@ -217,3 +221,65 @@ button {
 footer p {
   color: green !important;
 } */
+
+/* ------------------------ flexbox  */
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.related-link:link,
+.related-link:visited {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+
+  display: block;
+  margin-bottom: 5px;
+}
+
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.row {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 45px;
+  align-items: flex-start;
+}
+
+article {
+  /* flex: 0 0 825px; */
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+  /* align-self: flex-start; */
+}
