@@ -135,11 +135,17 @@ The flex-shrink property is specified as a single \<number\>. Negative values ar
 
 ## `flex-basis` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
 
-The flex-basis CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
+The `flex-basis` CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with box-sizing.
 
-The flex-basis property is specified as either the keyword ~~`content`~~ `auto` (default) or a <'width'>.
+The `flex-basis` property is specified as either the keyword ~~`content`~~ `auto` (default) or a <'width'>.
 
-Note: In case both flex-basis (other than auto) and width (or height in case of flex-direction: column) are set for an element, flex-basis has priority.
+#### Notes
+
+- When we want to size flex items, and in particular the `width`, then we usually do not use the `width` property, but instead we use `flex-basis`.
+- In case both `flex-basis` (other than auto) and width (or height in case of flex-direction: column) are set for an element, **`flex-basis` has priority**.
+- In case of `flex-grow` is enabled for all flex items with the same value, and these items have different width (or height in case of `flex-direction: column;`), there are two possibilities:
+  - If `flex-basis` is set on these flex items with the same value, they will grow equally.
+  - If not, they will grow according to their width (or height in case of `flex-direction: column;`).
 
 ## `flex` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/flex)
 
@@ -168,8 +174,6 @@ This property is a shorthand for the following CSS properties:
 
 The order CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order. Items not given an explicit order value are assigned the **default** value of `0`.
 
-#### Value \<integer\>
-
-Represents the ordinal group to be used by the item. Negative values are also valid.
+Value \<integer\>: Represents the ordinal group to be used by the item. Negative values are also valid.
 
 Can be very helpful when we are adapting a bigger layout to a small layout for mobile screens.
