@@ -37,7 +37,6 @@
       }
 
       .container--1 {
-        height: 600px;
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
@@ -49,7 +48,12 @@
         /* grid-template-columns: 200px 200px 1fr 100px; */
         grid-template-columns: repeat(3, 1fr) auto;
 
-        grid-template-rows: 200px 100px;
+        /* grid-template-rows: 200px 100px; */
+
+        /* usually needs the height property to work as expected */
+        height: 600px;
+        /* grid-template-rows: repeat(2, 1fr); */
+        grid-template-rows: 1fr auto;
 
         /* row-gap: 30px; */
         /* column-gap: 10px; */

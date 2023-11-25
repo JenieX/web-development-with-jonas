@@ -51,20 +51,31 @@ In a CSS Grid Layout, a grid cell is the smallest unit you can have on your CSS 
 
 If you do not place items using one of the grid placement methods, direct children of the grid container will be placed one into each individual grid cell by the auto-placement algorithm. Additional row or column tracks will be created to create enough cells to hold all items.
 
+## [Implicit and Explicit Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#implicit_and_explicit_grids)
+
+- Explicit grid: is created using grid-template-columns or grid-template-rows.
+- Implicit grid: extends the defined explicit grid when content is placed outside of that grid, such as into the rows by drawing additional grid lines.
+
+By default, tracks created in the implicit grid are auto sized, which in general means that they're large enough to contain their content.
+
 ## [The fr unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#the_fr_unit)
 
-Tracks can be defined using any length unit. Grid also introduces an additional length unit to help us create flexible grid tracks. The new fr unit represents a fraction of the available space in the grid container. The next grid definition would create three equal width tracks that grow and shrink according to the available space.
+Tracks can be defined using any length unit. Grid also introduces an additional length unit to help us create flexible grid tracks. The new fr unit represents a fraction of the available space in the grid container.
+
+Note: usually used on columns and not rows.
 
 ---
 
 ## [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
+
+The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns.
 
 #### Values
 
 - `<flex>` : Is a non-negative dimension with the unit `fr` specifying the track's flex factor. Each `<flex>`-sized track takes a share of the remaining space in proportion to its flex factor.
 - `auto` : As a maximum represents the largest max-content size of the items in that track.
 
-The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns.
+Note: usually the `auto` keyword is the way to go.
 
 ## [`grid-template-rows`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 
