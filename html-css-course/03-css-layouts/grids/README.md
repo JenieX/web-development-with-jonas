@@ -103,3 +103,31 @@ The CSS `align-content` property sets the distribution of space between and arou
 - `start` (default)
 - `end`
 - `center`
+
+---
+
+## [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
+
+The `align-self` CSS property overrides a grid or flex item's align-items value. In Grid, it aligns the item inside the grid area. In Flexbox, it aligns the item on the cross axis.
+
+## [`justify-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self)
+
+The CSS `justify-self` property sets the way a box is justified inside its alignment container along the appropriate axis. In grid layouts, it aligns an item inside its grid area on the inline axis.
+
+## [`grid-column`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column)
+
+The `grid-column` CSS shorthand property specifies a grid item's size and location within a grid column by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+
+This property is a shorthand for the following CSS properties:
+
+- `grid-column-end`
+- `grid-column-start`
+
+## [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
+
+The `grid-row` CSS shorthand property specifies a grid item's size and location within a grid row by contributing a line, a span, or nothing (automatic) to its grid placement, thereby specifying the inline-start and inline-end edge of its grid area.
+
+This property is a shorthand for the following CSS properties:
+
+- `grid-column-end`
+- `grid-column-start`
