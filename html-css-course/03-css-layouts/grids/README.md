@@ -15,11 +15,11 @@ In CSS grid, we have a row axis and a column axis. but, unlike flexbox, we can n
 - By default, a row will have the height of its tallest grid item.
 - If the `height` is set for the grid items by `grid-template-rows`, each grid item can override that `height` individually, if it is lower than the value that is set by `grid-template-rows`, otherwise it will overlap behind its siblings.
 
-## Grid Axis [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis)
+## [Grid Axis](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis)
 
 CSS Grid Layout is a two-dimensional layout method enabling the laying out of content in rows and columns. Therefore in any grid we have two axes. The block or column axis, and the inline or row axis.
 
-## Grid Lines [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines)
+## [Grid Lines](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines)
 
 Grid lines are created when you define tracks in the explicit grid using CSS Grid Layout.
 
@@ -37,13 +37,13 @@ Grid lines basically divide up the grid and separate the columns and the rows. T
 
 The numbers of these grid lines are actually important if we want to place a grid item at a specific area (cell). A cell can be empty.
 
-## Grid Tracks [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Tracks)
+## [Grid Tracks](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Tracks)
 
 A grid track (a column or a row) is the space between two adjacent grid lines. They are defined in the explicit grid by using the `grid-template-columns` and `grid-template-rows` properties or the shorthand `grid` or `grid-template` properties. Tracks are also created in the implicit grid by positioning a grid item outside of the tracks created in the explicit grid.
 
 These tracks are about the space itself and not the grid items, more like how is a grid cell is about the area of the intersection of four grid lines, and not about the grid item.
 
-## Grid Cell [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Cell)
+## [Grid Cell](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Cell)
 
 In a CSS Grid Layout, a grid cell is the smallest unit you can have on your CSS grid. It is the space between four intersecting grid lines and conceptually much like a table cell.
 
@@ -51,11 +51,11 @@ If you do not place items using one of the grid placement methods, direct childr
 
 ---
 
-## `grid-template-columns` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
+## [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
 
 The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns.
 
-## `grid-template-rows` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
+## [`grid-template-rows`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows)
 
 The `grid-template-rows` CSS property defines the line names and track sizing functions of the grid rows.
 
@@ -72,7 +72,7 @@ Early versions of the specification called this property grid-gap, and to mainta
 
 Should be noted that this is the only way to set margins between the grid items, as using `margin` property wouldn't work.
 
-## `justify-items` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
+## [`justify-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
 
 The CSS `justify-items` property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis. In grid layouts, it aligns the items inside their grid areas on the inline axis. Possible values include:
 
@@ -81,7 +81,7 @@ The CSS `justify-items` property defines the default `justify-self` for all item
 - `end`
 - `center`
 
-## `align-items` [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
+## [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
 
 The CSS align-items property sets the `align-self` value on all direct children as a group. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area. Possible values include:
 
@@ -91,6 +91,8 @@ The CSS align-items property sets the `align-self` value on all direct children 
 - `center`
 
 ## [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) and [`align-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)
+
+These two properties only apply if the container is larger than the grid.
 
 The CSS `justify-content` property defines how the browser distributes space between and around content items along the **inline axis** of a grid container.
 
