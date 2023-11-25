@@ -10,9 +10,11 @@ Unlike Flexbox, the items will not immediately look any different. Declaring `di
 
 In CSS grid, we have a row axis and a column axis. but, unlike flexbox, we can not change their directions.
 
+[Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+
 #### Notes
 
-- By default, a row will have the height of its tallest grid item.
+- By default (`align-items: stretch;`), a row will have the height of its tallest grid item.
 - If the `height` is set for the grid items by `grid-template-rows`, each grid item can override that `height` individually, if it is lower than the value that is set by `grid-template-rows`, otherwise it will overlap behind its siblings.
 
 ## [Grid Axis](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis)
@@ -49,9 +51,18 @@ In a CSS Grid Layout, a grid cell is the smallest unit you can have on your CSS 
 
 If you do not place items using one of the grid placement methods, direct children of the grid container will be placed one into each individual grid cell by the auto-placement algorithm. Additional row or column tracks will be created to create enough cells to hold all items.
 
+## [The fr unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#the_fr_unit)
+
+Tracks can be defined using any length unit. Grid also introduces an additional length unit to help us create flexible grid tracks. The new fr unit represents a fraction of the available space in the grid container. The next grid definition would create three equal width tracks that grow and shrink according to the available space.
+
 ---
 
 ## [`grid-template-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns)
+
+#### Values
+
+- \<flex\>: Is a non-negative dimension with the unit `fr` specifying the track's flex factor. Each \<flex\>-sized track takes a share of the remaining space in proportion to its flex factor.
+- `auto`: As a maximum represents the largest max-content size of the items in that track.
 
 The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns.
 
@@ -59,7 +70,7 @@ The `grid-template-columns` CSS property defines the line names and track sizing
 
 The `grid-template-rows` CSS property defines the line names and track sizing functions of the grid rows.
 
-## `gap`
+## [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
 
 The gap CSS shorthand property sets the gaps (gutters) between rows and columns.
 
