@@ -61,8 +61,8 @@ Tracks can be defined using any length unit. Grid also introduces an additional 
 
 #### Values
 
-- \<flex\>: Is a non-negative dimension with the unit `fr` specifying the track's flex factor. Each \<flex\>-sized track takes a share of the remaining space in proportion to its flex factor.
-- `auto`: As a maximum represents the largest max-content size of the items in that track.
+- `<flex>` : Is a non-negative dimension with the unit `fr` specifying the track's flex factor. Each `<flex>`-sized track takes a share of the remaining space in proportion to its flex factor.
+- `auto` : As a maximum represents the largest max-content size of the items in that track.
 
 The `grid-template-columns` CSS property defines the line names and track sizing functions of the grid columns.
 
