@@ -8,6 +8,10 @@ Flexbox conveniently solve issues like:
 - Making all the children of a container take up an equal amount of the available width/height, regardless of how much width/height is available.
 - Making all columns in a multiple-column layout adopt the same height even if they contain a different amount of content.
 
+#### Links
+
+- [FLEX by Malven Co.](https://flexbox.malven.co/)
+
 #### Notes
 
 - Setting `display: flex;` on container element (flex container) would enable Flexbox. Children of this element are called flex items.

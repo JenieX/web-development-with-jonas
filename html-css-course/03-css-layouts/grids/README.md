@@ -10,7 +10,10 @@ Unlike Flexbox, the items will not immediately look any different. Declaring `di
 
 In CSS grid, we have a row axis and a column axis. but, unlike flexbox, we can not change their directions.
 
-[Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+#### Links
+
+- [Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+- [GRID by Malven Co.](https://grid.malven.co/)
 
 #### Notes
 
@@ -63,6 +66,21 @@ By default, tracks created in the implicit grid are auto sized, which in general
 Tracks can be defined using any length unit. Grid also introduces an additional length unit to help us create flexible grid tracks. The new fr unit represents a fraction of the available space in the grid container.
 
 Note: usually used on columns and not rows.
+
+## [Spanning](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_line-based_placement)
+
+If an item only spans one track you can omit the `grid-column-end` or `grid-row-end` value. Grid defaults to spanning one track.
+
+In addition to specifying the start and end lines by number, you can specify a start line and then the number of tracks you would like the area to span.
+
+In the next example, the item would be positioned from column line 1 and ends at column line 2, and from row line 1 and ends at row line 4.
+
+```css
+.box1 {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+}
+```
 
 ---
 
@@ -142,8 +160,12 @@ The `grid-column` CSS shorthand property specifies a grid item's size and locati
 
 This property is a shorthand for the following CSS properties:
 
-- `grid-column-end`
 - `grid-column-start`
+- `grid-column-end`
+
+Example: `grid-column: 2 / 3;`, would starts at column line 2 and ends at column line 3, positioning the item at the second cell.
+
+Example: `grid-column: 2 / -1;`, would starts at column line 2 and ends at the last column line.
 
 ## [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
 
@@ -151,5 +173,5 @@ The `grid-row` CSS shorthand property specifies a grid item's size and location 
 
 This property is a shorthand for the following CSS properties:
 
-- `grid-column-end`
 - `grid-column-start`
+- `grid-column-end`
