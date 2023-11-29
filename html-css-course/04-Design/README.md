@@ -30,35 +30,45 @@ These rules wil be divided into 10 different areas of web design, each area will
 ### 2. Colors
 
 - CHOOSE THE **RIGHT COLOR**
+
   - Make the main color **match your website’s personality**: colors convey meaning!
-    - Red is to draws the most attention, and symbolizes power, passion, and excitement.
-    - Orange is less aggressive, it symbolizes happiness, cheerfulness, and creativity.
-    - Yellow means joy, brightness, and intelligence.
-    - Green represents nature, growth, and health,
-    - Blue is associated with peace, trustworthiness, and professionalism.
-    - Purple conveys wealth, wisdom, and also magic.
-    - Pink represent romance, care, and affection.
-    - Brown represents nature, comfort, and durability.
-    - Black symbolizes power like Red, elegance and minimalism. It also shows grief and sorrow.
+    - `red` is to draws the most attention, and symbolizes power, passion, and excitement.
+    - `orange` is less aggressive, it symbolizes happiness, cheerfulness, and creativity.
+    - `yellow` means joy, brightness, and intelligence.
+    - `green` represents nature, growth, and health,
+    - `blue` is associated with peace, trustworthiness, and professionalism.
+    - `purple` conveys wealth, wisdom, and also magic.
+    - `pink` represent romance, care, and affection.
+    - `brown` represents nature, comfort, and durability.
+    - `black` symbolizes power like Red, elegance and minimalism. It also shows grief and sorrow.
   - Use a **good color tone!** Don’t choose a random tone or CSS named colors.
 
--x
+- ESTABLISH A COLOR **SYSTEM**
 
-- You need at least two types of colors in your color palette: a main color and a grey color
-- With more experience, you can add more colors: accent (secondary) colors (use a tool)
-- For diversity, create lighter and darker “versions” (tints and shades)
-- Use your main color to draw attention to the most important elements on the page
-- Use colors to add interesting accents or make entire components or sections stand out
-- You can try to use your color strategically in images and illustrations
-- On dark colored backgrounds, try to use a tint of the background (“lighter version”) for text
-- Text should usually not be completely black. Lighten if up it looks heavy and uninviting
-- Don’t make text too light! Use a tool to check contrast between text and background colors
+  - You need at least two types of colors in your color palette: a **main color** and a **grey color**
+  - With more experience, you can add more colors: **accent (secondary) color** (use a tool)
+  - For diversity, create lighter and darker “versions” (**tints** and **shades**)
+
+- **WHEN AND HOW** TO USE COLORS
+
+  - Use your **main color to draw attention** to the most important elements on the page
+  - Use colors to add **interesting accents** or make **entire components or sections** stand out
+  - You can try to **use your color strategically** in images and illustrations
+
+- COLORS AND **TYPOGRAPHY**
+
+  - On **dark colored backgrounds**, try to **use a tint** of the background (“lighter version”) for text
+  - Text should usually **not** be completely **black**. Lighten if up it looks heavy and uninviting
+  - **Don’t make text too light!** Use a tool to check contrast between text and background colors
 
 Links:
 
 - [OC-](https://yeun.github.io/open-color/)
 - [Tailwind](https://tailwindcss.com/docs/customizing-colors)
 - [Color Hunt](https://www.colorhunt.co/)
+- [Tint & Shade Generator](https://maketintsandshades.com/)
+- [Paletton](http://paletton.com/)
+- [Coolors Contrast Checker](https://coolors.co/contrast-checker/112a46-acc8e5)
 - [More](https://codingheroes.io/resources/)
 
 ### 3. Images/Illustrations
