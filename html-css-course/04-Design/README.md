@@ -60,6 +60,7 @@ These rules wil be divided into 10 different areas of web design, each area will
   - On **dark colored backgrounds**, try to **use a tint** of the background (“lighter version”) for text
   - Text should usually **not** be completely **black**. Lighten if up it looks heavy and uninviting
   - **Don’t make text too light!** Use a tool to check contrast between text and background colors
+    - Contrast ratio needs to be at least **4.5:1 for normal text** and **3:1 for large text** (18px+)
 
 Links:
 
