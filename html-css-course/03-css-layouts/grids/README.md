@@ -1,4 +1,4 @@
-## Intro
+## [Intro]()
 
 CSS grid layout is a two-dimensional layout system for the web. It lets you organize content into rows and columns and offers many features to simplify the creation of complex layouts.
 
@@ -12,8 +12,12 @@ In CSS grid, we have a row axis and a column axis. but, unlike flexbox, we can n
 
 #### Links
 
-- [Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
 - [GRID by Malven Co.](https://grid.malven.co/)
+- [Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+- [Learn more](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout)
+- [Basic concepts of grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout)
+- [Box alignment in grid layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Box_alignment_in_grid_layout)
+- [`grid-auto-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns)
 
 #### Notes
 
@@ -81,6 +85,12 @@ In the next example, the item would be positioned from column line 1 and ends at
   grid-row: 1 / span 3;
 }
 ```
+
+## [Grid Areas](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Areas)
+
+A grid area is one or more grid cells that make up a **rectangular** area on the grid. Grid areas are created when you place an item using line-based placement or when defining areas using named grid areas.
+
+Grid areas must be rectangular in nature; it is not possible to create, for example, a T- or L-shaped grid area.
 
 ---
 
