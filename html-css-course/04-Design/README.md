@@ -57,7 +57,7 @@ These rules wil be divided into 10 different areas of web design, each area will
 Links:
 
 - [OC-](https://yeun.github.io/open-color/)
-- [tailwind](https://tailwindcss.com/docs/customizing-colors)
+- [Tailwind](https://tailwindcss.com/docs/customizing-colors)
 - [Color Hunt](https://www.colorhunt.co/)
 - [More](https://codingheroes.io/resources/)
 
