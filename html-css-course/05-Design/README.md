@@ -12,7 +12,7 @@ These rules wil be divided into 10 different areas of web design, each area will
 
 - USE GOOD FONT **SIZE AND WEIGHT**
 
-  - When choosing font-sizes, **limit choices**! Use a **“type scale” tool** or other **pre-defined range**
+  - When choosing font-sizes, limit choices! Use a “type scale” tool or other **pre-defined range**
   - Use a font size **between 16px and 32px** for “normal” text
   - For **long text** (like a blog post), try a size of **20px or even bigger**
   - For **headlines**, you can go really big **(50px+)** and bold **(600+)**, depending on personality
@@ -78,3 +78,9 @@ Widely used in startups, featuring medium-sized sans serif typefaces, light-grey
 ### Playful/Fun
 
 Colorful and round designs, fueled by creative elements like hand-drawn icons or illustrations, animations, and fun language.
+
+---
+
+## Links
+
+- [Type-scale](https://typescale.com/)
