@@ -74,6 +74,38 @@ Links:
 
 ### 3. Images/Illustrations
 
+- USE **GOOD IMAGES**
+
+  - Different types of images: **product** photos, **storytelling** photos, **illustrations**, **patterns**
+  - Use images to support your website’s message and story. So only use **relevant images!**
+  - Prefer **original images**. If not possible, use original-looking stock images (not generic ones!)
+
+- USE IMAGES **WELL**
+
+  - Try to show **real people** to trigger user’s emotions
+  - If necessary, **crop images** to fit your message
+  - Experiment **combining** photos, illustrations and patterns
+
+- HANDLING **TEXT** ON IMAGES
+
+  - Method #1: **Darker or brighten image** (completely or partially, using a gradient)
+  - Method #2: Position text into **neutral image area**
+  - Method #3: Put **text in a box**
+
+- SOME **TECHNICAL DETAILS**
+
+  - To account for high-res screens, make image dimensions **2x as big** as their displayed size
+  - **Compress images** for a lower file size and better performance
+  - When using multiple **images side-by-side**, make sure they **have the exact same dimensions**
+
+Links:
+
+- [Unsplash](https://unsplash.com/)
+- [Pexels](https://www.pexels.com/)
+- [DrawKit](https://www.drawkit.com/)
+- [unDraw](https://undraw.co/illustrations)
+- [Squoosh](https://squoosh.app/)
+
 ### 4. Icons
 
 ### 5. Shadows
