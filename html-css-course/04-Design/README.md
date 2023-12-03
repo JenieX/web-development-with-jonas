@@ -80,7 +80,7 @@ Links:
   - Use images to support your website’s message and story. So only use **relevant images!**
   - Prefer **original images**. If not possible, use original-looking stock images (not generic ones!)
 
-- USE IMAGES **WELL**
+- **USE** IMAGES **WELL**
 
   - Try to show **real people** to trigger user’s emotions
   - If necessary, **crop images** to fit your message
@@ -107,6 +107,35 @@ Links:
 - [Squoosh](https://squoosh.app/)
 
 ### 4. Icons
+
+- USE **GOOD ICONS**
+
+  - Use a **good icon pack**, there are tons of free and paid icons packs
+  - Use only **one icon pack**. Don’t mix icons from different icon packs
+  - Use **SVG icons or icon fonts**. Don’t use bitmap image formats (.jpg and .png)!
+  - **Adjust to website personality!** Roundness, weight and filled/outlined **depend on typography**
+
+- **WHEN** TO USE ICONS
+
+  - Use icons to provide **visual assistance to text**
+  - Use icons for **product feature blocks**
+  - Use icons **associated with actions**, and label them (unless no space or icon is 100% clear)
+  - Use icons as **bullet points**
+
+- USE ICONS **WELL**
+  - To keep icons neutral, **use same color as text**. **Or Different color To draw more attention**,
+  - Don’t confuse your users: icons need to make sense and **fit the text or action**!
+  - **Don't make icons larger** than what they were designed for. **If needed, enclose them in a shape**
+
+---
+
+Links:
+
+- [Phosphor Icons](https://phosphoricons.com/)
+- [Ionicons](https://ionic.io/ionicons)
+- [Hero Icons](https://heroicons.com/)
+
+---
 
 ### 5. Shadows
 
