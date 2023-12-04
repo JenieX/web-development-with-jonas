@@ -13,6 +13,7 @@ These rules wil be divided into 10 different areas of web design, each area will
 - USE GOOD FONT **SIZE AND WEIGHT**
 
   - When choosing font-sizes, limit choices! Use a “type scale” tool or other **pre-defined range**
+    - E.g. FONT SIZE SYSTEM (px) `10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98`
   - Use a font size **between 16px and 32px** for “normal” text
   - For **long text** (like a blog post), try a size of **20px or even bigger**
   - For **headlines**, you can go really big **(50px+)** and bold **(600+)**, depending on personality
@@ -91,6 +92,7 @@ Links:
   - Method #1: **Darker or brighten image** (completely or partially, using a gradient)
   - Method #2: Position text into **neutral image area**
   - Method #3: Put **text in a box**
+  - Bonus: Adding `text-shadow` property to the text element.
 
 - SOME **TECHNICAL DETAILS**
 
@@ -123,11 +125,10 @@ Links:
   - Use icons as **bullet points**
 
 - USE ICONS **WELL**
+
   - To keep icons neutral, **use same color as text**. **Or Different color To draw more attention**,
   - Don’t confuse your users: icons need to make sense and **fit the text or action**!
   - **Don't make icons larger** than what they were designed for. **If needed, enclose them in a shape**
-
----
 
 Links:
 
@@ -139,9 +140,52 @@ Links:
 
 ### 5. Shadows
 
+- USE SHADOWS **WELL** (Important)
+
+  - **You don’t have to use shadows!** Only use them if it makes sense for the **website personality**
+  - **Use shadows in small doses**: don’t add shadows to every element!
+  - **Go light on shadows**, don’t make them too dark!
+
+- USE SHADOWS IN THE **RIGHT SITUATION**
+
+  - Use **small shadows for smaller elements** that should stand out (to draw attention)
+  - Use **medium-sized shadows for larger areas** that should stand out a bit more
+  - Use **large shadows for elements that** should really **float** above the interface
+  - Experiment with changing shadows on **mouse interaction** (click and hover)
+  - Bonus: Experiment with **glows (colored shadows)**
+
+Links:
+
+- [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+- [`text-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
+
+---
+
 ### 6. Border-radius
 
+- USE BORDER-RADIUS **WELL**
+
+  - Use border-radius **to increase the playfulness** and fun of the design, to **make it less serious**
+  - **Typefaces** have a certain roundness: make sure that **border-radius matches that roundness!**
+  - Use border-radius **on buttons, images, around icons, standout sections** and other elements
+
 ### 7. Whitespace
+
+- **WHERE** TO USE WHITESPACE
+
+  - Use **tons** of whitespace **between sections**
+  - Use **a lot** of whitespace **between groups of elements**
+  - Use whitespace **between elements**
+  - **Inside groups of elements**, try to use whitespace instead of lines
+
+- **HOW MUCH** WHITESPACE
+  - The more some **elements** (or groups of elements) **belong together, the closer they should be!**
+  - **Start with a lot of whitespace**, maybe even too much! **Then remove** whitespace from there
+  - **Match other design choices**. If you have big text or big icons, you need more whitespace
+  - **Try a hard rule**, such as using multiples of 16px for all spacing
+    - E.g. SPACING SYSTEM (px) `2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128`
+
+---
 
 ### 8. Visual Hierarchy
 
@@ -187,5 +231,6 @@ Colorful and round designs, fueled by creative elements like hand-drawn icons or
 
 ## Links
 
+- [JONAS' RESOURCES](https://codingheroes.io/resources/)
 - [Type-scale](https://typescale.com/)
 - [Google Fonts](https://fonts.google.com/)
