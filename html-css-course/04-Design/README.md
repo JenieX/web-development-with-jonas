@@ -28,6 +28,11 @@ These rules wil be divided into 10 different areas of web design, each area will
   - Usually, **don’t justify text**
   - **Don’t center long text** blocks. Small blocks are fine
 
+Links:
+
+- [Type-scale](https://typescale.com/)
+- [Google Fonts](https://fonts.google.com/)
+
 ### 2. Colors
 
 - CHOOSE THE **RIGHT COLOR**
@@ -176,7 +181,7 @@ Links:
 
 - **HOW MUCH** WHITESPACE
 
-  - The more some **elements** (or groups of elements) **belong together, the closer they should be!**
+  - The more some **elements** (or groups of elements) **belong together, the closer they should be!** (The **law of proximity**)
   - **Start with a lot of whitespace**, maybe even too much! **Then remove** whitespace from there
   - **Match other design choices**. If you have big text or big icons, you need more whitespace
   - **Try a hard rule**, such as using multiples of 16px for all spacing
@@ -201,7 +206,7 @@ Links:
 
 - VISUAL HIERARCHY FOR **TEXT ELEMENTS**
 
-  - For text elements, use **font size**, **font weight**, **color**, and **whitespace** to convey importance
+  - For text elements, use **font size**, **font weight**, **color**, **background**, and **whitespace** to convey importance
   - **What text elements** to emphasize? **Titles**, **sub-titles**, **links**, **buttons**, **data points**, **icons**
     - You can also **de-emphasize less important text**, like labels or secondary/additional information
 
@@ -212,6 +217,36 @@ Links:
   - **What components** to emphasize? **Testimonials**, **call-to-action sections**, **highlight sections**, **preview cards**, **forms**, **pricing tables**, **important rows/columns in tables**, etc
 
 ### 9. User Experience
+
+- User Interface (UI) is the visual presentation of a product. It’s how the graphical interface looks and feels like. UI is graphical interface, UI Design is what makes an interface beautiful.
+
+  - Layout
+  - “Personality”
+  - Typography, colors, icons, etc.
+
+- User Experience (UX) is the overall experience the user has while interacting with the product. UX is experience with interface, UX Design is what makes an interface useful and functional.
+
+  - Does the app feel logical and well thought out?
+  - Does the navigation work intuitively?
+  - Are users reaching their goals?
+
+A website or application exists for a reason: a **user has a goal for visiting it**, and a **business has a goal for creating it**.
+
+- UX RULES FOR **USABILITY**
+
+  - Don’t design complicated layouts. Don’t reinvent the wheel. **Use patterns that users know**
+  - Make your **call-to-action the most prominent element**, and make the text descriptive
+  - Use **blue** text and **underlined text only for links!**
+  - **Animations** should have a purpose and be fast: between **200 and 500 milliseconds**
+  - **In forms, align labels and fields in a single vertical line**, to make the form easier to scan
+  - Offer users **good feedback for all actions**: form errors, form success, etc. [web apps]
+  - Place action buttons where they will create an effect (**law of locality**) [web apps]
+
+- UX RULES FOR **WEBSITE CONTENT**
+  - Use a **descriptive**, **keyword-focused headline** on your main page. Don’t be vague or fancy!
+  - Only include **relevant information**, efficiently! Cut out fluff and make the content 100% clear
+  - **Use simple words!** Avoid technical jargon and “smart-sounding” words
+  - **Break up long text** with sub-headings, images, block quotes, bullet points, etc.
 
 ### 10. Components and Layout
 
@@ -254,5 +289,3 @@ Colorful and round designs, fueled by creative elements like hand-drawn icons or
 ## Links
 
 - [JONAS' RESOURCES](https://codingheroes.io/resources/)
-- [Type-scale](https://typescale.com/)
-- [Google Fonts](https://fonts.google.com/)
