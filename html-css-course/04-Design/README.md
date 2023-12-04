@@ -136,8 +136,6 @@ Links:
 - [Ionicons](https://ionic.io/ionicons)
 - [Hero Icons](https://heroicons.com/)
 
----
-
 ### 5. Shadows
 
 - USE SHADOWS **WELL** (Important)
@@ -159,8 +157,6 @@ Links:
 - [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
 - [`text-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
 
----
-
 ### 6. Border-radius
 
 - USE BORDER-RADIUS **WELL**
@@ -179,15 +175,42 @@ Links:
   - **Inside groups of elements**, try to use whitespace instead of lines
 
 - **HOW MUCH** WHITESPACE
+
   - The more some **elements** (or groups of elements) **belong together, the closer they should be!**
   - **Start with a lot of whitespace**, maybe even too much! **Then remove** whitespace from there
   - **Match other design choices**. If you have big text or big icons, you need more whitespace
   - **Try a hard rule**, such as using multiples of 16px for all spacing
     - E.g. SPACING SYSTEM (px) `2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128`
 
----
-
 ### 8. Visual Hierarchy
+
+- WHAT IS VISUAL HIERARCHY?
+
+  - Visual hierarchy is about **establishing which elements of a design are the most important ones**.
+  - Visual hierarchy is about **drawing attention** to these most important elements
+  - Visual hierarchy is about **defining a “path” for users**, to guide them through the page
+  - We use a **combination of position**, **size**, **colors**, **spacing**, **borders**, and **shadows** to establish a meaningful visual hierarchy between elements/components
+
+- VISUAL HIERARCHY **FUNDAMENTALS**
+
+  - **Position important elements closer to the top the page**, where they get more attention
+  - **Use images mindfully**, as they draw a lot of attention (larger images get more attention)
+    - If you want the attention to be drawn toward some text, use smaller images or not at all.
+  - Whitespace creates separation, so **use whitespace strategically** to emphasize elements
+    - E.g. Google.com placing the search bar at the middle of the page with tone of whitespace.
+
+- VISUAL HIERARCHY FOR **TEXT ELEMENTS**
+
+- For text elements, use **font size**, **font weight**, **color**, and **whitespace** to convey importance
+- **What text elements** to emphasize? **Titles**, **sub-titles**, **links**, **buttons**, **data points**, **icons**
+
+  - You can also **de-emphasize less important text**, like labels or secondary/additional information
+
+- VISUAL HIERARCHY **BETWEEN COMPONENTS**
+
+  - Emphasize an important component using **background color**, **shadow**, or **border** (or multiple)
+  - Try emphasizing some component A over component B by **de-emphasizing component B**
+  - **What components** to emphasize? **Testimonials**, **call-to-action sections**, **highlight sections**, **preview cards**, **forms**, **pricing tables**, **important rows/columns in tables**, etc
 
 ### 9. User Experience
 
