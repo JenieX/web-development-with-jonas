@@ -262,6 +262,7 @@ For luxury and elegance, based on **thin serif typefaces**, **golden or pastel c
 
 | Ingredient    | Description                                                                       |
 | ------------- | --------------------------------------------------------------------------------- |
+| Industries    | Real estate, high fashion, jewelry, luxury products or services                   |
 | Typography    | Serif typefaces (especially in headings), light font weight, small body font size |
 | Colors        | Gold, pastel colors, black, dark blue or grey                                     |
 | Images        | Big, high-quality images                                                          |
@@ -274,13 +275,46 @@ For luxury and elegance, based on **thin serif typefaces**, **golden or pastel c
 
 Focusses on the essential text content, using small or medium-sized sans-serif black text, lines, and few images and icons.
 
+| Ingredient    | Description                                                                                                         |
+| ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| Industries    | Fashion, portfolios, minimalism companies, software startups                                                        |
+| Typography    | Boxy/squared sans-serif typefaces, small body font sizes                                                            |
+| Colors        | Usually black or dark grey, on pure white background. Usually just one color throughout the design                  |
+| Images        | Few images, which can be used to add some color to the design. Usually no illustrations, but if so, then just black |
+| Icons         | Usually no icons, but small simple black icons may be used                                                          |
+| Shadows       | Usually no shadows                                                                                                  |
+| Border-radius | Usually no border-radius                                                                                            |
+| Layout        | Simple layout, a narrow one-column layout is quite common                                                           |
+
 ### Plain/Neutral
 
 Design that gets out of the way by using neutral and small typefaces, and a very structured layout. Common in big corporations.
 
+| Ingredient    | Description                                                                                             |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| Industries    | Well-established corporations, companies that don’t want to make an impact through design               |
+| Typography    | Neutral-looking sans-serif typefaces are used, and text is usually small and doesn’t have visual impact |
+| Colors        | Safe colors are employed, nothing too bright or to washed-out. Blues and blacks are common              |
+| Images        | Images are frequently used, but usually in a small format                                               |
+| Icons         | Usually no icons, but simple icons may be used                                                          |
+| Shadows       | Usually no shadows                                                                                      |
+| Border-radius | Usually no border-radius                                                                                |
+| Layout        | Structured and condensed layout, with lots of boxes and rows                                            |
+
 ### Bold/Confident
 
 Makes an impact, by featuring big and bold typography, paired with confident use of big and bright colored blocks.
+
+| Ingredient    | Description              |
+| ------------- | ------------------------ |
+| Industries    |                          |
+| Typography    |                          |
+| Colors        |                          |
+| Images        |                          |
+| Icons         | Usually no icons         |
+| Shadows       | Usually no shadows       |
+| Border-radius | Usually no border-radius |
+| Layout        |                          |
 
 ### Calm/Peaceful
 
