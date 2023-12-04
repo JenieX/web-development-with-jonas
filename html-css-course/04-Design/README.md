@@ -201,10 +201,9 @@ Links:
 
 - VISUAL HIERARCHY FOR **TEXT ELEMENTS**
 
-- For text elements, use **font size**, **font weight**, **color**, and **whitespace** to convey importance
-- **What text elements** to emphasize? **Titles**, **sub-titles**, **links**, **buttons**, **data points**, **icons**
-
-  - You can also **de-emphasize less important text**, like labels or secondary/additional information
+  - For text elements, use **font size**, **font weight**, **color**, and **whitespace** to convey importance
+  - **What text elements** to emphasize? **Titles**, **sub-titles**, **links**, **buttons**, **data points**, **icons**
+    - You can also **de-emphasize less important text**, like labels or secondary/additional information
 
 - VISUAL HIERARCHY **BETWEEN COMPONENTS**
 
