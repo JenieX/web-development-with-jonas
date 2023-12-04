@@ -258,7 +258,17 @@ A website or application exists for a reason: a **user has a goal for visiting i
 
 ### Serious/Elegant
 
-For luxury and elegance, based on thin serif typefaces, golden or pastel colors, and big high-quality images.
+For luxury and elegance, based on **thin serif typefaces**, **golden or pastel colors**, and **big high-quality images**.
+
+| Ingredient    | Description                                                                       |
+| ------------- | --------------------------------------------------------------------------------- |
+| Typography    | Serif typefaces (especially in headings), light font weight, small body font size |
+| Colors        | Gold, pastel colors, black, dark blue or grey                                     |
+| Images        | Big, high-quality images                                                          |
+| Icons         | Usually no icons, but thin icons and lines may be used                            |
+| Shadows       | Usually no shadows                                                                |
+| Border-radius | Usually no border-radius                                                          |
+| Layout        | A creative and experimental layout is quite common                                |
 
 ### Minimalist/Simple
 
