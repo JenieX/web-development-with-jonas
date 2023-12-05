@@ -361,8 +361,16 @@ Widely used in startups, featuring **medium-sized sans serif typefaces**, **ligh
 | Border-radius | Border-radius is very common                                                                             |
 | Layout        | All kinds of layouts, no particular tendencies                                                           |
 
+<img src="combining-personalities.jpg?raw=true" width="700" >
+ 
 ---
 
 ## Links
 
 - [JONAS' RESOURCES](https://codingheroes.io/resources/)
+- Design Inspiration
+  - [Land Book](http://land-book.com/)
+  - [One Page Love](https://onepagelove.com/inspiration)
+  - [Awwwards](https://www.awwwards.com/websites/)
+  - [Screelane](https://screenlane.com/)
+  - [Dribbble](https://dribbble.com/)
