@@ -288,7 +288,7 @@ Focusses on the essential text content, using small or medium-sized sans-serif b
 
 ### Plain/Neutral
 
-Design that gets out of the way by using neutral and small typefaces, and a very structured layout. Common in big corporations.
+Design that gets out of the way by using **neutral and small typefaces**, and a very structured layout. **Common in big corporations**.
 
 | Ingredient    | Description                                                                                             |
 | ------------- | ------------------------------------------------------------------------------------------------------- |
@@ -303,30 +303,63 @@ Design that gets out of the way by using neutral and small typefaces, and a very
 
 ### Bold/Confident
 
-Makes an impact, by featuring big and bold typography, paired with confident use of big and bright colored blocks.
+Makes an impact, by featuring **big and bold typography**, paired with confident use of **big and bright colored blocks**.
 
-| Ingredient    | Description              |
-| ------------- | ------------------------ |
-| Industries    |                          |
-| Typography    |                          |
-| Colors        |                          |
-| Images        |                          |
-| Icons         | Usually no icons         |
-| Shadows       | Usually no shadows       |
-| Border-radius | Usually no border-radius |
-| Layout        |                          |
+| Ingredient    | Description                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------- |
+| Industries    | Digital agencies, software startups, travel, “strong" companies                                                |
+| Typography    | Boxy/squared sans-serif typefaces, big and bold typography, especially headings. Uppercase headings are common |
+| Colors        | Usually multiple bright colors. Big color blocks/sections are used to draw attention                           |
+| Images        | Lots of big images are usually displayed                                                                       |
+| Icons         | Usually no icons                                                                                               |
+| Shadows       | Usually no shadows                                                                                             |
+| Border-radius | Usually no border-radius                                                                                       |
+| Layout        | All kinds of layouts, no particular tendencies                                                                 |
 
 ### Calm/Peaceful
 
-For products and services that care, transmitted by calming pastel colors, soft serif headings, and matching images/illustrations.
+For products and services that care, transmitted by **calming pastel colors**, **soft serif headings**, and matching images/illustrations.
+
+| Ingredient    | Description                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Industries    | Healthcare, all products with focus on consumer well-being                                                               |
+| Typography    | Soft serif typefaces frequently used for headings, but sans-serif headings might be used too (e.g for software products) |
+| Colors        | Pastel/washed-out colors: light oranges, yellows, browns, greens, blues                                                  |
+| Images        | Images and illustrations are usual, matching calm color palette                                                          |
+| Icons         | Icons are quite frequent                                                                                                 |
+| Shadows       | Usually no shadows, but might be used sparingly                                                                          |
+| Border-radius | Some border-radius is usual                                                                                              |
+| Layout        | All kinds of layouts, no particular tendencies                                                                           |
 
 ### Startup/Upbeat
 
-Widely used in startups, featuring medium-sized sans serif typefaces, light-grey text and backgrounds, and rounded elements.
+Widely used in startups, featuring **medium-sized sans serif typefaces**, **light-grey** text and **backgrounds**, and **rounded elements**.
+
+| Ingredient    | Description                                                                                                              |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Industries    | Software startups, and other modern-looking companies                                                                    |
+| Typography    | Medium-sized headings (not too large), usually one sans-serif typeface in whole design. Tendency for lighter text colors |
+| Colors        | Blues, greens and purples are widely used. Lots of light backgrounds (mainly gray), gradients are also common            |
+| Images        | Images or illustrations are always used. 3D illustrations are modern. Sometimes patterns and shapes add visual details   |
+| Icons         | Icons are very frequent                                                                                                  |
+| Shadows       | Subtle shadows are frequent. Glows are becoming modern                                                                   |
+| Border-radius | Border-radius is very common                                                                                             |
+| Layout        | Rows of cards and Z-patterns are usual, as well as animations                                                            |
 
 ### Playful/Fun
 
-Colorful and round designs, fueled by creative elements like hand-drawn icons or illustrations, animations, and fun language.
+**Colorful and round designs**, fueled by **creative elements** like hand-drawn icons or illustrations, animations, and fun language.
+
+| Ingredient    | Description                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------- |
+| Industries    | Child products, animal products, food                                                                    |
+| Typography    | Round and creative (e.g. handwritten) sans-serif typefaces are frequent. Centered text is more common    |
+| Colors        | Multiple colors are frequently used to design a colorful layout, all over backgrounds and text           |
+| Images        | Images, hand-drawn (or 3D) illustrations, and geometric shapes and patterns are all very frequently used |
+| Icons         | Icons are very frequent, many times in a hand-drawn style                                                |
+| Shadows       | Subtle shadows are quite common, but not always used                                                     |
+| Border-radius | Border-radius is very common                                                                             |
+| Layout        | All kinds of layouts, no particular tendencies                                                           |
 
 ---
 
