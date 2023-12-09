@@ -21,3 +21,11 @@
 #### [`<tr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr) : The Table Row element
 
 The `<tr>` HTML element defines a row of cells in a table. The row's cells can then be established using a mix of `<td>` (data cell) and `<th>` (header cell) elements.
+
+#### [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td) : The Table Data Cell element
+
+The `<td>` HTML element defines a cell of a table that contains data. It participates in the table model.
+
+#### [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) : The Table Header element
+
+The `<th>` HTML element defines a cell as the header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
