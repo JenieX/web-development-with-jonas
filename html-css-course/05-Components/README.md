@@ -18,13 +18,13 @@
 
 ### [`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) : The Table element
 
-- [`tbody`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody) : The Table Body element (semantic)
-
-  - The `<tbody>` HTML element encapsulates a set of table rows (`<tr>` elements), indicating that they comprise the body of the table (`<table>`).
-
 - [`thead`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead) : The Table Head element (semantic)
 
   - The `<thead>` HTML element defines a set of rows defining the head of the columns of the table.
+
+- [`tbody`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody) : The Table Body element (semantic)
+
+  - The `<tbody>` HTML element encapsulates a set of table rows (`<tr>` elements), indicating that they comprise the body of the table (`<table>`).
 
 - [`<tr>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr) : The Table Row element
 
@@ -39,3 +39,12 @@
 - [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td) : The Table Data Cell element
 
   - The `<td>` HTML element defines a cell of a table that contains data.
+
+- [`border-collapse`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
+
+  - The `border-collapse` CSS property sets whether cells inside a `<table>` have shared or separate borders.
+  - It needs to be set on the `<table>` even if the cells have no borders, to remove the default border-like space!.
+
+- Notes
+  - Usually, you should style individual cells and not `thead`, `tbody`, or `<tr>`.
+  - On four column table, setting the `width: 25%;` on the first row's cells (`thead th`), will ensure that each column have the same width.
