@@ -13,6 +13,7 @@
 - Force an element to have a white space as its content:
   - `<button class="dot">&nbsp;</button>`
   - `<button class="dot">&NonBreakingSpace;</button>`
+- Use class variations with `--`. E.g. When main is `dot`, a variation can be `dot--fill`
 
 ---
 
@@ -43,8 +44,8 @@
 - [`border-collapse`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse)
 
   - The `border-collapse` CSS property sets whether cells inside a `<table>` have shared or separate borders.
-  - It needs to be set on the `<table>` even if the cells have no borders, to remove the default border-like space!.
+  - It needs to be set on the `<table>` even if the cells have no borders, to remove the default border-like space!
 
 - Notes
-  - Usually, you should style individual cells and not `thead`, `tbody`, or `<tr>`.
+  - Usually, you should style individual cells and not `<thead>`, `<tbody>`, or `<tr>`.
   - On four column table, setting the `width: 25%;` on the first row's cells (`thead th`), will ensure that each column have the same width.
