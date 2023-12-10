@@ -6,7 +6,11 @@
 
 ### Notes
 
-- If you place an `svg` element inside a `button`, it will not be visible until you set the `width` and `height` on it.
+- If you place an `svg` (icon) element inside a `button`, it will not be visible until you set the `width` and `height` on it.
+- When using an icon, give it a class with these declarations:
+  - `width`
+  - `height`
+  - `stroke`
 - `transform: scale(1.5);` : Scale an element to 150%.
 - `transform: translate(-50%, 0);` : Move an element back to the left by 50% of its width.
 - `transform: translate(0, -50%);` : Move an element up by 50% of its height.
@@ -14,6 +18,7 @@
   - `<button class="dot">&nbsp;</button>`
   - `<button class="dot">&NonBreakingSpace;</button>`
 - Use class variations with `--`. E.g. When main is `dot`, a variation can be `dot--fill`
+- `margin: 0 auto;` is used to center an element inside its parent, but only if it has the `width` property set.
 
 ---
 

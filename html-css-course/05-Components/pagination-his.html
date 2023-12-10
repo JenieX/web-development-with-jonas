@@ -59,12 +59,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         width: 32px;
         height: 32px;
         border-radius: 50%;
-
-        /* Using padding instead of `width` and `height` wouldn't work as it would create a square */
-        /* padding: 12px; */
       }
 
       /* .page-link:hover,
@@ -84,18 +82,14 @@
 
       .dots {
         color: #868e96;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
       }
 
       .btn {
-        border: none;
-        background-color: #fff;
+        background: none;
         width: 48px;
         height: 48px;
         border-radius: 50%;
-        /* padding: 12px; */
+        /* padding: 8px; */
         border: 1px solid #087f5b;
         cursor: pointer;
 
@@ -103,8 +97,6 @@
         justify-content: center;
         align-items: center;
       }
-
-      /* Using padding in `.btn` instead of `width` and `height` in the `.btn-icon`, made the icon perfectly centered! However, using flex to center the icon seems better  */
 
       .btn-icon {
         stroke: #087f5b;
