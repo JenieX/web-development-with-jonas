@@ -19,6 +19,7 @@
   - `<button class="dot">&NonBreakingSpace;</button>`
 - Use class variations with `--`. E.g. When main is `dot`, a variation can be `dot--fill`
 - `margin: 0 auto;` is used to center an element inside its parent, but only if it has the `width` property set.
+- If a button is to lead somewhere else, use `<a>`, otherwise use `<button>`.
 
 ---
 

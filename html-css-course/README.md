@@ -1,5 +1,6 @@
 ### VSCODE Shortcuts
 
+- `ctrl+enter` add new line.
 - `alt+up` to move line up.
 - `alt+down` to move line down.
 - `ctrl+alt+up` To add cursor above.
