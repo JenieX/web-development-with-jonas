@@ -1,3 +1,98 @@
+### CSS Guidelines
+
+##### 1. Use Low-Specificity Selectors
+
+```css
+/* incorrect  */
+.navigation a {
+  color: blue;
+}
+
+/* correct  */
+.nav-link {
+  color: blue;
+}
+```
+
+- Use one class for your selector.
+- Don't nest, and don't over select.
+- To override a style, place it after the original one.
+
+##### 2. Don't Use ID or Element Selectors
+
+##### 3. Don't Depend on a Certain Markup Structure
+
+```css
+/* incorrect  */
+.header ul li a {
+  margin-right: 20px;
+}
+
+/* correct  */
+.header-link {
+  margin-right: 20px;
+}
+```
+
+##### 4. Don't Use Inline Styles
+
+##### 5. Don't Use !important
+
+- Except when you have to override some inline styles.
+
+##### 6. Prefix Modifier Classes
+
+```css
+/* incorrect  */
+.btn {
+  background-color: blue;
+  color: white;
+}
+
+.btn.red {
+  background-color: red;
+}
+
+/* correct  */
+.btn {
+  background-color: blue;
+  color: white;
+}
+
+.btn--red {
+  background-color: red;
+}
+```
+
+##### 7. Write Small Rules
+
+```css
+/* incorrect  */
+.role-stat h1,
+.role-stat h2,
+.role-stat p,
+.role-stat a,
+.role-su h1,
+.role-su h2,
+.role-su p,
+.role-su a {
+  color: #fff;
+}
+
+/* correct  */
+.text-white {
+  color: #fff;
+}
+```
+
+##### 8. Use a Prefix for JavaScript Hooks
+
+Links:
+
+- [CSS for People Who Hate CSS](https://paulcpederson.com/articles/css-for-people-who-hate-css/#dont-depend-on-certain-markup-structure)
+
+---
+
 ### VSCODE Shortcuts
 
 - `ctrl+enter` add new line.
@@ -14,3 +109,7 @@
     - Overrides `{ "key": "shift+alt+i", "command": "-editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" }`
   - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }` Select to from the start.
   - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }` Select to the end.
+
+```
+
+```

@@ -40,8 +40,8 @@
 
 - [`<th>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th) : The Table Header element
 
-- The `<th>` HTML element defines a cell as the header of a group of table cells.
-- The exact nature of this group is defined by the scope and headers attributes.
+  - The `<th>` HTML element defines a cell as the header of a group of table cells.
+  - The exact nature of this group is defined by the scope and headers attributes.
 
 - [`<td>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td) : The Table Data Cell element
 
