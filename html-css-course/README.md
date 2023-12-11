@@ -1,6 +1,6 @@
 ### CSS Guidelines
 
-##### 1. Use Low-Specificity Selectors
+#### 1. Use Low-Specificity Selectors
 
 ```css
 /* incorrect  */
@@ -18,9 +18,9 @@
 - Don't nest, and don't over select.
 - To override a style, place it after the original one.
 
-##### 2. Don't Use ID or Element Selectors
+#### 2. Don't Use ID or Element Selectors
 
-##### 3. Don't Depend on a Certain Markup Structure
+#### 3. Don't Depend on a Certain Markup Structure
 
 ```css
 /* incorrect  */
@@ -34,13 +34,13 @@
 }
 ```
 
-##### 4. Don't Use Inline Styles
+#### 4. Don't Use Inline Styles
 
-##### 5. Don't Use !important
+#### 5. Don't Use !important
 
 - Except when you have to override some inline styles.
 
-##### 6. Prefix Modifier Classes
+#### 6. Prefix Modifier Classes
 
 ```css
 /* incorrect  */
@@ -64,7 +64,7 @@
 }
 ```
 
-##### 7. Write Small Rules
+#### 7. Write Small Rules
 
 ```css
 /* incorrect  */
@@ -85,7 +85,7 @@
 }
 ```
 
-##### 8. Use a Prefix for JavaScript Hooks
+#### 8. Use a Prefix for JavaScript Hooks
 
 Links:
 
