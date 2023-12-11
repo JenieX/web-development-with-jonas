@@ -87,10 +87,6 @@
 
 #### 8. Use a Prefix for JavaScript Hooks
 
-Links:
-
-- [CSS for People Who Hate CSS](https://paulcpederson.com/articles/css-for-people-who-hate-css/#dont-depend-on-certain-markup-structure)
-
 ---
 
 ### VSCODE Shortcuts
@@ -110,6 +106,8 @@ Links:
   - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }` Select to from the start.
   - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }` Select to the end.
 
-```
+---
 
-```
+Links:
+
+- [CSS for People Who Hate CSS](https://paulcpederson.com/articles/css-for-people-who-hate-css/#dont-depend-on-certain-markup-structure)

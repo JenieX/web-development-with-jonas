@@ -17,6 +17,7 @@ Flexbox conveniently solve issues like:
 
 - Setting `display: flex;` on container element (flex container) would enable Flexbox. Children of this element are called flex items.
 - Horizontally, **by default**, each flex item takes up exactly the space that it needs for its text content. And Vertically, **by default** (`align-items: stretch;`), all the flex items are as tall as the tallest one of them.
+- A trick is used to push the last element to the right is to give it `margin-left: auto;`.
 
 ## Main Axis
 
