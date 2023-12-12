@@ -51,3 +51,16 @@ The ingredients for responsive design should be considered/implemented from the 
 
 - Bring responsive sites to life!
 - To **change CSS styles on certain viewport widths** (called breakpoints).
+
+### Desktop-First VS. Mobile-First Development
+
+#### Desktop-First
+
+- Start writing CSS for the desktop: large screen
+- Then, media queries shrink design to smaller screens.
+
+#### Mobile-First (Common nowadays)
+
+- Start writing CSS for mobile devices: small screen
+- Then, media queries expand design to a large screen
+- Forces us to reduce websites and apps to the absolute essentials
