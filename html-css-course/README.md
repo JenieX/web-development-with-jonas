@@ -92,8 +92,10 @@
 ### VSCODE Shortcuts
 
 - `ctrl+enter` add new line.
-- `alt+up` to move line up.
-- `alt+down` to move line down.
+- `alt+up` to move line up, or a selection (not just cursors) of lines.
+- `alt+down` to move line down, or a selection (not just cursors) of lines.
+- `shift+alt+up` duplicate current line to the top.
+- `shift+alt+down` duplicate current line to the bottom.
 - `ctrl+alt+up` To add cursor above.
 - `ctrl+alt+down` To add cursor below.
 - Cursors blinking across many lines
@@ -105,6 +107,8 @@
     - Overrides `{ "key": "shift+alt+i", "command": "-editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" }`
   - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }` Select to from the start.
   - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }` Select to the end.
+  - `{ "key": "shift+alt+[", "command": "editor.action.moveCarretLeftAction" }` To move selected word to the left.
+  - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }` To move selected word to the right.
 
 ---
 

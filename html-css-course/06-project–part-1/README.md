@@ -52,7 +52,7 @@ The ingredients for responsive design should be considered/implemented from the 
 - Bring responsive sites to life!
 - To **change CSS styles on certain viewport widths** (called breakpoints).
 
-### Desktop-First VS. Mobile-First Development
+### Desktop-First vs. Mobile-First Development
 
 #### Desktop-First
 
@@ -64,3 +64,22 @@ The ingredients for responsive design should be considered/implemented from the 
 - Start writing CSS for mobile devices: small screen
 - Then, media queries expand design to a large screen
 - Forces us to reduce websites and apps to the absolute essentials
+
+### `width` vs. `max-width`
+
+When we set the **width of container to 1000px** on a **viewport** that **is smaller** than that, there are two scenarios:
+
+#### `width: 1000px;`
+
+would give **horizontal scroll bar** to allow for the desired width.
+
+#### `max-width: 1000px;`
+
+would take up the **full width of the viewport only!**
+
+- **Container is larger than** the specified value of **`max-width`**, then the width of the element would **match** that value
+- **Container is smaller**, then the width of the element would be **100% of the container** element width.
+
+#### What about using `width: 100vw;`?
+
+In that case, it would work as desired for the smaller viewport, but it will never consider the `1000px` width anymore.
