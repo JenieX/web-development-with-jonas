@@ -112,6 +112,7 @@ Links:
 - [DrawKit](https://www.drawkit.com/)
 - [unDraw](https://undraw.co/illustrations)
 - [Squoosh](https://squoosh.app/)
+- [UI Faces](https://www.uifaces.co/)
 
 ### 4. Icons
 
