@@ -186,6 +186,14 @@ strong {
   padding: 0px 3px;
   display: inline-block;
 }
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code {
+  background-color: #000 !important;
+}
 ```
 
 Links:
