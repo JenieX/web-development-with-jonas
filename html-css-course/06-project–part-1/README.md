@@ -77,9 +77,18 @@ would give **horizontal scroll bar** to allow for the desired width.
 
 would take up the **full width of the viewport only!**
 
-- **Container is larger than** the specified value of **`max-width`**, then the width of the element would **match** that value
-- **Container is smaller**, then the width of the element would be **100% of the container** element width.
+- **Container is larger than** the specified value of **`max-width`**, then the width of the element would **match** that value.
+- **Container is smaller**, then the width of the element would be **100% of the container** width.
 
 #### What about using `width: 100vw;`?
 
 In that case, it would work as desired for the smaller viewport, but it will never consider the `1000px` width anymore.
+
+### `rem` Unit
+
+- The root element is the parent, that is the `<html>` element.
+- `rem` is the root element's `font-size`.
+- If `rem` is not defined, it would fall to the default `font-size`, which is `16px`.
+- So by default, `1rem` would equal `16px`.
+- The browser would then automatically calculate `rem` to `px`, just like the other units.
+- To make it easy for use will override it by `html { font-size: 10px; }`.
