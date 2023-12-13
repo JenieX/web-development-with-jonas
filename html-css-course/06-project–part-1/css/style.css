@@ -51,9 +51,12 @@
   box-sizing: border-box;
 }
 
-/* html {
-  font-size: 10px;
-} */
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+}
 
 body {
   font-family: sans-serif;
@@ -64,8 +67,8 @@ body {
 
 .test {
   /* max-width: 1000px; */
-  background-color: tomato;
+  background-color: rgb(14, 241, 196);
   padding: 100px;
 
-  width: 100rem;
+  width: 50rem;
 }

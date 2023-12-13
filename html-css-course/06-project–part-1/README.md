@@ -91,4 +91,14 @@ In that case, it would work as desired for the smaller viewport, but it will nev
 - If `rem` is not defined, it would fall to the default `font-size`, which is `16px`.
 - So by default, `1rem` would equal `16px`.
 - The browser would then automatically calculate `rem` to `px`, just like the other units.
-- To make it easy for use will override it by `html { font-size: 10px; }`.
+- To make it easy for us, we will override it by `html { font-size: 10px; }`.
+  - However, overriding it by a fixed value like this, the user's definition of the browser font-size will not be respected.
+  - Instead, we will set it to a percentage of the default font-size. `10px / 16px = 0.625 = 62.5%`
+  - Therefor, `html { font-size: 62.5%; }` should be the trick!
+
+`rem` can be useful for adopting your website to different devices, instead of using media queries. E.g. for smaller screens' devices, setting `html { font-size: 8px; }`, will shrink all elements that are using the `rem` unit.
+
+#### Inspecting `rem`
+
+- `window.getComputedStyle(document.documentElement).fontSize;`
+- `window.getComputedStyle(document.querySelector('html')).getPropertyValue('font-size');`
