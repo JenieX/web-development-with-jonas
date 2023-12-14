@@ -103,16 +103,16 @@ In that case, it would work as desired for the smaller viewport, but it will nev
 - `window.getComputedStyle(document.documentElement).fontSize;`
 - `window.getComputedStyle(document.querySelector('html')).getPropertyValue('font-size');`
 
-### Animation
+## Animation
 
-### `transition: <property> <duration>`
+## `transition: <property> <duration>`
 
 - Always set the `transition` property on the original state.
 - The keyword `all` is a valid value for `<property>`, which would animate all properties.
 - `<duration>` is a number with either `ms` or just `s` unit.
   - Common value is `0.3s` (`300ms`).
 
-### Important Notes
+## Important Notes
 
 - Setting for example `padding: 1.6rem 3.2rem;` on an inline element like `<a>`, will not act as expected, therefore `display: inline-block;` is required!
 - `rem` should always be used, except for properties that are not very large to start with. E.g. `word-spacing` and `border-radius`.
