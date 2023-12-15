@@ -12,6 +12,9 @@ Flexbox conveniently solve issues like:
 
 - [FLEX by Malven Co.](https://flexbox.malven.co/)
 - [FLEXY-BOXES](https://the-echoplex.net/)
+- [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [Flexbox by Joni Trythall](https://jonitrythall.com/flexbox-cheatsheet)
+- [FLEXBOX FROGGY](https://flexboxfroggy.com/)
 
 #### Notes
 

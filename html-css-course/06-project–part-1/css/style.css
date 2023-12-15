@@ -59,7 +59,7 @@ html {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 400;
   color: #555;
   line-height: 1;
@@ -101,12 +101,11 @@ body {
 .btn:visited {
   display: inline-block;
   font-size: 2rem;
-  /* color: #e67e22; */
+  font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
   /* border-radius: 3px; */
   text-decoration: none;
-  font-weight: 600;
 
   transition: background-color 0.3s;
 }

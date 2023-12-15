@@ -71,7 +71,7 @@ When an element has some specific properties (mostly related to text), they will
 - Examples:
 
   - \<a>
-  - \<img>
+  - \<img> (inline block)
   - \<span>
   - \<em>
   - \<strong>
