@@ -112,12 +112,66 @@ In that case, it would work as desired for the smaller viewport, but it will nev
 - `<duration>` is a number with either `ms` or just `s` unit.
   - Common value is `0.3s` (`300ms`).
 
+## Re-usable Classes
+
+You should always consider using re-usable classes.
+
+**Note**: In our project,we could have used the classes `container grid`, but it has more `width` (`130rem`) on it, which makes it look better. **Usually, the Hero section is an exception that does not use these classes**.
+
+### `.margin-right-sm`
+
+```css
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+```
+
+Notice the use of the `!important` keyword!
+
+### `.container`
+
+It should be set on elements which content needs to be centered on our page.
+
+These elements therefor need to have a width value. Which should be `max-width` to make it fluid.
+
+- Value of `120rem` is very common for these elements.
+  - With `padding` right and left, this value will be close to the next.
+- Another common value is `1140px`.
+
+```css
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+```
+
+### .grid
+
+```css
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+```
+
 ## Important Notes
 
-- Setting for example `padding: 1.6rem 3.2rem;` on an inline element like `<a>`, will not act as expected, therefore `display: inline-block;` is required!
+- Setting for example `padding: 1.6rem 3.2rem;` on an inline element like `<a>`, will not act as expected, therefore `display: inline-block;` is required, and should be set by default.
 - `rem` should always be used, except for properties that are not very large to start with. E.g. `word-spacing` and `border-radius`.
 - To create a border on an element from the inside, instead of using `border: 3px solid #e67e22;`, we would use `box-shadow: inset 0 0 0 3px #e67e22;`.
-- You should consider using re-usable classes. E.g. `.margin-right-sm { margin-right: 1.6rem !important; }`
 - Always place the font(s) `<link>` element before your `<style>`/`<link>` element.
-- The `<header>` element is used at the top of the whole website, a section, or an article.
+- The `<header>` element is used at the top of the whole website, a `<section>`, or an `<article>`.
 - The `<main>` element is a semantic element, that contains the main part of web document. It does not include parts that are repeated across multiple pages, e.g. the main `<header>` and the `<footer>` elements.

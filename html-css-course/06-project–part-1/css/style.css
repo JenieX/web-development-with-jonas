@@ -150,11 +150,14 @@ body {
 .main-nav-list {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 3.2rem;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
+  display: inline-block;
+
   text-decoration: none;
   color: #333;
   font-size: 1.8rem;
@@ -165,6 +168,24 @@ body {
 .main-nav-link:hover,
 .main-nav-link:active {
   color: #cf711f;
+}
+
+/* 
+Adding the multiple classes to make sure it overrides the color property.
+In this case, it is not actually needed, since it is written after the base style.
+*/
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #e67e22;
+  color: #fff;
+
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
 }
 
 /* **************************** */
@@ -232,5 +253,38 @@ body {
 }
 
 /* **************************** */
-
+/* How section */
 /* **************************** */
+
+.section-how {
+  background-color: orangered;
+  padding: 9.6rem 0;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.section-how div div {
+  background-color: #333;
+  padding: 100px;
+}
