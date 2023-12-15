@@ -119,3 +119,5 @@ In that case, it would work as desired for the smaller viewport, but it will nev
 - To create a border on an element from the inside, instead of using `border: 3px solid #e67e22;`, we would use `box-shadow: inset 0 0 0 3px #e67e22;`.
 - You should consider using re-usable classes. E.g. `.margin-right-sm { margin-right: 1.6rem !important; }`
 - Always place the font(s) `<link>` element before your `<style>`/`<link>` element.
+- The `<header>` element is used at the top of the whole website, a section, or an article.
+- The `<main>` element is a semantic element, that contains the main part of web document. It does not include parts that are repeated across multiple pages, e.g. the main `<header>` and the `<footer>` elements.
