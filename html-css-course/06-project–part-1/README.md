@@ -116,7 +116,7 @@ In that case, it would work as desired for the smaller viewport, but it will nev
 
 You should always consider using re-usable classes.
 
-**Note**: In our project,we could have used the classes `container grid`, but it has more `width` (`130rem`) on it, which makes it look better. **Usually, the Hero section is an exception that does not use these classes**.
+Note: In our project, we could have used the classes `container grid` on the Hero section, but it has more `width` (`130rem`) on it, which makes it look better. **Usually, the Hero section is an exception that does not use these classes**.
 
 ### `.margin-right-sm`
 
@@ -146,7 +146,7 @@ These elements therefor need to have a width value. Which should be `max-width` 
 }
 ```
 
-### .grid
+### `.grid`
 
 ```css
 .grid {
@@ -166,6 +166,25 @@ These elements therefor need to have a width value. Which should be `max-width` 
   grid-template-columns: repeat(4, 1fr);
 }
 ```
+
+## Gray Colors
+
+- `#000` (black)
+- `#111`
+- `#222`
+- `#333`
+- `#444`
+- `#555`
+- `#666`
+- `#777`
+- `#888`
+- `#999`
+- `#AAA`
+- `#BBB`
+- `#CCC`
+- `#DDD`
+- `#EEE`
+- `#FFF` (white)
 
 ## Important Notes
 

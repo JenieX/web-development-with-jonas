@@ -71,14 +71,61 @@ body {
 /* General Re-usable Components */
 /* **************************** */
 
-.heading-primary {
-  font-size: 6.2rem;
-  font-weight: 700;
-  line-height: 1.05;
-  word-spacing: -0.5px;
-  /* word-spacing: -3.5px; */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.heading-primary,
+.heading-secondary {
   color: #333;
+  /* color: #2e1907; */
+  /* color: #343a40; */
+  font-weight: 700;
+
+  /* word-spacing: -0.5px; */
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+}
+.subheading {
+  font-size: 1.6rem;
+  color: #cf711f;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
 }
 
 .btn:link,
@@ -257,34 +304,13 @@ In this case, it is not actually needed, since it is written after the base styl
 /* **************************** */
 
 .section-how {
-  background-color: orangered;
   padding: 9.6rem 0;
 }
 
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
+.step-number{
+  font-size: 8.6rem;
 }
 
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.section-how div div {
-  background-color: #333;
-  padding: 100px;
+.step-img {
+  max-width: 50%;
 }
