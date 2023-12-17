@@ -169,22 +169,12 @@ These elements therefor need to have a width value. Which should be `max-width` 
 
 ## Gray Colors
 
-- `#000` (black)
-- `#111`
-- `#222`
-- `#333`
-- `#444`
-- `#555`
-- `#666`
-- `#777`
-- `#888`
-- `#999`
-- `#AAA`
-- `#BBB`
-- `#CCC`
-- `#DDD`
-- `#EEE`
-- `#FFF` (white)
+| Darker | dark | Light | Lighter |
+| :----: | :--: | :---: | :-----: |
+|  #000  | #444 | #888  |  #CCC   |
+|  #111  | #555 | #999  |  #DDD   |
+|  #222  | #666 | #AAA  |  #EEE   |
+|  #333  | #777 | #BBB  |  #FFF   |
 
 ## Important Notes
 
