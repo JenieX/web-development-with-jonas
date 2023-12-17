@@ -171,10 +171,10 @@ These elements therefor need to have a width value. Which should be `max-width` 
 
 | Darker | dark | Light | Lighter |
 | :----: | :--: | :---: | :-----: |
-|  #000  | #444 | #888  |  #CCC   |
-|  #111  | #555 | #999  |  #DDD   |
-|  #222  | #666 | #AAA  |  #EEE   |
-|  #333  | #777 | #BBB  |  #FFF   |
+|  #000  | #444 | #888  |  #ccc   |
+|  #111  | #555 | #999  |  #ddd   |
+|  #222  | #666 | #aaa  |  #eee   |
+|  #333  | #777 | #bbb  |  #fff   |
 
 ## Important Notes
 
@@ -184,3 +184,5 @@ These elements therefor need to have a width value. Which should be `max-width` 
 - Always place the font(s) `<link>` element before your `<style>`/`<link>` element.
 - The `<header>` element is used at the top of the whole website, a `<section>`, or an `<article>`.
 - The `<main>` element is a semantic element, that contains the main part of web document. It does not include parts that are repeated across multiple pages, e.g. the main `<header>` and the `<footer>` elements.
+- The `before` and `after` pseudo-elements can not be added to `<img>` elements, as they don't allow for children inside them.
+- When setting both `width` and `height` to a percentage value, it will not work. A trick to achieve that is to set `padding-bottom` with the `height` value instead!

@@ -76,8 +76,6 @@ In this case, it is not actually needed, since it is written after the base styl
   max-width: 130rem;
   margin: 0 auto;
   padding: 0 3.2rem;
-  /* background-color: blueviolet; */
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -135,6 +133,15 @@ In this case, it is not actually needed, since it is written after the base styl
   padding: 9.6rem 0;
 }
 
+.step-text-box {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* flex-direction: column; */
+
+  /* The better choice, and better set it on the parent! */
+  /* align-self: center; */
+}
+
 .step-number {
   font-size: 8.6rem;
   font-weight: 600;
@@ -142,6 +149,38 @@ In this case, it is not actually needed, since it is written after the base styl
   margin-bottom: 1.2rem;
 }
 
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+}
+
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: yellow; */
+  position: relative;
+}
+
+.step-img-box::before {
+  content: '';
+  display: block;
+  width: 60%;
+  /* A trick, see section notes! */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+
+  position: absolute;
+  /* Not needed because of the parent being `flex` and centering from there! */
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  border-radius: 50%;
+  z-index: -1;
+}
+
 .step-img {
-  max-width: 50%;
+  max-width: 35%;
 }
