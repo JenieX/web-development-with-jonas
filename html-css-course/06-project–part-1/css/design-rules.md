@@ -12,12 +12,12 @@
 
 ### Font Weight
 
-| Value |   Label   |
-| :---: | :-------: |
-|  400  |  Default  |
-|  500  |  Medium   |
-|  600  | Semi-bold |
-|  700  |   Bold    |
+| Value |       Label        |
+| :---: | :----------------: |
+|  400  |      Default       |
+|  500  | Medium, `<strong>` |
+|  600  |     Semi-bold      |
+|  700  |        Bold        |
 
 ### Line Heights
 
@@ -30,10 +30,10 @@
 
 ### Letter Spacing (px)
 
-| Value |                 Usage                 |
-| :---: | :-----------------------------------: |
-| -0.5  |           `h1`, `h2`, `h3`            |
-| 0.75  | `.subheading`, `.heading-featured-in` |
+| Value |                Usage                 |
+| :---: | :----------------------------------: |
+| -0.5  |            `h1` `h2` `h3`            |
+| 0.75  | `.subheading` `.heading-featured-in` |
 
 ## 02- COLORS
 

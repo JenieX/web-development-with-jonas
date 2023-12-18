@@ -233,3 +233,44 @@ In this case, it is not actually needed, since it is written after the base styl
 .step-img {
   max-width: 35%;
 }
+
+/* **************************** */
+/* meals section */
+/* **************************** */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-icon {
+  color: red;
+  /* width: 2.4rem; */
+  /* height: 2.4rem; */
+  font-size: 2.4rem;
+  /* --ionicon-stroke-width: 16px; */
+}

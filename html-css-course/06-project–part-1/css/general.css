@@ -11,6 +11,10 @@ html {
   font-size: 62.5%;
 }
 
+strong {
+  font-weight: 500;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   font-weight: 400;

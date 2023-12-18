@@ -91,6 +91,7 @@
 
 ### VSCODE Shortcuts
 
+- `shift+ctrl+k` to remove line.
 - `shift+ctrl+enter` add new line above.
 - `ctrl+enter` add new line below.
 - `alt+up` to move line up, or a selection (not just cursors) of lines.
@@ -116,11 +117,7 @@
 ### GitHub Style
 
 ```css
-#repository-container-header
-  > div.d-flex.flex-wrap
-  > div
-  > div
-  > svg.octicon-lock {
+#repository-container-header > div.d-flex.flex-wrap > div > div > svg.octicon-lock {
   height: 30px;
   width: 30px;
 }
