@@ -126,6 +126,42 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 /* **************************** */
+/* Featured section */
+/* **************************** */
+
+.section-featured {
+  /* background-color: #f3bf91; */
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.75px;
+  margin-bottom: 2.4rem;
+
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+
+  color: #888;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.logos img {
+  /* width: 10%; */
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/* **************************** */
 /* How section */
 /* **************************** */
 
@@ -163,21 +199,34 @@ In this case, it is not actually needed, since it is written after the base styl
   position: relative;
 }
 
-.step-img-box::before {
+.step-img-box::before,
+.step-img-box::after {
   content: '';
   display: block;
-  width: 60%;
-  /* A trick, see section notes! */
-  padding-bottom: 60%;
-  background-color: #fdf2e9;
-
   position: absolute;
+
   /* Not needed because of the parent being `flex` and centering from there! */
   /* top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); */
 
   border-radius: 50%;
+}
+
+.step-img-box::before {
+  width: 60%;
+  /* A trick, see section notes! */
+  background-color: #fdf2e9;
+  padding-bottom: 60%;
+  z-index: -2;
+}
+
+.step-img-box::after {
+  width: 45%;
+  /* A trick, see section notes! */
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+
   z-index: -1;
 }
 

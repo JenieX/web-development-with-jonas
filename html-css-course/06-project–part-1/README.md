@@ -165,6 +165,10 @@ These elements therefor need to have a width value. Which should be `max-width` 
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
+
+.grid--center-v {
+  align-items: center;
+}
 ```
 
 ## Gray Colors

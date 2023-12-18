@@ -30,10 +30,10 @@
 
 ### Letter Spacing (px)
 
-| Value |      Usage       |
-| :---: | :--------------: |
-| -0.5  | `h1`, `h2`, `h3` |
-| 0.75  |  `.subheading`   |
+| Value |                 Usage                 |
+| :---: | :-----------------------------------: |
+| -0.5  |           `h1`, `h2`, `h3`            |
+| 0.75  | `.subheading`, `.heading-featured-in` |
 
 ## 02- COLORS
 

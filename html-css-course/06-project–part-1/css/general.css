@@ -77,6 +77,7 @@ body {
 }
 
 .subheading {
+  display: block;
   font-size: 1.6rem;
   color: #cf711f;
   font-weight: 500;
