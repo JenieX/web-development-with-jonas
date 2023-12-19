@@ -10,23 +10,24 @@
 |  16   |   36   |  86   |
 |  18   |   44   |  98   |
 
-### Font Weight
+### Font Weight (no-unit)
 
-| Value |       Label        |
-| :---: | :----------------: |
-|  400  |      Default       |
-|  500  | Medium, `<strong>` |
-|  600  |     Semi-bold      |
-|  700  |        Bold        |
+| Value |      Label       |
+| :---: | :--------------: |
+|  400  |     Default      |
+|  500  | Medium, `strong` |
+|  600  |    Semi-bold     |
+|  700  |       Bold       |
 
-### Line Heights
+### Line Heights (no-unit)
 
-| Value |  Usage  |
-| :---: | :-----: |
-|   1   | Default |
-| 1.05  |  Small  |
-|  1.2  | Medium  |
-|  1.6  |   `p`   |
+| Value |      Usage       |
+| :---: | :--------------: |
+|   1   |     Default      |
+| 1.05  |      Small       |
+|  1.2  |      Medium      |
+|  1.6  |       `p`        |
+|  1.8  | `p` `blockquote` |
 
 ### Letter Spacing (px)
 
