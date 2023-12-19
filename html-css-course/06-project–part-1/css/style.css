@@ -246,6 +246,12 @@ In this case, it is not actually needed, since it is written after the base styl
   box-shadow: 0 2.4rem 4.8rem rgb(0, 0, 0, 0.075);
   border-radius: 11px;
   overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgb(0, 0, 0, 0.06);
 }
 
 .meal-content {
@@ -345,4 +351,25 @@ In this case, it is not actually needed, since it is written after the base styl
   display: flex;
   justify-content: center;
   font-size: 1.8rem;
+}
+
+/* **************************** */
+/* testimonials section */
+/* **************************** */
+
+.section-testimonials {
+  padding: 9.6rem 0;
+}
+
+/* We can use our usable grid, but that has huge gaps! */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
+
+.testimonial-img {
+  /* We want the images to be fixed and not fluid this time! */
+  width: 6.4rem;
+  border-radius: 50%;
 }
