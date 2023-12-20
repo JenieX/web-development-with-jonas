@@ -182,7 +182,7 @@ Syntax: `transition: <property> <duration>`
 - Always set the `transition` property on the original state.
 - The keyword `all` is a valid value for `<property>`, which would animate all properties.
 - `<duration>` is a number with either `ms` or just `s` unit.
-  - Common value is `0.3s` (`300ms`).
+  - Common value for small elements is `0.3s` (`300ms`), `0.4s` for bigger elements.
 
 ### [`overflow`](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow)
 
@@ -191,7 +191,7 @@ sets the desired behavior when content does not fit in the parent element box (o
 - `hidden`
   - Overflow content is clipped at the element's padding box.
   - There are no scroll bars, and the clipped content is not visible (i.e., clipped content is hidden), but the content still exists.
-  - Can be used to **prevent an image from overflowing a container** with `border-radius`.
+  - Can be used to **prevent an image from overflowing a container** with `border-radius`, or an image that is to be scaled up on hover.
 
 ## Notes
 
