@@ -1,6 +1,6 @@
-### CSS Guidelines
+## CSS Guidelines
 
-#### 1. Use Low-Specificity Selectors
+### 1. Use Low-Specificity Selectors
 
 ```css
 /* incorrect  */
@@ -18,9 +18,9 @@
 - Don't nest, and don't over select.
 - To override a style, place it after the original one.
 
-#### 2. Don't Use ID or Element Selectors
+### 2. Don't Use ID or Element Selectors
 
-#### 3. Don't Depend on a Certain Markup Structure
+### 3. Don't Depend on a Certain Markup Structure
 
 ```css
 /* incorrect  */
@@ -34,13 +34,13 @@
 }
 ```
 
-#### 4. Don't Use Inline Styles
+### 4. Don't Use Inline Styles
 
-#### 5. Don't Use !important
+### 5. Don't Use !important
 
 - Except when you have to override some inline styles.
 
-#### 6. Prefix Modifier Classes
+### 6. Prefix Modifier Classes
 
 ```css
 /* incorrect  */
@@ -64,7 +64,7 @@
 }
 ```
 
-#### 7. Write Small Rules
+### 7. Write Small Rules
 
 ```css
 /* incorrect  */
@@ -85,11 +85,13 @@
 }
 ```
 
-#### 8. Use a Prefix for JavaScript Hooks
+### 8. Use a Prefix for JavaScript Hooks
 
 ---
 
-### VSCODE Shortcuts
+## VSCODE
+
+### Shortcuts
 
 - `shift+ctrl+k` to remove line.
 - `shift+ctrl+enter` add new line above.
@@ -117,9 +119,29 @@
   - `{ "key": "shift+alt+[", "command": "editor.action.moveCarretLeftAction" }` To move selected word to the left.
   - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }` To move selected word to the right.
 
+### Snippets
+
+- To create nested elements, type for example `nav>ul>li`.
+- To create elements with with multiple classes, type for example `div.class1.class2`.
+- To create multiple HTML elements at once, type `<elementTag>*<count>`, e.g. `li*5`.
+- To create an element with the content of `hello`, type `<elementTag>{hello}`, e.g. `span{hello}`.
+
+#### More Examples
+
+- `div.container.grid.grid--2-cols > div.pricing-plan{Pricing $}*2`
+
+```html
+<div class="container grid grid--2-cols">
+  <div class="pricing-plan">Pricing 1</div>
+  <div class="pricing-plan">Pricing 2</div>
+</div>
+```
+
+[Emmet Docs Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
+
 ---
 
-### GitHub Style
+## GitHub Style
 
 ```css
 #repository-container-header > div.d-flex.flex-wrap > div > div > svg.octicon-lock {

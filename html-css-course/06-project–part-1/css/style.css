@@ -354,7 +354,7 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 /* **************************** */
-/* testimonials section */
+/* Testimonials section */
 /* **************************** */
 
 .section-testimonials {
@@ -416,4 +416,12 @@ In this case, it is not actually needed, since it is written after the base styl
 
 .gallery-img:hover {
   transform: scale(1.1);
+}
+
+/* **************************** */
+/* Pricing section */
+/* **************************** */
+
+.section-pricing {
+  margin: 9.6rem 0;
 }
