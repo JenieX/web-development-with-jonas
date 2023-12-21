@@ -207,3 +207,4 @@ sets the desired behavior when content does not fit in the parent element box (o
 - `text-align: center;` does not work on inline elements.
 - To give an element an animation of moving up on hover, use `transform: translateY(-1.2rem);`.
 - `<img>` elements are `inline` (`inline-block`) elements, which adds annoying small space around them. Setting them to be `block`, remove that space.
+- The **list** component is a very **good candidate for reusability**.
