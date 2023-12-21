@@ -21,13 +21,15 @@
 
 ### Line Heights (no-unit)
 
-| Value |      Usage       |
-| :---: | :--------------: |
-|   1   |     Default      |
-| 1.05  |      Small       |
-|  1.2  |      Medium      |
-|  1.6  |       `p`        |
-|  1.8  | `p` `blockquote` |
+| Value | Usage #1 |   Usage #2   |
+| :---: | :------: | :----------: |
+|   1   | Default  |              |
+| 1.05  |  Small   |              |
+|  1.2  |  Medium  |              |
+|  1.6  |   `p`    |              |
+|  1.8  |   `p`    | `blockquote` |
+
+\*fz: `font-size`
 
 ### Letter Spacing (px)
 

@@ -119,6 +119,14 @@ Note: In our project, we could have used the classes `container grid` on the Her
 
 Notice the use of the `!important` keyword!
 
+### `.margin-bottom-md`
+
+```css
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+```
+
 ### `.container`
 
 It should be set on elements which content needs to be centered on our page.
@@ -208,3 +216,5 @@ sets the desired behavior when content does not fit in the parent element box (o
 - To give an element an animation of moving up on hover, use `transform: translateY(-1.2rem);`.
 - `<img>` elements are `inline` (`inline-block`) elements, which adds annoying small space around them. Setting them to be `block`, remove that space.
 - The **list** component is a very **good candidate for reusability**.
+- When using the **ionicons icon pack**, remember that their icons' elements follow the **default settings of the box model**.
+- The `<aside>` element can be used inside components like the pricing tables, e.g. the tax notice after it being inside `<aside>` and not the generic `p` element.
