@@ -201,7 +201,7 @@ sets the desired behavior when content does not fit in the parent element box (o
   - There are no scroll bars, and the clipped content is not visible (i.e., clipped content is hidden), but the content still exists.
   - Can be used to **prevent an image from overflowing a container** with `border-radius`, or an image that is to be scaled up on hover.
 
-## [`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+### [`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
 
 Sets one or more background images on an element.
 
@@ -232,3 +232,6 @@ background-position: center;
 - The `<aside>` element can be used inside components like the pricing tables, e.g. the tax notice after it being inside `<aside>` and not the generic `p` element.
 - For an empty `<div>` element that has an image as a background, you should specify the attributes `role="img"` and the `aria-label="Description of the background image"` on it for accessibility.
 - To link (clicking it focuses the input) a `<label>` element to an `<input>` element, use the `for` attribute with a value that is the `id` on the `<input>` element.
+- You can force elements to apply their parent's CSS style using the keyword `inherit`, e.g. `font-family: inherit;` for `<input>` elements.
+- Giving `<input>` elements this shadow `box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);` makes them look better.
+- The pseudo class `::placeholder` is used to style the `placeholder` on the `<input>` elements.
