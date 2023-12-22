@@ -71,6 +71,17 @@ In this case, it is not actually needed, since it is written after the base styl
   background-color: #fdf2e9;
   padding: 4.8rem 0 9.6rem 0;
 }
+@media (max-width: 600px) {
+  .section-hero {
+    /* background-color: blue; */
+    border: 30px dotted yellow;
+  }
+}
+@media (max-width: 1200px) {
+  .section-hero {
+    background-color: red;
+  }
+}
 
 .hero {
   max-width: 130rem;
