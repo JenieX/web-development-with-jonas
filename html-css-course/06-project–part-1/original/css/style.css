@@ -1,6 +1,6 @@
-/* **************************** */
-/* Main Header */
-/* **************************** */
+/**************************/
+/* HEADER */
+/**************************/
 
 .header {
   display: flex;
@@ -8,19 +8,18 @@
   align-items: center;
   background-color: #fdf2e9;
 
-  /*
-  Using a fixed value here is not important, as we can simply use padding
-  at the top and bottom instead. But this is to make it easier for making
-  the header sticky.
-  */
+  /* Because we want header to be sticky later */
   height: 9.6rem;
   padding: 0 4.8rem;
 }
 
 .logo {
-  /* height: 2.4rem; Breaking the rules LOL */
   height: 2.2rem;
 }
+
+/**************************/
+/* NAVIGATION */
+/**************************/
 
 .main-nav-list {
   list-style: none;
@@ -32,11 +31,10 @@
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
-
   text-decoration: none;
   color: #333;
-  font-size: 1.8rem;
   font-weight: 500;
+  font-size: 1.8rem;
   transition: all 0.3s;
 }
 
@@ -45,17 +43,12 @@
   color: #cf711f;
 }
 
-/* 
-Adding the multiple classes to make sure it overrides the color property.
-In this case, it is not actually needed, since it is written after the base style.
-*/
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
-  background-color: #e67e22;
-  color: #fff;
-
   padding: 1.2rem 2.4rem;
   border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
 }
 
 .main-nav-link.nav-cta:hover,
@@ -63,9 +56,9 @@ In this case, it is not actually needed, since it is written after the base styl
   background-color: #cf711f;
 }
 
-/* **************************** */
-/* Hero Section */
-/* **************************** */
+/**************************/
+/* HERO SECTION */
+/**************************/
 
 .section-hero {
   background-color: #fdf2e9;
@@ -78,8 +71,8 @@ In this case, it is not actually needed, since it is written after the base styl
   padding: 0 3.2rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 9.6rem;
+  align-items: center;
 }
 
 .hero-description {
@@ -88,11 +81,15 @@ In this case, it is not actually needed, since it is written after the base styl
   margin-bottom: 4.8rem;
 }
 
+.hero-img {
+  width: 100%;
+}
+
 .delivered-meals {
   display: flex;
-  margin-top: 8rem;
   align-items: center;
   gap: 1.6rem;
+  margin-top: 8rem;
 }
 
 .delivered-imgs {
@@ -100,8 +97,8 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 .delivered-imgs img {
-  width: 4.8rem;
   height: 4.8rem;
+  width: 4.8rem;
   border-radius: 50%;
   margin-right: -1.6rem;
   border: 3px solid #fdf2e9;
@@ -118,65 +115,45 @@ In this case, it is not actually needed, since it is written after the base styl
 
 .delivered-text span {
   color: #cf711f;
+  font-weight: 700;
 }
 
-.hero-img {
-  /* max-width: 100%; */
-  width: 100%;
-}
-
-/* **************************** */
-/* Featured section */
-/* **************************** */
+/**************************/
+/* FEATURED IN SECTION */
+/**************************/
 
 .section-featured {
-  /* background-color: #f3bf91; */
   padding: 4.8rem 0 3.2rem 0;
 }
 
 .heading-featured-in {
   font-size: 1.4rem;
   text-transform: uppercase;
-  font-weight: 500;
   letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
   margin-bottom: 2.4rem;
-
-  /* text-align: center; */
-  display: flex;
-  justify-content: center;
-
   color: #888;
 }
 
 .logos {
   display: flex;
   justify-content: space-around;
-  /* align-items: center; */
 }
 
 .logos img {
-  /* width: 10%; */
   height: 3.2rem;
   filter: brightness(0);
   opacity: 50%;
 }
 
-/* **************************** */
-/* How section */
-/* **************************** */
+/**************************/
+/* HOW IT WORKS SECTION */
+/**************************/
 
 .section-how {
   padding: 9.6rem 0;
 }
-
-/* .step-text-box { */
-/* display: flex; */
-/* justify-content: center; */
-/* flex-direction: column; */
-
-/* The better choice, and better set it on the parent! */
-/* align-self: center; */
-/* } */
 
 .step-number {
   font-size: 8.6rem;
@@ -191,59 +168,57 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 .step-img-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* background-color: yellow; */
   position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .step-img-box::before,
 .step-img-box::after {
-  content: '';
+  content: "";
   display: block;
-  position: absolute;
-
-  /* Not needed because of the parent being `flex` and centering from there! */
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .step-img-box::before {
   width: 60%;
-  /* A trick, see section notes! */
-  background-color: #fdf2e9;
+  /* height: 60%; */
+
+  /* 60% of parent's width */
   padding-bottom: 60%;
+
+  background-color: #fdf2e9;
   z-index: -2;
 }
 
 .step-img-box::after {
   width: 45%;
-  /* A trick, see section notes! */
   padding-bottom: 45%;
   background-color: #fae5d3;
-
   z-index: -1;
 }
 
 .step-img {
-  max-width: 35%;
+  width: 35%;
+  /* z-index: 10; */
 }
 
-/* **************************** */
-/* meals section */
-/* **************************** */
+/**************************/
+/* MEALS SECTION */
+/**************************/
 
 .section-meals {
   padding: 9.6rem 0;
 }
 
 .meal {
-  box-shadow: 0 2.4rem 4.8rem rgb(0, 0, 0, 0.075);
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
   overflow: hidden;
   transition: all 0.4s;
@@ -251,18 +226,11 @@ In this case, it is not actually needed, since it is written after the base styl
 
 .meal:hover {
   transform: translateY(-1.2rem);
-  box-shadow: 0 3.2rem 6.4rem rgb(0, 0, 0, 0.06);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
 
 .meal-content {
-  padding: 4.8rem;
-  padding-top: 3.2rem;
-}
-
-.meal-img {
-  width: 100%;
-  /* border-top-right-radius: 11px; */
-  /* border-top-left-radius: 11px; */
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
 
 .meal-tags {
@@ -272,36 +240,29 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 .tag {
-  /*
-  Needed to apply the `padding` properly.
-  But not needed if the parent is a flex container!
-  */
-  /* display: inline-block; */
+  display: inline-block;
   padding: 0.4rem 0.8rem;
-
   font-size: 1.2rem;
-  color: #333;
-  border-radius: 1000px;
   text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
   font-weight: 600;
 }
 
 .tag--vegetarian {
-  background-color: #69db7c;
+  background-color: #51cf66;
 }
-
-.tag--Vegan {
-  background-color: #74b816;
+.tag--vegan {
+  background-color: #94d82d;
 }
-
-.tag--Paleo {
-  background-color: #f59f00;
+.tag--paleo {
+  background-color: #ffd43b;
 }
 
 .meal-title {
   font-size: 2.4rem;
-  font-weight: 600;
   color: #333;
+  font-weight: 600;
   margin-bottom: 3.2rem;
 }
 
@@ -320,22 +281,23 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 .meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
   color: #e67e22;
-  /* width: 2.4rem; */
-  /* height: 2.4rem; */
-  font-size: 2.4rem;
-  /* --ionicon-stroke-width: 16px; */
+}
+
+.meal-img {
+  width: 100%;
 }
 
 .all-recipes {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   font-size: 1.8rem;
 }
 
-/* **************************** */
-/* Testimonials section */
-/* **************************** */
+/**************************/
+/* TESTIMONIALS SECTION */
+/**************************/
 
 .section-testimonials {
   background-color: #fdf2e9;
@@ -348,7 +310,6 @@ In this case, it is not actually needed, since it is written after the base styl
   padding: 9.6rem;
 }
 
-/* We can use our usable grid, but that has huge gaps! */
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -357,7 +318,6 @@ In this case, it is not actually needed, since it is written after the base styl
 }
 
 .testimonial-img {
-  /* We want the images to be fixed and not fluid this time! */
   width: 6.4rem;
   border-radius: 50%;
   margin-bottom: 1.2rem;
@@ -374,8 +334,6 @@ In this case, it is not actually needed, since it is written after the base styl
   color: #6f6f6f;
 }
 
-/* ------------------------ */
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -387,66 +345,54 @@ In this case, it is not actually needed, since it is written after the base styl
   overflow: hidden;
 }
 
-.gallery-img {
-  /* max-width: 100%; */
-  width: 100%;
+.gallery-item img {
   display: block;
+  width: 100%;
   transition: all 0.4s;
 }
 
-.gallery-img:hover {
+.gallery-item img:hover {
   transform: scale(1.1);
 }
 
-/* **************************** */
-/* Pricing section */
-/* **************************** */
+/**************************/
+/* MEALS SECTION */
+/**************************/
 
 .section-pricing {
   padding: 9.6rem 0;
 }
 
-.pricing-plan {
-  /* box-shadow: 0 2.4rem 4.8rem rgb(0, 0, 0, 0.075); */
-  padding: 4.8rem;
-
+.princing-plan {
   border-radius: 11px;
+
   width: 75%;
-
-  /* display: flex; */
-  /* flex-direction: column; */
 }
 
-/* 
-# Note 
-`.pricing-plan--starter` having a border, that reduce its height, therefor
-will make its padding smaller to compensate for that.
-Another solution is to use `box-shadow` with `inset` keyword.
-*/
-.pricing-plan--starter {
-  /* padding: 4.6rem; */
+.princing-plan--starter {
   justify-self: end;
-  /* border: 3px solid #fdf2e9; */
-  box-shadow: inset 0 0 0 3px #fdf2e9;
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
 }
 
-.pricing-plan--complete {
-  /* padding: 4.8rem; */
+.princing-plan--complete {
   background-color: #fdf2e9;
+  padding: 4.8rem;
   position: relative;
   overflow: hidden;
 }
 
-.pricing-plan--complete::after {
-  content: 'Best value';
+.princing-plan--complete::after {
+  content: "Best value";
   position: absolute;
   top: 6%;
   right: -18%;
-  font-weight: 700;
-  font-size: 1.4rem;
+
   text-transform: uppercase;
-  background-color: #ffd43b;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: #333;
+  background-color: #ffd43b;
   padding: 0.8rem 8rem;
   transform: rotate(45deg);
 }
@@ -461,7 +407,7 @@ Another solution is to use `box-shadow` with `inset` keyword.
   font-weight: 600;
   font-size: 2rem;
   text-transform: uppercase;
-  letter-spacing: 0.75px;
+  letter-spacing: 0.75;
   margin-bottom: 3.2rem;
 }
 
@@ -480,26 +426,13 @@ Another solution is to use `box-shadow` with `inset` keyword.
 
 .plan-text {
   font-size: 1.6rem;
-  /* Becomes important when line breaks into two on smaller screens */
   line-height: 1.6;
   color: #6f6f6f;
 }
 
-/* .list--plan {
-  margin-bottom: 4.8rem;
-} */
-
-.plan-sign-up {
-  display: flex;
-  justify-content: center;
-
-  /*
-  An exception instead of adding `margin-bottom` to the list 
-  because that element is re-usable.
-  */
+.plan-sing-up {
+  text-align: center;
   margin-top: 4.8rem;
-
-  /* margin-top: auto; */
 }
 
 .plan-details {
@@ -508,22 +441,17 @@ Another solution is to use `box-shadow` with `inset` keyword.
   text-align: center;
 }
 
-/* ------------------------ */
-
 .feature-icon {
-  font-size: 3.2rem;
-  /* width: 3.2rem; */
-  /* height: 3.2rem; */
-
   color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
   background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
   padding: 1.6rem;
   border-radius: 50%;
-  margin-bottom: 3.2rem;
 }
 
 .feature-title {
-  /* Smaller value than h3 */
   font-size: 2.4rem;
   color: #333;
   font-weight: 700;
@@ -535,23 +463,27 @@ Another solution is to use `box-shadow` with `inset` keyword.
   line-height: 1.8;
 }
 
-/* **************************** */
-/* CTA section */
-/* **************************** */
+/**************************/
+/* CTA SECTION */
+/**************************/
 
 .section-cta {
-  padding: 9.6rem 0;
+  /* top / right / bottom / left */
+  /* padding: 9.6rem 0 12.8rem 0; */
+
+  /* top / horizontal / left */
+  padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
   border-radius: 11px;
+
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
   overflow: hidden;
-
-  height: 50rem;
 }
 
 .cta-text-box {
@@ -560,7 +492,8 @@ Another solution is to use `box-shadow` with `inset` keyword.
 }
 
 .cta .heading-secondary {
-  color: #45260a;
+  /* color: #45260a; */
+  color: inherit;
   margin-bottom: 3.2rem;
 }
 
@@ -576,14 +509,120 @@ Another solution is to use `box-shadow` with `inset` keyword.
       rgba(235, 151, 78, 0.35),
       rgba(230, 125, 34, 0.35)
     ),
-    url('../img/eating.jpg');
+    url("../img/eating.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .cta-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   column-gap: 3.2rem;
   row-gap: 2.4rem;
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.cta-form input,
+.cta-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/**************************/
+/* FOOTER */
+/**************************/
+
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
 }

@@ -201,6 +201,18 @@ sets the desired behavior when content does not fit in the parent element box (o
   - There are no scroll bars, and the clipped content is not visible (i.e., clipped content is hidden), but the content still exists.
   - Can be used to **prevent an image from overflowing a container** with `border-radius`, or an image that is to be scaled up on hover.
 
+## [`background-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-image)
+
+Sets one or more background images on an element.
+
+```css
+background-image: linear-gradient(<direction>, <color-1>, <color-2>), url(<img-path>);
+background-size: cover;
+background-position: center;
+```
+
+`direction` can be a number with `deg` unit, or a keyword like `to right bottom`.
+
 ## Notes
 
 - Setting for example `padding: 1.6rem 3.2rem;` on an inline element like `<a>`, will not act as expected, therefore `display: inline-block;` is required, and should be set by default.
@@ -218,3 +230,5 @@ sets the desired behavior when content does not fit in the parent element box (o
 - The **list** component is a very **good candidate for reusability**.
 - When using the **ionicons icon pack**, remember that their icons' elements follow the **default settings of the box model**.
 - The `<aside>` element can be used inside components like the pricing tables, e.g. the tax notice after it being inside `<aside>` and not the generic `p` element.
+- For an empty `<div>` element that has an image as a background, you should specify the attributes `role="img"` and the `aria-label="Description of the background image"` on it for accessibility.
+- To link (clicking it focuses the input) a `<label>` element to an `<input>` element, use the `for` attribute with a value that is the `id` on the `<input>` element.
