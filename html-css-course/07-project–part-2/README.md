@@ -20,3 +20,4 @@ To built a desktop responsive design, we start at the highest width, then make i
 - To create an animation for an element (completely hidden) sliding from the right, we position it there and have the `<body>|<html>` clip it by `overflow-x: hidden;`, then use `translateX`.
   - `overflow-x: hidden;` works only if there is nothing absolutely positioned in relation the `<body>|<html>`.
   - Always use `translateX` property instead of the `left/right` property.
+- `translate` is simply the easiest way of moving elements around without affecting the rest of the elements around it.

@@ -160,7 +160,7 @@ Instead, 1rem = 1em = 16px
   .main-nav {
     position: absolute;
     /* background-color: rgba(219, 7, 120, 0.9); */
-    background-color: rgb(255 255 255 / 90%);
+    background-color: rgb(255 255 255 / 97%);
     top: 0;
     left: 0;
     width: 100%;
@@ -191,7 +191,7 @@ Instead, 1rem = 1em = 16px
     pointer-events: auto;
     visibility: visible;
 
-    /* transform: translateX(0); */
+    transform: translateX(0);
   }
 
   .main-nav-list {
@@ -273,8 +273,8 @@ Instead, 1rem = 1em = 16px
 
 /* **************************** */
 /* Phones                       */
-/* BELOW 550px                  */
-/* 550/16 = 34                  */
+/* BELOW 544px                  */
+/* 544/16 = 34                  */
 /* **************************** */
 
 @media (max-width: 34em) {
@@ -288,6 +288,12 @@ Instead, 1rem = 1em = 16px
     grid-template-columns: 1fr;
   }
 
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
   .section-hero {
     background-color: #fdf2e9;
     padding: 2.4rem 0 6.4rem;
@@ -295,6 +301,65 @@ Instead, 1rem = 1em = 16px
 
   .hero {
     padding: 0 3.2rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  .step-img-box:nth-child(2) {
+    /* background-color: red; */
+    /* order: -1; */
+    grid-row: 1;
+  }
+
+  .step-img-box:nth-child(6) {
+    /* background-color: yellow; */
+    grid-row: 5;
+  }
+
+  /* .step-text-box:not(:nth-child(5)) {
+    margin-bottom: 9.6rem;
+  } */
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+
+  .pricing-plan {
+    width: 80%;
+  }
+
+  .pricing-plan--starter,
+  .pricing-plan--complete {
+    justify-self: center;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-img-box {
+    height: 48rem;
+    grid-row: 1;
+  }
+
+  .cta-text-box {
+    padding: 4.8rem;
+    padding-top: 3.2rem;
   }
 }
 

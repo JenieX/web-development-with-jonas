@@ -1,3 +1,9 @@
+| Size |    Phone    |
+| :--: | :---------: |
+| 424  |     XZ      |
+| 455  | XZ Premium` |
+| 480  |  XA1 Ultra  |
+
 ## 01- TYPOGRAPHY
 
 ### Font Size (px)
