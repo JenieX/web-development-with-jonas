@@ -85,6 +85,21 @@ In this case, it is not actually needed, since it is written after the base styl
   display: none;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background-color: #45260a; */
+  z-index: 998;
+  background-color: rgb(255 255 255 / 97%);
+
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 8rem;
+
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
 /* **************************** */
 /* Hero Section */
 /* **************************** */

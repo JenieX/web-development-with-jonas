@@ -2,7 +2,7 @@
 
 ### Scroll to section
 
-Using the property `href="#cta"` on anchor element, makes it so that clicking the element would auto-scroll to the element that has the `id="cta"` on it.
+Using the property `href="#cta"` on an anchor element, makes it so that clicking the element would auto-scroll to the element that has the property `id="cta"` on it.
 
 ## CSS Properties
 

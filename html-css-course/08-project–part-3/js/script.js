@@ -15,8 +15,66 @@ btnNavEl.addEventListener('click', function () {
 });
 
 ///////////////////////////////////////////////////////////
+// Smooth scrolling animation
+
+// For Safari browser!
+// But also needed to hide the mobile navigation after clicking.
+
+/* const allLinks = document.querySelectorAll('a:link');
+
+allLinks.forEach(function (link) {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+
+    // Scroll back to top
+    if (href === '#')
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+
+    // Scroll to other links
+    if (href !== '#' && href.startsWith('#')) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Close mobile navigation
+    if (link.classList.contains('main-nav-link'))
+      headerEl.classList.toggle('nav-open');
+  });
+}); */
 
 ///////////////////////////////////////////////////////////
+// Sticky navigation
+
+const sectionHeroEl = document.querySelector('.section-hero');
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+
+    if (ent.isIntersecting === false) {
+      document.querySelector('.header').classList.add('sticky');
+    }
+
+    // if (ent.isIntersecting === true) {
+    //   document.body.classList.remove('sticky');
+    // }
+  },
+  {
+    // In the viewport
+    root: null,
+    threshold: 0,
+    // rootMargin: '-80px',
+  },
+);
+obs.observe(sectionHeroEl);
+
+///////////////////////////////////////////////////////////
+
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement('div');
@@ -34,7 +92,8 @@ function checkFlexGap() {
 
   if (!isSupported) document.body.classList.add('no-flexbox-gap');
 }
-checkFlexGap();
+
+// checkFlexGap();
 
 // https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js
 
