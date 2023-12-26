@@ -135,6 +135,7 @@ body {
   /* Only for `.btn` */
   border: none;
   cursor: pointer;
+  font-family: inherit;
 }
 
 .btn--full:link,

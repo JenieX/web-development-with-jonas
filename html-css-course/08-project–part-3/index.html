@@ -89,7 +89,19 @@
             </div>
           </div>
           <div class="hero-img-box">
-            <img src="./img/hero.png" alt="A woman eating food" class="hero-img" />
+            <picture>
+              <!-- image should be resized before being compressed! -->
+
+              <source srcset="img/hero.webp" type="image/webp" />
+              <source srcset="img/hero-1200.png" type="image/png" />
+
+              <!-- Fallback src should be set below -->
+              <img
+                src="img/hero-1200.png"
+                alt="A woman eating food"
+                class="hero-img"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -579,11 +591,12 @@
                 meal is on us!
               </p>
 
-              <form action="#" class="cta-form">
+              <form class="cta-form" name="sign-up" netlify>
                 <div>
                   <label for="full-name">Full Name</label>
                   <input
                     type="text"
+                    name="full-name"
                     id="full-name"
                     placeholder="John Smith"
                     required
@@ -594,6 +607,7 @@
                   <label for="email">Email Address</label>
                   <input
                     type="email"
+                    name="email"
                     id="email"
                     placeholder="me@example.com"
                     required
@@ -605,7 +619,7 @@
 
                 <div>
                   <label for="select-where">How did you find us?</label>
-                  <select name="" id="select-where" required>
+                  <select name="select-where" id="select-where" required>
                     <option value="">Please provide an answer</option>
                     <option value="friends">Friends or family</option>
                     <option value="youtube">YouTube video</option>
@@ -648,7 +662,7 @@
           </ul>
 
           <p class="copyright">
-            Copyright &copy; <span class="year">2027</span> by Omnifood, inc. All
+            Copyright &copy; <span class="year">2027</span> by Omnifood, Inc. All
             rights reserved.
           </p>
         </div>

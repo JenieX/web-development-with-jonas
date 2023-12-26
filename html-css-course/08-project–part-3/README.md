@@ -4,6 +4,12 @@
 
 Using the property `href="#cta"` on an anchor element, makes it so that clicking the element would auto-scroll to the element that has the property `id="cta"` on it.
 
+### Website Optimization
+
+- Images should be resized to the double of the rendered dimensions in the browser.
+- Compressed after that. PNG images should be converted to WebP images.
+- `<picture>` element should be used to add support for all browser. E.g. hero-img in this project.
+
 ## CSS Properties
 
 ### [`scroll-behavior`](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior)
