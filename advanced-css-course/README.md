@@ -138,33 +138,33 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 
 ## Visual Studio Code Shortcuts
 
-|       Shortcut       |                        Description                         |
-| :------------------: | :--------------------------------------------------------: |
-|    `shift+ctrl+k`    |                        Remove line                         |
-|         ---          |                                                            |
-|  `shift+ctrl+enter`  |                     Add new line above                     |
-|     `ctrl+enter`     |                     Add new line below                     |
-|         ---          |                                                            |
-|       `alt+up`       |  Move line up, or a selection (not just cursors) of lines  |
-|      `alt+down`      | Move line down, or a selection (not just cursors) of lines |
-|         ---          |                                                            |
-|    `shift+alt+up`    |             Duplicate current line to the top              |
-|   `shift+alt+down`   |            Duplicate current line to the bottom            |
-|         ---          |                                                            |
-|    `ctrl+alt+up`     |                      Add cursor above                      |
-|   `ctrl+alt+down`    |                      Add cursor below                      |
-|         ---          |                                                            |
-|    `shift+ctrl+l`    |                   Select all occurrences                   |
-|       `ctrl+d`       |              Add selection to next find match              |
-| `ctrl+shift+d` (\*1) |            Add selection to previous find match            |
-|       **---**        |                   **Sequence Shortcut**                    |
-|   `ctrl+k ctrl+v`    |                  Transform to title case                   |
-|       **---**        |           **Cursors blinking across many lines**           |
-|                      |                                                            |
-|                      |                                                            |
-|                      |                                                            |
-|                      |                                                            |
-|                      |                                                            |
+|     **Shortcut**      |                      **Description**                       |
+| :-------------------: | :--------------------------------------------------------: |
+|    `shift+ctrl+k`     |                        Remove line                         |
+|          ---          |                                                            |
+|  `shift+ctrl+enter`   |                     Add new line above                     |
+|     `ctrl+enter`      |                     Add new line below                     |
+|          ---          |                                                            |
+|       `alt+up`        |  Move line up, or a selection (not just cursors) of lines  |
+|      `alt+down`       | Move line down, or a selection (not just cursors) of lines |
+|          ---          |                                                            |
+|    `shift+alt+up`     |             Duplicate current line to the top              |
+|   `shift+alt+down`    |            Duplicate current line to the bottom            |
+|          ---          |                                                            |
+|     `ctrl+alt+up`     |                      Add cursor above                      |
+|    `ctrl+alt+down`    |                      Add cursor below                      |
+|          ---          |                                                            |
+|    `shift+ctrl+l`     |                   Select all occurrences                   |
+|       `ctrl+d`        |              Add selection to next find match              |
+| `ctrl+shift+d` (\*1)  |            Add selection to previous find match            |
+| **Sequence Shortcut** |                      **Description**                       |
+|    `ctrl+k ctrl+v`    |                  Transform to title case                   |
+|  **Across Cursors**   |                      **Description**                       |
+|                       |                                                            |
+|                       |                                                            |
+|                       |                                                            |
+|                       |                                                            |
+|                       |                                                            |
 
 - 1
 
