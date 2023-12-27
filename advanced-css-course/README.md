@@ -16,11 +16,66 @@ clip-path: polygon(0 0, 50% 50%, 0 100%);
 clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 ```
 
+### [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes)
+
+The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than transitions.
+
+To **fix the shaking bug** use `backface-visibility: hidden;` property.
+
+```css
+/* Syntax #1 */
+@keyframes slideFadingFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Syntax #2 */
+
+@keyframes slideFadingFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  70% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Usage #1 */
+.heading-primary {
+  animation-name: slideFadingFromLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+}
+
+/* Usage #2 */
+.heading-secondary {
+  animation: slideFadingFromLeft 1s ease-out;
+}
+```
+
 ## Links
 
 ### Development
 
 - [Emmet Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
+- [Emmet in Visual Studio Code](https://code.visualstudio.com/docs/editor/emmet)
 
 ### CSS
 
@@ -38,6 +93,7 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 - [GRID by Malven Co.](https://grid.malven.co/)
 - [GRID GARDEN](http://cssgridgarden.com/)
 
+- [Can I use?](https://caniuse.com/)
 - [Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)
 
 ### Design
@@ -48,7 +104,7 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 - [Screelane](https://screenlane.com/)
 - [Dribbble](https://dribbble.com/)
 
-### Images / Videos
+### Images
 
 - [Unsplash](https://unsplash.com/)
 - [Pexels](https://www.pexels.com/)
@@ -79,3 +135,48 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 ### Deployment
 
 - [Squoosh](https://squoosh.app/)
+
+## Visual Studio Code Shortcuts
+
+| Shortcut           | Description        |
+| ------------------ | ------------------ |
+| `shift+ctrl+k`     | Remove line        |
+|                    |                    |
+| `shift+ctrl+enter` | add new line above |
+| `ctrl+enter`       | add new line below |
+|                    |                    |
+|                    |                    |
+|                    |                    |
+|                    |                    |
+
+- `shift+ctrl+k` to remove line.
+- `shift+ctrl+enter` add new line above.
+- `ctrl+enter` add new line below.
+- `alt+up` to move line up, or a selection (not just cursors) of lines.
+- `alt+down` to move line down, or a selection (not just cursors) of lines.
+- `shift+alt+up` duplicate current line to the top.
+- `shift+alt+down` duplicate current line to the bottom.
+- `ctrl+alt+up` To add cursor above.
+- `ctrl+alt+down` To add cursor below.
+
+- `shift+ctrl+l` To select all occurrences.
+- `ctrl+d` To add Selection To Next Find Match.
+- `{ "key": "ctrl+shift+d", "command": "editor.action.addSelectionToPreviousFindMatch" }` To Add Selection To Previous Find Match.
+
+  - Overrides `{ "key": "ctrl+shift+d", "command": "-workbench.view.debug", "when": "viewContainer.workbench.view.debug.enabled" }`
+
+- Cursors blinking across many lines
+  - If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
+  - `ctrl+u` undo cursor.
+  - `ctrl+l` to select each line that has a cursor.
+  - `ctrl+shift+left` cursorWordLeftSelect.
+  - `ctrl+shift+right` cursorWordEndRightSelect.
+  - `ctrl+right` cursorWordLeft.
+  - `ctrl+left` cursorWordEndRight.
+  - `{ "key": "shift+alt+u", "command": "cursorLineStart" }` To move each cursor to the start of the line.
+  - `{ "key": "shift+alt+i", "command": "cursorLineEnd" }` To move each cursor to the end of the line.
+    - Overrides `{ "key": "shift+alt+i", "command": "-editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" }`
+  - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }` Select to from the start.
+  - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }` Select to the end.
+  - `{ "key": "shift+alt+[", "command": "editor.action.moveCarretLeftAction" }` To move selected word to the left.
+  - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }` To move selected word to the right.
