@@ -138,32 +138,38 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 
 ## Visual Studio Code Shortcuts
 
-| Shortcut           | Description        |
-| ------------------ | ------------------ |
-| `shift+ctrl+k`     | Remove line        |
-|                    |                    |
-| `shift+ctrl+enter` | add new line above |
-| `ctrl+enter`       | add new line below |
-|                    |                    |
-|                    |                    |
-|                    |                    |
-|                    |                    |
+|       Shortcut       |                        Description                         |
+| :------------------: | :--------------------------------------------------------: |
+|    `shift+ctrl+k`    |                        Remove line                         |
+|         ---          |                                                            |
+|  `shift+ctrl+enter`  |                     Add new line above                     |
+|     `ctrl+enter`     |                     Add new line below                     |
+|         ---          |                                                            |
+|       `alt+up`       |  Move line up, or a selection (not just cursors) of lines  |
+|      `alt+down`      | Move line down, or a selection (not just cursors) of lines |
+|         ---          |                                                            |
+|    `shift+alt+up`    |             Duplicate current line to the top              |
+|   `shift+alt+down`   |            Duplicate current line to the bottom            |
+|         ---          |                                                            |
+|    `ctrl+alt+up`     |                      Add cursor above                      |
+|   `ctrl+alt+down`    |                      Add cursor below                      |
+|         ---          |                                                            |
+|    `shift+ctrl+l`    |                   Select all occurrences                   |
+|       `ctrl+d`       |              Add selection to next find match              |
+| `ctrl+shift+d` (\*1) |            Add selection to previous find match            |
+|       **---**        |                   **Sequence Shortcut**                    |
+|   `ctrl+k ctrl+v`    |                  Transform to title case                   |
+|       **---**        |           **Cursors blinking across many lines**           |
+|                      |                                                            |
+|                      |                                                            |
+|                      |                                                            |
+|                      |                                                            |
+|                      |                                                            |
 
-- `shift+ctrl+k` to remove line.
-- `shift+ctrl+enter` add new line above.
-- `ctrl+enter` add new line below.
-- `alt+up` to move line up, or a selection (not just cursors) of lines.
-- `alt+down` to move line down, or a selection (not just cursors) of lines.
-- `shift+alt+up` duplicate current line to the top.
-- `shift+alt+down` duplicate current line to the bottom.
-- `ctrl+alt+up` To add cursor above.
-- `ctrl+alt+down` To add cursor below.
+- 1
 
-- `shift+ctrl+l` To select all occurrences.
-- `ctrl+d` To add Selection To Next Find Match.
-- `{ "key": "ctrl+shift+d", "command": "editor.action.addSelectionToPreviousFindMatch" }` To Add Selection To Previous Find Match.
-
-  - Overrides `{ "key": "ctrl+shift+d", "command": "-workbench.view.debug", "when": "viewContainer.workbench.view.debug.enabled" }`
+  - `{ "key": "ctrl+shift+d", "command": "editor.action.addSelectionToPreviousFindMatch" }`
+  - `{ "key": "ctrl+shift+d", "command": "-workbench.view.debug", "when": "viewContainer.workbench.view.debug.enabled" }`
 
 - Cursors blinking across many lines
   - If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
