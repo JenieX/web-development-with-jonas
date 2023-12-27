@@ -20,7 +20,8 @@ clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 
 The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than transitions.
 
-To **fix the shaking bug** use `backface-visibility: hidden;` property.
+- To **fix the shaking bug** use `backface-visibility: hidden;` property.
+- Set [`animation-fill-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode) property to `backwards` to apply the initial animation state on the original state of the element first.
 
 ```css
 /* Syntax #1 */
@@ -68,6 +69,49 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 .heading-secondary {
   animation: slideFadingFromLeft 1s ease-out;
 }
+
+/* Usage #3 */
+.logo:hover {
+  animation: slideFadingFromLeft 1s ease-out;
+}
+```
+
+### [`text-align`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
+
+text-align
+The text-align CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box. This means it works like vertical-align but in the horizontal direction.
+
+Inline elements are treated as text, therefore this property would work on them as well.
+
+### [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+
+The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
+
+High value for Y offset and blur, make the element as if it is further away. See example below.
+
+```css
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+```
+
+### [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+
+The transform CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
+
+```css
+transform: scale(1.5);
+transform: scaleX(1.4) scaleY(1.6);
+
+transform: translate(x, y);
+transform: translateX(10px);
+transform: translateY(10px);
 ```
 
 ## Links
