@@ -222,7 +222,7 @@ background-position: center;
 - The `<header>` element is used at the top of the whole website, a `<section>`, or an `<article>`.
 - The `<main>` element is a semantic element, that contains the main part of web document. It does not include parts that are repeated across multiple pages, e.g. the main `<header>` and the `<footer>` elements.
 - The `before` and `after` pseudo-elements can not be added to `<img>` elements, as they don't allow for children inside them.
-- When setting both `width` and `height` to a percentage value, it will not work. A trick to achieve that is to set `padding-bottom` with the `height` value instead!
+- When setting both `width` and `height` to a percentage value, it will not work **except for pseudo elements**. A trick to achieve that is to set `padding-bottom` with the `height` value instead!
 - You should consider replacing the `text-decoration` on `<a>` elements, with `border-bottom: 1px solid currentColor; padding-bottom: 2px;` on the original state, and `border-bottom: 1px solid transparent;` on the hover state.
 - `text-align: center;` does not work on inline elements.
 - To give an element an animation of moving up on hover, use `transform: translateY(-1.2rem);`.
