@@ -178,6 +178,12 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 |  `shift+alt+[` (\*6)  |               Move selected word to the left               |
 |  `shift+alt+]` (\*7)  |              Move selected word to the right               |
 
+### Tips
+
+- If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
+
+---
+
 - 1
 
   - `{ "key": "ctrl+shift+d", "command": "editor.action.addSelectionToPreviousFindMatch" }`
@@ -207,7 +213,3 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 - 7
 
   - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }`
-
-### Tips
-
-- If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
