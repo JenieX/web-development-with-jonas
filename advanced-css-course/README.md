@@ -160,29 +160,54 @@ To **fix the shaking bug** use `backface-visibility: hidden;` property.
 | **Sequence Shortcut** |                      **Description**                       |
 |    `ctrl+k ctrl+v`    |                  Transform to title case                   |
 |  **Across Cursors**   |                      **Description**                       |
-|                       |                                                            |
-|                       |                                                            |
-|                       |                                                            |
-|                       |                                                            |
-|                       |                                                            |
+|       `ctrl+u`        |                        Undo cursor                         |
+|          ---          |                                                            |
+|       `ctrl+l`        |             Select each line that has a cursor             |
+|          ---          |                                                            |
+|   `ctrl+shift+left`   |                    cursorWordLeftSelect                    |
+|  `ctrl+shift+right`   |                  cursorWordEndRightSelect                  |
+|     `ctrl+right`      |                       cursorWordLeft                       |
+|      `ctrl+left`      |                     cursorWordEndRight                     |
+|          ---          |                                                            |
+|  `shift+alt+u` (\*2)  |         Move each cursor to the start of the line          |
+|  `shift+alt+i` (\*3)  |          Move each cursor to the end of the line           |
+|          ---          |                                                            |
+|  `shift+alt+j` (\*4)  |                  Select to from the start                  |
+|  `shift+alt+k` (\*5)  |                     Select to the end                      |
+|          ---          |                                                            |
+|  `shift+alt+[` (\*6)  |               Move selected word to the left               |
+|  `shift+alt+]` (\*7)  |              Move selected word to the right               |
 
 - 1
 
   - `{ "key": "ctrl+shift+d", "command": "editor.action.addSelectionToPreviousFindMatch" }`
   - `{ "key": "ctrl+shift+d", "command": "-workbench.view.debug", "when": "viewContainer.workbench.view.debug.enabled" }`
 
-- Cursors blinking across many lines
-  - If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
-  - `ctrl+u` undo cursor.
-  - `ctrl+l` to select each line that has a cursor.
-  - `ctrl+shift+left` cursorWordLeftSelect.
-  - `ctrl+shift+right` cursorWordEndRightSelect.
-  - `ctrl+right` cursorWordLeft.
-  - `ctrl+left` cursorWordEndRight.
-  - `{ "key": "shift+alt+u", "command": "cursorLineStart" }` To move each cursor to the start of the line.
-  - `{ "key": "shift+alt+i", "command": "cursorLineEnd" }` To move each cursor to the end of the line.
-    - Overrides `{ "key": "shift+alt+i", "command": "-editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" }`
-  - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }` Select to from the start.
-  - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }` Select to the end.
-  - `{ "key": "shift+alt+[", "command": "editor.action.moveCarretLeftAction" }` To move selected word to the left.
-  - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }` To move selected word to the right.
+- 2
+
+  - `{ "key": "shift+alt+u", "command": "cursorLineStart" }`
+
+- 3
+
+  - `{ "key": "shift+alt+i", "command": "cursorLineEnd" }`
+  - `{ "key": "shift+alt+i", "command": "-editor.action.insertCursorAtEndOfEachLineSelected", "when": "editorTextFocus" }`
+
+- 4
+
+  - `{ "key": "shift+alt+j", "command": "cursorHomeSelect", "when": "editorTextFocus" }`
+
+- 5
+
+  - `{ "key": "shift+alt+k", "command": "cursorEndSelect", "when": "editorTextFocus" }`
+
+- 6
+
+  - `{ "key": "shift+alt+[", "command": "editor.action.moveCarretLeftAction" }`
+
+- 7
+
+  - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }`
+
+### Tips
+
+- If you have copied multiple words/selection to the clipboard, you can paste them across across these cursors.
