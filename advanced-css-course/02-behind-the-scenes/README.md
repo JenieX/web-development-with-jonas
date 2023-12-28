@@ -33,4 +33,4 @@ The three pillars of writing good HTML and CSS
 <img src="shots/02.jpg?raw=true" width="700" >
 <img src="shots/03.jpg?raw=true" width="700" >
 
-[Learn more](../../html-css-course/02-css-fundamentals#conflicting-selectors)
+[Resolving conflicts between different CSS rules and declarations](../../html-css-course/02-css-fundamentals#conflicting-selectors)
