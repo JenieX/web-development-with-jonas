@@ -114,11 +114,11 @@ transform: translateX(10px);
 transform: translateY(10px);
 ```
 
-## [`box-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
+### [`box-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 
 The box-sizing CSS property sets how the total width and height of an element is calculated.
 
-See **good practice** in the example below. This way changing a parent setting will be inherited by children automatically.
+See **good practice** in the example below.
 
 ```css
 *,
@@ -126,6 +126,8 @@ See **good practice** in the example below. This way changing a parent setting w
 *::before {
   margin: 0;
   padding: 0;
+
+  /* Changing a parent setting will be inherited by children automatically */
   box-sizing: inherit;
 }
 
