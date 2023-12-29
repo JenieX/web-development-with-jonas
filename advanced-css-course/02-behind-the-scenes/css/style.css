@@ -44,17 +44,17 @@ body {
   /* align-items: center; */
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3.5rem;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -78,7 +78,7 @@ body {
   margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-weight: 400;
   font-size: 6rem;
@@ -98,7 +98,7 @@ body {
   /* animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
   font-weight: 700;
   font-size: 2rem;

@@ -39,7 +39,7 @@ The three pillars of writing good HTML and CSS
 
 BEM – meaning block, element, modifier – is a front-end naming methodology thought up by the guys at Yandex. It is a smart way of naming your CSS classes to give them more transparency and meaning to other developers. They are far more strict and informative, which makes the BEM naming convention ideal for teams of developers on larger projects that might last a while.
 
-The reason for **double** rather than single **hyphens and underscores** is so that your block itself can be hyphen delimited.
+The reason for **double** rather than single **hyphens and underscores** is so that your block itself can be hyphen delimited. Should be noted that **A block can be nested inside another**, e.g. `btn` inside `.hero`.
 
 ### `block`
 
