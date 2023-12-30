@@ -1,7 +1,7 @@
 {
   "name": "advanced-css-course",
   "scripts": {
-    "compile:sass": "sass 02-behind-the-scenes/sass/main.scss 02-behind-the-scenes/css/style.css --watch"
+    "compile:sass": "sass 04-natours-part-2/sass/main.scss 04-natours-part-2/css/style.css --watch"
   },
   "devDependencies": {
     "prettier": "^3.1.1",
