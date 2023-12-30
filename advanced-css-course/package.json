@@ -1,6 +1,10 @@
 {
   "name": "advanced-css-course",
+  "scripts": {
+    "compile:sass": "sass 02-behind-the-scenes/sass/main.scss 02-behind-the-scenes/css/style.css --watch"
+  },
   "devDependencies": {
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "sass": "^1.69.6"
   }
 }

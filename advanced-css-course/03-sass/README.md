@@ -162,3 +162,25 @@ Complied to:
   border-color: green;
 }
 ```
+
+### Tips
+
+#### HEX Colors Transparency
+
+You can use HEX color codes in the CSS `rgba` function!
+
+```scss
+$color-primary-dark: #28b485;
+
+body {
+  background-color: rgba($color-primary-dark, 0.6);
+}
+```
+
+Compiled to
+
+```css
+body {
+  background-color: rgba(40, 180, 133, 0.6);
+}
+```
