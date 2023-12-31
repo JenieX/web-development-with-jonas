@@ -137,6 +137,40 @@ body {
 }
 ```
 
+### [`calc()`](https://developer.mozilla.org/en-US/docs/Web/CSS/calc)
+
+The calc() CSS function lets you perform calculations when specifying CSS property values. You can use a different unit with each each operand in your expression. You may also use parentheses to establish computation order when needed.
+
+```scss
+$gutter-horizontal: 6rem;
+$grid-a-third-cell: calc((100% - ($gutter-horizontal * 2)) / 3);
+$grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);
+
+.col-1-of-2 {
+  width: calc((100% - $gutter-horizontal) / 2);
+}
+
+.col-1-of-3 {
+  width: $grid-a-third-cell;
+}
+
+.col-2-of-3 {
+  width: calc((($grid-a-third-cell) * 2) + $gutter-horizontal);
+}
+
+.col-1-of-4 {
+  width: $grid-a-quarter-cell;
+}
+
+.col-2-of-4 {
+  width: calc((($grid-a-quarter-cell) * 2) + $gutter-horizontal);
+}
+
+.col-3-of-4 {
+  width: calc((($grid-a-quarter-cell) * 3) + ($gutter-horizontal * 2));
+}
+```
+
 ## Links
 
 ### Development

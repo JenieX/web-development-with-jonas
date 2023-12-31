@@ -1,0 +1,60 @@
+@keyframes slideFadingFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  70% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFadingFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  70% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFadingFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0% {
+    transform: 0;
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scaleX(2.2) scaleY(2.5);
+    opacity: 0;
+    filter: blur(20px);
+  }
+}

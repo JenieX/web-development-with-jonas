@@ -1,0 +1,18 @@
+// Colors
+// ------------------------
+$color-primary: #55c57a;
+$color-primary-dark: #28b485;
+$color-primary-light: #7ed56f;
+
+$color-gray-dark: #777;
+$color-gray-light: #eee;
+$color-white: #fff;
+$color-black: #000;
+
+// Grid
+// ------------------------
+$gird-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+$grid-a-third-cell: calc((100% - ($gutter-horizontal * 2)) / 3);
+$grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);
