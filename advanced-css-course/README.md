@@ -171,6 +171,28 @@ $grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);
 }
 ```
 
+### [`background-clip`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-clip)
+
+The background-clip CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
+
+```scss
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  // The trick properties
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  background-clip: text;
+  color: transparent;
+}
+```
+
 ## Links
 
 ### Development

@@ -107,6 +107,22 @@ body {
   animation: slideFadingFromRight 1s ease-out;
 }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  color: transparent;
+}
+.heading-secondary:hover {
+  transform: skewX(15deg) skewY(2deg) scale(1.2);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 .btn:link, .btn:visited {
   display: inline-block;
   font-size: 1.6rem;
@@ -233,6 +249,12 @@ body {
   /* justify-content: center; */
   /* align-items: center; */
   text-align: center;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
 }
 
 /*# sourceMappingURL=style.css.map */

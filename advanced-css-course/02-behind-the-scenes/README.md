@@ -35,6 +35,10 @@ The three pillars of writing good HTML and CSS
 
 [Resolving conflicts between different CSS rules and declarations](../../html-css-course/02-css-fundamentals#conflicting-selectors)
 
+### Tips
+
+- When using a small value that uses `px`, it is not so important to convert it to `rem` as even after scaling using `rem` the value is too small to notice any difference.
+
 ## [BEM](https://getbem.com/), [1](https://stackoverflow.com/questions/36703546), [2](https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
 BEM – meaning block, element, modifier – is a front-end naming methodology thought up by the guys at Yandex. It is a smart way of naming your CSS classes to give them more transparency and meaning to other developers. They are far more strict and informative, which makes the BEM naming convention ideal for teams of developers on larger projects that might last a while.
