@@ -1,0 +1,32 @@
+.composition {
+  position: relative;
+  background-color: #bbb;
+
+  &__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    position: absolute;
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+    }
+
+    &--p2 {
+      top: 2rem;
+      right: 0;
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+    }
+
+    &:not(:last-child) {
+      // margin-bottom: 5rem;
+    }
+
+    // border: 10px solid crimson;
+  }
+}

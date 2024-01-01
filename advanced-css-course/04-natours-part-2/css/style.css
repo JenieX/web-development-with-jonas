@@ -228,6 +228,28 @@ body {
   transform: translateY(-1px);
 }
 
+.composition {
+  position: relative;
+  background-color: #bbb;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  position: absolute;
+}
+.composition__photo--p1 {
+  top: -2rem;
+  left: 0;
+}
+.composition__photo--p2 {
+  top: 2rem;
+  right: 0;
+}
+.composition__photo--p3 {
+  top: 10rem;
+  left: 20%;
+}
 .row {
   max-width: 114rem;
   margin: 0 auto;

@@ -89,6 +89,13 @@ The box-shadow CSS property adds shadow effects around an element's frame. You c
 
 High value for Y offset and blur, make the element as if it is further away. See example below.
 
+- Two, three, or four `<length>` values.
+  - If only two values are given, they are interpreted as `<offset-x>` and `<offset-y>` values.
+  - If a third value is given, it is interpreted as a `<blur>`.
+  - If a fourth value is given, it is interpreted as a `<spread>`.
+- Optionally, the inset keyword.
+- Optionally, a `<color>` value.
+
 ```css
 .btn:hover {
   transform: translateY(-3px);
