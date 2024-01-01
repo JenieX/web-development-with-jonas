@@ -1,7 +1,7 @@
 .row {
-  color: $color-black;
+  // color: $color-black;
   max-width: $gird-width;
-  background-color: $color-gray-light;
+  // background-color: $color-gray-light;
   margin: 0 auto;
 
   // To restore the collapsed row height that happened because of using `float`!
@@ -12,9 +12,9 @@
   }
 
   [class^='col-'] {
-    height: 5rem;
-    font-size: 1.8rem;
-    background-color: crimson;
+    // height: 5rem;
+    // font-size: 1.8rem;
+    // background-color: crimson;
 
     float: left;
 
