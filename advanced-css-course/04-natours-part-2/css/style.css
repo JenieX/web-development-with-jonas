@@ -230,25 +230,38 @@ body {
 
 .composition {
   position: relative;
-  background-color: #bbb;
 }
 .composition__photo {
   width: 55%;
-  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  box-shadow: 2.1px 4.2px 4.2px hsla(0, 0%, 0%, 0.44);
   border-radius: 2px;
   position: absolute;
+  transition: all 0.3s;
+}
+.composition__photo:hover {
+  transform: scale(1.05);
+  box-shadow: 6.7px 13.4px 13.4px hsla(0, 0%, 0%, 0.29);
 }
 .composition__photo--p1 {
   top: -2rem;
   left: 0;
 }
+.composition__photo--p1:hover {
+  z-index: 10;
+}
 .composition__photo--p2 {
   top: 2rem;
   right: 0;
 }
+.composition__photo--p2:hover {
+  z-index: 10;
+}
 .composition__photo--p3 {
   top: 10rem;
   left: 20%;
+}
+.composition__photo--p3:hover {
+  z-index: 10;
 }
 .row {
   max-width: 114rem;

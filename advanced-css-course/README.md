@@ -87,7 +87,16 @@ Inline elements are treated as text, therefore this property would work on them 
 
 The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
 
-High value for Y offset and blur, make the element as if it is further away. See example below.
+Making the illusion that an element is lifting up towards the user:
+
+- Half the value of Y offset for the X offset (optional).
+- Higher value for Y offset.
+- Same value for blur as the Y offset.
+- Making the shadow more transparent.
+- Moving the element up (`transform: translateY(-3px);`)
+- Making the element bigger (`transform: scaleX(1.4) scaleY(1.6);`)
+
+Read more on [designing beautiful shadows in CSS](https://www.joshwcomeau.com/css/designing-shadows/).
 
 - Two, three, or four `<length>` values.
   - If only two values are given, they are interpreted as `<offset-x>` and `<offset-y>` values.
