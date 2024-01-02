@@ -76,6 +76,10 @@ The @keyframes CSS at-rule controls the intermediate steps in a CSS animation se
 }
 ```
 
+### [`backface-visibility`](https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility)
+
+The backface-visibility CSS property sets whether the back face of an element is visible when turned towards the user.
+
 ### [`text-align`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-align)
 
 text-align

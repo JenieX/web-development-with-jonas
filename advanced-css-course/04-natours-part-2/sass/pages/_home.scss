@@ -15,15 +15,44 @@
     url(../img/nat-4.jpg);
   background-size: cover;
   // background-position: top;
+
+  // Using another trick than the clip-path trick that we used in the header
+  // which was actually better, since the trick of skewing seem to break the
+  // design on different devices!
+
   // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  // transform: skewY(-7deg);
 
-  transform: skewY(-7deg);
+  // Better value
+  transform: skewY(-4.3deg);
 
-  // .feature-box {
+  // Another way to fix the white background behind is to set
+  // <main> background color to #f7f7f7!
+  // margin-top: -103.8rem;
+  margin-top: -10rem;
+
+  //  skewing back all direct children!
+  // .section-features > .row
+
+  & > .row {
+    // transform: skewY(7deg);
+
+    // Better value
+    transform: skewY(4.3deg);
+  }
+
+  // Or
+  // & > * {
   //   transform: skewY(7deg);
   // }
+}
 
-  & > * {
-    transform: skewY(7deg);
-  }
+// main {
+//   background-color: #f7f7f7;
+// }
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10rem;
 }
