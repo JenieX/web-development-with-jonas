@@ -197,6 +197,8 @@ $grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);
 
 The background-clip CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
 
+You may have to **use the prefix `-webkit-`** for some browser!
+
 ```scss
 .heading-secondary {
   font-size: 3.5rem;
@@ -211,6 +213,7 @@ The background-clip CSS property sets whether an element's background extends un
     $color-primary-dark
   );
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 ```
@@ -225,6 +228,28 @@ Outline is a line outside of the element's border. Unlike other areas of the box
 .composition {
   outline-offset: 1.5rem;
   outline: 1.5rem solid $color-primary;
+}
+```
+
+### [`background-blend-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-blend-mode)
+
+The background-blend-mode CSS property sets how an element's background images should blend with each other and with the element's background color.
+
+```scss
+.card {
+  &__picture {
+    height: 23rem;
+    background-size: cover;
+    background-blend-mode: color;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ), url(../img/nat-5.jpg);
+    }
+  }
 }
 ```
 
