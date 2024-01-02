@@ -87,23 +87,25 @@ Inline elements are treated as text, therefore this property would work on them 
 
 The box-shadow CSS property adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
 
-Making the illusion that an element is lifting up towards the user:
-
-- Half the value of Y offset for the X offset (optional).
-- Higher value for Y offset.
-- Same value for blur as the Y offset.
-- Making the shadow more transparent.
-- Moving the element up (`transform: translateY(-3px);`)
-- Making the element bigger (`transform: scaleX(1.4) scaleY(1.6);`)
-
-Read more on [designing beautiful shadows in CSS](https://www.joshwcomeau.com/css/designing-shadows/).
-
 - Two, three, or four `<length>` values.
   - If only two values are given, they are interpreted as `<offset-x>` and `<offset-y>` values.
   - If a third value is given, it is interpreted as a `<blur>`.
   - If a fourth value is given, it is interpreted as a `<spread>`.
 - Optionally, the inset keyword.
 - Optionally, a `<color>` value.
+
+Making the illusion that an element is lifting up towards the user:
+
+- **Half** the value of **Y** offset **for the X** offset (optional).
+- **Higher** value for **Y** offset.
+- Same value for **blur as the Y** offset.
+- Making the shadow **more transparent** by lowering the alpha value.
+- **Moving** the element **up** (`transform: translateY(-3px);`).
+- **Making** the element **bigger** (`transform: scaleX(1.4) scaleY(1.6);`).
+
+When the shadow is smaller, it gives the impression that the button is closer to the page and further away from the user. E.g. the active state in the example below.
+
+Read more on [designing beautiful shadows in CSS](https://www.joshwcomeau.com/css/designing-shadows/).
 
 ```css
 .btn:hover {
@@ -113,7 +115,7 @@ Read more on [designing beautiful shadows in CSS](https://www.joshwcomeau.com/cs
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 ```
 
@@ -209,6 +211,19 @@ The background-clip CSS property sets whether an element's background extends un
 }
 ```
 
+### [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
+
+The outline CSS shorthand property sets most of the outline properties in a single declaration.
+
+Outline is a line outside of the element's border. Unlike other areas of the box, outlines don't take up space, so they don't affect the layout of the document in any way.
+
+```scss
+.composition {
+  outline-offset: 1.5rem;
+  outline: 1.5rem solid $color-primary;
+}
+```
+
 ## Links
 
 ### Development
@@ -231,6 +246,7 @@ The background-clip CSS property sets whether an element's background extends un
 
 - [GRID by Malven Co.](https://grid.malven.co/)
 - [GRID GARDEN](http://cssgridgarden.com/)
+- [An Interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
 
 - [Can I use?](https://caniuse.com/)
 - [Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)
