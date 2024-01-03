@@ -197,7 +197,7 @@ $grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);
 
 The background-clip CSS property sets whether an element's background extends underneath its border box, padding box, or content box.
 
-You may have to **use the prefix `-webkit-`** for some browser!
+You may have to **use the prefix `-webkit-`** for some browsers!
 
 ```scss
 .heading-secondary {
@@ -249,6 +249,29 @@ The background-blend-mode CSS property sets how an element's background images s
           $color-secondary-dark
         ), url(../img/nat-5.jpg);
     }
+  }
+}
+```
+
+### [`-webkit-box-decoration-break`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break)
+
+The box-decoration-break CSS property specifies how an element's fragments should be rendered when broken across multiple lines, columns, or pages.
+
+Normally, if a text is set to have a `padding` and breaks into two lines, the `padding-left` will be on the first line and the `padding-right` would be on the second line. Setting the `-webkit-box-decoration-break` property ensure that both side on each line get their `padding`. See the example below.
+
+```scss
+.card {
+  &__heading {
+    width: 75%;
+    text-align: right;
+  }
+
+  &__heading-span {
+    display: inline; // Just to know!
+    padding: 1rem 1.5rem;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 }
 ```
