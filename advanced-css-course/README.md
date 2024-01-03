@@ -345,45 +345,45 @@ Normally, if a text is set to have a `padding` and breaks into two lines, the `p
 
 ## Visual Studio Code Shortcuts
 
-|     **Shortcut**      |                      **Description**                       |
-| :-------------------: | :--------------------------------------------------------: |
-|    `shift+ctrl+k`     |                        Remove line                         |
-|          ---          |                                                            |
-|  `shift+ctrl+enter`   |                     Add new line above                     |
-|     `ctrl+enter`      |                     Add new line below                     |
-|          ---          |                                                            |
-|       `alt+up`        |  Move line up, or a selection (not just cursors) of lines  |
-|      `alt+down`       | Move line down, or a selection (not just cursors) of lines |
-|          ---          |                                                            |
-|    `shift+alt+up`     |             Duplicate current line to the top              |
-|   `shift+alt+down`    |            Duplicate current line to the bottom            |
-|          ---          |                                                            |
-|     `ctrl+alt+up`     |                      Add cursor above                      |
-|    `ctrl+alt+down`    |                      Add cursor below                      |
-|          ---          |                                                            |
-|    `shift+ctrl+l`     |                   Select all occurrences                   |
-|       `ctrl+d`        |              Add selection to next find match              |
-| `ctrl+shift+d` (\*1)  |            Add selection to previous find match            |
-| **Sequence Shortcut** |                      **Description**                       |
-|    `ctrl+k ctrl+v`    |                  Transform to title case                   |
-|  **Across Cursors**   |                      **Description**                       |
-|       `ctrl+u`        |                        Undo cursor                         |
-|          ---          |                                                            |
-|       `ctrl+l`        |             Select each line that has a cursor             |
-|          ---          |                                                            |
-|   `ctrl+shift+left`   |                    cursorWordLeftSelect                    |
-|  `ctrl+shift+right`   |                  cursorWordEndRightSelect                  |
-|     `ctrl+right`      |                       cursorWordLeft                       |
-|      `ctrl+left`      |                     cursorWordEndRight                     |
-|          ---          |                                                            |
-|  `shift+alt+u` (\*2)  |         Move each cursor to the start of the line          |
-|  `shift+alt+i` (\*3)  |          Move each cursor to the end of the line           |
-|          ---          |                                                            |
-|  `shift+alt+j` (\*4)  |                  Select to from the start                  |
-|  `shift+alt+k` (\*5)  |                     Select to the end                      |
-|          ---          |                                                            |
-|  `shift+alt+[` (\*6)  |               Move selected word to the left               |
-|  `shift+alt+]` (\*7)  |              Move selected word to the right               |
+|     **Shortcut**      |                          **Description**                          |
+| :-------------------: | :---------------------------------------------------------------: |
+|    `shift+ctrl+k`     |                            Remove line                            |
+|          ---          |                                                                   |
+|  `shift+ctrl+enter`   |                        Add new line above                         |
+|     `ctrl+enter`      |                        Add new line below                         |
+|          ---          |                                                                   |
+|       `alt+up`        |     Move line up, or a selection (not just cursors) of lines      |
+|      `alt+down`       |    Move line down, or a selection (not just cursors) of lines     |
+|          ---          |                                                                   |
+|    `shift+alt+up`     |  Duplicate current line to the top (duplicates empty lines too)   |
+|   `shift+alt+down`    | Duplicate current line to the bottom (duplicates empty lines too) |
+|          ---          |                                                                   |
+|     `ctrl+alt+up`     |                         Add cursor above                          |
+|    `ctrl+alt+down`    |                         Add cursor below                          |
+|          ---          |                                                                   |
+|    `shift+ctrl+l`     |                      Select all occurrences                       |
+|       `ctrl+d`        |                 Add selection to next find match                  |
+| `ctrl+shift+d` (\*1)  |               Add selection to previous find match                |
+| **Sequence Shortcut** |                          **Description**                          |
+|    `ctrl+k ctrl+v`    |                      Transform to title case                      |
+|  **Across Cursors**   |                          **Description**                          |
+|       `ctrl+u`        |                            Undo cursor                            |
+|          ---          |                                                                   |
+|       `ctrl+l`        |                Select each line that has a cursor                 |
+|          ---          |                                                                   |
+|   `ctrl+shift+left`   |                       cursorWordLeftSelect                        |
+|  `ctrl+shift+right`   |                     cursorWordEndRightSelect                      |
+|     `ctrl+right`      |                          cursorWordLeft                           |
+|      `ctrl+left`      |                        cursorWordEndRight                         |
+|          ---          |                                                                   |
+|  `shift+alt+u` (\*2)  |             Move each cursor to the start of the line             |
+|  `shift+alt+i` (\*3)  |              Move each cursor to the end of the line              |
+|          ---          |                                                                   |
+|  `shift+alt+j` (\*4)  |                     Select to from the start                      |
+|  `shift+alt+k` (\*5)  |                         Select to the end                         |
+|          ---          |                                                                   |
+|  `shift+alt+[` (\*6)  |                  Move selected word to the left                   |
+|  `shift+alt+]` (\*7)  |                  Move selected word to the right                  |
 
 ### Tips
 

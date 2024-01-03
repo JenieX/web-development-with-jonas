@@ -8,6 +8,7 @@
     padding: 1.5rem 4rem;
     border-radius: 10rem;
     transition: all 0.2s;
+    z-index: 3;
 
     position: relative;
   }
@@ -64,6 +65,15 @@
     //     background-color: $color-white;
     //   }
     // }
+  }
+
+  &--green {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &::after {
+      background-color: $color-primary;
+    }
   }
 
   &--animated {
