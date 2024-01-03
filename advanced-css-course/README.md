@@ -136,6 +136,18 @@ transform: translateX(10px);
 transform: translateY(10px);
 ```
 
+Note that **the `skewX()` function skew the direct children**, therefore to counter that use the direct children selector.
+
+```scss
+.story {
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
+}
+```
+
 ### [`box-sizing`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing)
 
 The box-sizing CSS property sets how the total width and height of an element is calculated.
@@ -273,6 +285,46 @@ Normally, if a text is set to have a `padding` and breaks into two lines, the `p
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
   }
+}
+```
+
+### [`shape-outside`](https://developer.mozilla.org/en-US/docs/Web/CSS/shape-outside)
+
+The shape-outside CSS property defines a shape—which may be non-rectangular—around which adjacent inline content should wrap. By default, inline content wraps around its margin box; shape-outside provides a way to customize this wrapping, making it possible to wrap text around complex objects rather than simple boxes.
+
+```scss
+.story {
+  width: 75%;
+
+  padding: 6rem;
+  // Makeup for the lost padding caused by `translateX(-3rem)`
+  padding-left: 9rem;
+
+  // Restores the collapsed shape height just incase it is taller than its parent!
+  @include clear-fix;
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: crimson;
+    // border-radius: 50%;
+    float: left;
+
+    // The circle shape
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    // The triangle shape
+    shape-outside: polygon(50% 0, 100% 100%, 0 100%);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+
+    // The proper way of moving the shape around with affecting the element around it!
+    transform: translateX(-3rem);
+  }
+
+  // To illustrate that there is text that wraps around the shape!
+  // .heading-tertiary {..}
+  // .paragraph {..}
 }
 ```
 
