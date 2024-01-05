@@ -58,6 +58,28 @@
 }
 
 .section-stories {
-  background-color: $color-gray-light-2;
+  // background-color: $color-gray-light-2;
   padding: 15rem 0;
+
+  position: relative;
+}
+
+.section-book {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  padding: 15rem 0;
+}
+
+.book {
+  background-image: url(../img/nat-10.jpg);
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  height: 64rem;
 }

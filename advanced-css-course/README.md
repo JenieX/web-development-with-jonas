@@ -339,6 +339,77 @@ The backdrop-filter CSS property lets you apply graphical effects such as blurri
 }
 ```
 
+### [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit)
+
+The object-fit CSS property sets how the content of a replaced element, such as an `<img>` or `<video>`, should be resized to fit its container.
+
+You can alter the alignment of the replaced element's content object within the element's box using the object-position property.
+
+```scss
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.15;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+```
+
+### [background-size](https://developer.mozilla.org/en-US/docs/Web/CSS/background-size)
+
+The background-size CSS property sets the size of the element's background image. The image can be left to its natural size, stretched, or constrained to fit the available space.
+
+```css
+/* Keyword values */
+background-size: cover;
+background-size: contain;
+
+/* One-value syntax */
+/* the width of the image (height becomes 'auto') */
+background-size: 50%;
+background-size: 3.2em;
+background-size: 12px;
+background-size: auto;
+
+/* He said it is the same as using the keyword `cover`, but not really! */
+background-size: 100%;
+
+/* Two-value syntax */
+/* first value: width of the image, second value: height */
+background-size: 50% auto;
+background-size: 3em 25%;
+background-size: auto 6px;
+```
+
+Example in this repository:
+
+```css
+.story-special__avatar::before {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/nat-8.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 130%;
+  background-position: center;
+  transition: all 0.5s;
+}
+
+.story-special:hover .story-special__avatar::before {
+  filter: blur(3px) brightness(80%);
+  background-size: auto 100%;
+}
+```
+
 ## Links
 
 ### Development
