@@ -410,6 +410,76 @@ Example in this repository:
 }
 ```
 
+### [`linear-gradient()`](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient)
+
+The linear-gradient() CSS function creates an image consisting of a progressive transition between two or more colors along a straight line. Its result is an object of the `<gradient>` data type, which is a special kind of `<image>`.
+
+#### Customizing Gradients
+
+By adding more color-stop points on the gradient line, you can create a highly customized transition between multiple colors. A color-stop's position can be explicitly defined by using a `<length>` or a `<percentage>`. If you don't specify the location of a color, it is placed halfway between the one that precedes it and the one that follows it. The following adjacent gradients are equivalent.
+
+```scss
+// Formula (100% / (numberOfColors - 1))
+
+.book {
+  // ------------------------
+
+  // 2 colors
+  background-image: linear-gradient(to right, rgb(255, 255, 0), rgb(0, 0, 0));
+
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 0) 0%,
+    rgb(0, 0, 0) 100%
+  );
+
+  // ------------------------
+
+  // 3 colors
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 0),
+    rgb(0, 0, 0),
+    rgb(255, 0, 0)
+  );
+
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 0) 0%,
+    rgb(0, 0, 0) 50%,
+    rgb(255, 0, 0) 100%
+  );
+
+  // ------------------------
+
+  // 4 colors
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 0),
+    rgb(0, 0, 0),
+    rgb(255, 0, 0),
+    rgb(0, 0, 255)
+  );
+
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 255, 0) 0%,
+    rgb(0, 0, 0) 33.33%,
+    rgb(255, 0, 0) 66.66%,
+    rgb(0, 0, 255) 100%
+  );
+}
+
+// My usage case
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.8) 50%,
+      transparent 50%
+    ), url(../img/nat-10.jpg);
+}
+```
+
 ## Links
 
 ### Development
@@ -467,6 +537,9 @@ Example in this repository:
 - [Tint & Shade Generator](https://maketintsandshades.com/)
 - [Paletton](http://paletton.com/)
 - [Coolors Contrast Checker](https://coolors.co/contrast-checker/112a46-acc8e5)
+- [CSS Gradient](https://cssgradient.io/)
+- [Gradient Maker](https://coolors.co/gradient-maker/cf414b-852170)
+- [Gradient Generator](https://www.joshwcomeau.com/gradient-generator/)
 
 ### Fonts
 
