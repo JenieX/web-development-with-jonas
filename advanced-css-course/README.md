@@ -328,6 +328,17 @@ The shape-outside CSS property defines a shape—which may be non-rectangular—
 }
 ```
 
+### [`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter)
+
+The backdrop-filter CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything behind the element, to see the effect the element or its background needs to be transparent or partially transparent.
+
+```css
+.main-nav {
+  background-color: rgb(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+}
+```
+
 ## Links
 
 ### Development
@@ -472,3 +483,7 @@ The shape-outside CSS property defines a shape—which may be non-rectangular—
 - 7
 
   - `{ "key": "shift+alt+]", "command": "editor.action.moveCarretRightAction" }`
+
+```
+
+```

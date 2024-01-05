@@ -484,6 +484,68 @@ body {
   transform: skewX(12deg);
 }
 
+.story-special {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 6rem;
+  padding-left: 9rem;
+  border-radius: 3px;
+  transform: skewX(-12deg);
+}
+.story-special::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.story-special__avatar {
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  transform: translateX(-3rem) skewX(12deg);
+  shape-outside: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  transition: all 0.5s;
+  position: relative;
+}
+.story-special__avatar::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/nat-8.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 130%;
+  background-position: center;
+  transition: all 0.5s;
+}
+.story-special__avatar::after {
+  content: "CSS version";
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.story-special:hover .story-special__avatar::before {
+  filter: blur(3px) brightness(80%);
+  background-size: auto 100%;
+}
+.story-special:hover .story-special__avatar::after {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.story-special__text {
+  transform: skewX(12deg);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
