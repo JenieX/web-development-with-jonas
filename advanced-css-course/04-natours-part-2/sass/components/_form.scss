@@ -1,0 +1,52 @@
+.form {
+  &__group {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+
+    // counter the 3px from bottom used for `border-bottom`!
+    // padding: 1.5rem 2rem 1.2rem;
+    padding: 1.5rem 2rem;
+
+    border-radius: 2px;
+    border: none;
+    width: 90%;
+    // background-color: $color-white;
+    border-bottom: 3px solid transparent;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+
+      // A trick to not use transparent border-bottom and mess the height
+      // of the input. Didn't work as expected and should be used only for
+      // all borders and not just the bottom!
+      // https://www.google.com/search?q=css+box-shadow+inset+bottom+only
+      // box-shadow:
+      //   0 1rem 2rem rgba($color-black, 0.1),
+      //   inset 0 -10px 10px -10px $color-primary;
+
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+
+    // &::-webkit-input-placeholder {
+    &::placeholder {
+      color: $color-gray-dark-2;
+    }
+  }
+
+  &__label {
+  }
+}

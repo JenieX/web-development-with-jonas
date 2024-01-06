@@ -480,6 +480,42 @@ By adding more color-stop points on the gradient line, you can create a highly c
 }
 ```
 
+### [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) aka `::-webkit-input-placeholder`
+
+The ::placeholder CSS pseudo-element represents the placeholder text in an `<input>` or `<textarea>` element.
+
+```scss
+.form {
+  &__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid transparent;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+
+    &::placeholder {
+      color: $color-gray-dark-2;
+    }
+    // Or
+    &::-webkit-input-placeholder {
+      color: $color-gray-dark-2;
+    }
+  }
+}
+```
+
 ## Links
 
 ### Development
@@ -549,6 +585,10 @@ By adding more color-stop points on the gradient line, you can create a highly c
 ### Deployment
 
 - [Squoosh](https://squoosh.app/)
+
+## Chrome Devtools
+
+- [Enable 'Show user agent shadow DOM'](https://stackoverflow.com/questions/26852922/inspect-webkit-input-placeholder-with-developer-tools) to allow for more inspection. E.g. `input::-webkit-input-placeholder`.
 
 ## Visual Studio Code Shortcuts
 
