@@ -575,6 +575,16 @@ My usage case
 }
 ```
 
+## HTML Properties
+
+### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
+
+`<input>` elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.
+
+#### Defining a radio group
+
+A radio group is **defined by giving each of radio buttons in the group the same name**. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.
+
 ## Links
 
 ### Development
