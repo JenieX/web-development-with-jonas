@@ -123,7 +123,7 @@ When an element has some specific properties (mostly related to text), they will
 
 - No impact on surrounding elements, and can overlap them.
 - We use `top`, `bottom`, `left`, or/and `right` properties to offset the element from its relatively positioned container.
-- By default, it is positioned in relation to the viewport (visible part of the browser). To have it positioned in relation to an element, you have to explicitly set `position: relative;` on that element. If multiple parents have that set already, it will be in relation to the closest parent element.
+- By default, it is positioned in relation to the viewport (visible part of the browser). To have it positioned in relation to an element, you have to explicitly set the `position` property (usually to `relative`) on that element if not set. If multiple parents have that set already, it will be in relation to the closest parent element.
 - Should not be use to build the layout, because it will make it very complex.
 
 ## Pseudo Elements
