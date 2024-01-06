@@ -482,7 +482,7 @@ By adding more color-stop points on the gradient line, you can create a highly c
 
 ### [`::placeholder`](https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder) aka `::-webkit-input-placeholder`
 
-The ::placeholder CSS pseudo-element represents the placeholder text in an `<input>` or `<textarea>` element.
+The `::placeholder` CSS pseudo-element represents the placeholder text in an `<input>` or `<textarea>` element.
 
 ```scss
 .form {
@@ -512,6 +512,65 @@ The ::placeholder CSS pseudo-element represents the placeholder text in an `<inp
     &::-webkit-input-placeholder {
       color: $color-gray-dark-2;
     }
+  }
+}
+```
+
+### [`:placeholder-shown`](https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown)
+
+The `:placeholder-shown` CSS pseudo-class represents any `<input>` or `<textarea>` element that is currently displaying placeholder text.
+
+### [`Subsequent-sibling combinator`](https://developer.mozilla.org/en-US/docs/Web/CSS/Subsequent-sibling_combinator) (~, a tilde)
+
+The subsequent-sibling combinator (~, a tilde) separates two selectors and matches all instances of the second element that follow the first element (not necessarily immediately) and share the same parent element.
+
+In the following example, the subsequent-sibling combinator (~) helps to select and style paragraphs that are both siblings of an image and appear after any image.
+
+```css
+img ~ p {
+  color: red;
+}
+```
+
+### [`Next-sibling combinator`](https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator) (+)
+
+The next-sibling combinator (+) separates two selectors and matches the second element **only if it immediately follows the first element**, and both are children of the same parent element.
+
+```css
+/* Paragraphs that come immediately after any image */
+img + p {
+  font-weight: bold;
+}
+```
+
+My usage case
+
+```scss
+.form {
+  // ..
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    // To make it possible to animate the element
+    opacity: 0;
+
+    // Because we don't want the element to be on the page
+    visibility: hidden;
+
+    transform: translateY(-4rem);
+  }
+
+  // Subsequent-sibling would work in this example as well!
+  &__input:placeholder-shown ~ &__label {
+    // ..
   }
 }
 ```

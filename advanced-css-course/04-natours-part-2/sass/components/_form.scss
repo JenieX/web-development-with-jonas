@@ -48,5 +48,22 @@
   }
 
   &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+    // opacity: 1;
+
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    // To make it possible to animate the element
+    opacity: 0;
+
+    // Because we don't want the element to be on the page
+    visibility: hidden;
+
+    transform: translateY(-4rem);
   }
 }
