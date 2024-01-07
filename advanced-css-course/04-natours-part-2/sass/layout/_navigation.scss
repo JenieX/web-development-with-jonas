@@ -54,8 +54,40 @@
   }
 
   &__item {
+    margin: 1rem;
+    text-align: center;
   }
 
   &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      background-image: linear-gradient(120deg, transparent 50%, $color-white 50%);
+
+      // Should be double but because of the 120deg effect we add more!
+      background-size: 230%;
+      // background-position: 0%;
+
+      transition: all 0.4s;
+
+      // Making an exception for not class and stuff..
+      span {
+        margin-right: 1.5rem;
+        /* display: inline-block; */
+      }
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
   }
 }
