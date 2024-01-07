@@ -61,6 +61,8 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -449,8 +451,6 @@ body {
   width: 15rem;
   height: 15rem;
   float: left;
-  shape-outside: polygon(50% 0, 100% 100%, 0 100%);
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
   shape-outside: circle(50% at 50% 50%);
   clip-path: circle(50% at 50% 50%);
   transform: translateX(-3rem) skewX(12deg);
@@ -765,11 +765,12 @@ body {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: white;
   position: fixed;
   top: 6rem;
   right: 6rem;
   z-index: 2000;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 .navigation__background {
   width: 6rem;
@@ -780,15 +781,29 @@ body {
   top: 6.5rem;
   right: 6.5rem;
   z-index: 1000;
+  transition: all 0.5s;
+}
+.navigation__checkbox:checked ~ .navigation__background {
   transform: scale(80);
 }
 .navigation__nav {
-  z-index: 1500;
   width: 100%;
+  z-index: 1500;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
+  transition: all 0.5s ease-in;
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 .navigation__list {
   list-style: none;

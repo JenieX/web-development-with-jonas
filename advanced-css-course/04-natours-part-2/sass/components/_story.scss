@@ -27,8 +27,8 @@
     float: left;
 
     // The triangle shape
-    shape-outside: polygon(50% 0, 100% 100%, 0 100%);
-    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    // shape-outside: polygon(50% 0, 100% 100%, 0 100%);
+    // clip-path: polygon(50% 0, 100% 100%, 0 100%);
 
     // The circle shape
     shape-outside: circle(50% at 50% 50%);
