@@ -18,6 +18,36 @@
   </head>
 
   <body>
+    <div class="navigation">
+      <input
+        type="checkbox"
+        name="navigation-switch"
+        id="navigation-switch"
+        class="navigation__checkbox"
+      />
+      <label for="navigation-switch" class="navigation__button">Menu</label>
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__navigation__link">About Natous</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__navigation__link">Your benefits</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__navigation__link">Popular tours</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__navigation__link">Stories</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__navigation__link">Book now</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
     <header class="header">
       <div class="header__logo-box">
         <img src="./img/logo-white.png" alt="Website logo" class="header__logo" />
@@ -371,7 +401,7 @@
                   >
                 </div>
 
-                <div class="form__group form__group--radio">
+                <div class="form__group form__group--radio u-margin-bottom-md">
                   <div class="form__radio-group">
                     <input
                       type="radio"
@@ -398,12 +428,66 @@
                     >
                   </div>
                 </div>
+
+                <div class="form__group">
+                  <button class="btn btn--green">Next step &rarr;</button>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <img
+          src="./img/logo-green-2x.png"
+          alt="Website big logo"
+          class="footer__logo"
+        />
+      </div>
+
+      <div class="row">
+        <div class="footer__text-box">
+          <div class="col-1-of-2">
+            <div class="footer__navigation">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Company</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Contact us</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Careers</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Privacy</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Policy</a>
+                </li>
+                <li class="footer__item">
+                  <a href="#" class="footer__link">Terms</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-1-of-2">
+            <p class="footer__copyright">
+              Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his
+              online course
+              <a href="#" class="footer__link">Advanced CSS and Sass</a>. Copyright
+              © by Jonas Schmedtmann. You are 100% allowed to use this webpage for
+              both personal and commercial use, but NOT to claim it as your own
+              design. A credit to the original author, Jonas Schmedtmann, is of
+              course highly appreciated!
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 

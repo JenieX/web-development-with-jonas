@@ -1,0 +1,61 @@
+.navigation {
+  background-color: crimson;
+  // @include clear-fix; // Only works on floated elements!
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: rgba($color-white, 0.5);
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 2000;
+  }
+
+  &__background {
+    // Smaller than the button just to be sure it is completely behind it!
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 1000;
+
+    transform: scale(80);
+  }
+
+  &__nav {
+    // background-color: aquamarine;
+    z-index: 1500;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  &__list {
+    list-style: none;
+    @include center-absolutely;
+
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+}

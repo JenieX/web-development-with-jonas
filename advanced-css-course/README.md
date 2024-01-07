@@ -585,6 +585,45 @@ My usage case
 
 A radio group is **defined by giving each of radio buttons in the group the same name**. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.
 
+## Tricks
+
+### [The “Checkbox Hack”](https://css-tricks.com/the-checkbox-hack/)
+
+The “Checkbox Hack” is where you use a connected `<label>` and `<input type="checkbox">` and usually some other element you are trying to control, like this:
+
+```html
+<label for="toggle">Do Something</label>
+<input type="checkbox" id="toggle" />
+<div class="control-me">Control me</div>
+```
+
+Then with CSS, you hide the checkbox entirely. But just because the checkbox is hidden, clicking the `<label>` still toggles its value on and off. Then you can use the adjacent sibling combinator to style the `<div>` differently based on the :checked state of the input.
+
+```css
+.control-me {
+  /* Default state */
+}
+
+#toggle:checked ~ .control-me {
+  /* A toggled state! No JavaScript! */
+}
+```
+
+My usage cases
+
+```css
+.form__radio-input:checked + .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+
+/* Somehow similar concept */
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+```
+
 ## Links
 
 ### Development
