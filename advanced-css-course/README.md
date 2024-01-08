@@ -651,6 +651,9 @@ My usage cases
 - [Can I use?](https://caniuse.com/)
 - [Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)
 
+- [Easing Functions](https://easings.net/)
+- [cubic-bezier](https://cubic-bezier.com/)
+
 ### Design
 
 - [Land Book](http://land-book.com/)

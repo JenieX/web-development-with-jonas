@@ -6,19 +6,6 @@
     display: none;
   }
 
-  &__button {
-    display: inline-block;
-    width: 7rem;
-    height: 7rem;
-    border-radius: 50%;
-    background-color: rgba($color-white, 1);
-    position: fixed;
-    top: 6rem;
-    right: 6rem;
-    z-index: 2000;
-    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
-  }
-
   &__background {
     // Smaller than the button just to be sure it is completely behind it!
     width: 6rem;
@@ -30,11 +17,7 @@
     right: 6.5rem;
     z-index: 1000;
 
-    transition: all 0.5s;
-  }
-
-  &__checkbox:checked ~ &__background {
-    transform: scale(80);
+    transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   }
 
   &__nav {
@@ -46,7 +29,11 @@
     top: 0;
     left: 0;
 
-    transition: all 0.5s ease-in;
+    transition: all 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+    // animation-name: easeInOutBounce;
+    // animation-duration: 1s;
+    // animation-timing-function: ease-out;
 
     // He used width:0 instead!
 
@@ -54,13 +41,6 @@
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-  }
-
-  &__checkbox:checked ~ &__nav {
-    transform: translateX(0);
-    opacity: 1;
-    pointer-events: auto;
-    visibility: visible;
   }
 
   &__list {
@@ -110,5 +90,124 @@
       color: $color-primary;
       transform: translateX(1rem);
     }
+  }
+
+  &__button {
+    // display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: rgba($color-white, 1);
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    z-index: 2000;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+  }
+
+  &__icon {
+    // position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    transition: all 0.2s;
+
+    // Moved outside because `&-middle` is a block-element and so is its parent!
+    // &-middle,
+    // &::after,
+    // &::before {
+    //   display: inline-block;
+    //   width: 3rem;
+    //   height: 2px; // We want it to be constant he said!
+    //   background-color: $color-gray-dark-3;
+    // }
+
+    &::after,
+    &::before {
+      content: '';
+      // position: absolute;
+      // left: 0;
+    }
+
+    &::before {
+      // top: -0.8rem;
+      // transform: rotate(135deg);
+    }
+
+    &::after {
+      // top: 0.8rem;
+      // transform: rotate(-135deg);
+    }
+  }
+
+  &__icon-middle {
+    //
+  }
+
+  &__icon-middle,
+  &__icon::after,
+  &__icon::before {
+    display: inline-block;
+    width: 3rem;
+    height: 2px; // We want it to be constant he said!
+    background-color: $color-gray-dark-3;
+
+    transition: all 0.2s;
+  }
+
+  // Functionalities
+
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  &__checkbox:not(:checked) + &__button:hover &__icon {
+    gap: 0.8rem;
+  }
+
+  &__checkbox:checked + &__button &__icon &__icon-middle {
+    // Works for me unlike him, because he had the middle line be the
+    // parent element itself, that is `__icon`!
+    // opacity: 0;
+    // visibility: hidden;
+    // pointer-events: none;
+
+    // display: none;
+
+    background-color: transparent;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    // gap: 0;
+    // flex-direction: row;
+  }
+
+  &__checkbox:checked + &__button &__icon::before {
+    // transform: rotate(45deg);
+    // transform: translateX(10px) translateY(1rem);
+    transform: translateY(0.8rem) rotate(135deg);
+  }
+
+  &__checkbox:checked + &__button &__icon::after {
+    // transform: rotate(-45deg);
+    // transform: translateY(0.8rem);
+    transform: translateY(-0.8rem) rotate(-135deg);
   }
 }
