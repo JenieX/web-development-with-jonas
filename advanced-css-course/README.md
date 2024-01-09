@@ -575,6 +575,49 @@ My usage case
 }
 ```
 
+### [`transform-origin`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin)
+
+The transform-origin CSS property sets the origin for an element's transformations.
+
+The transform origin is the point around which a transformation is applied. **For example, the default transform origin of the rotate() function is the center** of rotation.
+
+### `column-*`
+
+#### [`column-count`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-count)
+
+The column-count CSS property breaks an element's content into the specified number of columns.
+
+#### [`column-gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-gap)
+
+The column-gap CSS property sets the size of the gap (gutter) between an element's columns.
+
+default value is **1em** (current-font-size).
+
+#### [`column-rule`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule)
+
+The column-rule shorthand CSS property sets the width, style, and color of the line drawn between columns in a multi-column layout. Same syntax as the `border` property!
+
+```scss
+.popup {
+  &__text {
+    font-size: 1.4rem;
+    column-count: 2;
+    column-gap: 4rem; // default is 1em (current-font-size) that is 14px.
+    column-rule: 1px solid $color-gray-light-2;
+
+    hyphens: auto;
+  }
+}
+```
+
+### [`hyphens`](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
+
+The hyphens CSS property specifies how words should be hyphenated when text wraps across multiple lines. It can prevent hyphenation entirely, hyphenate at manually-specified points within the text, or let the browser automatically insert hyphens where appropriate.
+
+### [`:target`](https://developer.mozilla.org/en-US/docs/Web/CSS/:target)
+
+The `:target` CSS pseudo-class represents a unique element (the target element) with an id matching the URL's fragment.
+
 ## HTML Properties
 
 ### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
@@ -621,6 +664,27 @@ My usage cases
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem);
+}
+```
+
+### Making two columns match in their height, kind of!
+
+```scss
+.popup {
+  &__content {
+    display: table;
+  }
+
+  // First direct child of `.popup__content`
+  &__left {
+    display: table-cell;
+  }
+
+  // Second direct child of `.popup__content`
+  &__right {
+    display: table-cell;
+    vertical-align: middle;
+  }
 }
 ```
 

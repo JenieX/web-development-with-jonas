@@ -643,6 +643,79 @@ body {
   opacity: 1;
 }
 
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__content {
+  width: 75%;
+  background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+  display: table;
+  position: relative;
+  transition: all 0.5s 0.2s;
+  opacity: 0;
+  transform: scale(0.25);
+}
+.popup__left {
+  display: table-cell;
+  width: calc(100% / 3);
+}
+.popup__right {
+  display: table-cell;
+  vertical-align: middle;
+  width: calc((100% / 3) * 2);
+  padding: 3rem 5rem;
+}
+.popup__img {
+  width: 100%;
+  display: block;
+}
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #eee;
+  hyphens: auto;
+}
+.popup__close:link, .popup__close:visited {
+  display: inline-block;
+  color: #777;
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  line-height: 1;
+}
+.popup__close:hover, .popup__close:active {
+  color: #55c57a;
+}
+.popup:target .popup__content {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -858,11 +931,11 @@ body {
   pointer-events: auto;
   visibility: visible;
 }
-.navigation__checkbox:not(:checked) + .navigation__button:hover .navigation__icon {
-  gap: 0.8rem;
-}
 .navigation__checkbox:checked + .navigation__button .navigation__icon .navigation__icon-middle {
   background-color: transparent;
+}
+.navigation__checkbox:not(:checked) + .navigation__button:hover .navigation__icon {
+  gap: 0.8rem;
 }
 .navigation__checkbox:checked + .navigation__button .navigation__icon::before {
   transform: translateY(0.8rem) rotate(135deg);

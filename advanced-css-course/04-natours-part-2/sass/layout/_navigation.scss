@@ -165,6 +165,15 @@
     transition: all 0.2s;
   }
 
+  &__icon::after,
+  &__icon::before {
+    // transition: all 0.2s;
+  }
+
+  &__icon::before {
+    // transform-origin: right;
+  }
+
   // Functionalities
 
   &__checkbox:checked ~ &__background {
@@ -178,10 +187,6 @@
     visibility: visible;
   }
 
-  &__checkbox:not(:checked) + &__button:hover &__icon {
-    gap: 0.8rem;
-  }
-
   &__checkbox:checked + &__button &__icon &__icon-middle {
     // Works for me unlike him, because he had the middle line be the
     // parent element itself, that is `__icon`!
@@ -189,25 +194,33 @@
     // visibility: hidden;
     // pointer-events: none;
 
+    // Will disable animation but there isn't one anyways!
+    // Update: don't work and need more time to fix!
     // display: none;
 
     background-color: transparent;
   }
 
   &__checkbox:checked + &__button &__icon {
+    // translateY is the better option!
+
     // gap: 0;
     // flex-direction: row;
   }
 
+  // &__button:hover &__icon {
+  &__checkbox:not(:checked) + &__button:hover &__icon {
+    gap: 0.8rem;
+  }
+
   &__checkbox:checked + &__button &__icon::before {
+    // 180deg - 45deg = 135deg
     // transform: rotate(45deg);
-    // transform: translateX(10px) translateY(1rem);
     transform: translateY(0.8rem) rotate(135deg);
   }
 
   &__checkbox:checked + &__button &__icon::after {
     // transform: rotate(-45deg);
-    // transform: translateY(0.8rem);
     transform: translateY(-0.8rem) rotate(-135deg);
   }
 }
