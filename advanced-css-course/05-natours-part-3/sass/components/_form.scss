@@ -1,0 +1,135 @@
+.form {
+  &__group {
+    width: 90%;
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &--text {
+      flex-direction: column;
+    }
+
+    // &--radio {
+    // }
+  }
+
+  &__input {
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.5rem;
+
+    // counter the 3px from bottom used for `border-bottom`!
+    // padding: 1.5rem 2rem 1.2rem;
+    padding: 1.5rem 2rem;
+
+    border-radius: 2px;
+    border: none;
+    // width: 90%;
+    // background-color: $color-white;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+
+      // A trick to not use transparent border-bottom and mess the height
+      // of the input. Didn't work as expected and should be used only for
+      // all borders and not just the bottom!
+      // https://www.google.com/search?q=css+box-shadow+inset+bottom+only
+      // box-shadow:
+      //   0 1rem 2rem rgba($color-black, 0.1),
+      //   inset 0 -10px 10px -10px $color-primary;
+
+      &:invalid {
+        border-bottom: 3px solid $color-secondary-dark;
+      }
+    }
+
+    // &::-webkit-input-placeholder {
+    &::placeholder {
+      color: $color-gray-dark-2;
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    // To make it possible to animate the element
+    opacity: 0;
+
+    // Because we don't want the element to be on the page
+    visibility: hidden;
+
+    transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 50%;
+
+    // He used these since the parent wasn't a flex container for him
+    // width: 49%;
+    // display: inline-block;
+  }
+
+  &__radio-input {
+    display: none;
+
+    // &:checked {
+    //   opacity: 0.3;
+    // }
+  }
+
+  &__radio-label {
+    font-size: $font-size-default;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__radio-button {
+    // display: inline-block;
+    // position: relative;
+
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 5px solid $color-primary;
+    margin-right: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background-color: $color-primary;
+      opacity: 0;
+      transition: all 0.2s;
+
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+    }
+  }
+
+  &__radio-input:checked + &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+}

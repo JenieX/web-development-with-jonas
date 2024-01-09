@@ -1,0 +1,110 @@
+.popup {
+  position: fixed;
+  width: 100vw;
+  // or
+  // width: 100%;
+  height: 100vh;
+  background-color: rgba($color-white, 0.2);
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__content {
+    // Not needed because the parent is using `display: flex;`!
+    // @include clear-fix;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+
+    display: table;
+    position: relative;
+
+    transition: all 0.5s 0.2s;
+    opacity: 0;
+    transform: scale(0.25);
+  }
+
+  &__left {
+    // float: left;
+    display: table-cell;
+
+    // width: calc(100% / 3);
+    width: #{'calc(100% / 3)'};
+
+    // height: 100%;
+    // overflow: hidden;
+  }
+
+  &__right {
+    // float: left;
+    display: table-cell;
+    vertical-align: middle;
+
+    // width: calc((100% / 3) * 2);
+    width: #{'calc((100% / 3) * 2)'};
+
+    padding: 3rem 5rem;
+    // position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 4rem; // default is 1em (current-font-size) that is 14px.
+    column-rule: 1px solid $color-gray-light-2;
+
+    hyphens: auto;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      display: inline-block;
+      color: $color-gray-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      // To remove the space around its text content!
+      line-height: 1;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-primary;
+    }
+  }
+
+  // Functionalities
+
+  &:target &__content {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,33 @@
+// Colors
+// ------------------------
+$color-primary: #55c57a;
+$color-primary-dark: #28b485;
+$color-primary-light: #7ed56f;
+
+$color-secondary-dark: #ff7730;
+$color-secondary-light: #ffb900;
+
+$color-tertiary-dark: #5643fa;
+$color-tertiary-light: #2998ff;
+
+$color-gray-dark: #777;
+$color-gray-dark-2: #999;
+$color-gray-dark-3: #333;
+$color-gray-light: #eee;
+$color-white: #fff;
+$color-black: #000;
+
+$color-gray-light-1: #f7f7f7;
+$color-gray-light-2: #eee;
+
+// Fonts
+// ------------------------
+$font-size-default: 1.6rem;
+
+// Grid
+// ------------------------
+$gird-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+$grid-a-third-cell: calc((100% - ($gutter-horizontal * 2)) / 3);
+$grid-a-quarter-cell: calc((100% - ($gutter-horizontal * 3)) / 4);

@@ -1,0 +1,93 @@
+.composition {
+  position: relative;
+  // background-color: #bbb;
+  // box-sizing: content-box;
+
+  &__photo {
+    width: 55%;
+
+    // Mine
+    // box-shadow: 0 1rem 1rem rgba($color-black, 0.5);
+
+    // Someone's
+    // box-shadow: 2.1px 4.2px 4.2px hsl(0deg 0% 0% / 0.44);
+
+    // Jonas's
+    // box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.3s;
+    outline-offset: 1.5rem;
+
+    &:hover {
+      // border: 10px solid crimson;
+      transform: scale(1.05) translateY(-0.5rem);
+      outline: 1.5rem solid $color-primary;
+      z-index: 10;
+
+      // Mine
+      // box-shadow: 0 2rem 2rem rgba($color-black, 0.3);
+
+      // Someone's
+      // box-shadow: 6.7px 13.4px 13.4px hsl(0deg 0% 0% / 0.29);
+
+      // Jonas's
+      // box-shadow: 0 2.5rem 4rem rgba($color-black, 0.3);
+    }
+
+    &--p1 {
+      top: -2rem;
+      left: 0;
+
+      // Mine
+      box-shadow: 0 1rem 1rem rgba($color-black, 0.5);
+      &:hover {
+        box-shadow: 0 2rem 2rem rgba($color-black, 0.3);
+      }
+    }
+
+    &--p2 {
+      top: 2rem;
+      right: 0;
+
+      // Someone's
+      box-shadow: 2.1px 4.2px 4.2px hsl(0deg 0% 0% / 0.44);
+      &:hover {
+        box-shadow: 6.7px 13.4px 13.4px hsl(0deg 0% 0% / 0.29);
+      }
+    }
+
+    &--p3 {
+      top: 10rem;
+      left: 20%;
+
+      // Jonas's
+      box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
+      &:hover {
+        box-shadow: 0 2.5rem 4rem rgba($color-black, 0.3);
+      }
+    }
+
+    // &:not(:last-child) {
+    // margin-bottom: 5rem;
+    // }
+  }
+
+  // Making the other (not hovered) images smaller trick!
+  // .composition:hover .composition__photo:not(:hover)
+
+  // Syntax #1
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+    filter: grayscale(100%) blur(3px);
+  }
+
+  // Syntax #2
+  // &:hover &__photo {
+  //   &:not(:hover) {
+  //     transform: scale(0.9);
+  //     filter: grayscale(100%) blur(3px);
+  //   }
+  // }
+}

@@ -1,0 +1,106 @@
+.section-about {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  // background-position: top;
+
+  // Using another trick than the clip-path trick that we used in the header
+  // which was actually better, since the trick of skewing seem to break the
+  // design on different devices!
+
+  // clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  // transform: skewY(-7deg);
+
+  // Better value
+  transform: skewY(-4.3deg);
+
+  // Another way to fix the white background behind is to set
+  // <main> background color to #f7f7f7!
+  // margin-top: -103.8rem;
+  margin-top: -10rem;
+
+  //  skewing back all direct children!
+  // .section-features > .row
+
+  & > .row {
+    // transform: skewY(7deg);
+
+    // Better value
+    transform: skewY(4.3deg);
+  }
+
+  // Or
+  // & > * {
+  //   transform: skewY(7deg);
+  // }
+}
+
+// main {
+//   background-color: #f7f7f7;
+// }
+
+.section-tours {
+  background-color: $color-gray-light-1;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
+}
+
+.section-stories {
+  // background-color: $color-gray-light-2;
+  padding: 15rem 0;
+
+  position: relative;
+}
+
+.section-book {
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  padding: 15rem 0;
+}
+
+// rgba($color-white, 1) 50%,
+
+.book {
+  // Good background!
+  // background-image: repeating-linear-gradient(
+  //   to top left,
+  //   lightpink,
+  //   lightpink 5px,
+  //   white 5px,
+  //   white 10px
+  // );
+
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../img/nat-10.jpg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
+  // height: 64rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+    // background-color: rgba($color-black, 0.1);
+  }
+}
