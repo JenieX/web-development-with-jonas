@@ -5,11 +5,20 @@
 [1200 - 1800] is where our normal styles apply
 1800px + :      Big desktop
 
-$breakpoint options: phone | tab-port |tab-land | big-desktop
+$breakpoint options: phone | tab-port | tab-land | big-desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
+Order of usage: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
+
+| Size |   Device   |
+| :--: | :--------: |
+| 424  |     XZ     |
+| 455  | XZ Premium |
+| 480  | XA1 Ultra  |
+| 1280 |   Laptop   |
+| 1536 |     PC     |
+
 */
 @keyframes slideFadingFromLeft {
   0% {
@@ -74,8 +83,6 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 @media only screen and (max-width: 75em) {
   html {
@@ -87,11 +94,6 @@ html {
     font-size: 50%;
   }
 }
-@media only screen and (max-width: 37.5em) {
-  html {
-    font-size: 43.75%;
-  }
-}
 @media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
@@ -101,6 +103,11 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  body {
+    padding: 0;
+  }
 }
 
 body {
@@ -133,6 +140,12 @@ body {
   /* animation-delay: 3s; */
   /* animation-iteration-count: 3; */
 }
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--main {
+    font-size: 5rem;
+    letter-spacing: 1rem;
+  }
+}
 .heading-primary--sub {
   display: block;
   font-weight: 700;
@@ -140,6 +153,11 @@ body {
   letter-spacing: 1.75rem;
   /* margin-right: -1.75rem; */
   animation: slideFadingFromRight 1s ease-out;
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-primary--sub {
+    letter-spacing: 0.5rem;
+  }
 }
 
 .heading-secondary {
@@ -153,6 +171,16 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading-secondary {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
 }
 .heading-secondary:hover {
   transform: skewX(15deg) skewY(2deg) scale(1.2);
@@ -758,14 +786,36 @@ body {
   clear: both;
   display: table;
 }
+@media only screen and (max-width: 56.25em) {
+  .row {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+}
 .row:not(:last-child) {
   margin-bottom: 8rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row:not(:last-child) {
+    margin-bottom: 6rem;
+  }
 }
 .row [class^=col-] {
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-]:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 6rem;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .row [class^=col-] {
+    width: 100% !important;
+  }
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
@@ -797,6 +847,16 @@ body {
   /* justify-content: center; */
   /* align-items: center; */
 }
+@media only screen and (max-width: 56.25em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+}
 .header__logo-box {
   position: absolute;
   top: 4rem;
@@ -823,6 +883,11 @@ body {
   font-size: 1.4rem;
   color: #f7f7f7;
 }
+@media only screen and (max-width: 56.25em) {
+  .footer {
+    padding: 8rem 0;
+  }
+}
 .footer__logo-box {
   text-align: center;
   margin-bottom: 8rem;
@@ -836,7 +901,14 @@ body {
   padding-top: 2rem;
 }
 .footer__navigation {
-  display: inline-block;
+  /* display: inline-block; */
+}
+@media only screen and (max-width: 56.25em) {
+  .footer__navigation {
+    text-align: center;
+    /* margin: 0 auto; */
+    /* width: fit-content;*/
+  }
 }
 .footer__list {
   list-style: none;
@@ -877,6 +949,12 @@ body {
   z-index: 1000;
   transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
 }
+@media only screen and (max-width: 56.25em) {
+  .navigation__background {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+}
 .navigation__nav {
   width: 100%;
   z-index: 1500;
@@ -892,10 +970,11 @@ body {
 }
 .navigation__list {
   list-style: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .navigation__item {
   margin: 1rem;
@@ -936,6 +1015,12 @@ body {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+@media only screen and (max-width: 56.25em) {
+  .navigation__button {
+    top: 3rem;
+    right: 3rem;
+  }
 }
 .navigation__icon {
   display: flex;

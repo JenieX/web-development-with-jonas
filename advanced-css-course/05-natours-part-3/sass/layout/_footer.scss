@@ -4,6 +4,10 @@
   font-size: 1.4rem;
   color: $color-gray-light-1;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__logo-box {
     text-align: center;
     margin-bottom: 8rem;
@@ -23,11 +27,22 @@
   &__navigation {
     // border-top: 1px solid $color-gray-dark;
     // padding-top: 2rem;
-    display: inline-block;
+    /* display: inline-block; */
+
+    @include respond(tab-port) {
+      text-align: center;
+      // or
+      /* margin: 0 auto; */
+      /* width: fit-content;*/
+    }
   }
 
   &__list {
     list-style: none;
+
+    // If you decide to fix the items layout breaking into two lines!
+    // display: flex;
+    // justify-content: space-evenly;
   }
 
   &__item {

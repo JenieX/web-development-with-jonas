@@ -102,6 +102,12 @@ Normally, every argument a mixin declares must be passed when that mixin is incl
 
 In addition to taking arguments, a mixin can take an entire block of styles, known as a content block. A mixin can declare that it takes a content block by including the `@content` at-rule in its body. The content block is passed in using curly braces like any other block in Sass, and it’s injected in place of the `@content` rule.
 
+**Notice the order** in which to type the `@include respond($breakpoint)` for desktop (`max-width`):
+
+- tab-land
+- tab-port
+- phone
+
 ```scss
 // media-query manager
 
@@ -112,11 +118,20 @@ In addition to taking arguments, a mixin can take an entire block of styles, kno
 [1200 - 1800] is where our normal styles apply
 1800px + :      Big desktop
 
-$breakpoint options: phone | tab-port |tab-land | big-desktop
+$breakpoint options: phone | tab-port | tab-land | big-desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
+Order of usage: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
+
+| Size |   Device   |
+| :--: | :--------: |
+| 424  |     XZ     |
+| 455  | XZ Premium |
+| 480  | XA1 Ultra  |
+| 1280 |   Laptop   |
+| 1536 |     PC     |
+
 */
 
 @mixin respond($breakpoint) {

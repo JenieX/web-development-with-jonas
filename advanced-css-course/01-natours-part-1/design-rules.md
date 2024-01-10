@@ -1,8 +1,10 @@
-| Size |   Phone    |
+| Size |   Device   |
 | :--: | :--------: |
 | 424  |     XZ     |
 | 455  | XZ Premium |
 | 480  | XA1 Ultra  |
+| 1280 |   Laptop   |
+| 1536 |     PC     |
 
 ## 01- TYPOGRAPHY
 

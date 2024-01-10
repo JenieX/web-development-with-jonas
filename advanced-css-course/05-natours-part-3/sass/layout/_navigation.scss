@@ -18,6 +18,11 @@
     z-index: 1000;
 
     transition: all 0.8s cubic-bezier(0.83, 0, 0.17, 1);
+
+    @include respond(tab-port) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
@@ -45,13 +50,18 @@
 
   &__list {
     list-style: none;
-    @include center-absolutely;
 
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
+    // @include center-absolutely;
+    // A fix if you are not going to make it flex container!
+    // width: 100%;
+    // left: 0;
+    // transform: translateX(0) translateY(-50%);
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   &__item {
@@ -110,6 +120,11 @@
     align-items: center;
 
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__icon {

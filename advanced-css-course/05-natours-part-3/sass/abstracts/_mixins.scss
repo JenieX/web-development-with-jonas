@@ -15,6 +15,8 @@
   // }
 }
 
+// You should consider each device `window.devicePixelRatio`!
+
 // media-query manager
 
 /*
@@ -24,11 +26,20 @@
 [1200 - 1800] is where our normal styles apply
 1800px + :      Big desktop
 
-$breakpoint options: phone | tab-port |tab-land | big-desktop
+$breakpoint options: phone | tab-port | tab-land | big-desktop
 
-ORDER: Base + typography > general layout + grid > page layout > components
+Order of usage: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
+
+| Size |   Device   |
+| :--: | :--------: |
+| 424  |     XZ     |
+| 455  | XZ Premium |
+| 480  | XA1 Ultra  |
+| 1280 |   Laptop   |
+| 1536 |     PC     |
+
 */
 
 @mixin respond($breakpoint) {
