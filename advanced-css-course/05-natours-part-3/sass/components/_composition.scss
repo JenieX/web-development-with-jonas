@@ -1,8 +1,14 @@
+//  He used float inside `&__photo` which restored the parent height, unlike me!
+// https://stackoverflow.com/questions/13545947/position-absolute-and-parent-height
+
 .composition {
   position: relative;
   // background-color: #bbb;
   // box-sizing: content-box;
   z-index: 1;
+
+  // Trick to restore height!
+  padding-top: 25%;
 
   &__photo {
     width: 55%;
@@ -27,7 +33,7 @@
 
     &:hover {
       // border: 10px solid crimson;
-      transform: scale(1.5) translateY(-0.5rem);
+      transform: translateY(-0.5rem) scale(1.05);
       outline: 1.5rem solid $color-primary;
       z-index: 10;
 
@@ -85,8 +91,14 @@
       box-shadow: 0 1.5rem 4rem rgba($color-black, 0.5);
       &:hover {
         box-shadow: 0 2.5rem 4rem rgba($color-black, 0.3);
-        transform: scale(1.5) translate(-50%, calc(-15% + -0.5rem));
-        // transform: translate(-50%, -15%);
+
+        @include respond(tab-port) {
+          transform: translate(-50%, calc(-15% + -0.5rem)) scale(1.05);
+          // and not
+          // transform: scale(1.5) translate(-50%, calc(-15% + -0.5rem));
+
+          // transform: translate(-50%, -15%);
+        }
       }
     }
 
@@ -99,30 +111,29 @@
   // .composition:hover .composition__photo:not(:hover)
 
   // Syntax #1
+  // &:hover &__photo {
+  //   &:not(:hover) {
+  //     transform: scale(0.9);
+  //     filter: grayscale(100%) blur(3px);
+  //   }
+  // }
+
+  // Syntax #2
   &:hover &__photo:not(:hover) {
     transform: scale(0.9);
     filter: grayscale(100%) blur(3px);
   }
 
-  &:hover &__photo#{&}__photo--p3:not(:hover) {
-    transform: scale(0.9) translate(-50%, -15%);
+  @include respond(tab-port) {
+    &:hover &__photo#{&}__photo--p3:not(:hover) {
+      transform: translate(-50%, -15%) scale(0.9);
+    }
   }
 
-  // &:hover &__photo--p1:not(:hover) {
-  //   transform: scale(0.9);
-  //   filter: grayscale(100%) blur(3px);
-  // }
-
-  // &:hover &__photo--p2:not(:hover) {
-  //   transform: scale(0.9);
-  //   filter: grayscale(100%) blur(3px);
-  // }
-
-  // Syntax #2
-  // &:hover &__photo {
-  //   &:not(:hover) {
-  //     transform: scale(0.9);
-  //     filter: grayscale(100%) blur(3px);
+  // or
+  // &:hover &__photo#{&}__photo--p3:not(:hover) {
+  //   @include respond(tab-port) {
+  //     transform: translate(-50%, -15%) scale(0.9);
   //   }
   // }
 }

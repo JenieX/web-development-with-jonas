@@ -618,6 +618,24 @@ The hyphens CSS property specifies how words should be hyphenated when text wrap
 
 The `:target` CSS pseudo-class represents a unique element (the target element) with an id matching the URL's fragment.
 
+### [`transform`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)
+
+One or more of the CSS transform functions to be applied. The transform functions are multiplied in order from left to right, meaning that composite transforms are effectively applied in order from right to left.
+
+Multiple CSS transform functions can be applied. The **transform functions are applied in order from left to right**. E.g. when you want to use `translate` and `scale`, you should always `scale` last!
+
+```scss
+// Correct
+.composition__photo--p3:hover {
+  transform: translate(-50%, calc(-15% - 0.5rem)) scale(1.5);
+}
+
+// Incorrect
+.composition__photo--p3:hover {
+  transform: scale(1.5) translate(-50%, calc(-15% - 0.5rem));
+}
+```
+
 ## HTML Properties
 
 ### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)

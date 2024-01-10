@@ -324,6 +324,7 @@ body {
 .composition {
   position: relative;
   z-index: 1;
+  padding-top: 25%;
 }
 .composition__photo {
   width: 55%;
@@ -338,7 +339,7 @@ body {
   }
 }
 .composition__photo:hover {
-  transform: scale(1.5) translateY(-0.5rem);
+  transform: translateY(-0.5rem) scale(1.05);
   outline: 1.5rem solid #55c57a;
   z-index: 10;
 }
@@ -382,14 +383,20 @@ body {
 }
 .composition__photo--p3:hover {
   box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.3);
-  transform: scale(1.5) translate(-50%, calc(-15% - 0.5rem));
+}
+@media only screen and (max-width: 56.25em) {
+  .composition__photo--p3:hover {
+    transform: translate(-50%, calc(-15% - 0.5rem)) scale(1.05);
+  }
 }
 .composition:hover .composition__photo:not(:hover) {
   transform: scale(0.9);
   filter: grayscale(100%) blur(3px);
 }
-.composition:hover .composition__photo.composition__photo--p3:not(:hover) {
-  transform: scale(0.9) translate(-50%, -15%);
+@media only screen and (max-width: 56.25em) {
+  .composition:hover .composition__photo.composition__photo--p3:not(:hover) {
+    transform: translate(-50%, -15%) scale(0.9);
+  }
 }
 
 .feature-box {
@@ -401,6 +408,11 @@ body {
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
 }
+@media only screen and (max-width: 56.25em) {
+  .feature-box {
+    padding: 2rem;
+  }
+}
 .feature-box__icon {
   margin-bottom: 0.5rem;
   font-size: 6rem;
@@ -409,6 +421,11 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+@media only screen and (max-width: 56.25em) {
+  .feature-box__icon {
+    margin-bottom: 0;
+  }
 }
 .feature-box:hover {
   transform: scale(1.03) translateY(-1.5rem);
@@ -1132,7 +1149,7 @@ body {
 }
 @media only screen and (max-width: 56.25em) {
   .section-features {
-    padding: 15rem 0;
+    padding: 10rem 0;
   }
 }
 
