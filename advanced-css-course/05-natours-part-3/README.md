@@ -224,3 +224,23 @@ html {
   }
 }
 ```
+
+### Tips
+
+#### [Multiple classes selector](https://stackoverflow.com/questions/22476889/double-ampersand-selector-in-sass)
+
+```scss
+.composition {
+  &:hover &__photo#{&}__photo--p3:not(:hover) {
+    transform: scale(0.9) translate(-50%, -15%);
+  }
+}
+```
+
+=>
+
+```css
+.composition:hover .composition__photo.composition__photo--p3:not(:hover) {
+  transform: scale(0.9) translate(-50%, -15%);
+}
+```
