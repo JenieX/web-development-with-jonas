@@ -200,3 +200,59 @@
     font-weight: 100;
   }
 }
+
+// A whole re-write of the decelerations
+
+@include respond(tab-port) {
+  .card {
+    perspective: none;
+    position: relative;
+    height: auto;
+    background-color: $color-white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      width: 100%;
+      box-shadow: none;
+
+      &--back {
+        height: 23rem;
+
+        transform: rotateY(0deg);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        border-top-right-radius: 0;
+        // margin-top: -10rem;
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    // Front
+
+    &__details {
+      padding: 1rem 5rem;
+    }
+
+    // Back
+
+    &__price-box {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    &__price-only {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(150%, -50%);
+    }
+
+    &__price-value {
+      font-size: 5rem;
+    }
+  }
+}
