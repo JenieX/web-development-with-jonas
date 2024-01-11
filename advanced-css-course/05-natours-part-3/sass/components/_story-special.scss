@@ -19,6 +19,16 @@
 
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+
+    padding: 4rem;
+    // Makeup for the lost padding caused by `translateX(-3rem)`
+    padding-left: 7rem;
+
+    // transform: skewX(0deg);
+  }
+
   &__avatar {
     width: 15rem;
     height: 15rem;

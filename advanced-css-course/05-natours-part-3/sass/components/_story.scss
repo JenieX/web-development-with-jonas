@@ -13,6 +13,17 @@
 
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0deg);
+  }
+
   // Should be added to the children directly because one child already has
   // a transform property!
   // & > * {
@@ -43,6 +54,10 @@
     align-items: center;
 
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0deg);
+    }
   }
 
   &__img {
@@ -78,5 +93,9 @@
 
   &__text {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0deg);
+    }
   }
 }
