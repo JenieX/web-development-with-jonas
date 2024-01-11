@@ -6,6 +6,14 @@
 | 1280 |   Laptop   |
 | 1536 |     PC     |
 
+|   Size    |   Device   |
+| :-------: | :--------: |
+| 2.50 (x3) |     XZ     |
+| 4.75 (x4) | XZ Premium |
+| 2.25 (x2) | XA1 Ultra  |
+| 1.50 (x2) |   Laptop   |
+| 1.25 (x1) |     PC     |
+
 ## 01- TYPOGRAPHY
 
 ### Font Size (px)
