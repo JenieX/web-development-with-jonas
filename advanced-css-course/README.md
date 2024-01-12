@@ -646,6 +646,33 @@ Multiple CSS transform functions can be applied. The **transform functions are a
 
 A radio group is **defined by giving each of radio buttons in the group the same name**. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.
 
+### [<picture>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+
+The `<picture>` HTML element contains zero or more `<source>` elements and one `<img>` element to offer alternative versions of an image for different display/device scenarios.
+
+The browser will consider each child `<source>` element and choose the best match among them. If no matches are found, or the browser doesn't support the `<picture>` element, the URL of the `<img>` element's src attribute is selected. The selected image is then presented in the space occupied by the `<img>` element.
+
+To decide which URL to load, the user agent examines each `<source>`'s srcset, media, and type attributes to select a compatible image that best matches the current layout and capabilities of the display device.
+
+Common use cases for `<picture>` :
+
+- Art direction. Cropping or modifying images for different media conditions.
+- Offering alternative image formats, for cases where certain formats are not supported.
+
+### [`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
+
+The `<source>` HTML element specifies one or more media resources for the `<picture>`, `<audio>`, and `<video>` elements. It is a void element, which means that it has no content and does not require a closing tag. This element is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
+
+#### Attributes
+
+##### type
+
+Specifies the MIME media type of the image or other media type, optionally including a codecs parameter.
+
+##### media
+
+Specifies the media query for the resource's intended media.
+
 ## Tricks
 
 ### [The “Checkbox Hack”](https://css-tricks.com/the-checkbox-hack/)
