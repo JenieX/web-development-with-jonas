@@ -6,7 +6,7 @@
 | 1280 |   Laptop   |
 | 1536 |     PC     |
 
-|   Size    |   Device   |
+|    DPR    |   Device   |
 | :-------: | :--------: |
 | 2.50 (x3) |     XZ     |
 | 4.75 (x4) | XZ Premium |

@@ -659,48 +659,11 @@ Common use cases for `<picture>` :
 - Art direction. Cropping or modifying images for different media conditions.
 - Offering alternative image formats, for cases where certain formats are not supported.
 
-### [`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
-
-The `<source>` HTML element specifies one or more media resources for the `<picture>`, `<audio>`, and `<video>` elements. It is a void element, which means that it has no content and does not require a closing tag. This element is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
-
-**Note** : The first matched `<source>` will be used if there are multiple `<source>`s that match the device.
-
-#### Attributes
-
-##### srcset
-
-Specifies a comma-separated list of one or more image URLs and their descriptors. Required if the parent of `<source>` is `<picture>`. **Not allowed for <audio> and <video>**.
-
-The list consists of strings separated by commas, indicating a set of possible images for the browser to use. Each string is composed of:
-
-- A **URL** specifying an image location.
-- An **optional width descriptor**, a positive integer directly followed by "w", such as 300w.
-- An **optional pixel density descriptor**, a positive floating number directly followed by "x", such as 2x.
-
-Each string in the list must have either a width descriptor or a pixel density descriptor to be valid. These two **descriptors should not be used together**; only one should be used consistently throughout the list. The value of each descriptor in the list must be unique. If the sizes attribute is also present, then each string must include a width descriptor.
-
-##### type
-
-Specifies the MIME media type of the image or other media type, optionally including a codecs parameter.
-
-##### media
-
-Specifies the media query for the resource's intended media.
-
-### [`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)
-
-The HTMLImageElement property srcset is a string which identifies one or more image candidate strings, **separated using commas (,)** each specifying image resources to use under given circumstances.
-
-Each image **candidate string contains an image URL and an optional width or pixel density descriptor** that indicates the conditions under which that candidate should be used instead of the image specified by the src property.
-
-The srcset property, along with the sizes property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
-
-**Note** : If the srcset attribute uses width descriptors, the sizes attribute must also be present, or the srcset itself will be ignored.
-
 ```html
+<!-- Example #1 -->
 <picture class="footer__logo">
   <source
-    title="XA1 Ultra (2x)"
+    title="XA1 Ultra (2x or maybe 3x!)"
     media="(min-width: 480px)"
     srcset="
       ./img/logo-green-2x.png 2x
@@ -731,7 +694,68 @@ The srcset property, along with the sizes property, are a crucial component in d
 
   <img src="./img/default.png" alt="Website logo" />
 </picture>
+
+<!-- Example #2 -->
+<!-- <img src="./img/logo-green-2x.png" alt="Website big logo" class="footer__logo" /> -->
+<picture class="footer__logo">
+  <source
+    media="(max-width: 37.5em)"
+    srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x"
+  />
+
+  <!-- <img src="./img/logo-green-1x.png" alt="Website big logo" class="footer__logo" /> -->
+  <img
+    src="./img/logo-green-1x.png"
+    srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+    alt="Website big logo"
+    class="footer__logo"
+  />
+</picture>
 ```
+
+### [`<source>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source)
+
+The `<source>` HTML element specifies one or more media resources for the `<picture>`, `<audio>`, and `<video>` elements. It is a void element, which means that it has no content and does not require a closing tag. This element is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
+
+**Note** : The first matched `<source>` will be used if there are multiple `<source>`s that match the device.
+
+#### Attributes
+
+##### src
+
+Specifies the URL of the media resource. Required if the parent of `<source>` is `<audio>` or `<video>`. **Not allowed if the parent is `<picture>`**.
+
+##### srcset
+
+Specifies a comma-separated list of one or more image URLs and their descriptors. Required if the parent of `<source>` is `<picture>`. **Not allowed if the parent is `<audio>` or `<video>`**.
+
+The list consists of strings separated by commas, indicating a set of possible images for the browser to use. Each string is composed of:
+
+- A **URL** specifying an image location.
+- An **optional width descriptor**, a positive integer directly followed by "w", such as 300w.
+- An **optional pixel density descriptor**, a positive floating number directly followed by "x", such as 2x.
+
+Each string in the list must have either a width descriptor or a pixel density descriptor to be valid. These two **descriptors should not be used together**; only one should be used consistently throughout the list. The value of each descriptor in the list must be unique. If the sizes attribute is also present, then each string must include a width descriptor.
+
+##### type
+
+Specifies the MIME media type of the image or other media type, optionally including a codecs parameter.
+
+##### media
+
+Specifies the media query for the resource's intended media.
+
+### [`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)
+
+The HTMLImageElement property `srcset` is a string which identifies one or more image candidate strings, **separated using commas (,)** each specifying image resources to use under given circumstances.
+
+Each image **candidate string contains an image URL and an optional width or pixel density descriptor** that indicates the conditions under which that candidate should be used instead of the image specified by the src property.
+
+The srcset property, along with the sizes property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
+
+**Note** : If the srcset attribute uses width descriptors, the sizes attribute must also be present, or the srcset itself will be ignored.
+
+**Note** : If you are using `srcset` directly on an `<img>` element and not `<source>` inside `<picture>`, you should add the `src` attribute as a fallback, because if the browser does not support `srcset`, then `src` will be used for the default image source.
 
 ## Tricks
 

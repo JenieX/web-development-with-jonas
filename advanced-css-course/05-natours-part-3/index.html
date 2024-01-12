@@ -483,12 +483,7 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <!-- <img
-          srcset="./img/logo-green-small-1x.png 600w, ./img/logo-white.png 900w"
-          alt="Website big logo"
-          class="footer__logo"
-        /> -->
-        <picture class="footer__logo">
+        <!-- <picture class="footer__logo">
           <source
             title="XA1 Ultra"
             media="(min-width: 480px)"
@@ -498,7 +493,6 @@
               ./img/logo-green-2x.png       4x
             "
           />
-
           <source
             title="XZ Premium"
             media="(min-width: 455px)"
@@ -508,7 +502,6 @@
               ./img/logo-green-2x.png       4x
             "
           />
-
           <source
             title="XZ"
             media="(min-width: 424px)"
@@ -518,13 +511,30 @@
               ./img/logo-green-2x.png       4x
             "
           />
-
-          <!-- <source
-            media="(max-width: 37.5em)"
-            srcset="./img/logo-green-small-1x.png 2x, ./img/logo-white.png 3x, ./img/logo-green-2x.png 4x"
-          /> -->
           <img
             src="./img/nat-1-large.jpg"
+            alt="Website big logo"
+            class="footer__logo"
+          />
+        </picture> -->
+
+        <picture class="footer__logo">
+          <source
+            media="(max-width: 37.5em)"
+            srcset="
+              ./img/logo-green-small-1x.png 1x,
+              ./img/logo-green-small-2x.png 2x
+            "
+          />
+
+          <!-- <img
+            src="./img/logo-green-1x.png"
+            alt="Website big logo"
+            class="footer__logo"
+          /> -->
+          <img
+            src="./img/logo-green-1x.png"
+            srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
             alt="Website big logo"
             class="footer__logo"
           />
@@ -537,20 +547,26 @@
             <div class="footer__navigation">
               <ul class="footer__list">
                 <li class="footer__item">
-                  <a
-                    href="#"
-                    class="footer__link"
-                    onclick="location.reload(true);
-                  "
+                  <a href="javascript:location.reload(true)" class="footer__link"
                     >Reload</a
                   >
                 </li>
                 <li class="footer__item">
-                  <a href="#" class="footer__link">Contact us</a>
+                  <a href="javascript:alert(devicePixelRatio);" class="footer__link"
+                    >DPR</a
+                  >
                 </li>
                 <li class="footer__item">
-                  <a href="#" class="footer__link">Careers</a>
+                  <a href="javascript:alert(innerWidth);" class="footer__link"
+                    >width</a
+                  >
                 </li>
+                <li class="footer__item">
+                  <a href="javascript:alert(innerHeight);" class="footer__link"
+                    >height</a
+                  >
+                </li>
+
                 <li class="footer__item">
                   <a href="#" class="footer__link">Privacy Policy</a>
                 </li>
