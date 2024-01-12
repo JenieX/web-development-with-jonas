@@ -646,7 +646,7 @@ Multiple CSS transform functions can be applied. The **transform functions are a
 
 A radio group is **defined by giving each of radio buttons in the group the same name**. Once a radio group is established, selecting any radio button in that group automatically deselects any currently-selected radio button in the same group.
 
-### [<picture>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
+### [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
 The `<picture>` HTML element contains zero or more `<source>` elements and one `<img>` element to offer alternative versions of an image for different display/device scenarios.
 
