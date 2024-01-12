@@ -263,28 +263,3 @@ To use Half the image resolution on @1x screen.
 ### Art Direction
 
 To use a different image on smaller screen.
-
-### HTML
-
-#### [`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)
-
-The HTMLImageElement property srcset is a string which identifies one or more image candidate strings, **separated using commas (,)** each specifying image resources to use under given circumstances.
-
-Each image **candidate string contains an image URL and an optional width or pixel density descriptor** that indicates the conditions under which that candidate should be used instead of the image specified by the src property.
-
-The srcset property, along with the sizes property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
-
-**Note** : If the srcset attribute uses width descriptors, the sizes attribute must also be present, or the srcset itself will be ignored.
-
-```html
-<img
-  srcset="
-    ./img/logo-green-1x.png 1x,
-    ./img/logo-green-2x.png 2x,
-    ./img/logo-green-3x.png 3x,
-    ./img/logo-green-4x.png 4x
-  "
-  alt="Website big logo"
-  class="footer__logo"
-/>
-```

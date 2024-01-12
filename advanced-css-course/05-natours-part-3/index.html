@@ -483,11 +483,52 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img
+        <!-- <img
           srcset="./img/logo-green-small-1x.png 600w, ./img/logo-white.png 900w"
           alt="Website big logo"
           class="footer__logo"
-        />
+        /> -->
+        <picture class="footer__logo">
+          <source
+            title="XA1 Ultra"
+            media="(min-width: 480px)"
+            srcset="
+              ./img/logo-green-small-1x.png 2x,
+              ./img/logo-white.png          3x,
+              ./img/logo-green-2x.png       4x
+            "
+          />
+
+          <source
+            title="XZ Premium"
+            media="(min-width: 455px)"
+            srcset="
+              ./img/logo-green-small-1x.png 2x,
+              ./img/logo-white.png          3x,
+              ./img/logo-green-2x.png       4x
+            "
+          />
+
+          <source
+            title="XZ"
+            media="(min-width: 424px)"
+            srcset="
+              ./img/logo-green-small-1x.png 2x,
+              ./img/logo-white.png          3x,
+              ./img/logo-green-2x.png       4x
+            "
+          />
+
+          <!-- <source
+            media="(max-width: 37.5em)"
+            srcset="./img/logo-green-small-1x.png 2x, ./img/logo-white.png 3x, ./img/logo-green-2x.png 4x"
+          /> -->
+          <img
+            src="./img/nat-1-large.jpg"
+            alt="Website big logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
 
       <div class="row">
@@ -496,7 +537,13 @@
             <div class="footer__navigation">
               <ul class="footer__list">
                 <li class="footer__item">
-                  <a href="#" class="footer__link">Company</a>
+                  <a
+                    href="#"
+                    class="footer__link"
+                    onclick="location.reload(true);
+                  "
+                    >Reload</a
+                  >
                 </li>
                 <li class="footer__item">
                   <a href="#" class="footer__link">Contact us</a>

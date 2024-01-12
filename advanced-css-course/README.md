@@ -648,7 +648,7 @@ A radio group is **defined by giving each of radio buttons in the group the same
 
 ### [`<picture>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture)
 
-The `<picture>` HTML element contains zero or more `<source>` elements and one `<img>` element to offer alternative versions of an image for different display/device scenarios.
+The `<picture>` HTML element contains zero or more **`<source>` elements and one `<img>`** element to offer alternative versions of an image for different display/device scenarios.
 
 The browser will consider each child `<source>` element and choose the best match among them. If no matches are found, or the browser doesn't support the `<picture>` element, the URL of the `<img>` element's src attribute is selected. The selected image is then presented in the space occupied by the `<img>` element.
 
@@ -663,7 +663,21 @@ Common use cases for `<picture>` :
 
 The `<source>` HTML element specifies one or more media resources for the `<picture>`, `<audio>`, and `<video>` elements. It is a void element, which means that it has no content and does not require a closing tag. This element is commonly used to offer the same media content in multiple file formats in order to provide compatibility with a broad range of browsers given their differing support for image file formats and media file formats.
 
+**Note** : The first matched `<source>` will be used if there are multiple `<source>`s that match the device.
+
 #### Attributes
+
+##### srcset
+
+Specifies a comma-separated list of one or more image URLs and their descriptors. Required if the parent of `<source>` is `<picture>`. **Not allowed for <audio> and <video>**.
+
+The list consists of strings separated by commas, indicating a set of possible images for the browser to use. Each string is composed of:
+
+- A **URL** specifying an image location.
+- An **optional width descriptor**, a positive integer directly followed by "w", such as 300w.
+- An **optional pixel density descriptor**, a positive floating number directly followed by "x", such as 2x.
+
+Each string in the list must have either a width descriptor or a pixel density descriptor to be valid. These two **descriptors should not be used together**; only one should be used consistently throughout the list. The value of each descriptor in the list must be unique. If the sizes attribute is also present, then each string must include a width descriptor.
 
 ##### type
 
@@ -672,6 +686,52 @@ Specifies the MIME media type of the image or other media type, optionally inclu
 ##### media
 
 Specifies the media query for the resource's intended media.
+
+### [`srcset`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/srcset)
+
+The HTMLImageElement property srcset is a string which identifies one or more image candidate strings, **separated using commas (,)** each specifying image resources to use under given circumstances.
+
+Each image **candidate string contains an image URL and an optional width or pixel density descriptor** that indicates the conditions under which that candidate should be used instead of the image specified by the src property.
+
+The srcset property, along with the sizes property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
+
+**Note** : If the srcset attribute uses width descriptors, the sizes attribute must also be present, or the srcset itself will be ignored.
+
+```html
+<picture class="footer__logo">
+  <source
+    title="XA1 Ultra (2x)"
+    media="(min-width: 480px)"
+    srcset="
+      ./img/logo-green-2x.png 2x
+      ./img/logo-green-3x.png 3x
+      ./img/logo-green-4x.png 4x
+    "
+  />
+
+  <source
+    title="XZ Premium (4x)"
+    media="(min-width: 455px)"
+    srcset="
+      ./img/logo-green-2x.png 2x
+      ./img/logo-green-3x.png 3x
+      ./img/logo-green-4x.png 4x
+    "
+  />
+
+  <source
+    title="XZ (3x)"
+    media="(min-width: 424px)"
+    srcset="
+      ./img/logo-green-2x.png 2x
+      ./img/logo-green-3x.png 3x
+      ./img/logo-green-4x.png 4x
+    "
+  />
+
+  <img src="./img/default.png" alt="Website logo" />
+</picture>
+```
 
 ## Tricks
 
