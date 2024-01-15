@@ -89,7 +89,7 @@ Value: `auto` (default) | `<'width'>`
 Notes:
 
 - Should be used instead of the `width` property on flex items, and note that it would take priority over it.
-- If one value is set for `flex-grow` on all flex items while their content are not equal, there are [two cases](./flex-basis/index.html):
+- If one value is set for `flex-grow` on all flex items while their content are not equal, there are [two cases](./playground/flex-basis/index.html):
   - If one width value is set for `flex-basis` on all flex items, they will grow equally.
   - If the keyword `auto` is set for `flex-basis`, which is done by default, items will grow based on their content.
 
