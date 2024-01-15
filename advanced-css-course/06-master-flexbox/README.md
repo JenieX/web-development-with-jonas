@@ -8,6 +8,8 @@ The `flex-direction` CSS property sets how flex items are placed in the flex con
 
 Value: `row` (default)| `row-reverse` | `column` | `column-reverse`
 
+Tip: Whenever you switch to `column`, try rotating the container `90deg` in you imagination.
+
 ### [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
 
 The `gap` CSS shorthand property sets the gaps (gutters) between rows and columns (`row-gap` and `column-gap`).

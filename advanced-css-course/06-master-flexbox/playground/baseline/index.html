@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>baseline</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        height: 100vh;
+        background-color: #1f1f1f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        /* position: absolute; */
+        /* width: 100%; */
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+
+        font-family: sans-serif;
+        background-color: #eee;
+
+        width: 50vw;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        gap: 1rem;
+      }
+
+      .item {
+        font-size: 4.4rem;
+        color: #eee;
+        padding: 1rem;
+        background-color: crimson;
+
+        height: 16rem;
+        display: flex;
+      }
+
+      .item--1 {
+        align-items: flex-start;
+      }
+
+      .item--2 {
+        align-items: center;
+      }
+
+      .item--3 {
+        align-items: flex-end;
+      }
+
+      .item--4 {
+        align-items: center;
+        height: 12rem;
+      }
+
+      .item--5 {
+        align-items: center;
+        font-size: 9.6rem;
+        height: 24rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">1</div>
+      <div class="item item--2">2</div>
+      <div class="item item--3">3</div>
+      <div class="item item--4">4</div>
+      <div class="item item--5">5</div>
+    </div>
+  </body>
+</html>
