@@ -8,7 +8,7 @@ The `flex-direction` CSS property sets how flex items are placed in the flex con
 
 Value: `row` (default)| `row-reverse` | `column` | `column-reverse`
 
-Tip: Whenever you switch to `column`, try rotating the container `90deg` in you imagination.
+Tip: Whenever you switch to `column`, try rotating the container `-90deg` in your imagination.
 
 ### [`gap`](https://developer.mozilla.org/en-US/docs/Web/CSS/gap)
 
@@ -52,7 +52,21 @@ The `align-self` CSS property overrides a grid or flex item's `align-items` valu
 
 This property is a shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`.
 
-Value: `0 1 auto` (default)
+Value: `0 1 auto` (default) | `auto` | `initial` | `none`
+
+Value Hints:
+
+- 1 value
+
+  - A number without a unit => is for `flex-grow`, and `flex-basis` takes the value of `0`.
+  - A width or height value => is for `flex-basis`.
+
+- 2 values
+
+  - Two numbers without units => for `flex-grow` and `flex-shrink` respectively.
+  - Two values, second (width/height) => flex-grow | flex-basis
+
+- 3 values => for `flex-grow`, `flex-shrink`, and `flex-basis` respectively.
 
 ### [`flex-grow`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow)
 

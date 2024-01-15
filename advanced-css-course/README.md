@@ -680,6 +680,14 @@ a:hover {
 }
 ```
 
+### [`max-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-width)
+
+The `max-width` CSS property sets the maximum width of an element. It prevents the used value of the width property from becoming larger than the value specified by `max-width`.
+
+### [`min-width`](https://developer.mozilla.org/en-US/docs/Web/CSS/min-width)
+
+The `min-width` CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
+
 ## HTML Properties
 
 ### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
