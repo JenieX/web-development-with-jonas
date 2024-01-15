@@ -636,6 +636,50 @@ Multiple CSS transform functions can be applied. The **transform functions are a
 }
 ```
 
+### [`@supports`](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+
+The `@supports` CSS at-rule lets you specify CSS declarations that depend on a browser's support for CSS features. Using this at-rule is commonly called a feature query. The rule must be placed at the top level of your code or nested inside any other conditional group at-rule.
+
+```css
+.flex-container > * {
+  float: left;
+}
+
+@supports (display: flex) {
+  .flex-container > * {
+    float: none;
+  }
+
+  .flex-container {
+    display: flex;
+  }
+}
+```
+
+### [`::selection`](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection)
+
+The `::selection` CSS pseudo-element applies styles to the part of a document that has been highlighted by the user (such as clicking and dragging the mouse across text).
+
+### [`@media (hover: hover | none)`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover)
+
+The hover CSS media feature can be used to test whether the user's primary input mechanism can hover over elements.
+
+```css
+/* default hover effect */
+a:hover {
+  color: black;
+  background: yellow;
+}
+
+@media (hover: hover) {
+  /* when hover is supported */
+  a:hover {
+    color: white;
+    background: black;
+  }
+}
+```
+
 ## HTML Properties
 
 ### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)
@@ -666,8 +710,8 @@ Common use cases for `<picture>` :
     title="XA1 Ultra (2x or maybe 3x!)"
     media="(min-width: 480px)"
     srcset="
-      ./img/logo-green-2x.png 2x
-      ./img/logo-green-3x.png 3x
+      ./img/logo-green-2x.png 2x,
+      ./img/logo-green-3x.png 3x,
       ./img/logo-green-4x.png 4x
     "
   />
@@ -676,8 +720,8 @@ Common use cases for `<picture>` :
     title="XZ Premium (4x)"
     media="(min-width: 455px)"
     srcset="
-      ./img/logo-green-2x.png 2x
-      ./img/logo-green-3x.png 3x
+      ./img/logo-green-2x.png 2x,
+      ./img/logo-green-3x.png 3x,
       ./img/logo-green-4x.png 4x
     "
   />
@@ -686,8 +730,8 @@ Common use cases for `<picture>` :
     title="XZ (3x)"
     media="(min-width: 424px)"
     srcset="
-      ./img/logo-green-2x.png 2x
-      ./img/logo-green-3x.png 3x
+      ./img/logo-green-2x.png 2x,
+      ./img/logo-green-3x.png 3x,
       ./img/logo-green-4x.png 4x
     "
   />
@@ -751,9 +795,9 @@ The HTMLImageElement property `srcset` is a string which identifies one or more 
 
 Each image **candidate string contains an image URL and an optional width or pixel density descriptor** that indicates the conditions under which that candidate should be used instead of the image specified by the src property.
 
-The srcset property, along with the sizes property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
+The `srcset` property, along with the `sizes` property, are a crucial component in designing responsive websites, as they can be used together to make pages that use appropriate images for the rendering situation.
 
-**Note** : If the srcset attribute uses width descriptors, the sizes attribute must also be present, or the srcset itself will be ignored.
+**Note** : If the `srcset` attribute uses width descriptors (probably they meant on `<source>` since it works fine on `<img>`), the sizes attribute must also be present, or the srcset itself will be ignored.
 
 **Note** : If you are using `srcset` directly on an `<img>` element and not `<source>` inside `<picture>`, you should add the `src` attribute as a fallback, because if the browser does not support `srcset`, then `src` will be used for the default image source.
 

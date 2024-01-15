@@ -55,4 +55,14 @@ body {
   @include respond(tab-port) {
     padding: 0;
   }
+
+  // To test "autoprefixer" x
+  @media (min-resolution: 2dppx) {
+    // background-color: #fff;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

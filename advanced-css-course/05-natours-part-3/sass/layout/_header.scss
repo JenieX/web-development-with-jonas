@@ -12,6 +12,18 @@
 
   position: relative;
 
+  // @media (min-resolution: 192dpi) and (min-width: 600px), (min-width: 2000px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary-light, 0.6),
+        rgba($color-secondary-dark, 0.6)
+      ),
+      url(../img/hero.jpg);
+  }
+
   @include respond(tab-port) {
     clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
   }

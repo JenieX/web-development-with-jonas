@@ -245,14 +245,18 @@ html {
 }
 ```
 
-## Responsive Images
+## [Responsive Images](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images)
 
 The goal of responsive images is to **serve the right image to the right screen size** and
 device, in order to avoid downloading unnecessary large images on smaller screens.
 
+**Note** : If the bigger image was loaded first, then a lower version of it will not be loaded even if it matches certain rules.
+
+[imagekit.io article](https://imagekit.io/responsive-images)
+
 ### Resolution Switching
 
-To decrease the image resolution on smaller screen.
+To use a decreased image resolution on smaller screen.
 
 ### Density Switching
 
