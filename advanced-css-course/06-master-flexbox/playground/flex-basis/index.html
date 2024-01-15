@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>`flex-basis`</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        height: 100vh;
+        background-color: #1f1f1f;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 5rem;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #eee;
+
+        min-width: 75vw;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        position: relative;
+      }
+
+      .container::after {
+        display: inline-block;
+        color: #eee;
+        font-size: 1.6rem;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-130%);
+      }
+
+      /* .container--1::after {
+        content: 'Same content will not be affected';
+      } */
+
+      .container--2::after {
+        content: 'flex-basis: auto;';
+      }
+
+      .container--3::after {
+        content: 'flex-basis: 1px;';
+      }
+
+      .item {
+        font-size: 4.4rem;
+        color: #eee;
+        padding: 1rem;
+        background-color: crimson;
+
+        flex-grow: 1;
+        flex-basis: auto;
+      }
+
+      .container--3 .item {
+        flex-basis: 1px;
+      }
+
+      .item--1 {
+      }
+
+      .item--2 {
+      }
+
+      .item--3 {
+      }
+
+      .item--4 {
+      }
+
+      .item--5 {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container--1">
+      <div class="item item--1">A</div>
+      <div class="item item--2">A</div>
+      <div class="item item--3">A</div>
+      <div class="item item--4">A</div>
+      <div class="item item--5">A</div>
+    </div>
+
+    <div class="container container--2">
+      <div class="item item--1">A</div>
+      <div class="item item--2">A</div>
+      <div class="item item--3">ABC</div>
+      <div class="item item--4">A</div>
+      <div class="item item--5">A</div>
+    </div>
+
+    <div class="container container--3">
+      <div class="item item--1">A</div>
+      <div class="item item--2">A</div>
+      <div class="item item--3">ABC</div>
+      <div class="item item--4">A</div>
+      <div class="item item--5">A</div>
+    </div>
+  </body>
+</html>

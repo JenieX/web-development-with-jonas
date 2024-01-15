@@ -82,9 +82,16 @@ Value: `1` (default) | `<positive-number>`
 
 ### [`flex-basis`](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis)
 
-The `flex-basis` CSS property sets the initial main size of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
+The `flex-basis` CSS property sets the initial main size (width by default) of a flex item. It sets the size of the content box unless otherwise set with `box-sizing`.
 
 Value: `auto` (default) | `<'width'>`
+
+Notes:
+
+- Should be used instead of the `width` property on flex items, and note that it would take priority over it.
+- If one value is set for `flex-grow` on all flex items while their content are not equal, there are [two cases](./flex-basis/index.html):
+  - If one width value is set for `flex-basis` on all flex items, they will grow equally.
+  - If the keyword `auto` is set for `flex-basis`, which is done by default, items will grow based on their content.
 
 ### [`order`](https://developer.mozilla.org/en-US/docs/Web/CSS/order)
 
