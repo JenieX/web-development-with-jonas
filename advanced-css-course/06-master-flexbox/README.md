@@ -98,3 +98,35 @@ Notes:
 The `order` CSS property sets the order to lay out an item in a flex or grid container. Items in a container are sorted by ascending order value and then by their source code order.
 
 Value: `0` (default) | `<number>`
+
+## [CSS variables (custom properties)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+
+CSS variables are entities defined by CSS authors that represent specific values to be reused throughout a document.
+
+### Declaring custom properties
+
+In CSS, you can declare a custom property using two dashes as a prefix for the property name, or by using the @property at-rule.
+
+#### Using a prefix of two dashes (`--`)
+
+A common practice is to define custom properties on the `:root` pseudo-class, so that it can be referenced globally.
+
+```css
+:root {
+  --color-primary: #eb2f64;
+  --color-primary-dark: #ba265d;
+  --color-primary-light: #ff3366;
+}
+```
+
+#### Using the @property at-rule
+
+...
+
+### Advantages over Sass variables
+
+- Native
+- Can be manipulated in the devtools.
+- Can be manipulated from JavaScript.
+- Easier to use in the code function.
+- CSS variables cascade and they are inherited.

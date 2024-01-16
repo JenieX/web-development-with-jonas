@@ -1,6 +1,10 @@
 {
   "name": "advanced-css-course",
   "scripts": {
+    "compile:sass": "sass 06-master-flexbox/sass/main.scss 06-master-flexbox/css/style.css",
+    "watch:sass": "npm run compile:sass -- --watch"
+  },
+  "scripts-05": {
     "compile:sass": "sass 05-natours-part-3/sass/main.scss 05-natours-part-3/css/style.css",
     "watch:sass": "npm run compile:sass -- --watch",
     "concat:css": "concat -o 05-natours-part-3/css/style.concat.css 05-natours-part-3/css/icon-font.css 05-natours-part-3/css/style.comp.css",
