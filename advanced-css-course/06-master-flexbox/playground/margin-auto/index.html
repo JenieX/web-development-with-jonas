@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>margin auto</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        height: 100vh;
+        background-color: #1f1f1f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #eee;
+
+        min-width: 75vw;
+        display: flex;
+        align-items: center;
+        /* gap: 1rem; */
+      }
+
+      .item {
+        font-size: 4.4rem;
+        color: #eee;
+        padding: 1rem;
+        background-color: crimson;
+      }
+
+      .item--1 {
+      }
+
+      .item--2 {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .item--3 {
+      }
+
+      .item--4 {
+      }
+
+      .item--5 {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">1</div>
+      <div class="item item--2">2</div>
+      <div class="item item--3">3</div>
+      <div class="item item--4">4</div>
+      <div class="item item--5">5</div>
+    </div>
+  </body>
+</html>

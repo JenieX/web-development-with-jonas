@@ -1,0 +1,36 @@
+body {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.container {
+  max-width: 120rem;
+  background-color: var(--color-gray-light-2);
+  margin: 8rem auto;
+  box-shadow: var(--shadow-dark);
+  min-height: 50rem;
+
+  // If parent is Flex container
+  // width: 120rem;
+  // flex-grow: 1;
+}
+
+.header {
+}
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  // height: 10rem;
+  background-color: var(--color-gray-dark-1);
+  flex-grow: 1;
+}
+
+.hotel-view {
+  // height: 10rem;
+  background-color: aquamarine;
+  flex-grow: 5.5;
+}
