@@ -6,7 +6,7 @@ body {
 
 .container {
   max-width: 120rem;
-  background-color: var(--color-gray-light-2);
+  background-color: var(--color-gray-light-1);
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
@@ -17,6 +17,11 @@ body {
 }
 
 .header {
+  height: 8rem;
+  border-bottom: 1px solid var(--color-gray-light-2);
+  background-color: #fff;
+
+  display: flex;
 }
 
 .content {
@@ -26,11 +31,13 @@ body {
 .sidebar {
   // height: 10rem;
   background-color: var(--color-gray-dark-1);
-  flex-grow: 1;
+  // flex-grow: 1;
+  flex: 0 0 18%; // Is allowed to shrink because of using %
 }
 
 .hotel-view {
   // height: 10rem;
   background-color: aquamarine;
-  flex-grow: 5.5;
+  // flex-grow: 5.5;
+  flex: 1;
 }

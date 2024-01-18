@@ -92,6 +92,7 @@ Notes:
 - If one value is set for `flex-grow` on all flex items while their content are not equal, there are [two cases](./playground/flex-basis/index.html) ([preview](https://htmlpreview.github.io/?https://github.com/JenieX/web-development-with-jonas/blob/main/advanced-css-course/06-master-flexbox/playground/flex-basis/index.html)):
   - If one width value is set for `flex-basis` on all flex items, they will grow equally.
   - If the keyword `auto` is set for `flex-basis`, which is done by default, items will grow based on their content.
+- The `auto` value for `flex-basis` will give it the value of the width of the element.
 
 ### [`order`](https://developer.mozilla.org/en-US/docs/Web/CSS/order)
 

@@ -809,6 +809,19 @@ The `srcset` property, along with the `sizes` property, are a crucial component 
 
 **Note** : If you are using `srcset` directly on an `<img>` element and not `<source>` inside `<picture>`, you should add the `src` attribute as a fallback, because if the browser does not support `srcset`, then `src` will be used for the default image source.
 
+### [`<use>`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/use)
+
+The `<use>` element takes nodes from within the SVG document, and duplicates them somewhere else.
+
+Note: this method of loading icons is not allowed on local protocol URLs.
+
+```html
+<svg class="search__icon">
+  <use href="./img/sprite.svg#icon-magnifying-glass"></use>
+  <!-- <use xlink:href="./img/sprite.svg#icon-magnifying-glass"></use> -->
+</svg>
+```
+
 ## Tricks
 
 ### [The “Checkbox Hack”](https://css-tricks.com/the-checkbox-hack/)
@@ -920,6 +933,7 @@ My usage cases
 - [Phosphor Icons](https://phosphoricons.com/)
 - [Ionicons](https://ionic.io/ionicons)
 - [Hero Icons](https://heroicons.com/)
+- [IcoMoon](https://icomoon.io/)
 
 ### Colors
 
