@@ -1,6 +1,7 @@
 .logo {
-  height: 3.25rem;
-  margin-left: 3rem;
+  // height: 3.25rem;
+  height: 48%;
+  margin-left: 2rem;
 }
 
 .search {
@@ -33,6 +34,7 @@
 
     &:focus {
       outline: none;
+      // If it wasn't for the default flex shrink, this would probably not work!
       width: 100%;
       // flex: 1;
       // flex-basis: 100%;
@@ -46,13 +48,14 @@
   }
 
   &__button {
+    // Not going to work because we want the button to adapt with the input!
     // position: absolute;
     // top: 0;
     // left: 0;
 
     // transform: translateX(-180%);
-    transform: translateX(-3.25rem);
-    // margin-left: -3.5rem;
+    // transform: translateX(-3.25rem);
+    margin-left: -3.5rem;
 
     display: flex;
     align-items: center;
@@ -68,7 +71,8 @@
     }
 
     &:active {
-      transform: translateX(-3.25rem) translateY(2px);
+      // transform: translateX(-3.25rem) translateY(2px);
+      transform: translateY(2px);
     }
   }
 
@@ -85,36 +89,62 @@
 
 .user-nav {
   display: flex;
+  align-items: center;
+  // height: 100%;
+  align-self: stretch;
 
-  &__icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
-  &__user-photo {
-    width: 2.4rem;
-    height: 2.4rem;
+    &:hover {
+      background-color: var(--color-gray-light-2);
+    }
   }
 
   &__icon-box {
+    position: relative;
   }
 
   &__icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    fill: var(--color-gray-dark-2);
   }
 
   &__notification {
+    width: 1.75rem;
+    height: 1.75rem;
+
+    position: absolute;
+    // top: 20%;
+    // left: 50%;
+
+    top: 1.5rem;
+    right: 1.1rem;
+
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__user {
-    width: 3rem;
-    height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   &__user-photo {
-  }
-
-  &__user-name {
+    /* width: 3.75rem; */
+    height: 3.75rem;
+    border-radius: 50%;
   }
 }
