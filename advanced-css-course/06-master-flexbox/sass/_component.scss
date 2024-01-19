@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
 
+  // background-color: crimson;
   // position: relative;
 
   &__input {
@@ -39,7 +40,8 @@
     }
 
     &::placeholder {
-      // color: red;
+      font-weight: 100;
+      color: var(--color-gray-light-4);
     }
   }
 
@@ -49,7 +51,7 @@
     // left: 0;
 
     // transform: translateX(-180%);
-    transform: translateX(-3.5rem);
+    transform: translateX(-3.25rem);
     // margin-left: -3.5rem;
 
     display: flex;
@@ -57,12 +59,28 @@
 
     border: none;
     background-color: transparent;
+
+    // He used this with `&__input:focus + &__button` below!
+    // background-color: var(--color-gray-light-2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: translateX(-3.25rem) translateY(2px);
+    }
   }
 
   &__icon {
     width: 2rem;
     height: 2rem;
+    fill: var(--color-gray-dark-3);
   }
+
+  // &__input:focus + &__button {
+  //   background-color: var(--color-gray-light-3);
+  // }
 }
 
 .user-nav {

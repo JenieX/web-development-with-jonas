@@ -966,6 +966,9 @@ My usage cases
 | :-------------------: | :---------------------------------------------------------------: |
 |    `shift+ctrl+k`     |                            Remove line                            |
 |          ---          |                                                                   |
+|    `shift+ctrl+up`    |                  Select before and above cursor                   |
+|   `shift+ctrl+down`   |                   Select after and below cursor                   |
+|          ---          |                                                                   |
 |  `shift+ctrl+enter`   |                        Add new line above                         |
 |     `ctrl+enter`      |                        Add new line below                         |
 |          ---          |                                                                   |
