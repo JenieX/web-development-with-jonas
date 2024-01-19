@@ -1,15 +1,60 @@
 .logo {
   height: 3.25rem;
+  margin-left: 3rem;
 }
 
 .search {
-  margin: 0 auto;
+  flex: 0 0 40%;
+  // font-size: 7rem;
+  // margin: 0 auto;
   display: flex;
+  justify-content: center;
+
+  // position: relative;
 
   &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-gray-light-2);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 99px;
+    width: 90%;
+    // flex: 0 0 90%;
+    // flex-shrink: 0;
+    // flex-basis: 90%;
+
+    // He used this, and I used `translateX(-180%);` on the button!
+    // margin-right: -3.5rem;
+
+    transition: all 0.3s;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      // flex: 1;
+      // flex-basis: 100%;
+      background-color: var(--color-gray-light-3);
+    }
+
+    &::placeholder {
+      // color: red;
+    }
   }
 
   &__button {
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+
+    // transform: translateX(-180%);
+    transform: translateX(-3.5rem);
+    // margin-left: -3.5rem;
+
+    display: flex;
+    align-items: center;
+
     border: none;
     background-color: transparent;
   }
