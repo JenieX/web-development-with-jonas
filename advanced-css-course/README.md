@@ -962,6 +962,9 @@ My usage cases
 
 ## Visual Studio Code Shortcuts
 
+TODO: Add `anchor` shortcuts
+TODO: Add `shift+esc` shortcut
+
 |     **Shortcut**      |                          **Description**                          |
 | :-------------------: | :---------------------------------------------------------------: |
 |    `shift+ctrl+k`     |                            Remove line                            |
