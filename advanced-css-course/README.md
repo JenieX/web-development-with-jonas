@@ -688,6 +688,21 @@ The `max-width` CSS property sets the maximum width of an element. It prevents t
 
 The `min-width` CSS property sets the minimum width of an element. It prevents the used value of the `width` property from becoming smaller than the value specified for `min-width`.
 
+### [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)
+
+Enable you to define the transition between two states of an element. Different states may be defined using pseudo-classes like :hover or :active or dynamically set using JavaScript.
+
+```css
+/* property name (or all) | duration | delay */
+transition: all 0.2s;
+
+/* Multiple properties are allowed separated by ","  */
+transition:
+  transform 0.2s,
+  width 0.4s 0.2s cubic-bezier(1, 0, 0, 1),
+  background-color 0.1s;
+```
+
 ## HTML Properties
 
 ### [`<input type="radio">`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio)

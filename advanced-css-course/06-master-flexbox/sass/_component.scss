@@ -159,19 +159,60 @@
   padding-top: 3.5rem;
 
   &__item {
+    position: relative;
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
     }
 
     // padding: 1.8rem 3rem;
-    &--active,
-    &:hover {
-      background-color: var(--color-primary);
-    }
+
+    // &--active,
+    // &:hover {
+    // background-color: var(--color-primary);
+    // }
+  }
+
+  &__item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.3rem;
+    height: 100%;
+    background-color: var(--color-primary);
+    // border: 3px solid transparent;
+
+    transform: scaleY(0);
+    // transform-origin: bottom;
+    transition:
+      transform 0.2s,
+      width 0.4s 0.2s cubic-bezier(1, 0, 0, 1),
+      background-color 0.1s,
+      border 1s 1s;
+
+    // temp
+    // width: 10rem;
+    // left: 50%;
+  }
+
+  &__item:hover::before,
+  &__item--active::before {
+    transform: scaleY(1);
+    width: 100%;
+    // border: 3px solid yellow;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
   }
 
   &__link:link,
   &__link:visited {
+    // To bring the link element on top we need these 2 properties!
+    position: relative;
+    z-index: 1;
+
     padding: 1.5rem 3rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -200,4 +241,18 @@
   color: var(--color-gray-light-4);
   padding: 2.5rem;
   text-align: center;
+}
+
+.gallery {
+  display: flex;
+
+  &__item {
+    // flex: 1;
+    /*  */
+  }
+
+  &__photo {
+    width: 100%;
+    display: block;
+  }
 }
