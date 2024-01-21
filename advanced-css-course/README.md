@@ -978,10 +978,11 @@ My usage cases
 ## Visual Studio Code Shortcuts
 
 TODO: Add `anchor` shortcuts
-TODO: Add `shift+esc` shortcut
 
 |     **Shortcut**      |                          **Description**                          |
 | :-------------------: | :---------------------------------------------------------------: |
+|      `shift+esc`      |                    Exit multiple cursors mode                     |
+|          ---          |                                                                   |
 |    `shift+ctrl+k`     |                            Remove line                            |
 |          ---          |                                                                   |
 |    `shift+ctrl+up`    |                  Select before and above cursor                   |
@@ -995,6 +996,9 @@ TODO: Add `shift+esc` shortcut
 |          ---          |                                                                   |
 |    `shift+alt+up`     |  Duplicate current line to the top (duplicates empty lines too)   |
 |   `shift+alt+down`    | Duplicate current line to the bottom (duplicates empty lines too) |
+|          ---          |                                                                   |
+|   `shift+alt+right`   |                         Expand selection                          |
+|   `shift+alt+left`    |                         Shrink selection                          |
 |          ---          |                                                                   |
 |     `ctrl+alt+up`     |                         Add cursor above                          |
 |    `ctrl+alt+down`    |                         Add cursor below                          |
