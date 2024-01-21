@@ -9,7 +9,9 @@ body {
   background-color: var(--color-gray-light-1);
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
-  min-height: 50rem;
+
+  //temp!
+  // min-height: 50rem;
 
   // If parent is Flex container
   // width: 120rem;
@@ -43,9 +45,10 @@ body {
 }
 
 .hotel-view {
-  // height: 10rem;
   background-color: aquamarine;
   // flex-grow: 5.5;
+
+  // To have it grow at the start as it has no content!
   flex: 1;
 
   // temp
