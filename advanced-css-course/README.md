@@ -230,6 +230,34 @@ You may have to **use the prefix `-webkit-`** for some browsers!
 }
 ```
 
+### [`mask-image`](https://developer.mozilla.org/en-US/docs/Web/CSS/mask-image)
+
+The `mask-image` CSS property sets the image that is used as mask layer for an element.
+
+```scss
+.list {
+  &__item {
+    // ..
+  }
+
+  &__item::before {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    // Older browsers (no coloring)
+    /* background-image: url(../img/chevron-thin-right.svg); */
+    /* background-size: cover; */
+
+    // Newer browsers
+    background-color: var(--color-primary);
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+}
+```
+
 ### [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline)
 
 The outline CSS shorthand property sets most of the outline properties in a single declaration.
@@ -897,6 +925,10 @@ My usage cases
 }
 ```
 
+## [`z-index` not Working](https://www.positioniseverything.net/z-index-not-working)
+
+When non-positioned elements are not responding to the `z-index`, it is usually because `z-index` only applies to positioned element (i.e., elements with position: absolute, position: relative, position: fixed, or position: sticky).
+
 ## Links
 
 ### Development
@@ -926,6 +958,10 @@ My usage cases
 
 - [Easing Functions](https://easings.net/)
 - [cubic-bezier](https://cubic-bezier.com/)
+
+### HTML
+
+- [HTML Entity Reference by CSS-Tricks](https://css-tricks.com/snippets/html/glyphs/)
 
 ### Design
 
