@@ -925,7 +925,7 @@ My usage cases
 }
 ```
 
-## [`z-index` not Working](https://www.positioniseverything.net/z-index-not-working)
+### [`z-index` not Working](https://www.positioniseverything.net/z-index-not-working)
 
 When non-positioned elements are not responding to the `z-index`, it is usually because `z-index` only applies to positioned element (i.e., elements with position: absolute, position: relative, position: fixed, or position: sticky).
 

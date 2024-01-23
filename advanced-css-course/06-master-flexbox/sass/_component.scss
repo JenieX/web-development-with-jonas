@@ -515,3 +515,193 @@
     font-weight: 300;
   }
 }
+
+.cta {
+  // background-color: crimson;
+  padding: 3.5rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  gap: 2.5rem;
+
+  &__book-now {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+}
+
+// Attempt #1
+.btn-x {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+
+  // Needed somehow to enable translate on --hidden
+  display: flex;
+
+  overflow: hidden;
+
+  &__text {
+    transition: all 0.3s;
+
+    &--visible {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &--hidden {
+      // opacity: 0.2;
+      // transform: translate(-50%, -50%);
+      transform: translateY(-4.5rem);
+    }
+  }
+
+  // &:hover &__text--hidden {
+  // transform: translateY(0);
+  // }
+
+  &:hover {
+    .btn__text--hidden {
+      transform: translateY(0);
+    }
+
+    .btn__text--visible {
+      transform: translateX(-50%) translateY(calc(-50% + 4.5rem));
+    }
+  }
+}
+
+// Attempt #2 (not as good as the first)
+.btn-x2 {
+  width: 26rem;
+  height: 6rem;
+
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &__text {
+    transition: all 0.3s;
+    position: absolute;
+
+    &--visible {
+      top: 0;
+      left: 0;
+      transform: translateX(calc(-50% + 13rem)) translateY(calc(-50% + 3rem));
+    }
+
+    &--hidden {
+      top: 0;
+      left: 0;
+      transform: translateX(calc(-50% + 13rem)) translateY(calc(-50% + -3rem));
+    }
+  }
+
+  &:hover {
+    .btn__text--hidden {
+      transform: translateX(calc(-50% + 13rem)) translateY(calc(-50% + 3rem));
+    }
+
+    .btn__text--visible {
+      transform: translateX(calc(-50% + 13rem)) translateY(9rem);
+    }
+  }
+}
+
+// Attempt #3 (not as good as the first)
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  // background-color: transparent;
+  color: #000;
+  // padding: 1.5rem 2.5rem;
+  position: relative;
+
+  // Needed somehow to enable translate on --hidden
+  // display: flex;
+
+  // overflow: hidden;
+
+  &::after,
+  &__text {
+    background-color: var(--color-primary);
+    padding: 1.5rem 2.5rem;
+    transition: all 0.3s;
+  }
+
+  &::after {
+    content: 'Book now';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(220, 20, 60, 0.56);
+
+    transform: translateY(-100%);
+    width: -webkit-fill-available;
+  }
+
+  &__text {
+    display: block;
+    background-color: rgba(0, 255, 255, 0.568);
+
+    transition: all 0.3s;
+
+    &--visible {
+      display: none;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translateX(-50%) translateY(-50%);
+    }
+
+    &--hidden {
+      // opacity: 0.2;
+      // transform: translate(-50%, -50%);
+      // transform: translateY(-4.5rem);
+    }
+  }
+
+  // &:hover &__text--hidden {
+  // transform: translateY(0);
+  // }
+
+  &:hover {
+    &:after {
+      transform: translateY(0);
+      /*  */
+    }
+
+    .btn__text--hidden {
+      transform: translateY(100%);
+    }
+
+    .btn__text--visible {
+      // transform: translateX(-50%) translateY(calc(-50% + 4.5rem));
+    }
+  }
+}
