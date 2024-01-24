@@ -126,6 +126,18 @@
 - To create multiple HTML elements at once, type `<elementTag>*<count>`, e.g. `li*5`.
 - To create an element with the content of `hello`, type `<elementTag>{hello}`, e.g. `span{hello}`.
 
+#### `.container>.item.item--$*5{item$}`
+
+```html
+<div class="container">
+  <div class="item item--1">item1</div>
+  <div class="item item--2">item2</div>
+  <div class="item item--3">item3</div>
+  <div class="item item--4">item4</div>
+  <div class="item item--5">item5</div>
+</div>
+```
+
 #### More Examples
 
 - `div.container.grid.grid--2-cols > div.pricing-plan{Pricing $}*2`
