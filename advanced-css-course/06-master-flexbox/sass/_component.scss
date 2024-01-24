@@ -1,6 +1,6 @@
 .logo {
-  // height: 3.25rem;
-  height: 48%;
+  height: 3.25rem;
+  // height: 48%;
   margin-left: 2rem;
 }
 
@@ -14,6 +14,13 @@
   // background-color: crimson;
   // position: relative;
 
+  @media only screen and (max-width: $bp-500px) {
+    order: 2;
+    flex: 0 0 100%;
+    background-color: crimson;
+    // background-color: var(--color-gray-light-2);
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -22,7 +29,7 @@
     border: none;
     padding: 0.7rem 2rem;
     border-radius: 99px;
-    width: 90%;
+    width: 85%;
     // flex: 0 0 90%;
     // flex-shrink: 0;
     // flex-basis: 90%;
@@ -32,10 +39,15 @@
 
     transition: all 0.3s;
 
+    @media only screen and (max-width: $bp-500px) {
+      // width: 100%;
+      border-radius: 0;
+    }
+
     &:focus {
       outline: none;
       // If it wasn't for the default flex shrink, this would probably not work!
-      width: 100%;
+      width: 90%;
       // flex: 1;
       // flex-basis: 100%;
       background-color: var(--color-gray-light-3);
@@ -65,6 +77,10 @@
 
     // He used this with `&__input:focus + &__button` below!
     // background-color: var(--color-gray-light-2);
+
+    @media only screen and (max-width: $bp-500px) {
+      // margin-left: 0;
+    }
 
     &:focus {
       outline: none;
@@ -158,11 +174,24 @@
   // gap: 1rem;
   padding-top: 3.5rem;
 
+  @media only screen and (max-width: $bp-900px) {
+    flex-direction: row;
+    padding-top: 0;
+  }
+
   &__item {
     position: relative;
 
+    @media only screen and (max-width: $bp-900px) {
+      flex: 1;
+    }
+
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media only screen and (max-width: $bp-900px) {
+        margin-bottom: 0;
+      }
     }
 
     // padding: 1.8rem 3rem;
@@ -191,6 +220,10 @@
       background-color 0.1s,
       border 1s 1s;
 
+    @media only screen and (max-width: $bp-900px) {
+      width: 100%;
+    }
+
     // temp
     // width: 10rem;
     // left: 50%;
@@ -218,9 +251,19 @@
     text-transform: uppercase;
     color: var(--color-gray-light-1);
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     gap: 2rem;
+
+    @media only screen and (max-width: $bp-900px) {
+      justify-content: center;
+      padding: 2rem 0;
+    }
+
+    @media only screen and (max-width: $bp-600px) {
+      flex-direction: column;
+      gap: 0.7rem;
+      padding: 1.5rem 0;
+    }
 
     &:hover {
       // color: red;
@@ -232,6 +275,11 @@
     width: 1.75rem;
     height: 1.75rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-600px) {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -241,6 +289,10 @@
   color: var(--color-gray-light-4);
   padding: 2.5rem;
   text-align: center;
+
+  @media only screen and (max-width: $bp-900px) {
+    display: none;
+  }
 }
 
 .gallery {
@@ -272,7 +324,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
-    /*  */
+
+    @media only screen and (max-width: $bp-600px) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -307,12 +363,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media only screen and (max-width: $bp-600px) {
+      padding: 0 1.5rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
     margin-bottom: -3px;
+
+    @media only screen and (max-width: $bp-600px) {
+      font-size: 1.8rem;
+    }
   }
 
   &__rating-count {
@@ -435,7 +499,7 @@
     border: 3px solid #fff;
 
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 }
@@ -447,6 +511,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-900px) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &::before {
     content: '\201C';
@@ -526,6 +595,10 @@
   // justify-content: center;
   gap: 2.5rem;
 
+  @media only screen and (max-width: $bp-900px) {
+    padding: 2rem 0;
+  }
+
   &__book-now {
     font-size: 2rem;
     font-weight: 300;
@@ -534,7 +607,7 @@
 }
 
 // Attempt #1
-.btn-x {
+.btn-at1 {
   font-size: 1.5rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -584,7 +657,7 @@
 }
 
 // Attempt #2 (not as good as the first)
-.btn-x2 {
+.btn-at2 {
   width: 26rem;
   height: 6rem;
 
@@ -628,7 +701,7 @@
 }
 
 // Attempt #3 (not as good as the first)
-.btn {
+.btn-at3 {
   font-size: 1.5rem;
   font-weight: 300;
   text-transform: uppercase;
@@ -702,6 +775,123 @@
 
     .btn__text--visible {
       // transform: translateX(-50%) translateY(calc(-50% + 4.5rem));
+    }
+  }
+}
+
+// Attempt #1 (improved and similar to his) (best solution!)
+// The trick was to have each element define the same height for their parent!
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  // background-color: green;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+
+  &__text {
+    transition: all 0.2s;
+    padding: 2rem 4rem;
+
+    &--visible {
+      // opacity: 0;
+      position: absolute;
+      // background-color: rgba(220, 20, 60, 0.619);
+      width: -webkit-fill-available;
+      // transform: translateY(0);
+    }
+
+    &--hidden {
+      // opacity: 0;
+      // height: 100%;
+      transform: translateY(-100%);
+      // background-color: rgba(0, 255, 255, 0.799);
+    }
+  }
+
+  &:hover {
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+
+    .btn__text--visible {
+      transform: translateY(100%);
+    }
+
+    .btn__text--hidden {
+      transform: translateY(0);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+}
+
+// His solution but with `translate` instead of `top`!
+.btn-his {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  background-color: green;
+  color: #000;
+  position: relative;
+  // overflow: hidden;
+
+  // display: flex;
+
+  &__text {
+    display: inline-block;
+    transition: all 0.3s;
+
+    &--visible {
+      padding: 2rem 7.5rem;
+      // opacity: 0;
+      background-color: rgba(220, 20, 60, 0.619);
+      // width: -webkit-fill-available;
+      // transform: translateY(0);
+    }
+
+    &--hidden {
+      padding: 2rem 0;
+
+      position: absolute;
+      // height: 100%;
+      width: 100%;
+
+      transform: translateY(-100%);
+      // top: -100%;
+      left: 0;
+
+      // opacity: 0;
+      background-color: rgba(0, 255, 255, 0.799);
+    }
+  }
+
+  &:hover {
+    .btn__text--visible {
+      transform: translateY(100%);
+    }
+
+    .btn__text--hidden {
+      transform: translateY(0);
     }
   }
 }

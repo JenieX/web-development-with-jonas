@@ -16,6 +16,12 @@ body {
   // If parent is Flex container
   // width: 120rem;
   // flex-grow: 1;
+
+  @media only screen and (max-width: $bp-1200px) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -27,10 +33,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media only screen and (max-width: $bp-500px) {
+    flex-wrap: wrap;
+    height: 12rem;
+    align-content: space-around;
+  }
 }
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-900px) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -62,6 +78,15 @@ body {
   display: flex;
   gap: 4.5rem;
   border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-900px) {
+    padding: 3rem;
+    gap: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-600px) {
+    flex-direction: column;
+  }
 }
 
 .description {
@@ -69,6 +94,10 @@ body {
   flex: 0 0 60%;
   box-shadow: var(--shadow-light);
   padding: 3rem;
+
+  @media only screen and (max-width: $bp-900px) {
+    padding: 2rem;
+  }
 }
 
 .user-reviews {

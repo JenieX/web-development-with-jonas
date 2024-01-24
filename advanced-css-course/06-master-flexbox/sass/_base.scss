@@ -17,6 +17,16 @@
   --line: 1px solid var(--color-gray-light-2);
 }
 
+// Because CSS doesn't allow variable for media queries
+// You should use keywords for variable instead of fixed value like `1200px`
+// I will keep these for learning purposes!
+// Good examples: $bp-largest, $bp-large etc..
+$bp-1200px: 75em; // (1200px / 16)
+$bp-1100px: 68.75em;
+$bp-900px: 56.25em;
+$bp-600px: 37.5em;
+$bp-500px: 31.25em;
+
 *,
 *::after,
 *::before {
@@ -26,7 +36,14 @@
 }
 
 html {
+  // 9px / 16px = 0.5625 = 56.25%
+
+  /* font-size: 10px; */
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-1100px) {
+    font-size: 50%; // (8px / 16px)
+  }
 }
 
 body {
