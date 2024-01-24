@@ -463,13 +463,20 @@
     height: 1rem;
 
     // Older browsers (no coloring)
-    /* background-image: url(../img/chevron-thin-right.svg); */
-    /* background-size: cover; */
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
 
     // Newer browsers
-    background-color: var(--color-primary);
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
+    // @supports (--webkit-mask-image: url()) or (mask-image: url()) {
+    @supports (mask-image: url()) {
+      background-color: var(--color-primary);
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+
+      // Disable the old way
+      background-image: none;
+      background-size: auto;
+    }
   }
 }
 
