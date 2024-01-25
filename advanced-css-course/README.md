@@ -952,6 +952,7 @@ When non-positioned elements are not responding to the `z-index`, it is usually 
 - [GRID by Malven Co.](https://grid.malven.co/)
 - [GRID GARDEN](http://cssgridgarden.com/)
 - [An Interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
+- [layoutit-grid](https://grid.layoutit.com/)
 
 - [Can I use?](https://caniuse.com/)
 - [Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)

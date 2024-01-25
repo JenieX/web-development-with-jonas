@@ -27,8 +27,6 @@ The `gap` CSS shorthand property sets the gaps (gutters) between rows and column
 
 Note: this is the only way to set margins between the grid items, as using margin property wouldn't work.
 
----
-
 ## Item Properties
 
 ### [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
@@ -61,13 +59,13 @@ This property is a shorthand for `grid-row-start`, `grid-column-start`, `grid-ro
 
 **Note** : If a negative integer is given, it instead counts in reverse, starting from the end edge of the explicit grid.
 
-If **four values** are specified, `grid-row-start` is set to the first value, `grid-column-start` is set to the second value, `grid-row-end` is set to the third value, and `grid-column-end` is set to the fourth value.
+- If **four values** are specified, `grid-row-start` is set to the first value, `grid-column-start` is set to the second value, `grid-row-end` is set to the third value, and `grid-column-end` is set to the fourth value.
 
-When `grid-column-end` is omitted (**three values** were provided), if `grid-column-start` is a `<custom-ident>`, `grid-column-end` is set to that `<custom-ident>`; otherwise, it is set to `auto`.
+- When `grid-column-end` is omitted (**three values** were provided), if `grid-column-start` is a `<custom-ident>`, `grid-column-end` is set to that `<custom-ident>`; otherwise, it is set to `auto`.
 
-When `grid-row-end` is omitted (**two values** were provided), if `grid-row-start` is a `<custom-ident>`, `grid-row-end` is set to that `<custom-ident>`; otherwise, it is set to `auto`.
+- When `grid-row-end` is omitted (**two values** were provided), if `grid-row-start` is a `<custom-ident>`, `grid-row-end` is set to that `<custom-ident>`; otherwise, it is set to `auto`.
 
-When `grid-column-start` is omitted (**one value** was provided), if `grid-row-start` is a `<custom-ident>`, all four longhands are set to that value. Otherwise, it is set to `auto`.
+- When `grid-column-start` is omitted (**one value** was provided), if `grid-row-start` is a `<custom-ident>`, all four longhands are set to that value. Otherwise, it is set to `auto`.
 
 ```css
 /* grid-row-start: 2; */
@@ -89,8 +87,6 @@ grid-column: 3;
 /* Even shorter */
 grid-area: 2 / 3;
 ```
-
----
 
 ## Concepts
 
