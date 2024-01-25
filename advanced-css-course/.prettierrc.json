@@ -3,5 +3,13 @@
   "singleAttributePerLine": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "bracketSameLine": false
+  "bracketSameLine": false,
+  "overrides": [
+    {
+      "files": ["./07-grid/playground/naming-lines-2/index.html", "./README.md"],
+      "options": {
+        "printWidth": 150
+      }
+    }
+  ]
 }

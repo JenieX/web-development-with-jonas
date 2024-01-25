@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>naming-lines-1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        background-color: #1f1f1f;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #eee;
+        width: 100rem;
+
+        display: grid;
+        column-gap: 2rem;
+        row-gap: 2rem;
+
+        grid-template-rows: repeat(8, [row-auto-line] 5rem) [row-last-line];
+
+        /* grid-template-columns: repeat(4, 15rem); */
+        grid-template-columns:
+          [col-1st-line col-first-line]
+          15rem
+          [col-2nd-line col-second-line]
+          15rem
+          [col-3rd-line col-third-line]
+          15rem
+          [col-4th-line col-fourth-line]
+          15rem
+          [col-5th-line col-fifth-line col-last-line];
+      }
+
+      .item {
+        font-size: 2.4rem;
+        padding: 1rem;
+        background-color: rgb(0, 193, 227);
+      }
+
+      .item::after {
+        /*  */
+      }
+
+      .item--1 {
+        /* grid-area: 1 / 1 / 2 / -1; */
+        /* grid-area: 1 / col-1st-line / 2 / col-last-line; */
+        grid-area: row-auto-line 1 / col-first-line / row-auto-line 2 / col-last-line;
+      }
+
+      .item--2 {
+        /* grid-area: 2 / 1 / 4 / 2; */
+        /* grid-area: 2 / 1 / 4; */
+        grid-area: row-auto-line 2 / col-1st-line / row-auto-line 4 / col-2nd-line;
+      }
+
+      .item--3 {
+        /* grid-area: 2 / 2 / 4 / 3; */
+        /* grid-area: 2 / 2 / 4; */
+        grid-area: row-auto-line 2 / col-2nd-line / row-auto-line 4 / col-3rd-line;
+      }
+
+      .item--4 {
+        /* grid-area: 2 / 3 / 4 / 4; */
+        /* grid-area: 2 / 3 / 4; */
+        grid-area: row-auto-line 2 / col-3rd-line / row-auto-line 4 / col-fourth-line;
+      }
+
+      .item--5 {
+        /* grid-area: 2 / 4 / 8 / 5; */
+        grid-area: row-auto-line 2 / col-4th-line / row-auto-line 8 / col-last-line;
+      }
+
+      .item--6 {
+        /* grid-area: 4 / 1 / 8 / 4; */
+        grid-area: row-auto-line 4 / col-1st-line / row-auto-line 8 / col-4th-line;
+      }
+
+      .item--7 {
+        /* grid-area: 8 / 1 / 9 / -1; */
+        grid-area: row-auto-line 8 / col-first-line / row-last-line / col-last-line;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">Header</div>
+      <div class="item item--2">Box</div>
+      <div class="item item--3">Box</div>
+      <div class="item item--4">Box</div>
+      <div class="item item--5">Sidebar</div>
+      <div class="item item--6">Main</div>
+      <div class="item item--7">Footer</div>
+    </div>
+  </body>
+</html>

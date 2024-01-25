@@ -112,6 +112,91 @@ In addition to specifying the start and end lines by number, you can specify a s
 grid-area: 2 / 1 / 3 / span 3;
 ```
 
+### [Naming lines](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines#naming_lines)
+
+The lines created in the explicit grid can be named, by adding the name in square brackets before or after the track sizing information. When placing an item, you can then use these names instead of the line number.
+
+<!-- prettier-ignore -->
+```css
+.container {
+  /* grid-template-rows: repeat(8, [row-auto-line] 5rem) [row-last-line]; */
+  grid-template-rows: repeat(8, [start-of-row-number] 5rem [end-of-row-number]) [row-last-line];
+
+  /* grid-template-columns: repeat(4, 15rem); */
+  grid-template-columns:
+    [col-1st-line col-first-line]
+    15rem
+    [col-2nd-line col-second-line]
+    15rem
+    [col-3rd-line col-third-line]
+    15rem
+    [col-4th-line col-fourth-line]
+    15rem
+    [col-5th-line col-fifth-line col-last-line];
+}
+
+.item--1 {
+  /* grid-area: 1 / 1 / 2 / -1; */
+  /* grid-area: 1 / col-1st-line / 2 / col-last-line; */
+
+  /* grid-area: row-auto-line 1 / col-first-line / row-auto-line 2 / col-last-line; */
+
+  grid-area: start-of-row-number 1 / col-first-line / end-of-row-number 1 / col-last-line;
+}
+
+.item--2 {
+  /* grid-area: 2 / 1 / 4 / 2; */
+  /* grid-area: 2 / 1 / 4; */
+
+  /* grid-area: row-auto-line 2 / col-1st-line / row-auto-line 4 / col-2nd-line; */
+
+  grid-area: start-of-row-number 2 / col-1st-line / end-of-row-number 3 / col-2nd-line;
+}
+
+.item--3 {
+  /* grid-area: 2 / 2 / 4 / 3; */
+  /* grid-area: 2 / 2 / 4; */
+
+  /* grid-area: row-auto-line 2 / col-2nd-line / row-auto-line 4 / col-3rd-line; */
+
+  grid-area: start-of-row-number 2 / col-2nd-line / end-of-row-number 3 / col-3rd-line;
+}
+
+.item--4 {
+  /* grid-area: 2 / 3 / 4 / 4; */
+  /* grid-area: 2 / 3 / 4; */
+
+  /* grid-area: row-auto-line 2 / col-3rd-line / row-auto-line 4 / col-fourth-line; */
+
+  grid-area: start-of-row-number 2 / col-3rd-line / end-of-row-number 3 / col-fourth-line;
+}
+
+.item--5 {
+  /* grid-area: 2 / 4 / 8 / 5; */
+
+  /* grid-area: row-auto-line 2 / col-4th-line / row-auto-line 8 / col-last-line; */
+
+  grid-area: start-of-row-number 2 / col-4th-line / end-of-row-number 7 / col-last-line;
+}
+
+.item--6 {
+  /* grid-area: 4 / 1 / 8 / 4; */
+
+  /* grid-area: row-auto-line 4 / col-1st-line / row-auto-line 8 / col-4th-line; */
+
+  grid-area: start-of-row-number 4 / col-1st-line / end-of-row-number 7 / col-4th-line;
+}
+
+.item--7 {
+  /* grid-area: 8 / 1 / 9 / -1; */
+
+  /* grid-area: row-auto-line 8 / col-first-line / row-last-line / col-last-line; */
+
+  /* grid-area: start-of-row-number 8 / col-first-line / row-last-line / col-last-line; */
+  grid-area: start-of-row-number 8 / col-first-line / end-of-row-number 8 / col-last-line;
+}
+```
+
 ## Functions
 
 ### [`repeat()`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat)
