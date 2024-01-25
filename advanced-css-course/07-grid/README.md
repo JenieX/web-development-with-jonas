@@ -27,6 +27,66 @@ The `gap` CSS shorthand property sets the gaps (gutters) between rows and column
 
 Note: this is the only way to set margins between the grid items, as using margin property wouldn't work.
 
+### [`grid-template-areas`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas)
+
+The `grid-template-areas` CSS property specifies named grid areas, establishing the cells in the grid and assigning them names.
+
+Note: Should be used for small layouts.
+
+```css
+/* Same example as "naming-lines" below */
+
+.container {
+  grid-template-rows: repeat(8, 5rem);
+  grid-template-columns: repeat(4, 15rem);
+
+  grid-template-areas:
+    'head head head head'
+    'bx-1 bx-2 bx-3 side'
+    'bx-1 bx-2 bx-3 side'
+    'main main main side'
+    'main main main side'
+    'main main main side'
+    'main main main side'
+    'foot foot foot foot';
+}
+
+.item--1 {
+  /* grid-area: 1 / 1 / 2 / -1; */
+  grid-area: head;
+}
+
+.item--2 {
+  /* grid-area: 2 / 1 / 4 / 2; */
+  grid-area: bx-1;
+}
+
+.item--3 {
+  /* grid-area: 2 / 2 / 4 / 3; */
+  grid-area: bx-2;
+}
+
+.item--4 {
+  /* grid-area: 2 / 3 / 4 / 4; */
+  grid-area: bx-3;
+}
+
+.item--5 {
+  /* grid-area: 2 / 4 / 8 / 5; */
+  grid-area: side;
+}
+
+.item--6 {
+  /* grid-area: 4 / 1 / 8 / 4; */
+  grid-area: main;
+}
+
+.item--7 {
+  /* grid-area: 8 / 1 / 9 / -1; */
+  grid-area: foot;
+}
+```
+
 ## Item Properties
 
 ### [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
@@ -114,10 +174,16 @@ grid-area: 2 / 1 / 3 / span 3;
 
 ### [Naming lines](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Lines#naming_lines)
 
-The lines created in the explicit grid can be named, by adding the name in square brackets before or after the track sizing information. When placing an item, you can then use these names instead of the line number.
+The lines created in the explicit grid can be named, by adding the name in square brackets before or after the track sizing information. When placing an item, you can then use these names instead of the line number. A line may have multiple names, e.g. `[col-5th-line col-fifth-line col-last-line]` .
+
+[Naming lines with `repeat()`](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_using_named_grid_lines#multiple_lines_with_the_same_name_with_repeat)
+
+Note: Should be used for very large layouts.
 
 <!-- prettier-ignore -->
 ```css
+/* Same example as "naming area" above */
+
 .container {
   /* grid-template-rows: repeat(8, [row-auto-line] 5rem) [row-last-line]; */
   grid-template-rows: repeat(8, [start-of-row-number] 5rem [end-of-row-number]) [row-last-line];

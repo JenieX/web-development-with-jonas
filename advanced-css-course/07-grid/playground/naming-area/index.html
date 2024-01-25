@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>naming-area</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        background-color: #1f1f1f;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        font-family: sans-serif;
+        background-color: #eee;
+        width: 100rem;
+
+        display: grid;
+        column-gap: 2rem;
+        row-gap: 2rem;
+
+        grid-template-rows: repeat(8, 5rem);
+        grid-template-columns: repeat(4, 15rem);
+
+        grid-template-areas:
+          'head head head head'
+          'bx-1 bx-2 bx-3 side'
+          'bx-1 bx-2 bx-3 side'
+          'main main main side'
+          'main main main side'
+          'main main main side'
+          'main main main side'
+          'foot foot foot foot';
+      }
+
+      .item {
+        font-size: 2.4rem;
+        padding: 1rem;
+        background-color: rgb(0, 193, 227);
+      }
+
+      .item::after {
+        /*  */
+      }
+
+      .item--1 {
+        /* grid-area: 1 / 1 / 2 / -1; */
+        grid-area: head;
+      }
+
+      .item--2 {
+        /* grid-area: 2 / 1 / 4 / 2; */
+        grid-area: bx-1;
+      }
+
+      .item--3 {
+        /* grid-area: 2 / 2 / 4 / 3; */
+        grid-area: bx-2;
+      }
+
+      .item--4 {
+        /* grid-area: 2 / 3 / 4 / 4; */
+        grid-area: bx-3;
+      }
+
+      .item--5 {
+        /* grid-area: 2 / 4 / 8 / 5; */
+        grid-area: side;
+      }
+
+      .item--6 {
+        /* grid-area: 4 / 1 / 8 / 4; */
+        grid-area: main;
+      }
+
+      .item--7 {
+        /* grid-area: 8 / 1 / 9 / -1; */
+        grid-area: foot;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">Header</div>
+      <div class="item item--2">Box</div>
+      <div class="item item--3">Box</div>
+      <div class="item item--4">Box</div>
+      <div class="item item--5">Sidebar</div>
+      <div class="item item--6">Main</div>
+      <div class="item item--7">Footer</div>
+    </div>
+  </body>
+</html>
