@@ -87,6 +87,44 @@ Note: Should be used for small layouts.
 }
 ```
 
+### [`grid-auto-rows`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows)
+
+The `grid-auto-rows` CSS property specifies the size of an implicitly-created grid row track or pattern of tracks.
+
+### [`grid-auto-columns`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns)
+
+The `grid-auto-columns` CSS property specifies the size of an implicitly-created grid column track or pattern of tracks.
+
+### [`grid-auto-flow`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow)
+
+The `grid-auto-flow` CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
+
+### [`justify-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
+
+The CSS `justify-items` property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis. It aligns the items inside their grid areas on the inline axis.
+
+Value: `stretch` (default) | `start` | `end` | `center`
+
+### [`align-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
+
+The CSS align-items property sets the `align-self` value on all direct children as a group. In Flexbox, it controls the alignment of items on the Cross Axis. In Grid Layout, it controls the alignment of items on the Block Axis within their grid area.
+
+Value: `stretch` (default) | `start` | `end` | `center`
+
+### [`justify-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content) and [`align-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-content)
+
+#### `justify-content`
+
+defines how the browser distributes space between and around content items along the **inline axis** of a grid container.
+
+#### `align-content`
+
+sets the distribution of space between and around content items along a grid's **block axis**.
+
+These two properties only apply if the container is larger than the grid.
+
+Value: `start` (default) | `end` | `center` | `space-around` | `space-between` | `space-evenly`
+
 ## Item Properties
 
 ### [`grid-row`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row)
@@ -147,6 +185,14 @@ grid-column: 3;
 /* Even shorter */
 grid-area: 2 / 3;
 ```
+
+### [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
+
+The `align-self` CSS property overrides a grid or flex item's align-items value. In Grid, it aligns the item inside the grid area on the Block Axis. In Flexbox, it aligns the item on the cross axis.
+
+### [`justify-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self)
+
+The CSS `justify-self` property sets the way a box is justified inside its alignment container along the appropriate axis. In grid layouts, it aligns an item inside its grid area on the inline axis.
 
 ## Concepts
 
@@ -262,6 +308,13 @@ Note: Should be used for very large layouts.
   grid-area: start-of-row-number 8 / col-first-line / end-of-row-number 8 / col-last-line;
 }
 ```
+
+### [Implicit and Explicit Grids](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids#implicit_and_explicit_grids)
+
+- Explicit grid: is created using grid-template-columns or grid-template-rows.
+- Implicit grid: extends the defined explicit grid when content is placed outside of that grid, such as into the rows by drawing additional grid lines.
+
+By default, tracks created in the implicit grid are auto sized, which in general means that they're large enough to contain their content.
 
 ## Functions
 

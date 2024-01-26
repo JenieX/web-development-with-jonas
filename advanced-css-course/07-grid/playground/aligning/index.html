@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>naming-area</title>
+    <title>aligning</title>
     <style>
       * {
         margin: 0;
@@ -18,6 +18,7 @@
 
       body {
         box-sizing: border-box;
+        height: 100vh;
         background-color: #1f1f1f;
 
         display: flex;
@@ -28,29 +29,34 @@
       .container {
         font-family: sans-serif;
         background-color: #eee;
-        width: 100rem;
+        width: 85vw;
+        height: 85vh;
 
         display: grid;
-        column-gap: 2rem;
-        row-gap: 2rem;
+        /* column-gap: 2rem; */
+        /* row-gap: 2rem; */
 
-        grid-template-rows: repeat(8, 5rem);
-        grid-template-columns: repeat(4, 15rem);
+        grid-template-rows: repeat(3, 5rem);
+        grid-template-columns: repeat(3, 15rem);
 
         grid-template-areas:
-          'head head head head'
-          'bx-1 bx-2 bx-3 side'
-          'bx-1 bx-2 bx-3 side'
-          'main main main side'
-          'main main main side'
-          'main main main side'
-          'main main main side'
-          'foot foot foot foot';
+          'head head head'
+          'bx-1 bx-2 bx-3'
+          'bx-1 bx-2 bx-3';
+
+        /* align-items: center; */
+        /* justify-items: center; */
+
+        /* justify-content: center; */
+        /* align-content: center; */
+
+        justify-content: space-evenly;
+        align-content: space-evenly;
       }
 
       .item {
         font-size: 2.4rem;
-        padding: 1rem;
+        /* padding: 1rem; */
         background-color: rgb(0, 193, 227);
       }
 
@@ -59,52 +65,31 @@
       }
 
       .item--1 {
-        /* grid-area: 1 / 1 / 2 / -1; */
-
         grid-area: head;
-        /* grid-area: head-start / head-start / head-end / head-end; */
       }
 
       .item--2 {
-        /* grid-area: 2 / 1 / 4 / 2; */
-
         grid-area: bx-1;
-        /* grid-area: bx-1-start / bx-1-start / bx-1-end / bx-1-end; */
       }
 
       .item--3 {
-        /* grid-area: 2 / 2 / 4 / 3; */
-
         grid-area: bx-2;
-        /* grid-area: bx-2-start / bx-2-start / bx-2-end / bx-2-end; */
       }
 
       .item--4 {
-        /* grid-area: 2 / 3 / 4 / 4; */
-
         grid-area: bx-3;
-        /* grid-area: bx-3-start / bx-3-start / bx-3-end / bx-3-end; */
       }
 
       .item--5 {
-        /* grid-area: 2 / 4 / 8 / 5; */
-
         grid-area: side;
-        /* grid-area: side-start / side-start / side-end / side-end; */
       }
 
       .item--6 {
-        /* grid-area: 4 / 1 / 8 / 4; */
-
         grid-area: main;
-        /* grid-area: main-start / main-start / main-end / main-end; */
       }
 
       .item--7 {
-        /* grid-area: 8 / 1 / 9 / -1; */
-
         grid-area: foot;
-        /* grid-area: foot-start / foot-start / foot-end / foot-end; */
       }
     </style>
   </head>
@@ -114,9 +99,9 @@
       <div class="item item--2">Box</div>
       <div class="item item--3">Box</div>
       <div class="item item--4">Box</div>
-      <div class="item item--5">Sidebar</div>
+      <!-- <div class="item item--5">Sidebar</div>
       <div class="item item--6">Main</div>
-      <div class="item item--7">Footer</div>
+      <div class="item item--7">Footer</div> -->
     </div>
   </body>
 </html>

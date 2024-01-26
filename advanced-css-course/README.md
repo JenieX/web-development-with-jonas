@@ -219,11 +219,7 @@ You may have to **use the prefix `-webkit-`** for some browsers!
 
   // The trick properties
   display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -283,11 +279,7 @@ The background-blend-mode CSS property sets how an element's background images s
     background-blend-mode: color;
 
     &--1 {
-      background-image: linear-gradient(
-          to right bottom,
-          $color-secondary-light,
-          $color-secondary-dark
-        ), url(../img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
     }
   }
 }
@@ -455,56 +447,26 @@ By adding more color-stop points on the gradient line, you can create a highly c
   // 2 colors
   background-image: linear-gradient(to right, rgb(255, 255, 0), rgb(0, 0, 0));
 
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 0) 0%,
-    rgb(0, 0, 0) 100%
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 0) 0%, rgb(0, 0, 0) 100%);
 
   // ------------------------
 
   // 3 colors
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 0),
-    rgb(0, 0, 0),
-    rgb(255, 0, 0)
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 0), rgb(0, 0, 0), rgb(255, 0, 0));
 
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 0) 0%,
-    rgb(0, 0, 0) 50%,
-    rgb(255, 0, 0) 100%
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 0) 0%, rgb(0, 0, 0) 50%, rgb(255, 0, 0) 100%);
 
   // ------------------------
 
   // 4 colors
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 0),
-    rgb(0, 0, 0),
-    rgb(255, 0, 0),
-    rgb(0, 0, 255)
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 0), rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 0, 255));
 
-  background-image: linear-gradient(
-    to right,
-    rgb(255, 255, 0) 0%,
-    rgb(0, 0, 0) 33.33%,
-    rgb(255, 0, 0) 66.66%,
-    rgb(0, 0, 255) 100%
-  );
+  background-image: linear-gradient(to right, rgb(255, 255, 0) 0%, rgb(0, 0, 0) 33.33%, rgb(255, 0, 0) 66.66%, rgb(0, 0, 255) 100%);
 }
 
 // My usage case
 .book {
-  background-image: linear-gradient(
-      105deg,
-      rgba($color-white, 0.8) 50%,
-      transparent 50%
-    ), url(../img/nat-10.jpg);
+  background-image: linear-gradient(105deg, rgba($color-white, 0.8) 50%, transparent 50%), url(../img/nat-10.jpg);
 }
 ```
 
@@ -760,32 +722,16 @@ Common use cases for `<picture>` :
   <source
     title="XA1 Ultra (2x or maybe 3x!)"
     media="(min-width: 480px)"
-    srcset="
-      ./img/logo-green-2x.png 2x,
-      ./img/logo-green-3x.png 3x,
-      ./img/logo-green-4x.png 4x
-    "
+    srcset="./img/logo-green-2x.png 2x, ./img/logo-green-3x.png 3x, ./img/logo-green-4x.png 4x"
   />
 
   <source
     title="XZ Premium (4x)"
     media="(min-width: 455px)"
-    srcset="
-      ./img/logo-green-2x.png 2x,
-      ./img/logo-green-3x.png 3x,
-      ./img/logo-green-4x.png 4x
-    "
+    srcset="./img/logo-green-2x.png 2x, ./img/logo-green-3x.png 3x, ./img/logo-green-4x.png 4x"
   />
 
-  <source
-    title="XZ (3x)"
-    media="(min-width: 424px)"
-    srcset="
-      ./img/logo-green-2x.png 2x,
-      ./img/logo-green-3x.png 3x,
-      ./img/logo-green-4x.png 4x
-    "
-  />
+  <source title="XZ (3x)" media="(min-width: 424px)" srcset="./img/logo-green-2x.png 2x, ./img/logo-green-3x.png 3x, ./img/logo-green-4x.png 4x" />
 
   <img src="./img/default.png" alt="Website logo" />
 </picture>
@@ -793,18 +739,10 @@ Common use cases for `<picture>` :
 <!-- Example #2 -->
 <!-- <img src="./img/logo-green-2x.png" alt="Website big logo" class="footer__logo" /> -->
 <picture class="footer__logo">
-  <source
-    media="(max-width: 37.5em)"
-    srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x"
-  />
+  <source media="(max-width: 37.5em)" srcset="./img/logo-green-small-1x.png 1x, ./img/logo-green-small-2x.png 2x" />
 
   <!-- <img src="./img/logo-green-1x.png" alt="Website big logo" class="footer__logo" /> -->
-  <img
-    src="./img/logo-green-1x.png"
-    srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
-    alt="Website big logo"
-    class="footer__logo"
-  />
+  <img src="./img/logo-green-1x.png" srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x" alt="Website big logo" class="footer__logo" />
 </picture>
 ```
 
@@ -1011,6 +949,8 @@ When non-positioned elements are not responding to the `z-index`, it is usually 
 ## Chrome Devtools
 
 - [Enable 'Show user agent shadow DOM'](https://stackoverflow.com/questions/26852922/inspect-webkit-input-placeholder-with-developer-tools) to allow for more inspection. E.g. `input::-webkit-input-placeholder`.
+
+- You can access the CSS Grid areas name in both Chrome and Firefox from the Layout panel. [Read more](https://umaar.com/dev-tips/237-css-grid-inspecting/).
 
 ## Visual Studio Code Shortcuts
 
