@@ -330,19 +330,19 @@ By default, tracks created in the implicit grid are auto sized, which in general
 
 ### `max-content`, `min-content`, and `minmax(min, max)`
 
-These keyword are can be used for `grid-template-rows` and `grid-template-columns`.
+These keywords can be used for `grid-template-rows` and `grid-template-columns`.
 
-#### [`max-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content)
+#### [`max-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows#syntax)
 
 Is a keyword representing the largest maximal content contribution of the grid items occupying the grid track.
 
-#### [`min-content`]()
+#### [`min-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows#syntax)
 
 Is a keyword representing the largest minimal content contribution of the grid items occupying the grid track.
 
-#### [`minmax(min, max)`]()
+#### [`minmax(min, max)`](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows#syntax)
 
-Is a functional notation that defines a size range, greater than or equal to min, and less than or equal to max. If max is smaller than min, then max is ignored and the function is treated as min. As a maximum, a <flex> value sets the track's flex factor. It is invalid as a minimum.
+Is a functional notation that defines a size range, greater than or equal to min, and less than or equal to max. If max is smaller than min, then max is ignored and the function is treated as min.
 
 ## Functions
 
@@ -353,6 +353,16 @@ The `repeat()` CSS function represents a repeated fragment of the track list, al
 ```css
 grid-template-columns: repeat(3, 15rem);
 ```
+
+#### Value
+
+##### [`auto-fill`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fill)
+
+If the grid container has a definite or maximal size in the relevant axis, then the number of repetitions is the largest possible positive integer that does not cause the grid to overflow its grid container.
+
+##### [`auto-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#auto-fit)
+
+Behaves the same as auto-fill, except that after placing the grid items any empty repeated tracks are collapsed.
 
 ## Tips
 
