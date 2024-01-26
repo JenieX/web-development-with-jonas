@@ -99,6 +99,12 @@ The `grid-auto-columns` CSS property specifies the size of an implicitly-created
 
 The `grid-auto-flow` CSS property controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid.
 
+Value: `row` | `column` | `dense`
+
+"dense" packing algorithm attempts to fill in holes earlier in the grid, if smaller items come up later. This may cause items to appear out-of-order, when doing so would fill in holes left by larger items.
+
+If it is omitted, a "sparse" algorithm is used, where the placement algorithm only ever moves "forward" in the grid when placing items, never backtracking to fill holes. This ensures that all of the auto-placed items appear "in order", even if this leaves holes that could have been filled by later items.
+
 ### [`justify-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items)
 
 The CSS `justify-items` property defines the default `justify-self` for all items of the box, giving them all a default way of justifying each box along the appropriate axis. It aligns the items inside their grid areas on the inline axis.
@@ -115,11 +121,11 @@ Value: `stretch` (default) | `start` | `end` | `center`
 
 #### `justify-content`
 
-defines how the browser distributes space between and around content items along the **inline axis** of a grid container.
+defines how the browser distributes space between and around content items along the inline axis of a grid container.
 
 #### `align-content`
 
-sets the distribution of space between and around content items along a grid's **block axis**.
+sets the distribution of space between and around content items along a grid's block axis.
 
 These two properties only apply if the container is larger than the grid.
 
@@ -195,6 +201,12 @@ The `align-self` CSS property overrides a grid or flex item's align-items value.
 The CSS `justify-self` property sets the way a box is justified inside its alignment container along the appropriate axis. In grid layouts, it aligns an item inside its grid area on the inline axis.
 
 ## Concepts
+
+### [Grid Tracks](https://developer.mozilla.org/en-US/docs/Glossary/Grid_Tracks)
+
+A grid track is the space between two adjacent grid lines. They are defined in the explicit grid by using the `grid-template-columns` and `grid-template-rows` properties. Tracks are also created in the implicit grid by positioning a grid item outside of the tracks created in the explicit grid.
+
+These tracks are about the space itself and not the grid items, more like how is a grid cell is about the area of the intersection of four grid lines, and not about the grid item.
 
 ### [The `fr` unit](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout#the_fr_unit)
 
@@ -315,6 +327,22 @@ Note: Should be used for very large layouts.
 - Implicit grid: extends the defined explicit grid when content is placed outside of that grid, such as into the rows by drawing additional grid lines.
 
 By default, tracks created in the implicit grid are auto sized, which in general means that they're large enough to contain their content.
+
+### `max-content`, `min-content`, and `minmax(min, max)`
+
+These keyword are can be used for `grid-template-rows` and `grid-template-columns`.
+
+#### [`max-content`](https://developer.mozilla.org/en-US/docs/Web/CSS/max-content)
+
+Is a keyword representing the largest maximal content contribution of the grid items occupying the grid track.
+
+#### [`min-content`]()
+
+Is a keyword representing the largest minimal content contribution of the grid items occupying the grid track.
+
+#### [`minmax(min, max)`]()
+
+Is a functional notation that defines a size range, greater than or equal to min, and less than or equal to max. If max is smaller than min, then max is ignored and the function is treated as min. As a maximum, a <flex> value sets the track's flex factor. It is invalid as a minimum.
 
 ## Functions
 
