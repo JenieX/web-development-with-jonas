@@ -48,10 +48,8 @@ body {
 
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 
-  // Usually our main content width is 1100px - 1200px
-  // We picked 1140px
-  // 1140 / 8 (main-cols) = ~ 14rem
-  grid-template-columns:
+  // Test
+  /* grid-template-columns:
     [sidebar-start]
     8rem
     [sidebar-end full-start]
@@ -60,5 +58,27 @@ body {
     repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
     [center-end]
     1fr
+    [full-end]; */
+
+  // Usually our main content width is 1100px - 1200px
+  // We picked 1140px
+  // 1140 / 8 (main-cols) = ~ 14rem
+  grid-template-columns:
+    [sidebar-start]
+    8rem
+    [sidebar-end full-start]
+    minmax(6rem, 1fr)
+    // 1fr
+    [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr)
+    // 1fr
     [full-end];
+
+  & > * {
+    font-size: 3rem;
+    padding: 3rem;
+    // background-color: transparent !important;
+  }
 }
