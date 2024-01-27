@@ -1,0 +1,64 @@
+// COLOR VARIABLES
+$color-primary: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+
+$color-gray-light-1: #f9f7f6;
+$color-gray-light-2: #aaa;
+
+$color-gray-dark-1: #54483a;
+$color-gray-dark-2: #6d5d4b;
+
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  // 9px / 16px = 0.5625 = 56.25%
+
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: 300;
+  // color: $color-gray-dark-2;
+
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.container {
+  display: grid;
+
+  // The focus is always more on the columns and not the rows.
+  // Sometimes, you may not even need to set fix sizes for the rows!
+  // And we usually don't name the rows lines!
+
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  // Usually our main content width is 1100px - 1200px
+  // We picked 1140px
+  // 1140 / 8 (main-cols) = ~ 14rem
+  grid-template-columns:
+    [sidebar-start]
+    8rem
+    [sidebar-end full-start]
+    1fr
+    [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    1fr
+    [full-end];
+}

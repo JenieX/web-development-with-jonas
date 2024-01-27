@@ -1,6 +1,10 @@
 {
   "name": "advanced-css-course",
   "scripts": {
+    "compile:sass": "sass 08-master-grid/sass/main.scss 08-master-grid/css/style.css",
+    "watch:sass": "npm run compile:sass -- --watch"
+  },
+  "scripts-06": {
     "compile:sass": "sass 06-master-flexbox/sass/main.scss 06-master-flexbox/css/style.css",
     "watch:sass": "npm run compile:sass -- --watch"
   },

@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  /* font-size: 10px; */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] 1fr [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] 1fr [full-end];
+}
+
+.sidebar {
+  background-color: #c69963;
+  grid-area: 1/sidebar-start/-1/sidebar-end;
+}
+
+.header {
+  background-color: aqua;
+  grid-area: 1/full-start/2/col-end 6;
+}
+
+.realtors {
+  background-color: coral;
+  grid-area: 1/col-start 7/2/full-end;
+}
+
+.features {
+  background-color: rgb(127, 80, 255);
+  grid-area: 2/center-start/3/center-end;
+}
+
+.story__pictures {
+  background-color: rgb(255, 80, 185);
+  grid-area: 3/full-start/4/col-end 4;
+}
+
+.story__content {
+  background-color: rgb(130, 255, 80);
+  grid-area: 3/col-end 4/4/full-end;
+}
+
+.homes {
+  background-color: rgb(226, 255, 80);
+  grid-area: 4/center-start/5/center-end;
+}
+
+.gallery {
+  background-color: rgb(255, 16, 16);
+  grid-area: 5/full-start/6/full-end;
+}
+
+.footer {
+  background-color: rgb(104, 176, 167);
+  grid-area: 6/full-start/7/full-end;
+}
+
+/*# sourceMappingURL=style.css.map */

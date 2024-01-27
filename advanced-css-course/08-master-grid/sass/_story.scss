@@ -1,0 +1,20 @@
+// .story {
+//   &__pictures {
+//     background-color: rgb(255, 80, 185);
+//   }
+
+//   &__content {
+//     background-color: rgb(130, 255, 80);
+//   }
+// }
+
+.story__pictures {
+  background-color: rgb(255, 80, 185);
+
+  grid-area: 3 / full-start / 4 / col-end 4;
+}
+
+.story__content {
+  background-color: rgb(130, 255, 80);
+  grid-area: 3 / col-end 4 / 4 / full-end;
+}
