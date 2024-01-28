@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>nexter-layout (broken-in-chrome)</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        /* font-size: 10px; */
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 300;
+        font-size: 1.8rem;
+        color: #000;
+      }
+
+      .container {
+        display: grid;
+
+        /*   
+        The focus is always more on the columns and not the rows.
+        Sometimes, you may not even need to set fix sizes for the rows!
+        And we usually don't name the rows lines! 
+        */
+
+        grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+        /*
+        Usually our main content width is 1100px - 1200px
+        We picked 1140px
+        1140 / 8 (main-cols) = ~ 14rem
+        */
+        grid-template-columns:
+          [sidebar-start]
+          8rem
+          [sidebar-end full-start]
+          1fr
+          [center-start]
+          repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+          [center-end]
+          1fr
+          [full-end];
+      }
+
+      .container > * {
+        font-size: 3rem;
+
+        /* "Top 3 realtors" would cause an issue with the layout in Chrome */
+        padding: 3rem;
+      }
+
+      .sidebar {
+        background-color: #c69963;
+        grid-area: 1 / sidebar-start / -1 / sidebar-end;
+      }
+
+      .header {
+        background-color: aqua;
+        grid-area: 1 / full-start / 2 / col-end 6;
+      }
+
+      .realtors {
+        background-color: coral;
+        grid-area: 1 / col-start 7 / 2 / full-end;
+      }
+
+      .features {
+        background-color: rgb(127, 80, 255);
+        grid-area: 2 / center-start / 3 / center-end;
+      }
+
+      .story__pictures {
+        background-color: rgb(255, 80, 185);
+        grid-area: 3 / full-start / 4 / col-end 4;
+      }
+
+      .story__content {
+        background-color: rgb(130, 255, 80);
+        grid-area: 3 / col-end 4 / 4 / full-end;
+      }
+
+      .homes {
+        background-color: rgb(226, 255, 80);
+        grid-area: 4 / center-start / 5 / center-end;
+      }
+
+      .gallery {
+        background-color: rgb(255, 16, 16);
+        grid-area: 5 / full-start / 6 / full-end;
+      }
+
+      .footer {
+        background-color: rgb(104, 176, 167);
+        grid-area: 6 / full-start / 7 / full-end;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <!-- <div class="sidebar"></div>
+    <header class="header"></header>
+    <div class="realtors"></div>
+    <div class="features"></div>
+    <div class="story__pictures"></div>
+    <div class="story__content"></div>
+    <div class="homes"></div>
+    <div class="gallery"></div>
+    <footer class="footer"></footer> -->
+
+    <div class="sidebar">Side-bar</div>
+    <header class="header">Header</header>
+    <div class="realtors">Top 3</div>
+    <div class="features">Features</div>
+    <div class="story__pictures">Story pictures</div>
+    <div class="story__content">Story content</div>
+    <div class="homes">Homes</div>
+    <div class="gallery">Gallery</div>
+    <footer class="footer">Footer</footer>
+  </body>
+</html>

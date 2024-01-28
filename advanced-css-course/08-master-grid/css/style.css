@@ -16,7 +16,8 @@ body {
   font-family: "Nunito", sans-serif;
   font-weight: 300;
   font-size: 1.8rem;
-  color: #000;
+  line-height: 1.6;
+  color: #6d5d4b;
 }
 
 .container {
@@ -34,9 +35,31 @@ body {
     [full-end]; */
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
-.container > * {
-  font-size: 3rem;
-  padding: 3rem;
+.heading-4, .heading-3, .heading-2, .heading-1 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 400;
+}
+
+.heading-1 {
+  /*  */
+}
+
+.heading-2 {
+  /*  */
+}
+
+.heading-3 {
+  /*  */
+}
+
+.heading-4 {
+  font-size: 1.9rem;
+}
+.heading-4--dark {
+  color: #54483a;
+}
+.heading-4--light {
+  color: #f9f7f6;
 }
 
 .sidebar {
@@ -55,8 +78,38 @@ body {
 }
 
 .features {
-  background-color: rgb(127, 80, 255);
   grid-area: 2/center-start/3/center-end;
+  margin: 15rem 0;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  align-items: start;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  /* grid-template-areas:
+    'icon head'
+    'none text'; */
+  grid-template-areas: "icon head" "icon text";
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+}
+.feature__icon {
+  grid-area: icon;
+  fill: #c69963;
+  width: 4.5rem;
+  height: 4.5rem;
+  transform: translateY(-1rem);
+}
+.feature .heading-4 {
+  grid-area: head;
+}
+.feature__text {
+  grid-area: text;
+  font-size: 1.7rem;
 }
 
 .story__pictures {

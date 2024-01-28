@@ -161,7 +161,7 @@ The `grid-column-end` CSS property specifies a grid item's end position within t
 
 This property is a shorthand for `grid-row-start`, `grid-column-start`, `grid-row-end`, and `grid-column-end`.
 
-**Note** : If a negative integer is given, it instead counts in reverse, starting from the end edge of the explicit grid.
+**Note** : If a negative integer is given, it instead counts in reverse, starting from the end edge of the **explicit** grid.
 
 - If **four values** are specified, `grid-row-start` is set to the first value, `grid-column-start` is set to the second value, `grid-row-end` is set to the third value, and `grid-column-end` is set to the fourth value.
 

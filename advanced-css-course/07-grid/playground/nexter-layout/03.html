@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="./style.css" />
-
-    <title>nexter-layout (broken-in-chrome)</title>
+    <title>nexter-layout (current)</title>
 
     <style>
       *,
@@ -51,19 +49,19 @@
           [sidebar-start]
           8rem
           [sidebar-end full-start]
-          1fr
+          minmax(6rem, 1fr)
           [center-start]
           repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
           [center-end]
-          1fr
+          minmax(6rem, 1fr)
           [full-end];
       }
 
       .container > * {
         font-size: 3rem;
 
-        /* "Top 3 realtors" would cause an issue with the layout */
-        padding: 3rem;
+        /* "Top 3 realtors" would cause an issue with the layout in Chrome */
+        /* padding: 3rem; */
       }
 
       .sidebar {
@@ -111,26 +109,61 @@
         grid-area: 6 / full-start / 7 / full-end;
       }
     </style>
+
+    <style>
+      .features {
+        display: grid;
+        /* grid-template-columns: repeat(3, 1fr); */
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      }
+
+      .feature {
+        /*  */
+      }
+
+      .feature--1 {
+        /*  */
+      }
+
+      .feature--2 {
+        /*  */
+      }
+
+      .feature--3 {
+        /*  */
+      }
+
+      .feature--4 {
+        /*  */
+      }
+
+      .feature--5 {
+        /*  */
+      }
+
+      .feature--6 {
+        /*  */
+      }
+    </style>
   </head>
   <body class="container">
-    <!-- <div class="sidebar"></div>
-    <header class="header"></header>
-    <div class="realtors"></div>
-    <div class="features"></div>
-    <div class="story__pictures"></div>
-    <div class="story__content"></div>
-    <div class="homes"></div>
-    <div class="gallery"></div>
-    <footer class="footer"></footer> -->
-
     <div class="sidebar">Side-bar</div>
     <header class="header">Header</header>
     <div class="realtors">Top 3</div>
-    <div class="features">Features</div>
+
+    <section class="features">
+      <div class="feature feature--1">feature-1</div>
+      <div class="feature feature--2">feature-2</div>
+      <div class="feature feature--3">feature-3</div>
+      <div class="feature feature--4">feature-4</div>
+      <div class="feature feature--5">feature-5</div>
+      <div class="feature feature--6">feature-6</div>
+    </section>
+
     <div class="story__pictures">Story pictures</div>
     <div class="story__content">Story content</div>
-    <div class="homes">Homes</div>
-    <div class="gallery">Gallery</div>
+    <section class="homes">Homes</section>
+    <section class="gallery">Gallery</section>
     <footer class="footer">Footer</footer>
   </body>
 </html>

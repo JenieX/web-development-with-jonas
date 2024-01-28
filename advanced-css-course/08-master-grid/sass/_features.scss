@@ -1,8 +1,49 @@
 .features {
-  background-color: rgb(127, 80, 255);
+  // background-color: rgb(127, 80, 255);
 
   grid-area: 2 / center-start / 3 / center-end;
 
   // To push the element after it down (for easy developing)
   // grid-area: auto / center-start / auto / center-end;
+
+  margin: 15rem 0;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 6rem;
+  align-items: start;
+}
+
+.feature {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  /* grid-template-areas:
+    'icon head'
+    'none text'; */
+  grid-template-areas:
+    'icon head'
+    'icon text';
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem;
+
+  &__icon {
+    grid-area: icon;
+
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    transform: translateY(-1rem);
+  }
+
+  .heading-4 {
+    // grid-area: 1/ 2 / 2 /3;
+    grid-area: head;
+  }
+
+  &__text {
+    grid-area: text;
+
+    font-size: 1.7rem;
+  }
 }

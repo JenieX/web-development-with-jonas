@@ -33,10 +33,11 @@ html {
 body {
   font-family: $font-primary;
   font-weight: 300;
-  // color: $color-gray-dark-2;
-
   font-size: 1.8rem;
-  color: #000;
+  line-height: 1.6;
+
+  color: $color-gray-dark-2;
+  // color: #000;
 }
 
 .container {
@@ -77,8 +78,8 @@ body {
     [full-end];
 
   & > * {
-    font-size: 3rem;
-    padding: 3rem;
+    // font-size: 3rem;
+    // padding: 3rem;
     // background-color: transparent !important;
   }
 }
