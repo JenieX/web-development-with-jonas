@@ -83,3 +83,25 @@ body {
     // background-color: transparent !important;
   }
 }
+
+// utility classes (for re-usable elements only!)
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-sm {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-md {
+  margin-bottom: 3rem !important;
+}
+
+.u-margin-bottom-lg {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-hg {
+  margin-bottom: 8rem !important;
+}

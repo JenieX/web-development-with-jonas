@@ -35,6 +35,26 @@ body {
     [full-end]; */
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
 }
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-margin-bottom-sm {
+  margin-bottom: 2rem !important;
+}
+
+.u-margin-bottom-md {
+  margin-bottom: 3rem !important;
+}
+
+.u-margin-bottom-lg {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-hg {
+  margin-bottom: 8rem !important;
+}
+
 .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -45,11 +65,21 @@ body {
 }
 
 .heading-2 {
-  /*  */
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1;
+}
+.heading-2--dark {
+  color: #54483a;
+}
+.heading-2--light {
+  color: #f9f7f6;
 }
 
 .heading-3 {
-  /*  */
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #c69963;
 }
 
 .heading-4 {
@@ -60,6 +90,22 @@ body {
 }
 .heading-4--light {
   color: #f9f7f6;
+}
+
+.btn {
+  background-color: #c69963;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 1.8rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn:hover {
+  background-color: #b28451;
 }
 
 .sidebar {
@@ -116,10 +162,17 @@ body {
   background-color: rgb(255, 80, 185);
   grid-area: 3/full-start/4/col-end 4;
 }
-
 .story__content {
-  background-color: rgb(130, 255, 80);
   grid-area: 3/col-end 4/4/full-end;
+  padding: 6rem 12rem;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+}
+.story__text {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 4rem;
 }
 
 .homes {
