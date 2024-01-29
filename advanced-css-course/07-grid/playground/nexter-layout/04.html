@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>nexter-layout (current)</title>
+    <title>nexter-layout (card overlapping)</title>
 
     <style>
       *,
@@ -108,9 +108,82 @@
         background-color: rgb(104, 176, 167);
         grid-area: 6 / full-start / 7 / full-end;
       }
+
+      .btn {
+        background-color: #c69963;
+        color: #fff;
+        border: none;
+        border-radius: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: 1.8rem 3rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn:hover {
+        background-color: #b28451;
+      }
     </style>
 
-    <style></style>
+    <style>
+      .homes {
+        background-color: transparent;
+        grid-area: 4 / center-start/5/center-end;
+        margin: 15rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 7rem;
+      }
+
+      .home {
+        background-color: #f9f7f6;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .home__img {
+        z-index: 1;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+
+        width: 100%;
+      }
+
+      .home__like {
+        z-index: 2;
+        grid-row: 1/2;
+        grid-column: 2/3;
+
+        height: 2.5rem;
+        width: 2.5rem;
+
+        fill: #c69963;
+        justify-self: end;
+        margin: 1rem;
+      }
+
+      .home__name {
+        z-index: 3;
+        grid-row: 1/2;
+        grid-column: 1/-1;
+
+        justify-self: center;
+        align-self: end;
+        width: 80%;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 1.25rem;
+        background-color: #101d2c;
+        color: #fff;
+        /* transform: translateY(50%); */
+      }
+
+      .home__btn {
+        padding: 3rem;
+        grid-column: 1/-1;
+      }
+    </style>
   </head>
   <body class="container">
     <div class="sidebar">Side-bar</div>
@@ -122,7 +195,27 @@
     <div class="story__pictures">Story pictures</div>
     <div class="story__content">Story content</div>
 
-    <section class="homes">Homes</section>
+    <section class="homes">
+      <div class="home">
+        <img
+          src="../../../08-master-grid//img/house-2.jpeg"
+          alt="House 2"
+          class="home__img"
+        />
+        <svg class="home__like">
+          <use
+            xlink:href="../../../08-master-grid//img/sprite.svg#icon-heart-full"
+          ></use>
+        </svg>
+        <h5 class="home__name">Modern Glass Villa</h5>
+
+        <button class="btn home__btn">Contact realtor</button>
+      </div>
+
+      <div class="home"></div>
+      <div class="home"></div>
+    </section>
+
     <section class="gallery">Gallery</section>
     <footer class="footer">Footer</footer>
   </body>
