@@ -3,25 +3,65 @@
     background-color: rgb(255, 80, 185);
 
     grid-area: 3 / full-start / 4 / col-end 4;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    align-items: center;
+
+    background-image: linear-gradient(
+        rgba($color-primary, 0.5),
+        rgba($color-primary, 0.5)
+      ),
+      url(../img/back.jpg);
+    background-size: cover;
+  }
+
+  &__img {
+    // If the image is wider, use `width`!
+    width: 100%;
+
+    // Important!
+    // If the image is taller use `height`!
+    // height: 100%;
+
+    &--1 {
+      /* display: none; */
+      grid-area: 2 / 2 / 6 / 6;
+      box-shadow: 0 2rem 5rem rgba(#000, 0.1);
+    }
+
+    &--2 {
+      /* display: none; */
+      width: 115%;
+      grid-area: 4 / 4 / 6 / 7;
+      box-shadow: 0 2rem 5rem rgba(#000, 0.2);
+
+      // Doesn't seem to be needed now!
+      // Edit: seems to be needed in the playground example!
+      z-index: 9;
+    }
   }
 
   &__content {
-    // background-color: rgb(130, 255, 80);
+    background-color: $color-gray-light-1;
     grid-area: 3 / col-end 4 / 4 / full-end;
-    padding: 6rem 12rem;
+    /* padding: 6rem 12rem; */
+    padding: 6rem 8vw;
 
     // Vertically center content (flex)
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
-    // justify-content: center;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
     // Vertically center content (grid)
-    display: grid;
-    align-content: center;
-    justify-items: start;
+    /* display: grid; */
+    /* align-content: center; */
+    /* justify-items: start; */
 
     // Vertically center content (as grid item)
+    // Edit: not a good solution if there is a background color!
     // align-self: center;
     // padding: 0 12rem;
   }

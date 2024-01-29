@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>nexter-layout (story)</title>
+    <title>nexter-layout (current)</title>
 
     <style>
       *,
@@ -110,42 +110,7 @@
       }
     </style>
 
-    <style>
-      .story__pictures,
-      .story__content {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-template-rows: repeat(6, 1fr);
-      }
-
-      .story__pictures {
-        align-items: center;
-      }
-
-      .story__content {
-        justify-items: center;
-      }
-
-      .story__pictures .story__img--1 {
-        width: 100%;
-      }
-
-      .story__content .story__img--1 {
-        height: 100%;
-      }
-
-      .story__img--1 {
-        /* display: none; */
-        grid-area: 2/2/6/6;
-      }
-
-      .story__img--2 {
-        /* display: none; */
-        width: 115%;
-        grid-area: 4/4/6/7;
-        z-index: 1;
-      }
-    </style>
+    <style></style>
   </head>
   <body class="container">
     <div class="sidebar">Side-bar</div>
@@ -154,27 +119,8 @@
 
     <section class="features">Features</section>
 
-    <!-- <div class="story__pictures">Story pictures</div> -->
-    <div class="story__pictures">
-      <img
-        src="../../../08-master-grid//img/story-1.jpeg"
-        alt="Couple with new house"
-        class="story__img story__img--1"
-      />
-      <img
-        src="../../../08-master-grid//img/story-2.jpeg"
-        alt="New house"
-        class="story__img story__img--2"
-      />
-    </div>
-
-    <!-- <div class="story__content">Story content</div> -->
-    <div class="story__content">
-      <img
-        src="../../../responsive-images/img/black-bird-1500_x_2250.jpg"
-        class="story__img story__img--1"
-      />
-    </div>
+    <div class="story__pictures">Story pictures</div>
+    <div class="story__content">Story content</div>
 
     <section class="homes">Homes</section>
     <section class="gallery">Gallery</section>

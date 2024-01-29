@@ -867,6 +867,10 @@ My usage cases
 
 When non-positioned elements are not responding to the `z-index`, it is usually because `z-index` only applies to positioned element (i.e., elements with position: absolute, position: relative, position: fixed, or position: sticky).
 
+### Possible `align-content` Chrome bug!
+
+In Chrome, the `align-content` seem to be working without setting the `display` property to either `flex` or `grid`!
+
 ## Links
 
 ### Development
