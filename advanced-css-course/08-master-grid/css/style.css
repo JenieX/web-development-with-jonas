@@ -218,17 +218,16 @@ body {
   background-color: #f9f7f6;
   display: grid;
   grid-template-columns: 1fr min-content;
+  align-self: start;
 }
 .home-mine__img {
   grid-row: 1/3;
   width: 100%;
-  /*  */
 }
 .home-mine__icon {
   width: 2rem;
   height: 2rem;
   fill: #c69963;
-  /*  */
 }
 .home-mine__icon--like {
   width: 2.5rem;
@@ -253,14 +252,16 @@ body {
 .home-mine__details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  padding: 2rem 2.5rem 3rem;
-  /*  */
+  row-gap: 3.5rem;
+  margin-top: 0.9rem;
+  margin-bottom: 3.5rem;
 }
 .home-mine__details > * {
   display: flex;
   align-items: center;
   gap: 1rem;
+  font-size: 1.5rem;
+  margin-left: 2rem;
 }
 .home-mine__location {
   /*  */
@@ -274,10 +275,6 @@ body {
 .home-mine__price {
   /*  */
 }
-.home-mine__btn {
-  /*  */
-}
-
 .home {
   background-color: #f9f7f6;
   display: grid;

@@ -366,4 +366,6 @@ Behaves the same as auto-fill, except that after placing the grid items any empt
 
 ## Tips
 
-- It is possible to explicitly place two elements on the same cell(s), which will make one of them hides behind the other.
+### Overlapping
+
+It is possible to explicitly place two elements on the same cell(s), which will make one of them hides behind the other. An issue that can be solved by the `z-index` property. Another great possibility is to position these elements independently using `justify-self` and `align-self`.
