@@ -138,15 +138,27 @@
 </div>
 ```
 
-#### More Examples
-
-- `div.container.grid.grid--2-cols > div.pricing-plan{Pricing $}*2`
+#### `div.container.grid.grid--2-cols > div.pricing-plan{Pricing $}*2`
 
 ```html
 <div class="container grid grid--2-cols">
   <div class="pricing-plan">Pricing 1</div>
   <div class="pricing-plan">Pricing 2</div>
 </div>
+```
+
+#### `(figure.gallery__item.gallery__item--$>img.gallery__img[src="img/image-$.jpg"][alt="Gallery image $"])*3`
+
+```html
+<figure class="gallery__item gallery__item--1">
+  <img src="img/image-1.jpg" alt="Gallery image 1" class="gallery__img" />
+</figure>
+<figure class="gallery__item gallery__item--2">
+  <img src="img/image-2.jpg" alt="Gallery image 2" class="gallery__img" />
+</figure>
+<figure class="gallery__item gallery__item--3">
+  <img src="img/image-3.jpg" alt="Gallery image 3" class="gallery__img" />
+</figure>
 ```
 
 [Emmet Docs Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
