@@ -61,7 +61,9 @@ body {
 }
 
 .heading-1 {
-  /*  */
+  font-size: 4.5rem;
+  color: #f9f7f6;
+  line-height: 1;
 }
 
 .heading-2 {
@@ -139,8 +141,39 @@ body {
   transform: translateY(1.5rem);
 }
 .header {
-  background-color: aqua;
   grid-area: 1/full-start/2/col-end 6;
+  background-image: linear-gradient(rgba(16, 29, 44, 0.93), rgba(16, 29, 44, 0.93)), url(../img/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 8rem;
+  padding-top: 4rem;
+  display: grid;
+  grid-template-rows: 1fr min-content 6rem 1fr;
+  grid-template-columns: max-content;
+  row-gap: 1.5rem;
+  justify-content: center;
+}
+.header__logo {
+  height: 3rem;
+  justify-self: center;
+}
+.header__btn {
+  justify-self: start;
+  align-self: start;
+}
+.header__seen-on-text {
+  /*  */
+}
+.header__seen-on-logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 3rem;
+  justify-items: center;
+}
+.header__seen-on-logos img {
+  height: 2.5rem;
+  /* opacity: 0.7; */
+  filter: brightness(70%);
 }
 
 .realtors {
