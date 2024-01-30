@@ -2,4 +2,69 @@
   background-color: $color-primary;
 
   grid-area: 1 / sidebar-start/ -1 / sidebar-end;
+
+  display: flex;
+  justify-content: center;
+}
+
+// I followed his method in here unlike what I did in the
+// "natours" project!
+// Edit: I changed my mind and went with `position: absolute;`!
+
+.nav-btn {
+  margin-top: 4rem;
+  border: none;
+  // border-radius: 0; // He set this for some reason!
+
+  // Not going to work because the parent height is the same
+  // as its children and setting `gap` will just remove them!
+  // display: flex;
+  // flex-direction: column;
+  /* gap: 10px; */
+
+  position: relative;
+
+  &,
+  &::before,
+  &::after {
+    width: 4.5rem;
+    height: 2px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    background-color: #fff;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    // display: block;
+    // position: relative;
+  }
+
+  &::before {
+    transform: translateY(-1.5rem);
+  }
+
+  &::after {
+    transform: translateY(1.5rem);
+  }
+
+  // Next is for developing purposes!
+
+  // z-index: 10;
+  // background-color: crimson;
+  // background-color: rgba(220, 20, 60, 0.262);
+
+  &::before {
+    // background-color: rgba(0, 0, 0, 0.5);
+    // transform: translateX(-1rem);
+  }
+
+  &::after {
+    // background-color: rgba(0, 0, 0, 0.5);
+    // transform: translateX(1rem);
+  }
 }
