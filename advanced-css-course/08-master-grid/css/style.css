@@ -334,8 +334,62 @@ body {
 }
 
 .gallery {
-  background-color: rgb(255, 16, 16);
+  background-color: #f9f7f6;
   grid-area: 5/full-start/6/full-end;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 5vw);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  grid-template-areas: "img-01 img-01 img-02 img-02 img-02 img-03 img-04 img-04" "img-01 img-01 img-02 img-02 img-02 img-03 img-04 img-04" "img-05 img-05 img-02 img-02 img-02 img-08 img-08 img-09" "img-05 img-05 img-06 img-06 img-07 img-08 img-08 img-09" "img-05 img-05 img-06 img-06 img-13 img-13 img-13 img-09" "img-10 img-11 img-11 img-12 img-13 img-13 img-13 img-14" "img-10 img-11 img-11 img-12 img-13 img-13 img-13 img-14";
+}
+.gallery__item--1 {
+  grid-area: img-01;
+}
+.gallery__item--2 {
+  grid-area: img-02;
+}
+.gallery__item--3 {
+  grid-area: img-03;
+}
+.gallery__item--4 {
+  grid-area: img-04;
+}
+.gallery__item--5 {
+  grid-area: img-05;
+}
+.gallery__item--6 {
+  grid-area: img-06;
+}
+.gallery__item--7 {
+  grid-area: img-07;
+}
+.gallery__item--8 {
+  grid-area: img-08;
+}
+.gallery__item--9 {
+  grid-area: img-09;
+}
+.gallery__item--10 {
+  grid-area: img-10;
+}
+.gallery__item--11 {
+  grid-area: img-11;
+}
+.gallery__item--12 {
+  grid-area: img-12;
+}
+.gallery__item--13 {
+  grid-area: img-13;
+}
+.gallery__item--14 {
+  grid-area: img-14;
+}
+.gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .footer {
