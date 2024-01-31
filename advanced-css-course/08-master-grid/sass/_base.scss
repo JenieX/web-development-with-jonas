@@ -13,6 +13,13 @@ $color-gray-dark-2: #6d5d4b;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+$bp-1200px: 75em; // (1200px / 16)
+// $bp-1100px: 68.75em;
+$bp-1000px: 62.5em;
+$bp-900px: 56.25em;
+$bp-600px: 37.5em;
+$bp-500px: 31.25em;
+
 *,
 *::after,
 *::before {
@@ -32,6 +39,14 @@ html {
 
   /* font-size: 10px; */
   font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-1200px) {
+    // 8px / 16px = 0.5 => 50%
+    font-size: 50%;
+
+    // 9px / 16px = 0.5625 = 56.25%
+    // font-size: 56.25%;
+  }
 }
 
 body {
@@ -51,7 +66,22 @@ body {
   // Sometimes, you may not even need to set fix sizes for the rows!
   // And we usually don't name the rows lines!
 
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  // grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  grid-template-rows:
+    [header-start realtors-start]
+    80vh
+    [header-end realtors-end features-start]
+    min-content
+    [features-end story-start]
+    40vw
+    [story-end homes-start]
+    min-content
+    [homes-end gallery-start]
+    min-content
+    [gallery-end footer-start]
+    min-content
+    [footer-end];
 
   // Test
   /* grid-template-columns:
@@ -80,6 +110,40 @@ body {
     minmax(6rem, 1fr)
     // 1fr
     [full-end];
+
+  @media only screen and (max-width: $bp-1000px) {
+    grid-template-rows:
+      [top-sidebar-start]
+      6rem
+      [top-sidebar-end header-start realtors-start]
+      80vh
+      [header-end realtors-end features-start]
+      min-content
+      [features-end story-start]
+      40vw
+      [story-end homes-start]
+      min-content
+      [homes-end gallery-start]
+      min-content
+      [gallery-end footer-start]
+      min-content
+      [footer-end];
+
+    grid-template-columns:
+      // [sidebar-start]
+      // 8rem
+      // [sidebar-end full-start]
+
+      [full-start]
+      minmax(6rem, 1fr)
+      // 1fr
+      [center-start]
+      repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr)
+      // 1fr
+      [full-end];
+  }
 
   & > * {
     // font-size: 3rem;

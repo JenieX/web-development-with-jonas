@@ -1,7 +1,7 @@
 .footer {
   background-color: $color-secondary;
 
-  grid-area: 6 / full-start / 7 / full-end;
+  grid-area: footer-start / full-start / footer-end / full-end;
   padding: 8rem;
 }
 

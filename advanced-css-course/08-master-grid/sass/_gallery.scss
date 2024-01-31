@@ -2,7 +2,8 @@
   background-color: $color-gray-light-1;
   // height: 40rem;
 
-  grid-area: 5 / full-start / 6 / full-end;
+  // grid-area: 5 / full-start / 6 / full-end;
+  grid-area: gallery-start / full-start / gallery-end / full-end;
 
   display: grid;
   grid-template-columns: repeat(8, 1fr);

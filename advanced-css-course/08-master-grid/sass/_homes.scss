@@ -1,7 +1,9 @@
 .homes {
   // background-color: rgb(226, 255, 80);
 
-  grid-area: 4 / center-start / 5 / center-end;
+  // grid-area: 4 / center-start / 5 / center-end;
+  grid-area: homes-start / center-start / homes-end / center-end;
+
   margin: 15rem 0;
   display: grid;
   // grid-template-columns: repeat(3, 1fr);

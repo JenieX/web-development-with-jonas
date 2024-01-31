@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>nexter-layout (named rows)</title>
+    <title>nexter-layout (current)</title>
 
     <style>
       *,
@@ -149,7 +149,43 @@
       }
     </style>
 
-    <style></style>
+    <style>
+      @media only screen and (max-width: 62.5em) {
+        .container {
+          grid-template-rows:
+            [top-sidebar-start]
+            6rem
+            [top-sidebar-end header-start realtors-start]
+            80vh
+            [header-end realtors-end features-start]
+            min-content
+            [features-end story-start]
+            40vw
+            [story-end homes-start]
+            min-content
+            [homes-end gallery-start]
+            min-content
+            [gallery-end footer-start]
+            min-content
+            [footer-end];
+
+          grid-template-columns:
+            [full-start]
+            minmax(6rem, 1fr)
+            [center-start]
+            repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+            [center-end]
+            minmax(6rem, 1fr)
+            [full-end];
+        }
+      }
+
+      @media only screen and (max-width: 62.5em) {
+        .sidebar {
+          grid-area: top-sidebar-start/full-start/top-sidebar-end/full-end;
+        }
+      }
+    </style>
   </head>
   <body class="container">
     <div class="sidebar">Side-bar</div>

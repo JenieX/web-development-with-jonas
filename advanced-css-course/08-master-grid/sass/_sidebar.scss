@@ -1,7 +1,13 @@
 .sidebar {
   background-color: $color-primary;
 
-  grid-area: 1 / sidebar-start/ -1 / sidebar-end;
+  grid-area: 1 / sidebar-start / -1 / sidebar-end;
+
+  @media only screen and (max-width: $bp-1000px) {
+    grid-area: top-sidebar-start / full-start / top-sidebar-end / full-end;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
   display: flex;
   justify-content: center;
@@ -50,6 +56,19 @@
 
   &::after {
     transform: translateY(1.5rem);
+  }
+
+  @media only screen and (max-width: $bp-1000px) {
+    margin-top: 0;
+    margin-right: 4rem;
+
+    &::before {
+      transform: translateY(-1.3rem);
+    }
+
+    &::after {
+      transform: translateY(1.3rem);
+    }
   }
 
   // Next is for developing purposes!

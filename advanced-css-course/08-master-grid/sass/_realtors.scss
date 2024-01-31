@@ -1,7 +1,7 @@
 .realtors {
   background-color: $color-secondary;
 
-  grid-area: 1 / col-start 7 / 2 / full-end;
+  grid-area: realtors-start / col-start 7 / realtors-end / full-end;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;

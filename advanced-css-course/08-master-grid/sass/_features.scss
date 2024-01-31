@@ -1,7 +1,8 @@
 .features {
   // background-color: rgb(127, 80, 255);
 
-  grid-area: 2 / center-start / 3 / center-end;
+  // grid-area: 2 / center-start / 3 / center-end;
+  grid-area: features-start / center-start / features-end / center-end;
 
   // To push the element after it down (for easy developing)
   // grid-area: auto / center-start / auto / center-end;

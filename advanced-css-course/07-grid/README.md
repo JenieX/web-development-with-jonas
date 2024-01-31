@@ -373,3 +373,65 @@ It is possible to explicitly place two elements on the same cell(s), which will 
 ### Special Grid items
 
 The `::before` and `::after` pseudo elements, as well as the text content of an element, can all be made as Grid items.
+
+### Always name your Grid lines
+
+Adopting your layout to different devices may require you to change the positions of some Grid item, leading to different columns and rows, which would break your `grid-area` values if the were just numbers.
+
+```scss
+.container {
+  grid-template-rows:
+    [header-start realtors-start]
+    80vh
+    [header-end realtors-end features-start]
+    min-content
+    [features-end story-start]
+    40vw
+    [story-end homes-start]
+    min-content
+    [homes-end gallery-start]
+    min-content
+    [gallery-end footer-start]
+    min-content
+    [footer-end];
+
+  grid-template-columns:
+    [sidebar-start]
+    8rem
+    [sidebar-end full-start]
+    minmax(6rem, 1fr)
+    [center-start]
+    repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end]
+    minmax(6rem, 1fr)
+    [full-end];
+
+  @media only screen and (max-width: $bp-1000px) {
+    grid-template-rows:
+      [top-sidebar-start]
+      6rem
+      [top-sidebar-end header-start realtors-start]
+      80vh
+      [header-end realtors-end features-start]
+      min-content
+      [features-end story-start]
+      40vw
+      [story-end homes-start]
+      min-content
+      [homes-end gallery-start]
+      min-content
+      [gallery-end footer-start]
+      min-content
+      [footer-end];
+
+    grid-template-columns:
+      [full-start]
+      minmax(6rem, 1fr)
+      [center-start]
+      repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+      [center-end]
+      minmax(6rem, 1fr)
+      [full-end];
+  }
+}
+```
