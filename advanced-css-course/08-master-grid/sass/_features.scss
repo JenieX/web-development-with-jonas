@@ -8,14 +8,26 @@
   // grid-area: auto / center-start / auto / center-end;
 
   margin: 15rem 0;
-  display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 6rem;
-  align-items: start;
+
+  @supports (display: grid) {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 6rem;
+    align-items: start;
+  }
 }
 
 .feature {
+  float: left;
+  width: calc(100% / 3);
+
+  @supports (display: grid) {
+    // Not needed as it will be ignored if the element is a Grid item
+    // float: none;
+    width: auto;
+  }
+
   display: grid;
   grid-template-columns: min-content 1fr;
   /* grid-template-areas:

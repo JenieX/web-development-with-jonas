@@ -32,6 +32,10 @@
     grid-area: header-start / full-start / header-end / full-end;
   }
 
+  @media only screen and (max-width: $bp-600px) {
+    padding: 5rem;
+  }
+
   &__logo {
     height: 3rem;
     justify-self: center;

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>nexter-layout (full-story)</title>
+
+    <style>
+      *,
+      *::after,
+      *::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        box-sizing: border-box;
+        /* font-size: 10px; */
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 300;
+        font-size: 1.8rem;
+        color: #000;
+      }
+
+      .container {
+        display: grid;
+
+        /*   
+        The focus is always more on the columns and not the rows.
+        Sometimes, you may not even need to set fix sizes for the rows!
+        And we usually don't name the rows lines! 
+        */
+
+        /* grid-template-rows: 80vh min-content 40vw repeat(3, min-content); */
+
+        grid-template-rows:
+          [header-start realtors-start]
+          80vh
+          [header-end realtors-end features-start]
+          min-content
+          [features-end story-pictures-start story-content-start]
+          40vw
+          [story-pictures-end story-content-end homes-start]
+          min-content
+          [homes-end gallery-start]
+          min-content
+          [gallery-end footer-start]
+          min-content
+          [footer-end];
+
+        /*
+        Usually our main content width is 1100px - 1200px
+        We picked 1140px
+        1140 / 8 (main-cols) = ~ 14rem
+        */
+        grid-template-columns:
+          [sidebar-start]
+          8rem
+          [sidebar-end full-start]
+          minmax(6rem, 1fr)
+          [center-start]
+          repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+          [center-end]
+          minmax(6rem, 1fr)
+          [full-end];
+      }
+
+      .container > * {
+        font-size: 3rem;
+
+        /* "Top 3 realtors" would cause an issue with the layout in Chrome */
+        /* padding: 3rem; */
+      }
+
+      .sidebar {
+        background-color: #c69963;
+        grid-area: 1 / sidebar-start / -1 / sidebar-end;
+      }
+
+      .header {
+        background-color: aqua;
+        /* grid-area: 1 / full-start / 2 / col-end 6; */
+        grid-area: header-start / full-start / header-end / col-end 6;
+      }
+
+      .realtors {
+        background-color: coral;
+        /* grid-area: 1 / col-start 7 / 2 / full-end; */
+        grid-area: realtors-start / col-start 7 / realtors-end / full-end;
+      }
+
+      .features {
+        background-color: rgb(127, 80, 255);
+        /* grid-area: 2 / center-start / 3 / center-end; */
+        grid-area: features-start / center-start / features-end / center-end;
+      }
+
+      .story__pictures {
+        background-color: rgb(255, 80, 185);
+        /* grid-area: 3 / full-start / 4 / col-end 4; */
+        grid-area: story-pictures-start / full-start / story-pictures-end / col-end 4;
+      }
+
+      .story__content {
+        background-color: rgb(130, 255, 80);
+        /* grid-area: 3 / col-end 4 / 4 / full-end; */
+        grid-area: story-content-start / col-end 4 / story-content-end / full-end;
+      }
+
+      .homes {
+        background-color: rgb(226, 255, 80);
+        /* grid-area: 4 / center-start / 5 / center-end; */
+        grid-area: homes-start / center-start / homes-end / center-end;
+      }
+
+      .gallery {
+        background-color: rgb(255, 16, 16);
+        /* grid-area: 5 / full-start / 6 / full-end; */
+        grid-area: gallery-start / full-start / gallery-end / full-end;
+      }
+
+      .footer {
+        background-color: rgb(104, 176, 167);
+        /* grid-area: 6 / full-start / 7 / full-end; */
+        grid-area: footer-start / full-start / footer-end / full-end;
+      }
+
+      .btn {
+        background-color: #c69963;
+        color: #fff;
+        border: none;
+        border-radius: 0;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: 1.8rem 3rem;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn:hover {
+        background-color: #b28451;
+      }
+    </style>
+
+    <style>
+      @media only screen and (max-width: 62.5em) {
+        .container {
+          grid-template-rows:
+            [top-sidebar-start]
+            6rem
+            [top-sidebar-end header-start realtors-start]
+            80vh
+            [header-end realtors-end features-start]
+            min-content
+            [features-end story-pictures-start story-content-start]
+            40vw
+            [story-pictures-end story-content-end homes-start]
+            min-content
+            [homes-end gallery-start]
+            min-content
+            [gallery-end footer-start]
+            min-content
+            [footer-end];
+
+          grid-template-columns:
+            [full-start]
+            minmax(6rem, 1fr)
+            [center-start]
+            repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+            [center-end]
+            minmax(6rem, 1fr)
+            [full-end];
+        }
+
+        .sidebar {
+          grid-area: top-sidebar-start/full-start/top-sidebar-end/full-end;
+        }
+      }
+
+      @media only screen and (max-width: 50em) {
+        .container {
+          /* grid-template-rows:
+            [top-sidebar-start]
+            6rem
+            [top-sidebar-end header-start]
+            calc(100vh - 6rem)
+            [header-end realtors-start]
+            min-content
+            [realtors-end features-start]
+            min-content
+            [features-end story-content-start]
+            40vw
+            [story-content-end story-pictures-start]
+            40vw
+            [story-pictures-end homes-start]
+            min-content
+            [homes-end gallery-start]
+            min-content
+            [gallery-end footer-start]
+            min-content
+            [footer-end]; */
+
+          /* grid-template-rows: 6rem calc(100vh - 6rem) */
+
+          /* He switched to (auto/min-content) for the rest of the columns but I can't, */
+          /* as that would remove the lines names which my items depend on!  */
+
+          grid-template-rows:
+            [top-sidebar-start]
+            6rem
+            [top-sidebar-end header-start]
+            calc(100vh - 6rem)
+            [header-end realtors-start]
+            min-content
+            [realtors-end features-start]
+            min-content
+            [features-end story-content-start]
+            min-content
+            [story-content-end story-pictures-start]
+            min-content
+            [story-pictures-end homes-start]
+            min-content
+            [homes-end gallery-start]
+            min-content
+            [gallery-end footer-start]
+            min-content
+            [footer-end];
+        }
+
+        .header {
+          grid-area: header-start/full-start/header-end/full-end;
+        }
+
+        .realtors {
+          grid-area: realtors-start/full-start/realtors-end/full-end;
+        }
+
+        .story__content {
+          grid-area: story-content-start/full-start/story-content-end/full-end;
+        }
+
+        .story__pictures {
+          grid-area: story-pictures-start/full-start/story-pictures-end/full-end;
+        }
+      }
+    </style>
+  </head>
+  <body class="container">
+    <div class="sidebar">Side-bar</div>
+
+    <header class="header">Header</header>
+
+    <div class="realtors">Top 3</div>
+
+    <section class="features">Features</section>
+
+    <div class="story__pictures">Story pictures</div>
+    <div class="story__content">Story content</div>
+
+    <section class="homes">Homes</section>
+
+    <section class="gallery">Gallery</section>
+    <footer class="footer">Footer</footer>
+  </body>
+</html>

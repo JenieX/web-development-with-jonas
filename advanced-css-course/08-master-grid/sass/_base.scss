@@ -18,7 +18,7 @@ $bp-1200px: 75em; // (1200px / 16)
 $bp-1000px: 62.5em;
 // $bp-900px: 56.25em;
 $bp-800px: 50em;
-// $bp-600px: 37.5em;
+$bp-600px: 37.5em;
 // $bp-500px: 31.25em;
 
 *,
@@ -147,6 +147,32 @@ body {
   }
 
   @media only screen and (max-width: $bp-800px) {
+    // grid-template-rows:
+    //   [top-sidebar-start]
+    //   6rem
+    //   [top-sidebar-end header-start]
+    //   calc(100vh - 6rem)
+    //   [header-end realtors-start]
+    //   min-content
+    //   [realtors-end features-start]
+    //   min-content
+    //   [features-end story-content-start]
+    //   40vw
+    //   [story-content-end story-pictures-start]
+    //   40vw
+    //   [story-pictures-end homes-start]
+    //   min-content
+    //   [homes-end gallery-start]
+    //   min-content
+    //   [gallery-end footer-start]
+    //   min-content
+    //   [footer-end];
+
+    // grid-template-rows: 6rem calc(100vh - 6rem)
+
+    // He switched to (auto/min-content) for the rest of the columns but I can't,
+    // as that would remove the lines names which my items depend on! 
+
     grid-template-rows:
       [top-sidebar-start]
       6rem
@@ -156,9 +182,11 @@ body {
       min-content
       [realtors-end features-start]
       min-content
-      [features-end story-pictures-start story-content-start]
-      40vw
-      [story-pictures-end story-content-end homes-start]
+      [features-end story-content-start]
+      min-content
+      [story-content-end story-pictures-start]
+      min-content
+      [story-pictures-end homes-start]
       min-content
       [homes-end gallery-start]
       min-content

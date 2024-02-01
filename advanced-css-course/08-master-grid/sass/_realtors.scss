@@ -48,6 +48,10 @@
       grid-template-columns: repeat(3, min-content max-content);
       /* grid-template-columns: repeat(6, min-content max-content); */
     }
+
+    @media only screen and (max-width: $bp-600px) {
+      grid-template-columns: min-content max-content;
+    }
   }
 
   &__img {
