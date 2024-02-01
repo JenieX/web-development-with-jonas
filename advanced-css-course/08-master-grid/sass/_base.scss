@@ -16,9 +16,10 @@ $font-display: 'Josefin Sans', sans-serif;
 $bp-1200px: 75em; // (1200px / 16)
 // $bp-1100px: 68.75em;
 $bp-1000px: 62.5em;
-$bp-900px: 56.25em;
-$bp-600px: 37.5em;
-$bp-500px: 31.25em;
+// $bp-900px: 56.25em;
+$bp-800px: 50em;
+// $bp-600px: 37.5em;
+// $bp-500px: 31.25em;
 
 *,
 *::after,
@@ -73,9 +74,9 @@ body {
     80vh
     [header-end realtors-end features-start]
     min-content
-    [features-end story-start]
+    [features-end story-pictures-start story-content-start]
     40vw
-    [story-end homes-start]
+    [story-pictures-end story-content-end homes-start]
     min-content
     [homes-end gallery-start]
     min-content
@@ -119,9 +120,9 @@ body {
       80vh
       [header-end realtors-end features-start]
       min-content
-      [features-end story-start]
+      [features-end story-pictures-start story-content-start]
       40vw
-      [story-end homes-start]
+      [story-pictures-end story-content-end homes-start]
       min-content
       [homes-end gallery-start]
       min-content
@@ -143,6 +144,27 @@ body {
       minmax(6rem, 1fr)
       // 1fr
       [full-end];
+  }
+
+  @media only screen and (max-width: $bp-800px) {
+    grid-template-rows:
+      [top-sidebar-start]
+      6rem
+      [top-sidebar-end header-start]
+      calc(100vh - 6rem)
+      [header-end realtors-start]
+      min-content
+      [realtors-end features-start]
+      min-content
+      [features-end story-pictures-start story-content-start]
+      40vw
+      [story-pictures-end story-content-end homes-start]
+      min-content
+      [homes-end gallery-start]
+      min-content
+      [gallery-end footer-start]
+      min-content
+      [footer-end];
   }
 
   & > * {

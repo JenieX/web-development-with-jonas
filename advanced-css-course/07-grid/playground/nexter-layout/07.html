@@ -45,9 +45,9 @@
           80vh
           [header-end realtors-end features-start]
           min-content
-          [features-end story-start]
+          [features-end story-pictures-start story-content-start]
           40vw
-          [story-end homes-start]
+          [story-pictures-end story-content-end homes-start]
           min-content
           [homes-end gallery-start]
           min-content
@@ -105,13 +105,13 @@
       .story__pictures {
         background-color: rgb(255, 80, 185);
         /* grid-area: 3 / full-start / 4 / col-end 4; */
-        grid-area: story-start / full-start / story-end / col-end 4;
+        grid-area: story-pictures-start / full-start / story-pictures-end / col-end 4;
       }
 
       .story__content {
         background-color: rgb(130, 255, 80);
         /* grid-area: 3 / col-end 4 / 4 / full-end; */
-        grid-area: story-start / col-end 4 / story-end / full-end;
+        grid-area: story-content-start / col-end 4 / story-content-end / full-end;
       }
 
       .homes {
@@ -159,9 +159,9 @@
             80vh
             [header-end realtors-end features-start]
             min-content
-            [features-end story-start]
+            [features-end story-pictures-start story-content-start]
             40vw
-            [story-end homes-start]
+            [story-pictures-end story-content-end homes-start]
             min-content
             [homes-end gallery-start]
             min-content

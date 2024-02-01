@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>nexter-layout (current)</title>
+    <title>nexter-layout (full-header)</title>
 
     <style>
       *,
@@ -45,9 +45,9 @@
           80vh
           [header-end realtors-end features-start]
           min-content
-          [features-end story-start]
+          [features-end story-pictures-start story-content-start]
           40vw
-          [story-end homes-start]
+          [story-pictures-end story-content-end homes-start]
           min-content
           [homes-end gallery-start]
           min-content
@@ -105,13 +105,13 @@
       .story__pictures {
         background-color: rgb(255, 80, 185);
         /* grid-area: 3 / full-start / 4 / col-end 4; */
-        grid-area: story-start / full-start / story-end / col-end 4;
+        grid-area: story-pictures-start / full-start / story-pictures-end / col-end 4;
       }
 
       .story__content {
         background-color: rgb(130, 255, 80);
         /* grid-area: 3 / col-end 4 / 4 / full-end; */
-        grid-area: story-start / col-end 4 / story-end / full-end;
+        grid-area: story-content-start / col-end 4 / story-content-end / full-end;
       }
 
       .homes {
@@ -159,9 +159,9 @@
             80vh
             [header-end realtors-end features-start]
             min-content
-            [features-end story-start]
+            [features-end story-pictures-start story-content-start]
             40vw
-            [story-end homes-start]
+            [story-pictures-end story-content-end homes-start]
             min-content
             [homes-end gallery-start]
             min-content
@@ -183,6 +183,41 @@
       @media only screen and (max-width: 62.5em) {
         .sidebar {
           grid-area: top-sidebar-start/full-start/top-sidebar-end/full-end;
+        }
+      }
+
+      @media only screen and (max-width: 50em) {
+        .container {
+          grid-template-rows:
+            [top-sidebar-start]
+            6rem
+            [top-sidebar-end header-start]
+            calc(100vh - 6rem)
+            [header-end realtors-start]
+            min-content
+            [realtors-end features-start]
+            min-content
+            [features-end story-pictures-start story-content-start]
+            40vw
+            [story-pictures-end story-content-end homes-start]
+            min-content
+            [homes-end gallery-start]
+            min-content
+            [gallery-end footer-start]
+            min-content
+            [footer-end];
+        }
+      }
+
+      @media only screen and (max-width: 50em) {
+        .header {
+          grid-area: header-start/full-start/header-end/full-end;
+        }
+      }
+
+      @media only screen and (max-width: 50em) {
+        .realtors {
+          grid-area: realtors-start/full-start/realtors-end/full-end;
         }
       }
     </style>

@@ -28,6 +28,10 @@
   row-gap: 1.5rem;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-800px) {
+    grid-area: header-start / full-start / header-end / full-end;
+  }
+
   &__logo {
     height: 3rem;
     justify-self: center;

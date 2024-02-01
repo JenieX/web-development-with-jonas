@@ -1,4 +1,6 @@
 .realtors {
+  // display: none !important;
+
   background-color: $color-secondary;
 
   grid-area: realtors-start / col-start 7 / realtors-end / full-end;
@@ -19,7 +21,17 @@
   // align-self: center;
 
   // Why?!
-  // padding: 3rem;
+  padding: 3rem;
+
+  @media only screen and (max-width: $bp-800px) {
+    grid-area: realtors-start / full-start / realtors-end / full-end;
+  }
+
+  &__header {
+    // @media only screen and (max-width: $bp-800px) {
+    //   display: none;
+    // }
+  }
 
   &__list {
     display: grid;
@@ -31,6 +43,11 @@
     align-items: center;
 
     // width: 80%;
+
+    @media only screen and (max-width: $bp-800px) {
+      grid-template-columns: repeat(3, min-content max-content);
+      /* grid-template-columns: repeat(6, min-content max-content); */
+    }
   }
 
   &__img {

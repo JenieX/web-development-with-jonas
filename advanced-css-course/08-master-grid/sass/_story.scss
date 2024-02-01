@@ -2,7 +2,7 @@
   &__pictures {
     background-color: rgb(255, 80, 185);
 
-    grid-area: story-start / full-start / story-end / col-end 4;
+    grid-area: story-pictures-start / full-start / story-pictures-end / col-end 4;
 
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -45,7 +45,7 @@
 
   &__content {
     background-color: $color-gray-light-1;
-    grid-area: story-start / col-end 4 / story-end / full-end;
+    grid-area: story-content-start / col-end 4 / story-content-end / full-end;
     /* padding: 6rem 12rem; */
     padding: 6rem 8vw;
 

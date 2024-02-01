@@ -351,7 +351,11 @@ Is a functional notation that defines a size range, greater than or equal to min
 The `repeat()` CSS function represents a repeated fragment of the track list, allowing a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form.
 
 ```css
-grid-template-columns: repeat(3, 15rem);
+grid-template-columns: repeat(3, 15rem);'
+
+/* 6 columns */
+grid-template-columns: repeat(3, 2rem 5rem);
+grid-template-columns: repeat(3, min-content max-content);
 ```
 
 #### Value
@@ -376,7 +380,7 @@ The `::before` and `::after` pseudo elements, as well as the text content of an 
 
 ### Always name your Grid lines
 
-Adopting your layout to different devices may require you to change the positions of some Grid item, leading to different columns and rows, which would break your `grid-area` values if the were just numbers.
+Adopting your layout to different devices may require you to change the positions of some Grid item, leading to different columns and rows, which would break your `grid-area` values if they were just numbers.
 
 ```scss
 .container {
