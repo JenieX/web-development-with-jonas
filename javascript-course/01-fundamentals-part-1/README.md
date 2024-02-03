@@ -14,7 +14,7 @@ Notes:
 
 - `+` operator converts number to string (concatenate), unlike the `-`, `*`, and the `/` operators.
 - JS converts your value into a `boolean` first when used inside a condition.
-- Using `==` when comparing two values will use type Coercion as well.
+- Using `==` when comparing two values will use type coercion as well.
 
 ```js
 // Type coercion examples
