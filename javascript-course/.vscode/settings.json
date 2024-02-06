@@ -1,5 +1,7 @@
 {
-  "cSpell.words": [
-    "typeof"
-  ]
+  "cSpell.words": ["typeof"],
+
+  // "hot-reload" only works for link of CSS files
+  // anyways, but I will disable it all together.
+  "liveServer.settings.fullReload": true
 }

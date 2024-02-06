@@ -72,7 +72,7 @@ Operator precedence determines how operators are parsed concerning each other. O
 
 For a typical function, the value of `this` is the object that the function is accessed on. In other words, if the function call is in the form `obj.f()`, then `this` refers to `obj`.
 
-In `non–strict` mode, `this` is always a reference to an object. If a primitive value is passed as an argument, it will be converted to an object, e.g. `1` will be converted to `Number {1}`. In `strict` mode, it can be any value.
+In `non–strict` mode, `this` is **always** a reference to an object. If a primitive value is passed as an argument, it will be converted to an object. In `strict` mode, it can be any value.
 
 ```js
 const obj1 = {
