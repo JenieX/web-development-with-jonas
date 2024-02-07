@@ -1,98 +1,86 @@
-'use strict';
+const rollBtn = document.querySelector('.btn--roll');
+const holdBtn = document.querySelector('.btn--hold');
+const newBtn = document.querySelector('.btn--new');
+const diceElement = document.querySelector('.dice');
 
-// Selecting elements
-const player0El = document.querySelector('.player--0');
-const player1El = document.querySelector('.player--1');
-const score0El = document.querySelector('#score--0');
-const score1El = document.getElementById('score--1');
-const current0El = document.getElementById('current--0');
-const current1El = document.getElementById('current--1');
-
-const diceEl = document.querySelector('.dice');
-const btnNew = document.querySelector('.btn--new');
-const btnRoll = document.querySelector('.btn--roll');
-const btnHold = document.querySelector('.btn--hold');
-
-let scores, currentScore, activePlayer, playing;
-
-// Starting conditions
-const init = function () {
-  scores = [0, 0];
-  currentScore = 0;
-  activePlayer = 0;
-  playing = true;
-
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-
-  diceEl.classList.add('hidden');
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-};
-init();
-
-const switchPlayer = function () {
-  document.getElementById(`current--${activePlayer}`).textContent = 0;
-  currentScore = 0;
-  activePlayer = activePlayer === 0 ? 1 : 0;
-  player0El.classList.toggle('player--active');
-  player1El.classList.toggle('player--active');
+const stateElements = {
+  'player-1': {
+    section: document.querySelector('.player--0'),
+    total: document.querySelector('#score--0'),
+    current: document.querySelector('#current--0'),
+  },
+  'player-2': {
+    section: document.querySelector('.player--1'),
+    total: document.querySelector('#score--1'),
+    current: document.querySelector('#current--1'),
+  },
 };
 
-// Rolling dice functionality
-btnRoll.addEventListener('click', function () {
-  if (playing) {
-    // 1. Generating a random dice roll
-    const dice = Math.trunc(Math.random() * 6) + 1;
+const initialState = JSON.stringify({
+  turn: 'player-1',
+  'player-1': {
+    total: 0,
+    current: 0,
+  },
+  'player-2': {
+    total: 0,
+    current: 0,
+  },
+});
 
-    // 2. Display dice
-    diceEl.classList.remove('hidden');
-    diceEl.src = `dice-${dice}.png`;
+let state = JSON.parse(initialState);
 
-    // 3. Check for rolled 1
-    if (dice !== 1) {
-      // Add dice to current score
-      currentScore += dice;
-      document.getElementById(
-        `current--${activePlayer}`
-      ).textContent = currentScore;
-    } else {
-      // Switch to next player
-      switchPlayer();
-    }
+function switchTurn() {
+  // You can use classLis.toggle() instead!
+
+  state.turn = state.turn === 'player-1' ? 'player-2' : 'player-1';
+  stateElements['player-1'].section.classList.toggle('player--active');
+  stateElements['player-2'].section.classList.toggle('player--active');
+
+  // if (state.turn === 'player-1') {
+  //   stateElements['player-1'].section.classList.remove('player--active');
+
+  //   state.turn = 'player-2';
+  //   stateElements['player-2'].section.classList.add('player--active');
+  // } else {
+  //   stateElements['player-2'].section.classList.remove('player--active');
+
+  //   state.turn = 'player-1';
+  //   stateElements['player-1'].section.classList.add('player--active');
+  // }
+}
+
+rollBtn.addEventListener('click', () => {
+  const diceValue = Math.trunc(Math.random() * 6) + 1;
+  diceElement.setAttribute('src', `dice-${diceValue}.png`);
+
+  if (diceElement.classList.contains('hidden')) {
+    diceElement.classList.remove('hidden');
+  }
+
+  if (diceValue === 1) {
+    state[state.turn].current = 0;
+    stateElements[state.turn].current.textContent = 0;
+    switchTurn();
+  } else {
+    state[state.turn].current += diceValue;
+    stateElements[state.turn].current.textContent = state[state.turn].current;
+    // console.log(JSON.stringify(state));
   }
 });
 
-btnHold.addEventListener('click', function () {
-  if (playing) {
-    // 1. Add current score to active player's score
-    scores[activePlayer] += currentScore;
-    // scores[1] = scores[1] + currentScore
+holdBtn.addEventListener('click', () => {
+  state[state.turn].total += state[state.turn].current;
+  stateElements[state.turn].total.textContent = state[state.turn].total;
 
-    document.getElementById(`score--${activePlayer}`).textContent =
-      scores[activePlayer];
+  state[state.turn].current = 0;
+  stateElements[state.turn].current.textContent = 0;
 
-    // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 100) {
-      // Finish the game
-      playing = false;
-      diceEl.classList.add('hidden');
-
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.add('player--winner');
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.remove('player--active');
-    } else {
-      // Switch to the next player
-      switchPlayer();
-    }
-  }
+  switchTurn();
 });
 
-btnNew.addEventListener('click', init);
+newBtn.addEventListener('click', () => {
+  console.log('Resetting game..');
+  state = JSON.parse(initialState);
+  diceElement.classList.add('hidden');
+});
