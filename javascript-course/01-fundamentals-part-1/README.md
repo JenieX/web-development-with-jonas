@@ -2,9 +2,34 @@
 
 ## `let`, `const` and `var`
 
-### `let`
+Note: variable declared with `var` will be available on the `window` object
 
-Allows you to reassign a value to a variable, also called mutating that variable.
+```js
+var a = 1;
+const b = 2;
+let c = 3;
+
+console.log(a === window.a);
+// => true
+
+console.log(b === window.b);
+// => false
+
+console.log(c === window.c);
+// => false
+```
+
+### [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+
+The `const` declaration declares block-scoped local variables. The value of a constant can't be changed through reassignment using the assignment operator.
+
+### [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+
+The let declaration declares re-assignable (mutating that variable), block-scoped local variables.
+
+### [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
+
+The `var` statement declares function-scoped or globally-scoped variables.
 
 ## Type Conversion vs Type Coercion
 
