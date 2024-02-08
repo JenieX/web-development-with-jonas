@@ -75,9 +75,15 @@ Operator precedence determines how operators are parsed concerning each other. O
 
 For a typical function, the value of `this` is the object that the function is accessed on. In other words, if the function call is in the form `obj.f()`, then `this` refers to `obj`.
 
+### `this` inside object
+
 In `non–strict` mode, `this` is **always** a reference to an object. If a primitive value is passed as an argument, it will be converted to an object. In `strict` mode, it can be any value.
 
+Note: `this` keyword inside a function points to the object that called that method and not the object that the function belongs to.
+
 ```js
+'use strict';
+
 const obj1 = {
   name: 'obj1',
   logThis() {
@@ -98,9 +104,23 @@ obj1.logThis.call(1);
 // => 1
 // non–strict
 // => Number {1}
+
+// ------------------------
+// Extra for the note above!
+
+// Extracted and will act as `function logThis() { console.log(this); }`!
+const logThis = obj1.logThis;
+
+logThis();
+// strict
+// => undefined
+// non–strict
+// => Window {}
 ```
 
 ### strict vs non-strict
+
+Note: Arrow functions use the lexical (parent-scope) this keyword.
 
 #### strict example
 
@@ -115,7 +135,13 @@ function logThis() {
   // => undefined
 }
 
+const logThisArrow = () => {
+  console.log(this);
+  // => Window {}
+};
+
 logThis();
+logThisArrow();
 ```
 
 #### non-strict example
@@ -129,5 +155,11 @@ function logThis() {
   // => Window {}
 }
 
+const logThisArrow = () => {
+  console.log(this);
+  // => Window {}
+};
+
 logThis();
+logThisArrow();
 ```
