@@ -13,15 +13,18 @@ const passTest = true;
 // Notice the miss spelling of "hasDriversLicense"
 if (passTest) {
   hasDriverLicense = true;
+  // strict mode only
+  // => ReferenceError: hasDriverLicense is not defined
 }
 
 if (hasDriversLicense) {
   console.log('I can drive :D');
 }
 
-// Some words are preserved, which will log errors only in strick mode:
-const interface = 'Audio';
-const private = 534;
+// Some words are preserved, which will log errors only in strick mode.
+// SyntaxError: Unexpected strict mode reserved word.
+// const interface = 'Audio';
+// const private = 534;
 ```
 
 [Note](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#strict_mode_for_modules): Scripts with the attribute `type="module"` are automatically in strict mode.
@@ -95,4 +98,36 @@ obj1.logThis.call(1);
 // => 1
 // non–strict
 // => Number {1}
+```
+
+### strict vs non-strict
+
+#### strict example
+
+```js
+'use strict';
+
+console.log(this);
+// => Window {}
+
+function logThis() {
+  console.log(this);
+  // => undefined
+}
+
+logThis();
+```
+
+#### non-strict example
+
+```js
+console.log(this);
+// => Window {}
+
+function logThis() {
+  console.log(this);
+  // => Window {}
+}
+
+logThis();
 ```
