@@ -75,7 +75,9 @@ Operator precedence determines how operators are parsed concerning each other. O
 
 For a typical function, the value of `this` is the object that the function is accessed on. In other words, if the function call is in the form `obj.f()`, then `this` refers to `obj`.
 
-### `this` inside object
+Important: You should never use arrow functions as methods (functions inside objects), even if you are not trying to access `this` at the time, as you may change your mind later!
+
+### `this` of functions inside object
 
 In `non–strict` mode, `this` is **always** a reference to an object. If a primitive value is passed as an argument, it will be converted to an object. In `strict` mode, it can be any value.
 
@@ -162,4 +164,52 @@ const logThisArrow = () => {
 
 logThis();
 logThisArrow();
+```
+
+### A usage of arrow function `this`
+
+Since arrow functions use `this` of their parent scope, here is a good usage for it. 
+
+```js
+'use strict';
+
+const user = {
+  name: 'Jenie',
+  birthYear: 1992,
+
+  logAgeInfo() {
+    const age = new Date().getFullYear() - this.birthYear;
+
+    // Workaround #1
+    /* const that = this;
+
+    // Is a function that is not a property of the object, which act
+    // as a regular declared function inside the global scope, which will
+    // point its `this` to undefined in strict mode. Not in non-strict mode though.
+    const isAdult = function () {
+      // console.log(this);
+
+      if (age > 15) {
+        console.log(`${that.name} is an adult.`);
+      } else {
+        console.log(`${that.name} is not an adult!`);
+      }
+    }; */
+
+    // Workaround #2
+    const isAdult = () => {
+      if (age > 15) {
+        console.log(`${this.name} is an adult.`);
+      } else {
+        console.log(`${this.name} is not an adult!`);
+      }
+    };
+
+    console.log(`${age} years old,`);
+
+    isAdult();
+  },
+};
+
+user.logAgeInfo();
 ```

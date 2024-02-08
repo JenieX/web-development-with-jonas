@@ -1,34 +1,41 @@
 'use strict';
 
-const obj1 = {
-  name: 'obj1',
-  logThis() {
-    console.log(this);
+const user = {
+  name: 'Jenie',
+  birthYear: 1992,
+
+  logAgeInfo() {
+    const age = new Date().getFullYear() - this.birthYear;
+
+    // Workaround #1
+    /* const that = this;
+
+    // Is a function that is not a property of the object, which act
+    // as a regular declared function inside the global scope, which will
+    // point its `this` to undefined in strict mode. Not in non-strict mode though.
+    const isAdult = function () {
+      // console.log(this);
+
+      if (age > 15) {
+        console.log(`${that.name} is an adult.`);
+      } else {
+        console.log(`${that.name} is not an adult!`);
+      }
+    }; */
+
+    // Workaround #2
+    const isAdult = () => {
+      if (age > 15) {
+        console.log(`${this.name} is an adult.`);
+      } else {
+        console.log(`${this.name} is not an adult!`);
+      }
+    };
+
+    console.log(`${age} years old,`);
+
+    isAdult();
   },
 };
 
-const obj2 = { name: 'obj2' };
-
-obj1.logThis();
-// => { name: 'obj1', logThis: ƒ logThis() }
-
-obj1.logThis.call(obj2);
-// => { name: 'obj2' }
-
-obj1.logThis.call(1);
-// strict
-// => 1
-// non–strict
-// => Number {1}
-
-// ------------------------
-// Extra for the note above!
-
-// Extracted and will act as `function logThis() { console.log(this); }`!
-const logThis = obj1.logThis;
-
-logThis();
-// strict
-// => undefined
-// non–strict
-// => Window {}
+user.logAgeInfo();

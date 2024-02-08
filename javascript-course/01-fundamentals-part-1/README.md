@@ -2,7 +2,7 @@
 
 ## `let`, `const` and `var`
 
-Note: variable declared with `var` will be available on the `window` object.
+Note: variable declared with `var` will be available on the `window` object, which can lead to many bugs!
 
 ```js
 var a = 1;
