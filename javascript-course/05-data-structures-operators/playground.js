@@ -1,18 +1,14 @@
 'use strict';
 
-const jenie = { name: 'Jenie', age: 32, children: 0 };
+const jenie = { name: 'Jenie', age: 32, wife: { age: 35 }, children: ['Adam'] };
+const jonas = { name: 'Jonas', age: 33 };
 
-// Will not change anything!
-jenie.children ??= 1;
-// => {name: 'Jenie', age: 32, children: 0}
+console.log(jenie.wife.age);
+// => 35
+console.log(jenie.children[0]);
+// => 'Adam'
 
-// ------------------------
-
-// jenie.children = null;
-jenie.children = undefined;
-
-// Now that the value is either `null` or `undefined`, it will change
-jenie.children ??= 1;
-
-console.log(jenie);
-// => {name: 'Jenie', age: 32, children: 1}
+console.log(jonas.children?.[0]);
+// => undefined
+console.log(jonas.wife?.age);
+// => undefined

@@ -59,6 +59,8 @@ console.log(one, two, three);
 
 The logical AND assignment (`&&=`) operator only evaluates the right operand and assigns to the left if the left operand is truthy.
 
+Note: Can be useful when trying to change current value to another like capitalizing the letters for example.
+
 ```js
 function makeBoolean(value) {
   if (value === 'yes') {
@@ -132,4 +134,37 @@ jenie.children ??= 1;
 
 console.log(jenie);
 // => {name: 'Jenie', age: 32, children: 1}
+```
+
+### [`Optional chaining (?.)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+
+The optional chaining (`?.`) operator accesses an object's property or calls a function. If the object accessed or function called using this operator is `undefined` or `null`, the expression short circuits and evaluates to `undefined` instead of throwing an error.
+
+```js
+const jenie = { name: 'Jenie', age: 32, wife: { age: 35 }, children: ['Adam'] };
+const jonas = { name: 'Jonas', age: 33 };
+
+console.log(jenie.wife.age);
+// => 35
+console.log(jenie.children[0]);
+// => 'Adam'
+
+console.log(jonas.children?.[0]);
+// => undefined
+console.log(jonas.wife?.age);
+// => undefined
+```
+
+## Tricks
+
+### `index` inside for-of-loop
+
+Can be done with the help of [`Array.prototype.entries()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries). See the example below.
+
+```js
+const fruits = ['Apple', 'Banana', 'Orange'];
+
+for (const [index, fruit] of fruits.entries()) {
+  console.log(fruit);
+}
 ```
