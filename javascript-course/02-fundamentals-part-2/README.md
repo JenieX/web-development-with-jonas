@@ -166,7 +166,7 @@ logThis();
 logThisArrow();
 ```
 
-### A usage of arrow function `this`
+### A usage of arrow function's `this` behavior!
 
 Since arrow functions use `this` of their parent scope, here is a good usage for it. 
 
