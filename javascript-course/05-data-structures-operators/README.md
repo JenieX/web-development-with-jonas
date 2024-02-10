@@ -277,6 +277,90 @@ Advantages of `Objects`:
 - Easy to access property
 - More common
 
+## [Text processing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#text_processing)
+
+### `String`
+
+#### [`String.prototype.indexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
+
+The `indexOf()` method of `String` values searches this string and returns the index of the first occurrence of the specified substring. It takes an optional starting position and returns the first occurrence of the specified substring at an index greater than or equal to the specified number.
+
+```js
+const text = 'Hello world!';
+
+const indexOfFirst = text.indexOf('o');
+
+console.log(indexOfFirst);
+// => 4
+```
+
+#### [`String.prototype.lastIndexOf()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf)
+
+The `lastIndexOf()` method of `String` values searches this string and returns the index of the last occurrence of the specified substring. It takes an optional starting position and returns the last occurrence of the specified substring at an index less than or equal to the specified number.
+
+```js
+const text = 'Hello world!';
+
+const indexOfLast = text.lastIndexOf('o');
+
+console.log(indexOfLast);
+// => 7
+```
+
+#### [`String.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+The `slice()` method of `String` values extracts a section of this string and returns it as a new string, without modifying the original string.
+
+##### [Syntax]
+
+```js
+slice(indexStart);
+slice(indexStart, indexEnd);
+```
+
+##### [Parameters]
+
+- `indexStart`
+  The index of the first character to **include** in the returned substring.
+
+- `indexEnd` (Optional)
+  The index of the first character to **exclude** from the returned substring.
+
+Hint: The length of the extracted substring will be (`indexEnd` || stringLength) - (`indexStart`).
+
+```js
+const text = 'Hello!';
+
+const index = text.indexOf('l');
+
+console.log(index);
+// => 2
+
+const substring = text.slice(index);
+
+console.log(substring);
+// => 'llo!'
+
+// const substringLength = indexEnd - index;
+const substringLength = text.length - index;
+console.log(substringLength);
+```
+
+#### [`String.prototype.padStart()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+The `padStart()` method of `String` values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length
+
+```js
+const hello = 'Hello'.padStart(15, '-');
+const world = 'world!'.padStart(15, '-');
+
+console.log(hello);
+// => '----------Hello'
+
+console.log(world);
+// => '---------world!'
+```
+
 ## Tricks
 
 ### `index` inside for-of-loop
