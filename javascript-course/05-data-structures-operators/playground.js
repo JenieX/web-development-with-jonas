@@ -1,14 +1,9 @@
 'use strict';
 
-const jenie = { name: 'Jenie', age: 32, wife: { age: 35 }, children: ['Adam'] };
-const jonas = { name: 'Jonas', age: 33 };
+const elements = new Map();
 
-console.log(jenie.wife.age);
-// => 35
-console.log(jenie.children[0]);
-// => 'Adam'
+elements
+  .set('.header', document.querySelector('.header'))
+  .set('.content', document.querySelector('.content'));
 
-console.log(jonas.children?.[0]);
-// => undefined
-console.log(jonas.wife?.age);
-// => undefined
+console.log(elements);

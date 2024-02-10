@@ -155,6 +155,121 @@ console.log(jonas.wife?.age);
 // => undefined
 ```
 
+## [Keyed collections](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#keyed_collections)
+
+### [`Set`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+
+The `Set` object lets you store unique values of any type, whether primitive values or object references.
+
+`Set` objects are collections of values. A value in the set may only occur once; it is unique in the set's collection. You can iterate through the elements of a set in insertion order. The insertion order corresponds to the order in which each element was inserted into the set by the `add()` method successfully (that is, there wasn't an identical element already in the set when `add()` was called).
+
+Note: Sets values have no indexes, therefore it is not possible to retrieve any value. Note that `Sets` are not intended to replace `Arrays`!
+
+Common usages for `Sets`:
+
+- Removing duplicate values of `Arrays`
+- Getting the length of unique items in an array by using the `size` method
+- Counting the letters in strings by using the `size` method as well
+
+```js
+/* 
+Syntax:
+  - new Set();
+  - new Set(iterable);
+*/
+
+const jenie = { name: 'Jenie', age: 32 };
+
+const mySet = new Set([1, 2, 3]);
+mySet.add(jenie);
+
+console.log(mySet);
+// => Set(4) {1, 2, 3, {..}}
+
+console.log(mySet.size);
+// => 4
+
+// ------------------------
+
+console.log(mySet.has(jenie));
+// => true
+
+mySet.delete(1);
+
+console.log(mySet);
+// => Set(3) {2, 3, {..}}
+
+// ------------------------
+
+mySet.clear();
+
+console.log(mySet);
+// => Set(0) {size: 0}
+```
+
+### [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+The `Map` object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
+
+`Map` objects are collections of key-value pairs. A key in the `Map` may only occur once; it is unique in the `Map`'s collection. A `Map` object is iterated by key-value pairs — a `for...of` loop returns a 2-member array of `[key, value]` for each iteration. Iteration happens in insertion order, which corresponds to the order in which each key-value pair was first inserted into the map by the `set()` method (that is, there wasn't a key with the same value already in the map when `set()` was called).
+
+```js
+/* 
+Syntax:
+  - new Map();
+  - new Map(2D key-value Array);
+*/
+
+const keyValueArray = [
+  ['one', 1],
+  ['two', 2],
+];
+
+const jenie = { name: 'Jenie', age: 32 };
+
+const myMap = new Map(keyValueArray);
+myMap.set('three', 3).set(jenie, 'me');
+
+console.log(myMap);
+// => Map(4) {'one' => 1, 'two' => 2, 'three' => 3, {…} => 'me'}
+
+console.log(myMap.size);
+// => 4
+
+// ------------------------
+
+console.log(myMap.get(jenie));
+// => 'me'
+
+console.log(myMap.has(jenie));
+// => true
+
+myMap.delete('one');
+
+console.log(myMap);
+// => Map(3) {'two' => 2, 'three' => 3, {…} => 'me'}
+
+// ------------------------
+
+myMap.clear();
+
+console.log(myMap);
+// => Map(0) {size: 0}
+```
+
+#### [Objects vs. Maps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#objects_vs._maps)
+
+`Object` is similar to `Map`—both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. For this reason (and because there were no built-in alternatives), `Object` has been used as `Map` historically.
+
+## Advantages over using `Objects`:
+
+- A `Map` does not contain any keys by default
+- A `Map`'s keys can be any value
+- The keys ordered in `Map` is guaranteed
+- Items number in `Maps` can be access easily via `size`
+- A `Map` is an iterable
+- Chaining multiple calls to `set`
+
 ## Tricks
 
 ### `index` inside for-of-loop
@@ -167,4 +282,16 @@ const fruits = ['Apple', 'Banana', 'Orange'];
 for (const [index, fruit] of fruits.entries()) {
   console.log(fruit);
 }
+```
+
+### `Map` to store elements by classes
+
+```js
+const elements = new Map();
+
+elements
+  .set('.header', document.querySelector('.header'))
+  .set('.content', document.querySelector('.content'));
+
+console.log(elements);
 ```
