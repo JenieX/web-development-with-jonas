@@ -261,7 +261,7 @@ console.log(myMap);
 
 `Object` is similar to `Map`—both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. For this reason (and because there were no built-in alternatives), `Object` has been used as `Map` historically.
 
-## Advantages over using `Objects`:
+##### Advantages over using `Objects`:
 
 - A `Map` does not contain any keys by default
 - A `Map`'s keys can be any value
@@ -294,4 +294,15 @@ elements
   .set('.content', document.querySelector('.content'));
 
 console.log(elements);
+```
+
+### `Object` to `Map`
+
+```js
+const jenie = { name: 'Jenie', age: 32, wife: { age: 35 }, children: ['Adam'] };
+
+const myMap = new Map(Object.entries(jenie));
+
+console.log(myMap);
+// => Map(4) {'name' => 'Jenie', 'age' => 32, 'wife' => {…}, 'children' => Array(1)}
 ```
