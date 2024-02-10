@@ -261,7 +261,7 @@ console.log(myMap);
 
 `Object` is similar to `Map`—both let you set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. For this reason (and because there were no built-in alternatives), `Object` has been used as `Map` historically.
 
-Advantages over using `Objects`:
+Advantages of `Maps`:
 
 - A `Map` does not contain any keys by default
 - A `Map`'s keys can be any value
@@ -269,6 +269,13 @@ Advantages over using `Objects`:
 - Items number in `Maps` can be access easily via `size`
 - A `Map` is an iterable
 - Chaining multiple calls to `set`
+
+Advantages of `Objects`:
+
+- Functions inside objects are methods that can access `this`
+- Easy to transform from JSON string
+- Easy to access property
+- More common
 
 ## Tricks
 
