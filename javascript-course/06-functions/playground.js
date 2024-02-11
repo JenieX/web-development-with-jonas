@@ -1,33 +1,17 @@
 'use strict';
 
-const jenie = {
-  name: 'Jenie',
-  age: 32,
+function log(...args) {
+  console.log(this, ...args);
+}
 
-  logAge() {
-    console.log(`${this.name} is ${this.age} years old`);
-  },
+const obj1 = { name: 'obj1' };
+const obj2 = { name: 'obj2' };
 
-  logChildren(child, ...children) {
-    console.log(`${this.name}'s children are ${children.join(', ')}, and ${child}`);
-  },
-};
+const logBoundFirst = log.bind(obj1, 1, 2);
+const logBoundSecond = logBoundFirst.bind(obj2, 3, 4);
 
-const jonas = { name: 'Jonas', age: 33 };
+logBoundFirst('x');
+// => {name: 'obj1'} 1 2 'x'
 
-const jonasLogAge = jenie.logAge.bind(jonas);
-const jonasLogChildren = jenie.logChildren.bind(jonas, 'Sara');
-
-// ------------------------
-
-jenie.logAge();
-// => 'Jenie is 32 years old'
-
-jenie.logChildren('Adam', 'Hawra', 'Azharr');
-// => 'Jenie's children are Hawra, Azharr, and Adam'
-
-jonasLogAge();
-// => 'Jonas is 33 years old'
-
-jonasLogChildren('Jack');
-// => 'Jonas's children are Jack, and Sara'
+logBoundSecond(5, 6);
+// => {name: 'obj1'} 1 2 3 4 5 6

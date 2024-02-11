@@ -85,13 +85,13 @@ jenie.logChildren.apply(jonas, ['Sara', 'Jack']);
 
 ## [`Function.prototype.bind()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
-The `bind()` method of `Function` instances creates a new function that, when called, calls this function with its `this` keyword set to the provided value, and a given sequence of `arguments` preceding any provided when the new function is called.
+The `bind()` method of `Function` instances creates a **new** function that, when called, calls this function with its `this` keyword set to the provided value, and a given sequence of `arguments` preceding any provided when the new function is called.
 
 ### [Partially applied functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#partially_applied_functions)
 
 Arguments (if any) follow the provided `this` value are inserted at the start of the arguments passed to the target function, followed by whatever arguments are passed to the bound function at the time it is called. See example below.
 
-Hint: Used to create specific functions out of the original, even more when binding arguments. This same behavior can be achieved with closure when a function returns a function.
+Hint: Used to create **new** specific functions out of the original, even more when binding arguments. This same behavior can be achieved with closure when a function returns a function.
 
 ```js
 const jenie = {
@@ -125,6 +125,30 @@ jonasLogAge();
 
 jonasLogChildren('Jack');
 // => 'Jonas's children are Jack, and Sara'
+```
+
+### Further Binding
+
+A bound function can be further bound. The **newly bound `thisArg` value is ignored**. The arguments that `fn` ultimately receives are, in order: the arguments bound by `boundFn`, arguments bound by `boundFn2`, and the arguments received by `boundFn2`. See example below.
+
+```js
+'use strict';
+
+function log(...args) {
+  console.log(this, ...args);
+}
+
+const obj1 = { name: 'obj1' };
+const obj2 = { name: 'obj2' };
+
+const logBoundFirst = log.bind(obj1, 1, 2);
+const logBoundSecond = logBoundFirst.bind(obj2, 3, 4);
+
+logBoundFirst('x');
+// => {name: 'obj1'} 1 2 'x'
+
+logBoundSecond(5, 6);
+// => {name: 'obj1'} 1 2 3 4 5 6
 ```
 
 ---
