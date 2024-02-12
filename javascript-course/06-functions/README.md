@@ -149,6 +149,118 @@ logBoundFirst('x');
 
 logBoundSecond(5, 6);
 // => {name: 'obj1'} 1 2 3 4 5 6
+
+// Inspect `this` and `args`
+console.dir(logBoundFirst);
+console.dir(logBoundSecond);
+```
+
+## [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+
+A closure in JavaScript is created when a function is defined within another function, allowing the inner function to access the outer function's variables and parameters even after the outer function has finished executing.
+
+```js
+function createCounter() {
+  let counter = 0;
+
+  return {
+    increment() {
+      counter += 5;
+      console.log(counter);
+    },
+    decrement() {
+      counter -= 1;
+      console.log(counter);
+    },
+  };
+}
+
+const counter = createCounter();
+
+counter.increment();
+// => 5
+
+counter.increment();
+// => 10
+
+counter.decrement();
+// => 9
+
+counter.decrement();
+// => 8
+
+// Inspect closure
+console.dir(counter);
+```
+
+Another example showing that closure has priority over the scope chain.
+
+```js
+const a = 1000;
+
+function makeClosures() {
+  return (() => {
+    const a = 1;
+
+    return (() => {
+      const b = 2;
+
+      return (() => {
+        const c = 3;
+
+        return (() => {
+          const d = 4;
+
+          return () => {
+            const e = 5;
+            console.log(a, b, c, d, e);
+          };
+        })();
+        //
+      })();
+      //
+    })();
+    //
+  })();
+}
+
+const myFunc = makeClosures();
+
+myFunc();
+// => 1 2 3 4 5
+
+// Inspect closure
+console.dir(myFunc);
+// [[Scopes]]: Scopes[6]
+// 0: Closure {d: 4}
+// 1: Closure {c: 3}
+// 2: Closure {b: 2}
+// 3: Closure {a: 1}
+// 4: Script {a: 1000, myFunc: ƒ}
+// 5: Global {window}
+```
+
+One more example
+
+```js
+const myFunc = (function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  const callback = () => {
+    header.style.color = 'blue';
+  };
+
+  document.querySelector('body').addEventListener('click', callback);
+
+  return callback;
+})();
+
+console.dir(myFunc);
+// [[Scopes]]: Scopes[3]
+// 0: Closure {header: h1}
+// 1: Script {myFunc: ƒ}
+// 2: Global {window}
 ```
 
 ---

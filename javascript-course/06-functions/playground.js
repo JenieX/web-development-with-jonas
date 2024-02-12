@@ -15,3 +15,7 @@ logBoundFirst('x');
 
 logBoundSecond(5, 6);
 // => {name: 'obj1'} 1 2 3 4 5 6
+
+// Inspect `this` and `args`
+console.dir(logBoundFirst);
+console.dir(logBoundSecond);
