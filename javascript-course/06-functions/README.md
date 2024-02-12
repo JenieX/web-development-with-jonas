@@ -263,16 +263,6 @@ console.dir(myFunc);
 // 2: Global {window}
 ```
 
----
-
-## []()
-
-..
-
-```js
-
-```
-
 ## Glossary
 
 Note: First-class function is just a concept. However, there are higher order functions in practice, which is possible because the language supports First-class functions.
