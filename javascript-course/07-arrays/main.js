@@ -80,7 +80,7 @@ function calcDisplaySummary(account) {
     })
     .map((deposit, index, arrayAfterFilter) => {
       if (index === 0) {
-        console.log(arrayAfterFilter);
+        // console.log(arrayAfterFilter);
       }
 
       return (deposit * account.interestRate) / 100;
@@ -88,7 +88,7 @@ function calcDisplaySummary(account) {
     // Filter out interests that are below 1
     .filter((interest, index, arrayAfterMap) => {
       if (index === 0) {
-        console.log(arrayAfterMap);
+        // console.log(arrayAfterMap);
       }
 
       return interest >= 1;

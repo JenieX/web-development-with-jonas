@@ -185,6 +185,58 @@ console.log(sum);
 // => 6
 ```
 
+## [`Array.prototype.find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+
+The `find()` method of `Array` instances returns the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `undefined` is returned.
+
+Hint: Same as `filter()`, except that if the condition is satisfied, it stops at first match and returns it.
+
+```js
+const users = [
+  { name: 'Jenie', age: 32 },
+  { name: 'Jonas', age: 33 },
+  { name: 'Alicia', age: 43 },
+  { name: 'Adam', age: 1 },
+  { name: 'Sara', age: 7 },
+];
+
+const AdamInfo = users.find(({ name }) => {
+  return name === 'Adam';
+});
+
+console.log(AdamInfo);
+// => {name: 'Adam', age: 1}
+```
+
+## [`Array.prototype.findIndex()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
+The `findIndex()` method of `Array` instances returns the index of the first element in an array that satisfies the provided testing function. If no elements satisfy the testing function, `-1` is returned.
+
+```js
+const users = [
+  { name: 'Jenie', age: 32 },
+  { name: 'Jonas', age: 33 },
+  { name: 'Alicia', age: 43 },
+  { name: 'Adam', age: 1 },
+  { name: 'Sara', age: 7 },
+];
+
+// ------------------------
+
+// const AdamInfo = users.find(({ name }) => {
+//   return name === 'Adam';
+// });
+
+// const AdamInfoIndex = users.indexOf(AdamInfo);
+
+const AdamInfoIndex = users.findIndex(({ name }) => {
+  return name === 'Adam';
+});
+
+console.log(AdamInfoIndex);
+// => 3
+```
+
 ---
 
 ## []()
