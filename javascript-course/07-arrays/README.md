@@ -224,3 +224,27 @@ console.log(numbers.slice(-1)[0]);
 console.log(numbers.at(-1));
 // => 7
 ```
+
+### Array Parameter in the Callback
+
+In the callback function of most `Array` methods, usually the third parameter, is the array that is being processed. A good use for it is when chaining methods.
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+const results = numbers
+  .filter((number) => {
+    return number % 2 === 0;
+  })
+  .map((number, index, array) => {
+    // Inspect the results done by the `filter()` method.
+    if (index === 0) {
+      console.log(array);
+    }
+
+    return number.toString();
+  });
+
+console.log(results);
+// => ['2', '4', '6']
+```
