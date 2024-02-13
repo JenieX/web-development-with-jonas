@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["typeof"],
+  "cSpell.words": [
+    "afterbegin",
+    "afterend",
+    "beforebegin",
+    "beforeend",
+    "typeof"
+  ],
 
   // "hot-reload" only works for link of CSS files
   // anyways, but I will disable it all together.

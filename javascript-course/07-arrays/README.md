@@ -30,7 +30,6 @@ console.log(extractedFirst);
 // => [2, 3]
 
 const extractedFirstLength = indexEnd - index;
-// const extractedFirstLength = text.length - index;
 console.log(extractedFirstLength);
 // => 2
 
@@ -145,6 +144,22 @@ console.log(numbers);
 // -> [1, 2, 4, 4, 5]
 ```
 
+Remove a item example
+
+```js
+const jenie = { name: 'Jenie', age: 32, wife: { age: 35 } };
+const items = [1, 2, 3, jenie, 4, 5];
+
+const index = items.indexOf(jenie);
+const result = items.splice(index, 1);
+
+console.log(result);
+// => [{…}]
+
+console.log(items);
+// => [1, 2, 3, 4, 5]
+```
+
 ---
 
 ## []()
@@ -168,4 +183,19 @@ console.log(numbers.slice());
 
 console.log([...numbers]);
 // => [1, 2, 3, 4, 5, 6, 7]
+```
+
+### Get last item
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+console.log(numbers[numbers.length - 1]);
+// => 7
+
+console.log(numbers.slice(-1)[0]);
+// => 7
+
+console.log(numbers.at(-1));
+// => 7
 ```
