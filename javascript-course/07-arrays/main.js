@@ -1,9 +1,6 @@
 import { accounts } from './js/accounts.js';
 import { elements } from './js/elements.js';
 
-// console.log(accounts);
-// console.log(elements);
-
 function displayMovements(originalMovements, sort = false) {
   elements.containerMovements.innerHTML = '';
   let movements;
@@ -28,4 +25,28 @@ function displayMovements(originalMovements, sort = false) {
   });
 }
 
+function calcDisplayBalance(account) {
+  account.balance = account.movements.reduce((accumulator, movement) => {
+    return accumulator + movement;
+  }, 0);
+
+  elements.labelBalance.textContent = `${account.balance}€`;
+}
+
+function createUsernames(originalAccounts) {
+  for (const account of originalAccounts) {
+    account.username = account.owner
+      .toLowerCase()
+      .split(' ')
+      .map((name) => name[0])
+      .join('');
+  }
+}
+
+// ------------------------
+
 displayMovements(accounts[0].movements);
+calcDisplayBalance(accounts[0]);
+createUsernames(accounts);
+
+// console.log(accounts)
