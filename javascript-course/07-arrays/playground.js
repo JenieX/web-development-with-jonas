@@ -10,9 +10,9 @@ const users = [
 
 // ------------------------
 
-const AdamInfo = users.find(({ name }) => {
-  return name === 'Adam';
-});
+// const AdamInfo = users.find(({ name }) => {
+//   return name === 'Adam';
+// });
 
 // const AdamInfoIndex = users.indexOf(AdamInfo);
 
@@ -20,5 +20,5 @@ const AdamInfoIndex = users.findIndex(({ name }) => {
   return name === 'Adam';
 });
 
-console.log(AdamInfoIndex);
+// console.log(AdamInfoIndex);
 // => 3

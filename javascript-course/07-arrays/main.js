@@ -114,11 +114,100 @@ function createUsernames(originalAccounts) {
   }
 }
 
+function updateUI(account) {
+  displayMovements(account.movements);
+  calcDisplayBalance(account);
+  calcDisplaySummary(account);
+}
+
+function validatePin(pin) {
+  const pinAsNumber = Number(pin);
+
+  if (pinAsNumber.toString() !== pin) {
+    throw new Error('Invalid value for pin!');
+  }
+
+  if (pin.length !== 4) {
+    throw new Error('Invalid length for pin!');
+  }
+}
+
+function login(account) {
+  console.log(account);
+
+  const welcomeMessage = `Welcome back, ${account.owner.split(' ')[0]}`;
+  elements.labelWelcome.textContent = welcomeMessage;
+  elements.containerApp.style.opacity = 100;
+
+  // Clear input fields
+  elements.inputLoginUsername.value = elements.inputLoginPin.value = '';
+  elements.inputLoginUsername.blur();
+  elements.inputLoginPin.blur();
+
+  updateUI(account);
+}
+
 // ------------------------
 
-displayMovements(accounts[0].movements);
-calcDisplayBalance(accounts[0]);
-calcDisplaySummary(accounts[0]);
+let currentAccount;
+
+elements.btnLogin.addEventListener('click', (event) => {
+  // Prevent form from submitting
+  event.preventDefault();
+
+  const providedUsername = elements.inputLoginUsername.value;
+  const providedPin = elements.inputLoginPin.value;
+
+  try {
+    validatePin(providedPin);
+  } catch (error) {
+    console.error(error);
+    return;
+  }
+
+  console.log({ providedUsername, providedPin });
+
+  const matchedAccount = accounts.find(({ username, pin }) => {
+    return username === providedUsername && pin === Number(providedPin);
+  });
+
+  if (matchedAccount === undefined) {
+    console.error('No matched account!');
+    return;
+  }
+
+  currentAccount = matchedAccount;
+
+  login(currentAccount);
+});
+
+elements.btnTransfer.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const amount = Number(elements.inputTransferAmount.value);
+  const receiver = accounts.find(({ username }) => {
+    return username === elements.inputTransferTo.value;
+  });
+
+  elements.inputTransferAmount.value = elements.inputTransferTo.value = '';
+
+  if (
+    amount > 0 &&
+    currentAccount.balance >= amount &&
+    receiver !== undefined &&
+    receiver.username !== currentAccount.username
+  ) {
+    currentAccount.movements.push(-amount);
+    receiver.movements.push(amount);
+
+    updateUI(currentAccount);
+  } else{
+    console.error('Something went wrong!')
+  }
+});
+
 createUsernames(accounts);
 
-// console.log(accounts)
+// temp
+currentAccount = accounts[0];
+login(accounts[0]);
