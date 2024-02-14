@@ -201,9 +201,32 @@ elements.btnTransfer.addEventListener('click', (event) => {
     receiver.movements.push(amount);
 
     updateUI(currentAccount);
-  } else{
-    console.error('Something went wrong!')
+  } else {
+    console.error('Something went wrong!');
   }
+});
+
+elements.btnClose.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  if (
+    elements.inputCloseUsername.value === currentAccount.username &&
+    Number(elements.inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(({ username }) => {
+      return username === currentAccount.username;
+    });
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    elements.containerApp.style.opacity = 0;
+  }
+
+  elements.inputCloseUsername.value = elements.inputClosePin.value = '';
+
+  console.log(accounts);
 });
 
 createUsernames(accounts);

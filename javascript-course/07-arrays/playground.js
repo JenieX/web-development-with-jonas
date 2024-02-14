@@ -22,3 +22,5 @@ const AdamInfoIndex = users.findIndex(({ name }) => {
 
 // console.log(AdamInfoIndex);
 // => 3
+users.splice(AdamInfoIndex, 1);
+// console.log(users);
