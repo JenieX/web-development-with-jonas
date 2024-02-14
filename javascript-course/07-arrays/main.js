@@ -206,6 +206,33 @@ elements.btnTransfer.addEventListener('click', (event) => {
   }
 });
 
+elements.btnLoan.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  const amount = Number(elements.inputLoanAmount.value);
+
+  if (amount <= 0) {
+    console.error('Invalid value!');
+
+    return;
+  }
+
+  const didDepositTenthTheAmount = currentAccount.movements.some((mov) => {
+    return mov >= amount * 0.1;
+  });
+
+  if (didDepositTenthTheAmount === false) {
+    console.error("User didn't meet the requirement!");
+
+    return;
+  }
+
+  currentAccount.movements.push(amount);
+
+  updateUI(currentAccount);
+  elements.inputLoanAmount.value = '';
+});
+
 elements.btnClose.addEventListener('click', (event) => {
   event.preventDefault();
 

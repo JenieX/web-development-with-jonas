@@ -1,0 +1,10 @@
+{
+  "tabWidth": 2,
+  "printWidth": 85,
+  "singleQuote": true,
+  "singleAttributePerLine": false,
+  "bracketSameLine": false,
+  "plugins": ["prettier-plugin-jsdoc"],
+  "jsdocSingleLineComment": true,
+  "jsdocPreferCodeFences": false
+}

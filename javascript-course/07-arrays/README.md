@@ -237,6 +237,66 @@ console.log(AdamInfoIndex);
 // => 3
 ```
 
+## [`Array.prototype.some()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+
+The `some()` method of `Array` instances tests whether at least one element in the array passes the test implemented by the provided function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
+
+Hint: Similar to `include()`, except that it accepts a condition via a callback instead of one value.
+
+```js
+// @ts-check
+
+'use strict';
+
+/** @typedef {{ name: string; age: number; gender: 'male' | 'female' }} User */
+
+/** @type {User[]} */
+const users = [
+  { name: 'Jenie', age: 32, gender: 'male' },
+  { name: 'Jonas', age: 33, gender: 'male' },
+  { name: 'Sara', age: 7, gender: 'female' },
+  { name: 'Adam', age: 1, gender: 'male' },
+];
+
+// ------------------------
+
+const HasAFemale = users.some(({ gender }) => {
+  return gender === 'female';
+});
+
+console.log(HasAFemale);
+// => true
+```
+
+## [`Array.prototype.every()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
+The `every()` method of `Array` instances tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+```js
+// @ts-check
+
+'use strict';
+
+/** @typedef {{ name: string; age?: number; gender: 'male' | 'female' }} User */
+
+/** @type {User[]} */
+const users = [
+  { name: 'Jenie', age: 32, gender: 'male' },
+  { name: 'Jonas', age: 33, gender: 'male' },
+  { name: 'Sara', age: 7, gender: 'female' },
+  { name: 'Adam', gender: 'male' },
+];
+
+// ------------------------
+
+const completeAgeInfo = users.every(({ age }) => {
+  return age !== undefined;
+});
+
+console.log(completeAgeInfo);
+// => false
+```
+
 ---
 
 ## []()

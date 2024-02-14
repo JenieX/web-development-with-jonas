@@ -1,26 +1,22 @@
+// @ts-check
+
 'use strict';
 
+/** @typedef {{ name: string; age?: number; gender: 'male' | 'female' }} User */
+
+/** @type {User[]} */
 const users = [
-  { name: 'Jenie', age: 32 },
-  { name: 'Jonas', age: 33 },
-  { name: 'Alicia', age: 43 },
-  { name: 'Adam', age: 1 },
-  { name: 'Sara', age: 7 },
+  { name: 'Jenie', age: 32, gender: 'male' },
+  { name: 'Jonas', age: 33, gender: 'male' },
+  { name: 'Sara', age: 7, gender: 'female' },
+  { name: 'Adam', gender: 'male' },
 ];
 
 // ------------------------
 
-// const AdamInfo = users.find(({ name }) => {
-//   return name === 'Adam';
-// });
-
-// const AdamInfoIndex = users.indexOf(AdamInfo);
-
-const AdamInfoIndex = users.findIndex(({ name }) => {
-  return name === 'Adam';
+const completeAgeInfo = users.every(({ age }) => {
+  return age !== undefined;
 });
 
-// console.log(AdamInfoIndex);
-// => 3
-users.splice(AdamInfoIndex, 1);
-// console.log(users);
+// console.log(completeAgeInfo);
+// => false
