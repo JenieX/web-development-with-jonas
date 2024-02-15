@@ -1,25 +1,30 @@
 // @ts-check
 'use strict';
 
-const arrayOfUndefined = Array.from({ length: 5 });
+// Generating a sequence of numbers from 1-7
 
-console.log(arrayOfUndefined);
-// => [undefined, undefined, undefined, undefined, undefined]
+const numbers1 = Array.from({ length: 7 }, (item, index) => index + 1);
 
-// ------------------------
+console.log(numbers1);
+// => [1, 2, 3, 4, 5, 6, 7]
 
-// Generate a sequence of numbers
-const numbers = Array.from({ length: 5 }, (item, index) => {
-  return index + 1;
-});
+// -------------------------
 
-console.log(numbers);
-// => [1, 2, 3, 4, 5]
+const numbers2 = Array.from(Array(7), (item, index) => index + 1);
 
-// ------------------------
+console.log(numbers2);
+// => [1, 2, 3, 4, 5, 6, 7]
 
-const pElementsClasses = Array.from(document.querySelectorAll('p'), (element) => {
-  return element.className;
-});
+// -------------------------
 
-console.log(pElementsClasses);
+const numbers3 = [...Array(8).keys()].slice(1);
+
+console.log(numbers3);
+// => [1, 2, 3, 4, 5, 6, 7]
+
+// -------------------------
+
+const numbers4 = Array.from(Array(8).keys()).slice(1);
+
+console.log(numbers4);
+// => [1, 2, 3, 4, 5, 6, 7]

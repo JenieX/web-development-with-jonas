@@ -499,19 +499,15 @@ console.log(numbers);
 
 // ------------------------
 
+// const pElementsClasses = [...document.querySelectorAll('p')].map((element) => {
+//   return element.className;
+// });
+
 const pElementsClasses = Array.from(document.querySelectorAll('p'), (element) => {
   return element.className;
 });
 
 console.log(pElementsClasses);
-```
-
----
-
-### []()
-
-```js
-//
 ```
 
 ## Tricks and Tips
@@ -600,6 +596,41 @@ emptySlotsArray.length = 7;
 
 console.log(emptySlotsArray);
 // => [empty × 7]
+```
+
+### Generate a sequence of numbers
+
+```js
+// @ts-check
+'use strict';
+
+// Generating a sequence of numbers from 1-7
+
+const numbers1 = Array.from({ length: 7 }, (item, index) => index + 1);
+
+console.log(numbers1);
+// => [1, 2, 3, 4, 5, 6, 7]
+
+// -------------------------
+
+const numbers2 = Array.from(Array(7), (item, index) => index + 1);
+
+console.log(numbers2);
+// => [1, 2, 3, 4, 5, 6, 7]
+
+// -------------------------
+
+const numbers3 = [...Array(8).keys()].slice(1);
+
+console.log(numbers3);
+// => [1, 2, 3, 4, 5, 6, 7]
+
+// -------------------------
+
+const numbers4 = Array.from(Array(8).keys()).slice(1);
+
+console.log(numbers4);
+// => [1, 2, 3, 4, 5, 6, 7]
 ```
 
 ## Screenshots
