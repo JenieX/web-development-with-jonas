@@ -268,7 +268,7 @@ elements.btnSort.addEventListener('click', (event) => {
 createUsernames(accounts);
 
 // temp
-console.log(accounts);
-console.log('------------------------');
+// console.log(accounts);
+// console.log('------------------------');
 currentAccount = accounts[0];
 login(accounts[0]);
