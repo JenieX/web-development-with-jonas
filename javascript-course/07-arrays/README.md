@@ -496,6 +496,14 @@ const numbers = Array.from({ length: 5 }, (item, index) => {
 
 console.log(numbers);
 // => [1, 2, 3, 4, 5]
+
+// ------------------------
+
+const pElementsClasses = Array.from(document.querySelectorAll('p'), (element) => {
+  return element.className;
+});
+
+console.log(pElementsClasses);
 ```
 
 ---
