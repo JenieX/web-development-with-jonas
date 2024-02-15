@@ -1,22 +1,30 @@
 // @ts-check
-
 'use strict';
 
-/** @typedef {{ name: string; age?: number; gender: 'male' | 'female' }} User */
+/** @type {(number | 'Jenie')[]} */
+const numbers = [1, 2, 3, 4, 5];
 
-/** @type {User[]} */
-const users = [
-  { name: 'Jenie', age: 32, gender: 'male' },
-  { name: 'Jonas', age: 33, gender: 'male' },
-  { name: 'Sara', age: 7, gender: 'female' },
-  { name: 'Adam', gender: 'male' },
-];
+numbers.fill('Jenie');
+
+console.log(numbers);
+// => ['Jenie', 'Jenie', 'Jenie', 'Jenie', 'Jenie']
 
 // ------------------------
 
-const completeAgeInfo = users.every(({ age }) => {
-  return age !== undefined;
-});
+const emptySlotsArray = new Array(5);
 
-// console.log(completeAgeInfo);
-// => false
+emptySlotsArray.fill('Jenie');
+
+console.log(emptySlotsArray);
+// => ['Jenie', 'Jenie', 'Jenie', 'Jenie', 'Jenie']
+
+// ------------------------
+
+/** @type {('*' | number)[]} */
+const pin = [4, 8, 2, 6, 3, 5];
+
+// pin.fill('*', 1, pin.length - 1);
+pin.fill('*', 1, -1);
+
+console.log(pin);
+// => [4, '*', '*', '*', '*', 5]

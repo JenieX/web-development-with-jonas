@@ -256,6 +256,15 @@ elements.btnClose.addEventListener('click', (event) => {
   console.log(accounts);
 });
 
+let sorted = false;
+elements.btnSort.addEventListener('click', (event) => {
+  // I don't think it is needed!
+  // event.preventDefault();
+
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
+
 createUsernames(accounts);
 
 // temp

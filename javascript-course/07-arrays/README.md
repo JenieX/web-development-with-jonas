@@ -245,7 +245,6 @@ Hint: Similar to `include()`, except that it accepts a condition via a callback 
 
 ```js
 // @ts-check
-
 'use strict';
 
 /** @typedef {{ name: string; age: number; gender: 'male' | 'female' }} User */
@@ -274,7 +273,6 @@ The `every()` method of `Array` instances tests whether all elements in the arra
 
 ```js
 // @ts-check
-
 'use strict';
 
 /** @typedef {{ name: string; age?: number; gender: 'male' | 'female' }} User */
@@ -297,9 +295,212 @@ console.log(completeAgeInfo);
 // => false
 ```
 
+## [`Array.prototype.flat()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat)
+
+The `flat()` method of `Array` instances creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+
+### Syntax
+
+```js
+flat();
+flat(depth);
+```
+
+Example
+
+```js
+// @ts-check
+'use strict';
+
+/** @typedef {{ name: string; children: string[] }} User */
+
+/** @type {User[]} */
+const users = [
+  { name: 'Jenie', children: ['Adam', 'Hawra', 'Azharr'] },
+  { name: 'Jonas', children: ['Sara', 'Jack'] },
+];
+
+const children = users.map(({ children }) => {
+  return children;
+});
+
+console.log(children);
+// => [Array(3), Array(2)]
+
+const combinedChildren = children.flat();
+
+console.log(combinedChildren);
+// => ['Adam', 'Hawra', 'Azharr', 'Sara', 'Jack']
+```
+
+## [`Array.prototype.flatMap()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap)
+
+The `flatMap()` method of `Array` instances returns a new array formed by applying a given callback function to each element of the array, and then flattening the result by one level. It is identical to a `map()` followed by a `flat()` of depth 1 (`arr.map(...args).flat()`), but slightly more efficient than calling those two methods separately.
+
+```js
+// @ts-check
+'use strict';
+
+/** @typedef {{ name: string; children: string[] }} User */
+
+/** @type {User[]} */
+const users = [
+  { name: 'Jenie', children: ['Adam', 'Hawra', 'Azharr'] },
+  { name: 'Jonas', children: ['Sara', 'Jack'] },
+];
+
+// const children = users.map(({ children }) => {
+//   return children;
+// });
+
+// const combinedChildren = children.flat();
+
+const combinedChildren = users.flatMap(({ children }) => {
+  return children;
+});
+
+console.log(combinedChildren);
+// => ['Adam', 'Hawra', 'Azharr', 'Sara', 'Jack']
+```
+
+## [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+The `sort()` method of `Array` instances sorts the elements of an array in place and returns the reference to the same array, now sorted. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+Related: To sort the elements in an array without mutating the original array, use [`toSorted()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted).
+
+### Syntax
+
+```js
+function compareFn(a, b) {
+  // a is less than b by some ordering criterion
+  if (a < b) {
+    // Sort a before b (keep order)
+    return -1;
+  }
+  // a is greater than b by the ordering criterion
+  else if (a > b) {
+    // Sort a after b (switch order)
+    return 1;
+  }
+
+  // a must be equal to b
+  return 0;
+}
+
+sort();
+sort(compareFn);
+```
+
+Example
+
+```js
+// @ts-check
+'use strict';
+
+/** @type {number[]} */
+const numbers = [100, -25, 0, 15, -50];
+
+// ------------------------
+
+// Mutates the original Array and sort as string
+// numbers.sort();
+
+// console.log(numbers);
+// => [-25, -50, 0, 100, 15]
+
+// ------------------------
+
+//  Sort numerically
+// numbers.sort((a, b) => {
+//   if (a < b) {
+//     return -1;
+//   }
+
+//   return 1;
+// });
+
+// Sort numerically (Shorthand)
+numbers.sort((a, b) => a - b);
+
+console.log(numbers);
+// => [-50, -25, 0, 15, 100]
+```
+
+### [`Array.prototype.fill()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+
+The `fill()` method of `Array` instances changes all elements within a range of indices in an array to a static value. It returns the modified array.
+
+### Syntax
+
+```js
+fill(value);
+fill(value, indexStart);
+fill(value, indexStart, indexEnd);
+```
+
+Example
+
+```js
+// @ts-check
+'use strict';
+
+/** @type {(number | 'Jenie')[]} */
+const numbers = [1, 2, 3, 4, 5];
+
+numbers.fill('Jenie');
+
+console.log(numbers);
+// => ['Jenie', 'Jenie', 'Jenie', 'Jenie', 'Jenie']
+
+// ------------------------
+
+const emptySlotsArray = new Array(5);
+
+emptySlotsArray.fill('Jenie');
+
+console.log(emptySlotsArray);
+// => ['Jenie', 'Jenie', 'Jenie', 'Jenie', 'Jenie']
+
+// ------------------------
+
+/** @type {('*' | number)[]} */
+const pin = [4, 8, 2, 6, 3, 5];
+
+// pin.fill('*', 1, pin.length - 1);
+pin.fill('*', 1, -1);
+
+console.log(pin);
+// => [4, '*', '*', '*', '*', 5]
+```
+
+### [`Array.from()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+
+The `Array.from()` static method creates a new, shallow-copied `Array` instance from an iterable or array-like object.
+
+```js
+// @ts-check
+'use strict';
+
+const arrayOfUndefined = Array.from({ length: 5 });
+
+console.log(arrayOfUndefined);
+// => [undefined, undefined, undefined, undefined, undefined]
+
+// ------------------------
+
+// Generate a sequence of numbers
+const numbers = Array.from({ length: 5 }, (item, index) => {
+  return index + 1;
+});
+
+console.log(numbers);
+// => [1, 2, 3, 4, 5]
+```
+
 ---
 
-## []()
+### []()
 
 ```js
 //
@@ -360,3 +561,39 @@ const results = numbers
 console.log(results);
 // => ['2', '4', '6']
 ```
+
+### [Using `new Array()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Array)
+
+A JavaScript array is initialized with the given elements, **except in the case where a number is passed as the only argument** to the Array constructor. In that case, An array is created with its length property set to that number, and the array elements are empty slots.
+
+Hint: Only the `fill()` method can be called on an empty slots Array.
+
+```js
+console.log(new Array('jenie'));
+// => ['jenie']
+
+console.log(new Array(7));
+// => [empty × 7]
+
+console.log(new Array(7, 0));
+// => [7, 0]
+```
+
+### Create empty slots Array
+
+```js
+console.log(new Array(7));
+// => [empty × 7]
+
+// ------------------------
+
+const emptySlotsArray = [];
+emptySlotsArray.length = 7;
+
+console.log(emptySlotsArray);
+// => [empty × 7]
+```
+
+## Screenshots
+
+<img src="array-methods.png?raw=true" width="700" >
