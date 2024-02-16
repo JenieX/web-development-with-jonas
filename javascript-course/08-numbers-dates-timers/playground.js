@@ -1,107 +1,93 @@
 // @ts-check
 'use strict';
 
-function randomNumber(minimum, maximum) {
-  const areIntegers =
-    Number(minimum) === minimum &&
-    minimum % 1 === 0 &&
-    Number(maximum) === maximum &&
-    maximum % 1 === 0;
-  if (!areIntegers) {
-    throw new Error('minimum and maximum are not both integers!');
-  }
-  if (minimum > maximum) {
-    throw new Error('minimum can not be bigger than maximum!');
-  }
+// https://stackoverflow.com/a/29246176
 
-  console.log(
-    `\n# Random number between ${minimum} (inclusive) and ${maximum} (exclusive)`,
-  );
+/** @param {() => { results: number; signature: string }} generator */
+function logResults(generator) {
+  let loops = 1_000_000;
 
-  console.log('\n------------------------');
-  console.log('');
+  /** @type {Record<String, number>} */
+  const collector = {};
+  let callbackSignature;
 
-  console.log(`const range = ${maximum} - ${minimum}`);
-  const range = maximum - minimum;
-  console.log('=>', range);
+  while (loops) {
+    const { results: randomNumber, signature } = generator();
 
-  console.log('\n------------------------');
-  console.log('');
-
-  console.log(`// Random number greater than or equal to 0 and less than ${range}`);
-  console.log('');
-  console.log(`Math.random() * ${range};`);
-  const random = Math.random() * range;
-  console.log('=>', random);
-
-  console.log('\n------------------------');
-  console.log('');
-
-  console.log('// To integer');
-  console.log('');
-  console.log(`Math.floor(${random});`);
-  const randomInteger = Math.floor(random);
-  console.log('=>', randomInteger);
-
-  console.log('\n------------------------');
-  console.log('');
-
-  console.log(`// Finally add the minimum`);
-  console.log('');
-  console.log(`${randomInteger} + ${minimum}`);
-  console.log('=>', randomInteger + minimum);
-
-  console.log('\n------------------------ Extra');
-  console.log('');
-
-  console.log('// The final code in one line');
-  console.log('');
-  console.log(`Math.floor(Math.random() * ${range}) + ${minimum}`);
-  console.log('=>', Math.floor(Math.random() * (maximum - minimum)) + minimum);
-
-  if (range < 9) {
-    console.log('\n------------------------');
-    console.log('');
-    const possibilities = [];
-    for (let index = 0; index < 1000000; index += 1) {
-      const newRandom = Math.floor(Math.random() * range);
-      if (!possibilities.includes(newRandom)) {
-        possibilities.push(newRandom);
-      }
+    if (callbackSignature === undefined) {
+      callbackSignature = signature;
     }
 
-    console.log('// Possibilities in 1000000 runs for the range from zero');
-    console.log('');
-    console.log(`Math.floor(Math.random() * ${range})`);
-    console.log(
-      '=>',
-      possibilities.sort((a, b) => a - b),
-    );
-  }
-
-  if (range < 9) {
-    console.log('\n------------------------');
-    console.log('');
-    const possibilities = [];
-    for (let index = 0; index < 1000000; index += 1) {
-      const newRandom = Math.floor(Math.random() * range) + minimum;
-      if (!possibilities.includes(newRandom)) {
-        possibilities.push(newRandom);
-      }
+    if (collector[randomNumber] === undefined) {
+      collector[randomNumber] = 1;
+    } else {
+      collector[randomNumber] += 1;
     }
 
-    console.log('// Possibilities in 1000000 runs for the final code');
-    console.log('');
-    console.log(`Math.floor(Math.random() * ${range}) + ${minimum}`);
-    console.log(
-      '=>',
-      possibilities.sort((a, b) => a - b),
-    );
-    console.log('');
+    loops -= 1;
   }
+
+  console.log(callbackSignature);
+  console.log(collector);
+  console.log('------------------------');
 }
 
-randomNumber(4, 8);
-// randomNumber(-3, 3);
-// randomNumber(-3, 7);
-// randomNumber(-10, -1);
+/**
+ * Generate random integer number between 0 (included) and max (excluded)
+ *
+ * @param {number} max
+ */
+function getRandomIntegerFromZero(max) {
+  // return Math.floor(Math.random() * max);
+
+  return {
+    signature: `Math.floor(Math.random() * ${max})`,
+    results: Math.floor(Math.random() * max),
+  };
+}
+
+/**
+ * Generate random integer number between min (included) and max (excluded)
+ *
+ * @param {number} min
+ * @param {number} max
+ * @param {boolean} maxIncluded
+ */
+function getRandomInteger(min, max, maxIncluded = false) {
+  const zeroOrOne = maxIncluded === true ? 1 : 0;
+
+  return {
+    signature: `Math.floor(Math.random() * (${max - min + zeroOrOne})) + ${min}`,
+    results: Math.floor(Math.random() * (max - min + zeroOrOne)) + min,
+  };
+}
+
+// ------------------------
+
+logResults(getRandomIntegerFromZero.bind(undefined, 2));
+// => {0: 500000, 1: 500000}
+
+logResults(getRandomIntegerFromZero.bind(undefined, 4));
+// => {0: 250000, 1: 250000, 2: 250000, 3: 250000}
+
+logResults(getRandomInteger.bind(undefined, 4, 8));
+// => {4: 250000, 5: 250000, 6: 250000, 7: 250000}
+
+logResults(getRandomInteger.bind(undefined, 4, 8, true));
+// => {4: 200000, 5: 200000, 6: 200000, 7: 200000, 8: 200000}
+
+//------------------------
+
+// Extra examples
+
+// 0 -> 10
+Math.floor(Math.random() * 11);
+
+// 1 -> 10
+Math.floor(Math.random() * 10) + 1;
+
+// 5 -> 20
+Math.floor(Math.random() * 16) + 5;
+
+// -10 -> (-2)
+Math.floor(Math.random() * 9) - 10;
