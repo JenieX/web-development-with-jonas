@@ -7,6 +7,9 @@ Numbers in JavaScript are presented internally as floating point numbers (decima
 ```js
 console.log(3 === 3.0);
 // => true
+
+const myInt = 5; // A number without decimals
+const myFloat = 6.667; // A number with decimals
 ```
 
 ### [`Number.parseInt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt)
@@ -72,7 +75,7 @@ console.log(Number.isNaN(37));
 
 The `Number.isFinite()` static method determines whether the passed value is a finite number — that is, it checks that a given value is a number, and the number is neither positive `Infinity`, negative `Infinity`, nor `NaN`.
 
-Hint: Check if a value is a real number. Should be used instead of `Number.isNaN()`.
+Hint: Checks if a value is a real number. Should be used instead of `Number.isNaN()`.
 
 ```js
 // @ts-check
@@ -157,6 +160,16 @@ console.log(Number.isInteger(4500000000000000.1));
 // => true
 ```
 
+### [`Math.random()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+The `Math.random()` static method returns a floating-point, pseudo-random number that's greater than or equal to `0` and less than `1`, with approximately uniform distribution over that range — which you can then scale to your desired range.
+
+<img src="ruler.webp?raw=true" width="700" >
+
+```js
+//
+```
+
 ---
 
 ### []()
@@ -219,4 +232,36 @@ if (valueAsNumber.toString() === value) {
 } else {
   console.error('Not a number!');
 }
+```
+
+### [`Math.random()` to get 50/50 chance](https://stackoverflow.com/a/44651632), [extra](https://stackoverflow.com/a/21507231)
+
+The random number generators returns a number from `0` to `0.99999999`, We can split this range into two, [`0` - `0.49999999`] and [`0.5` - `0.9999999`].
+
+<img src="ruler.webp?raw=true" width="700" >
+
+```js
+// @ts-check
+'use strict';
+
+let loops = 1_000_000;
+let face = 0;
+let tail = 0;
+
+while (loops) {
+  // const side = Math.random() < 0.5 ? 'tail' : 'face';
+  // const side = Math.random() * 2 < 1 ? 'tail' : 'face';
+  const side = Math.floor(Math.random() * 2) === 0 ? 'tail' : 'face';
+
+  if (side === 'tail') {
+    face += 1;
+  } else {
+    tail += 1;
+  }
+
+  loops -= 1;
+}
+
+console.log({ face, tail });
+// => {face: 500000, tail: 500000}
 ```

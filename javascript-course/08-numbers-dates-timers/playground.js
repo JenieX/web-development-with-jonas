@@ -1,39 +1,107 @@
 // @ts-check
 'use strict';
 
-console.log(Number.isInteger(0));
-// => true
+function randomNumber(minimum, maximum) {
+  const areIntegers =
+    Number(minimum) === minimum &&
+    minimum % 1 === 0 &&
+    Number(maximum) === maximum &&
+    maximum % 1 === 0;
+  if (!areIntegers) {
+    throw new Error('minimum and maximum are not both integers!');
+  }
+  if (minimum > maximum) {
+    throw new Error('minimum can not be bigger than maximum!');
+  }
 
-console.log(Number.isInteger(1));
-// => true
+  console.log(
+    `\n# Random number between ${minimum} (inclusive) and ${maximum} (exclusive)`,
+  );
 
-console.log(Number.isInteger(-10));
-// => true
+  console.log('\n------------------------');
+  console.log('');
 
-console.log(Number.isInteger(5.0));
-// => true
+  console.log(`const range = ${maximum} - ${minimum}`);
+  const range = maximum - minimum;
+  console.log('=>', range);
 
-console.log(Number.isInteger(0.1));
-// => false
+  console.log('\n------------------------');
+  console.log('');
 
-console.log(Number.isInteger(NaN));
-// => false
+  console.log(`// Random number greater than or equal to 0 and less than ${range}`);
+  console.log('');
+  console.log(`Math.random() * ${range};`);
+  const random = Math.random() * range;
+  console.log('=>', random);
 
-console.log(Number.isInteger(Infinity));
-// => false
+  console.log('\n------------------------');
+  console.log('');
 
-console.log(Number.isInteger(-Infinity));
-// => false
+  console.log('// To integer');
+  console.log('');
+  console.log(`Math.floor(${random});`);
+  const randomInteger = Math.floor(random);
+  console.log('=>', randomInteger);
 
-console.log(Number.isInteger('10'));
-// => false
+  console.log('\n------------------------');
+  console.log('');
 
-// ------------------------
+  console.log(`// Finally add the minimum`);
+  console.log('');
+  console.log(`${randomInteger} + ${minimum}`);
+  console.log('=>', randomInteger + minimum);
 
-// An exception for the case of losing precision
+  console.log('\n------------------------ Extra');
+  console.log('');
 
-console.log(Number.isInteger(5.0000000000000001));
-// => true
+  console.log('// The final code in one line');
+  console.log('');
+  console.log(`Math.floor(Math.random() * ${range}) + ${minimum}`);
+  console.log('=>', Math.floor(Math.random() * (maximum - minimum)) + minimum);
 
-console.log(Number.isInteger(4500000000000000.1));
-// => true
+  if (range < 9) {
+    console.log('\n------------------------');
+    console.log('');
+    const possibilities = [];
+    for (let index = 0; index < 1000000; index += 1) {
+      const newRandom = Math.floor(Math.random() * range);
+      if (!possibilities.includes(newRandom)) {
+        possibilities.push(newRandom);
+      }
+    }
+
+    console.log('// Possibilities in 1000000 runs for the range from zero');
+    console.log('');
+    console.log(`Math.floor(Math.random() * ${range})`);
+    console.log(
+      '=>',
+      possibilities.sort((a, b) => a - b),
+    );
+  }
+
+  if (range < 9) {
+    console.log('\n------------------------');
+    console.log('');
+    const possibilities = [];
+    for (let index = 0; index < 1000000; index += 1) {
+      const newRandom = Math.floor(Math.random() * range) + minimum;
+      if (!possibilities.includes(newRandom)) {
+        possibilities.push(newRandom);
+      }
+    }
+
+    console.log('// Possibilities in 1000000 runs for the final code');
+    console.log('');
+    console.log(`Math.floor(Math.random() * ${range}) + ${minimum}`);
+    console.log(
+      '=>',
+      possibilities.sort((a, b) => a - b),
+    );
+    console.log('');
+  }
+}
+
+randomNumber(4, 8);
+// randomNumber(-3, 3);
+// randomNumber(-3, 7);
+// randomNumber(-10, -1);
