@@ -172,20 +172,17 @@ The `Math.random()` static method returns a floating-point, pseudo-random number
 
 // https://stackoverflow.com/a/29246176
 
-/** @param {() => { results: number; signature: string }} generator */
+let lastExpression;
+
+/** @param {() => number} generator */
 function logResults(generator) {
   let loops = 1_000_000;
 
   /** @type {Record<String, number>} */
   const collector = {};
-  let callbackSignature;
 
   while (loops) {
-    const { results: randomNumber, signature } = generator();
-
-    if (callbackSignature === undefined) {
-      callbackSignature = signature;
-    }
+    const randomNumber = generator();
 
     if (collector[randomNumber] === undefined) {
       collector[randomNumber] = 1;
@@ -196,9 +193,7 @@ function logResults(generator) {
     loops -= 1;
   }
 
-  console.log(callbackSignature);
   console.log(collector);
-  console.log('------------------------');
 }
 
 /**
@@ -207,12 +202,13 @@ function logResults(generator) {
  * @param {number} max
  */
 function getRandomIntegerFromZero(max) {
-  // return Math.floor(Math.random() * max);
+  const expression = `Math.floor(Math.random() * ${max})`;
+  if (lastExpression !== expression) {
+    lastExpression = expression;
+    console.log(lastExpression);
+  }
 
-  return {
-    signature: `Math.floor(Math.random() * ${max})`,
-    results: Math.floor(Math.random() * max),
-  };
+  return Math.floor(Math.random() * max);
 }
 
 /**
@@ -225,10 +221,13 @@ function getRandomIntegerFromZero(max) {
 function getRandomInteger(min, max, maxIncluded = false) {
   const zeroOrOne = maxIncluded === true ? 1 : 0;
 
-  return {
-    signature: `Math.floor(Math.random() * (${max - min + zeroOrOne})) + ${min}`,
-    results: Math.floor(Math.random() * (max - min + zeroOrOne)) + min,
-  };
+  const expression = `Math.floor(Math.random() * ${max - min + zeroOrOne}) + ${min}`;
+  if (lastExpression !== expression) {
+    lastExpression = expression;
+    console.log(lastExpression);
+  }
+
+  return Math.floor(Math.random() * (max - min + zeroOrOne)) + min;
 }
 
 // ------------------------
@@ -262,9 +261,135 @@ Math.floor(Math.random() * 16) + 5;
 Math.floor(Math.random() * 9) - 10;
 ```
 
+### [`Math.floor()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor)
+
+The `Math.floor()` static method always **rounds down** and returns the largest integer less than or equal to a given number.
+
+Note: Coerces its parameter to a number.
+
+```js
+// @ts-check
+'use strict';
+
+console.log(Math.floor(5.95));
+// => 5
+
+console.log(Math.floor(5.05));
+// => 5
+
+console.log(Math.floor(5));
+// => 5
+
+console.log(Math.floor(-5.05));
+// => -6
+```
+
+### [`Math.ceil()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/ceil)
+
+The `Math.ceil()` static method always **rounds up** and returns the smallest integer greater than or equal to a given number.
+
+Note: Coerces its parameter to a number.
+
+```js
+// @ts-check
+'use strict';
+
+console.log(Math.ceil(0.95));
+// => 1
+
+console.log(Math.ceil(4));
+// => 4
+
+console.log(Math.ceil(7.004));
+// => 8
+
+console.log(Math.ceil(-7.004));
+// => -7
+```
+
+### [`Math.round()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round)
+
+The `Math.round()` static method returns the value of a number **rounded to the nearest** integer.
+
+Note: Coerces its parameter to a number.
+
+```js
+// @ts-check
+'use strict';
+
+console.log(Math.round(0.9));
+// => 1
+
+console.log(Math.round(5.95));
+// => 6
+
+console.log(Math.round(5.5));
+// => 6
+
+console.log(Math.round(5.499999999999999));
+// => 5
+
+console.log(Math.round(-5.05));
+// => -5
+
+console.log(Math.round(-5.5));
+// => -5
+
+console.log(Math.round(-5.95));
+// => -6
+```
+
+### [`Math.trunc()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/trunc)
+
+The `Math.trunc()` static method returns the integer part of a number by **removing any fractional digits**.
+
+Unlike the other three `Math` methods: `Math.floor()`, `Math.ceil()` and `Math.round()`, the way `Math.trunc()` works is very simple. It truncates (cuts off) the dot and the digits to the right of it, no matter whether the argument is a positive or negative number.
+
+Note: Coerces its parameter to a number.
+
+```js
+// @ts-check
+'use strict';
+
+console.log(Math.trunc(13.37));
+// => 13
+
+console.log(Math.trunc(42.84));
+// => 42
+
+console.log(Math.trunc(0.123));
+// => 0
+
+console.log(Math.trunc(-0.123));
+// => -0
+```
+
+### [`Math.abs()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/abs)
+
+The `Math.abs()` static method returns the **absolute value** of a number.
+
+Note: Coerces its parameter to a number.
+
+```js
+// @ts-check
+'use strict';
+
+console.log(Math.abs(-Infinity));
+// => Infinity
+
+console.log(Math.abs(-1));
+// => 1
+
+console.log(Math.abs(-0));
+// => 0
+
+console.log(Math.abs(1));
+// => 1
+```
+
 ---
 
-### []()
+### [``]()
 
 ```js
 //

@@ -4,6 +4,7 @@
     "afterend",
     "beforebegin",
     "beforeend",
+    "trunc",
     "typeof"
   ],
 
