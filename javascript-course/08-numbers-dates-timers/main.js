@@ -17,7 +17,7 @@ function displayMovements(originalMovements, sort = false) {
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
-        <div class="movements__value">${movement}€</div>
+        <div class="movements__value">${movement.toFixed(2)}€</div>
       </div>
     `;
 
@@ -30,7 +30,7 @@ function calcDisplayBalance(account) {
     return accumulator + movement;
   }, 0);
 
-  elements.labelBalance.textContent = `${account.balance}€`;
+  elements.labelBalance.textContent = `${account.balance.toFixed(2)}€`;
 }
 
 function calcDisplaySummary(account) {
@@ -50,7 +50,7 @@ function calcDisplaySummary(account) {
       return accumulator + deposit;
     }, 0);
 
-  elements.labelSumIn.textContent = `${incomes}€`;
+  elements.labelSumIn.textContent = `${incomes.toFixed(2)}€`;
 
   const outcome = account.movements
     .filter((movement, index, originalArray) => {
@@ -68,7 +68,7 @@ function calcDisplaySummary(account) {
       return accumulator + withdraw;
     }, 0);
 
-  elements.labelSumOut.textContent = `${Math.abs(outcome)}€`;
+  elements.labelSumOut.textContent = `${Math.abs(outcome.toFixed(2))}€`;
 
   const interest = account.movements
     .filter((movement, index, originalArray) => {
@@ -101,7 +101,7 @@ function calcDisplaySummary(account) {
       return accumulator + interest;
     }, 0);
 
-  elements.labelSumInterest.textContent = `${interest}€`;
+  elements.labelSumInterest.textContent = `${interest.toFixed(2)}€`;
 }
 
 function createUsernames(originalAccounts) {

@@ -387,6 +387,84 @@ console.log(Math.abs(1));
 // => 1
 ```
 
+### [`Number.prototype.toFixed()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+
+The `toFixed()` method of Number values formats this number using fixed-point notation.
+
+```js
+// @ts-check
+'use strict';
+
+console.log((123.456).toFixed());
+// => '123'
+
+console.log((123.456).toFixed(1));
+// => '123.5'
+
+console.log((123.456).toFixed(2));
+// => '123.46'
+
+console.log((0.004).toFixed(2));
+// => '0.00'
+```
+
+### [`Remainder (%)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Remainder)
+
+The remainder (`%`) operator returns the remainder left over when one operand is divided by a second operand. It always takes the sign of the dividend.
+
+```js
+// @ts-check
+'use strict';
+
+// https://stackoverflow.com/a/6211660
+/** @param {number} number */
+function isEven(number) {
+  return number % 2 == 0;
+}
+
+console.log(13 % 5);
+// => 3
+
+console.log(-13 % 5);
+// => -3
+
+console.log(4 % 2);
+// => 0
+
+console.log(-4 % 2);
+// => -0
+```
+
+### [`Number.MAX_SAFE_INTEGER`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER)
+
+The `Number.MAX_SAFE_INTEGER` static data property represents the maximum safe integer in JavaScript (2 \*\* 53 – 1).
+
+Hint: For larger integers, consider using [`BigInt`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt).
+
+```js
+// @ts-check
+'use strict';
+
+// Value inspection
+console.log(9007199254740991);
+console.log(2 ** 53 - 1);
+console.log(Math.pow(2, 53) - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(Number.MIN_SAFE_INTEGER);
+
+// ------------------------
+
+console.log(9007199254740991 + 1);
+// => 9007199254740992
+
+console.log(9007199254740991 + 2);
+// => 9007199254740992
+
+console.log(9007199254740992 === 9007199254740993);
+// => true
+```
+
 ---
 
 ### [``]()
