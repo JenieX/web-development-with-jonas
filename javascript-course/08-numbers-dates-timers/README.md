@@ -645,6 +645,65 @@ console.log(futureDate.getMilliseconds());
 // => 98
 ```
 
+### [`Date.prototype.getTime()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
+
+The `getTime()` method of `Date` instances returns the number of milliseconds for this date since the epoch, which is defined as the midnight at the beginning of January 1, 1970, UTC.
+
+```js
+// @ts-check
+'use strict';
+
+const theStartDate = new Date(0);
+
+console.log(theStartDate);
+// => Thu Jan 01 1970 03:00:00 GMT+0300 (Arabian Standard Time)
+
+const threeDaysTimestamp = 3 * 24 * 60 * 60 * 1000;
+
+console.log(threeDaysTimestamp);
+// => 259200000
+
+const afterThreeDays = new Date(threeDaysTimestamp);
+
+console.log(afterThreeDays);
+// => Sun Jan 04 1970 03:00:00 GMT+0300 (Arabian Standard Time)
+
+// ------------------------
+
+console.log(afterThreeDays.getTime());
+// => 259200000
+
+console.log(+afterThreeDays);
+// => 259200000
+```
+
+### [`Date.prototype.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
+
+The `toISOString()` method of `Date` instances returns a string representing this date in the date time string format, a simplified format based on ISO 8601, which is always 24 or 27 characters long (`YYYY-MM-DDTHH:mm:ss.sssZ` or `±YYYYYY-MM-DDTHH:mm:ss.sssZ`, respectively). The timezone **is always UTC**, as denoted by the suffix `Z`.
+
+```js
+// @ts-check
+'use strict';
+
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.toISOString());
+// => 2037-01-10T10:30:07.098Z
+
+const properDate = futureDate
+  .toISOString()
+  .slice(0, 10)
+  .split('-')
+  .reverse()
+  .join('/');
+
+console.log(properDate);
+// => 10/01/2037
+```
+
 ---
 
 ### [``]()
@@ -739,4 +798,44 @@ while (loops) {
 
 console.log({ face, tail });
 // => {face: 500000, tail: 500000}
+```
+
+### Proper Date
+
+```js
+// @ts-check
+'use strict';
+
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.toISOString());
+// => 2037-01-10T10:30:07.098Z
+
+// ------------------------
+
+const properDateMethod1 = futureDate
+  .toISOString()
+  .slice(0, 10)
+  .split('-')
+  .reverse()
+  .join('/');
+
+console.log(properDateMethod1);
+// => 10/01/2037
+
+const day = `0${futureDate.getDate()}`.slice(-2);
+// const day = `${futureDate.getDate()}`.padStart(2, '0');
+
+const month = `0${futureDate.getMonth() + 1}`.slice(-2);
+// const month = `${futureDate.getMonth() + 1}`.padStart(2, '0');
+
+const year = futureDate.getFullYear();
+
+const properDateMethod2 = `${day}/${month}/${year}`;
+
+console.log(properDateMethod2);
+// => 10/01/2037
 ```

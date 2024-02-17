@@ -1,29 +1,35 @@
 // @ts-check
 'use strict';
 
-// year, month, day (called date!), hours, minutes, seconds, ms
 const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
 
 console.log(futureDate);
 // => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
 
-console.log(futureDate.getFullYear());
-// => 2037
+console.log(futureDate.toISOString());
+// => 2037-01-10T10:30:07.098Z
 
-console.log(futureDate.getMonth());
-// => 0
+// ------------------------
 
-console.log(futureDate.getDate());
-// => 10
+const properDateMethod1 = futureDate
+  .toISOString()
+  .slice(0, 10)
+  .split('-')
+  .reverse()
+  .join('/');
 
-console.log(futureDate.getHours());
-// => 13
+console.log(properDateMethod1);
+// => 10/01/2037
 
-console.log(futureDate.getMinutes());
-// => 30
+const day = `0${futureDate.getDate()}`.slice(-2);
+// const day = `${futureDate.getDate()}`.padStart(2, '0');
 
-console.log(futureDate.getSeconds());
-// => 7
+const month = `0${futureDate.getMonth() + 1}`.slice(-2);
+// const month = `${futureDate.getMonth() + 1}`.padStart(2, '0');
 
-console.log(futureDate.getMilliseconds());
-// => 98
+const year = futureDate.getFullYear();
+
+const properDateMethod2 = `${day}/${month}/${year}`;
+
+console.log(properDateMethod2);
+// => 10/01/2037
