@@ -465,6 +465,186 @@ console.log(9007199254740992 === 9007199254740993);
 // => true
 ```
 
+<!-- ---
+
+### [``]()
+
+```js
+//
+``` -->
+
+## Dates
+
+JavaScript `Date` objects represent a single moment in time in a platform-independent format. `Date` objects encapsulate an integral number that represents milliseconds since the midnight at the beginning of January 1, 1970, UTC (the epoch).
+
+### [`Date() constructor`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+
+The `Date()` constructor creates `Date` objects. When called as a function, it returns a string representing the current time.
+
+Note: The result of calling the constructor is an `Date`, which is an object.
+
+```js
+// @ts-check
+'use strict';
+
+const theStartDate = new Date(0);
+
+console.log(theStartDate);
+// => Thu Jan 01 1970 03:00:00 GMT+0300 (Arabian Standard Time)
+
+const threeDaysTimestamp = 3 * 24 * 60 * 60 * 1000;
+const afterThreeDays = new Date(threeDaysTimestamp);
+
+console.log(afterThreeDays);
+// => Sun Jan 04 1970 03:00:00 GMT+0300 (Arabian Standard Time)
+
+// ------------------------
+
+const now = new Date();
+
+console.log(now);
+// => Sat Feb 17 2024 16:53:34 GMT+0300 (Arabian Standard Time)
+
+console.log(typeof now);
+// => 'object'
+
+// ------------------------
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:07 GMT+0300 (Arabian Standard Time)
+```
+
+### [`Date.prototype.getFullYear()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear)
+
+The `getFullYear()` method of `Date` instances returns the year for this date according to local time.
+
+Note: Use this method instead of the deprecated `getYear()` method.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getFullYear());
+// => 2037
+```
+
+### [`Date.prototype.getMonth()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth)
+
+The `getMonth()` method of `Date` instances returns the month for this date according to local time, as a **zero-based value** (where zero indicates the first month of the year).
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getMonth());
+// => 0
+```
+
+### [`Date.prototype.getDate()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate)
+
+The `getDate()` method of `Date` instances returns the day of the month for this date according to local time.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getDate());
+// => 10
+```
+
+### [`Date.prototype.getHours()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours)
+
+The `getHours()` method of `Date` instances returns the hours for this date according to local time.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getHours());
+// => 13
+```
+
+### [`Date.prototype.getMinutes()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes)
+
+The `getMinutes()` method of `Date` instances returns the minutes for this date according to local time.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getMinutes());
+// => 30
+```
+
+### [`Date.prototype.getSeconds()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds)
+
+The `getSeconds()` method of `Date` instances returns the seconds for this date according to local time.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getSeconds());
+// => 7
+```
+
+### [`Date.prototype.getMilliseconds()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds)
+
+The `getMilliseconds()` method of `Date` instances returns the milliseconds for this date according to local time.
+
+```js
+// @ts-check
+'use strict';
+
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
+
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
+
+console.log(futureDate.getMilliseconds());
+// => 98
+```
+
 ---
 
 ### [``]()

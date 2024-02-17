@@ -1,21 +1,29 @@
 // @ts-check
 'use strict';
 
-// Value inspection
-console.log(9007199254740991);
-console.log(2 ** 53 - 1);
-console.log(Math.pow(2, 53) - 1);
-console.log(Number.MAX_SAFE_INTEGER);
+// year, month, day (called date!), hours, minutes, seconds, ms
+const futureDate = new Date(2037, 0, 10, 13, 30, 7, 98);
 
-console.log(Number.MIN_SAFE_INTEGER);
+console.log(futureDate);
+// => Sat Jan 10 2037 13:30:00 GMT+0300 (Arabian Standard Time)
 
-// ------------------------
+console.log(futureDate.getFullYear());
+// => 2037
 
-console.log(9007199254740991 + 1);
-// => 9007199254740992
+console.log(futureDate.getMonth());
+// => 0
 
-console.log(9007199254740991 + 2);
-// => 9007199254740992
+console.log(futureDate.getDate());
+// => 10
 
-console.log(9007199254740992 === 9007199254740993);
-// => true
+console.log(futureDate.getHours());
+// => 13
+
+console.log(futureDate.getMinutes());
+// => 30
+
+console.log(futureDate.getSeconds());
+// => 7
+
+console.log(futureDate.getMilliseconds());
+// => 98
