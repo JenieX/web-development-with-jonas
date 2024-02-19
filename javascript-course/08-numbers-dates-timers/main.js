@@ -1,22 +1,74 @@
 import { accounts } from './js/accounts.js';
 import { elements } from './js/elements.js';
 
-function displayMovements(originalMovements, sort = false) {
+function formatMovementDate(date, locale) {
+  const calcDaysPassed = (date1, date2) => {
+    const differenceInDays = Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+    const rounded = Math.round(differenceInDays);
+
+    return rounded;
+  };
+
+  const daysPassed = calcDaysPassed(new Date(), date);
+
+  if (daysPassed === 0) {
+    return 'Today';
+  }
+
+  if (daysPassed === 1) {
+    return 'Yesterday';
+  }
+
+  if (daysPassed <= 7) {
+    return `${daysPassed} days ago`;
+  }
+
+  // const day = `${date.getDate()}`.padStart(2, 0);
+  // const month = `${date.getMonth() + 1}`.padStart(2, 0);
+  // const year = date.getFullYear();
+  // return `${day}/${month}/${year}`;
+
+  const options = {
+    // dateStyle: 'long', // "full", "long", "medium", and "short"
+    // timeStyle: 'long', // "full", "long", "medium", and "short"
+
+    // Or customize individually
+    // hour12: false,
+    // timeZoneName: 'long',
+    weekday: 'long', // "long", "short", and "narrow"
+
+    // second: '2-digit', // "numeric", and "2-digit"
+    // minute: '2-digit', // "numeric", and "2-digit"
+    // hour: '2-digit', // "numeric", and "2-digit"
+    day: 'numeric', // "numeric", and "2-digit"
+    month: 'numeric', // "numeric", "2-digit", "long", "short", and "narrow"
+    year: '2-digit', // "numeric", and "2-digit"
+  };
+
+  return new Intl.DateTimeFormat(locale, options).format(date);
+}
+
+function displayMovements(account, sort = false) {
   elements.containerMovements.innerHTML = '';
   let movements;
 
   if (sort === true) {
-    movements = originalMovements.slice().sort((a, b) => a - b);
+    // Create a copy to keep the original order as well
+    movements = account.movements.slice().sort((a, b) => a - b);
   } else {
-    movements = originalMovements;
+    movements = account.movements;
   }
 
-  movements.forEach(function (movement, i) {
+  movements.forEach(function (movement, index) {
     const type = movement > 0 ? 'deposit' : 'withdrawal';
+
+    const date = new Date(account.movementsDates[index]);
+    const displayDate = formatMovementDate(date, account.locale);
 
     const html = `
       <div class="movements__row">
-        <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+        <div class="movements__type movements__type--${type}">${index + 1} ${type}</div>
+        <div class="movements__date">${displayDate}</div>
         <div class="movements__value">${movement.toFixed(2)}€</div>
       </div>
     `;
@@ -115,7 +167,7 @@ function createUsernames(originalAccounts) {
 }
 
 function updateUI(account) {
-  displayMovements(account.movements);
+  displayMovements(account);
   calcDisplayBalance(account);
   calcDisplaySummary(account);
 }
@@ -200,6 +252,11 @@ elements.btnTransfer.addEventListener('click', (event) => {
     currentAccount.movements.push(-amount);
     receiver.movements.push(amount);
 
+    // Update dates
+    const now = new Date().toISOString();
+    currentAccount.movementsDates.push(now);
+    receiver.movementsDates.push(now);
+
     updateUI(currentAccount);
   } else {
     console.error('Something went wrong!');
@@ -222,12 +279,15 @@ elements.btnLoan.addEventListener('click', (event) => {
   });
 
   if (didDepositTenthTheAmount === false) {
-    console.error("User didn't meet the requirement!");
+    console.error("User didn't meet the requirements!");
 
     return;
   }
 
   currentAccount.movements.push(amount);
+
+  // Update dates
+  currentAccount.movementsDates.push(new Date().toISOString());
 
   updateUI(currentAccount);
   elements.inputLoanAmount.value = '';
@@ -261,11 +321,25 @@ elements.btnSort.addEventListener('click', (event) => {
   // I don't think it is needed!
   // event.preventDefault();
 
-  displayMovements(currentAccount.movements, !sorted);
+  displayMovements(currentAccount, !sorted);
   sorted = !sorted;
 });
 
 createUsernames(accounts);
+
+// const properDate = new Date()
+//   .toISOString()
+//   .slice(0, 10)
+//   .split('-')
+//   .reverse()
+//   .join('/');
+
+// elements.labelDate.textContent = properDate;
+
+elements.labelDate.textContent = formatMovementDate(
+  new Date(1992, 3, 22),
+  accounts[0].locale,
+);
 
 // temp
 // console.log(accounts);

@@ -483,6 +483,26 @@ The `Date()` constructor creates `Date` objects. When called as a function, it r
 
 Note: The result of calling the constructor is an `Date`, which is an object.
 
+#### Syntax
+
+```js
+new Date();
+new Date(dateTimestamp);
+new Date(dateISOString);
+new Date(dateObject);
+
+new Date(year, monthIndex);
+new Date(year, monthIndex, day);
+new Date(year, monthIndex, day, hours);
+new Date(year, monthIndex, day, hours, minutes);
+new Date(year, monthIndex, day, hours, minutes, seconds);
+new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds);
+
+Date();
+```
+
+Example
+
 ```js
 // @ts-check
 'use strict';
@@ -675,6 +695,9 @@ console.log(afterThreeDays.getTime());
 
 console.log(+afterThreeDays);
 // => 259200000
+
+console.log(Number(afterThreeDays));
+// => 259200000
 ```
 
 ### [`Date.prototype.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
@@ -702,6 +725,60 @@ const properDate = futureDate
 
 console.log(properDate);
 // => 10/01/2037
+```
+
+### [`Intl.DateTimeFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)
+
+The `Intl.DateTimeFormat` object enables language-sensitive date and time formatting.
+
+[ISO Language Code Table](http://www.lingoes.net/en/translator/langcode.htm)
+
+```js
+// @ts-check
+'use strict';
+
+const date = new Date();
+
+// To use browser's default locale (no argument may achieve the same!)
+const locale = navigator.language;
+console.log(new Intl.DateTimeFormat(locale).format(date));
+
+console.log(new Intl.DateTimeFormat('en-US').format(date));
+// => 2/19/2024
+
+console.log(new Intl.DateTimeFormat('en-GB').format(date));
+// => 19/02/2024
+
+console.log(new Intl.DateTimeFormat('ko-KR').format(date));
+// => 2024. 2. 19.
+
+// Arabic numbers
+console.log(new Intl.DateTimeFormat('ar-EG').format(date));
+
+// Hijri
+console.log(new Intl.DateTimeFormat('ar-SA').format(date));
+
+// ------------------------
+
+const options = {
+  // dateStyle: 'long', // "full", "long", "medium", and "short"
+  // timeStyle: 'long', // "full", "long", "medium", and "short"
+
+  // Or customize individually
+  hour12: false,
+  timeZoneName: 'long',
+  weekday: 'long', // "long", "short", and "narrow"
+
+  second: '2-digit', // "numeric", and "2-digit"
+  minute: '2-digit', // "numeric", and "2-digit"
+  hour: '2-digit', // "numeric", and "2-digit"
+  day: 'numeric', // "numeric", and "2-digit"
+  month: 'numeric', // "numeric", "2-digit", "long", "short", and "narrow"
+  year: '2-digit', // "numeric", and "2-digit"
+};
+
+// @ts-ignore
+console.log(new Intl.DateTimeFormat('en-US', options).format(date));
 ```
 
 ---
