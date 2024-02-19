@@ -48,6 +48,13 @@ function formatMovementDate(date, locale) {
   return new Intl.DateTimeFormat(locale, options).format(date);
 }
 
+function formatMovementCurrency(value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: 'currency',
+    currency: currency,
+  }).format(value);
+}
+
 function displayMovements(account, sort = false) {
   elements.containerMovements.innerHTML = '';
   let movements;
@@ -65,11 +72,17 @@ function displayMovements(account, sort = false) {
     const date = new Date(account.movementsDates[index]);
     const displayDate = formatMovementDate(date, account.locale);
 
+    const displayCurrency = formatMovementCurrency(
+      movement,
+      account.locale,
+      account.currency,
+    );
+
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${index + 1} ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${movement.toFixed(2)}€</div>
+        <div class="movements__value">${displayCurrency}</div>
       </div>
     `;
 
@@ -82,7 +95,12 @@ function calcDisplayBalance(account) {
     return accumulator + movement;
   }, 0);
 
-  elements.labelBalance.textContent = `${account.balance.toFixed(2)}€`;
+  // elements.labelBalance.textContent = `${account.balance.toFixed(2)}€`;
+  elements.labelBalance.textContent = formatMovementCurrency(
+    account.balance,
+    account.locale,
+    account.currency,
+  );
 }
 
 function calcDisplaySummary(account) {
@@ -102,7 +120,12 @@ function calcDisplaySummary(account) {
       return accumulator + deposit;
     }, 0);
 
-  elements.labelSumIn.textContent = `${incomes.toFixed(2)}€`;
+  // elements.labelSumIn.textContent = `${incomes.toFixed(2)}€`;
+  elements.labelSumIn.textContent = formatMovementCurrency(
+    incomes,
+    account.locale,
+    account.currency,
+  );
 
   const outcome = account.movements
     .filter((movement, index, originalArray) => {
@@ -120,7 +143,12 @@ function calcDisplaySummary(account) {
       return accumulator + withdraw;
     }, 0);
 
-  elements.labelSumOut.textContent = `${Math.abs(outcome.toFixed(2))}€`;
+  // elements.labelSumOut.textContent = `${Math.abs(outcome.toFixed(2))}€`;
+  elements.labelSumOut.textContent = formatMovementCurrency(
+    Math.abs(outcome),
+    account.locale,
+    account.currency,
+  );
 
   const interest = account.movements
     .filter((movement, index, originalArray) => {
@@ -153,7 +181,12 @@ function calcDisplaySummary(account) {
       return accumulator + interest;
     }, 0);
 
-  elements.labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+  // elements.labelSumInterest.textContent = `${interest.toFixed(2)}€`;
+  elements.labelSumInterest.textContent = formatMovementCurrency(
+    interest,
+    account.locale,
+    account.currency,
+  );
 }
 
 function createUsernames(originalAccounts) {

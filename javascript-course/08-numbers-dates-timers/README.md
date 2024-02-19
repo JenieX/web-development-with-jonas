@@ -465,13 +465,334 @@ console.log(9007199254740992 === 9007199254740993);
 // => true
 ```
 
-<!-- ---
+### [`Intl.NumberFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)
+
+The `Intl.NumberFormat` object enables language-sensitive number formatting.
+
+#### [**Syntax**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#syntax)
+
+```js
+new Intl.NumberFormat();
+new Intl.NumberFormat(locales);
+new Intl.NumberFormat(locales, options);
+
+Intl.NumberFormat();
+Intl.NumberFormat(locales);
+Intl.NumberFormat(locales, options);
+```
+
+- [Units list](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat#unit_2)
+- [Currency codes list](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes)
+
+Generic example
+
+```js
+// @ts-check
+'use strict';
+
+const number = 123456.789;
+
+// To use browser's default locale (no argument may achieve the same!)
+const locale = navigator.language;
+console.log(new Intl.NumberFormat(locale).format(number));
+
+console.log(new Intl.NumberFormat('en-US').format(number));
+// => 123,456.789
+
+console.log(new Intl.NumberFormat('en-GB').format(number));
+// => 123,456.789
+
+console.warn(new Intl.NumberFormat('de-DE').format(number));
+// => 123.456,789
+
+console.log(new Intl.NumberFormat('ko-KR').format(number));
+// => 123,456.789
+
+console.log(new Intl.NumberFormat('ar-EG').format(number));
+// => ١٢٣٬٤٥٦٫٧٨٩
+
+console.log(new Intl.NumberFormat('ar-SA').format(number));
+// => ١٢٣٬٤٥٦٫٧٨٩
+```
+
+Unit Example (kilometer-per-hour)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'kilometer-per-hour',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 km/h
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 km/h
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ كم/س
+```
+
+Unit Example (celsius)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'celsius',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34°C
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 °C
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤°م
+```
+
+Unit Example (fahrenheit)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'fahrenheit',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34°F
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 °F
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤°ف
+```
+
+Unit Example (centimeter)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'centimeter',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 cm
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 cm
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ سم
+```
+
+Unit Example (gram)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'gram',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 g
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 g
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ غرام
+```
+
+Unit Example (kilogram)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'kilogram',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 kg
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 kg
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ كغم
+```
+
+Unit Example (kilobyte)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'kilobyte',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 kB
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 kB
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ كيلوبايت
+```
+
+Unit Example (megabyte)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'unit', // "decimal" (default), "currency", "percent", and "unit"
+  unit: 'megabyte',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => 12.34 MB
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 MB
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٤ م.ب
+```
+
+Currency example (USD)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.3456789;
+
+const options = {
+  style: 'currency', // "decimal" (default), "currency", "percent", and "unit"
+  currency: 'USD',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => $12.35
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,35 $
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٥ US$
+```
+
+Currency example (EUR)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.3456789;
+
+const options = {
+  style: 'currency', // "decimal" (default), "currency", "percent", and "unit"
+  currency: 'EUR',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => €12.35
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,35 €
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => ١٢٫٣٥ €
+```
+
+Currency example (SAR)
+
+```js
+// @ts-check
+'use strict';
+
+const number = 12.34;
+
+const options = {
+  style: 'currency', // "decimal" (default), "currency", "percent", and "unit"
+  currency: 'SAR',
+};
+
+console.log(new Intl.NumberFormat('en-US', options).format(number));
+// => SAR 12.34
+
+console.log(new Intl.NumberFormat('de-DE', options).format(number));
+// => 12,34 SAR
+
+console.log(new Intl.NumberFormat('ar-SA', options).format(number));
+// => .١٢٫٣٤ ر.س
+```
+
+Example ()
+
+```js
+//
+```
+
+Example ()
+
+```js
+//
+```
+
+Example ()
+
+```js
+//
+```
+
+---
 
 ### [``]()
 
 ```js
 //
-``` -->
+```
 
 ## Dates
 
@@ -731,7 +1052,21 @@ console.log(properDate);
 
 The `Intl.DateTimeFormat` object enables language-sensitive date and time formatting.
 
+#### [**Syntax**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat#syntax)
+
+```js
+new Intl.DateTimeFormat();
+new Intl.DateTimeFormat(locales);
+new Intl.DateTimeFormat(locales, options);
+
+Intl.DateTimeFormat();
+Intl.DateTimeFormat(locales);
+Intl.DateTimeFormat(locales, options);
+```
+
 [ISO Language Code Table](http://www.lingoes.net/en/translator/langcode.htm)
+
+Example
 
 ```js
 // @ts-check

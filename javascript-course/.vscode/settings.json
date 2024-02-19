@@ -6,7 +6,9 @@
     "beforeend",
     "DDTHH",
     "trunc",
-    "typeof"
+    "typeof",
+    "غرام",
+    "كيلوبايت"
   ],
 
   // "hot-reload" only works for link of CSS files
