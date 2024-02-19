@@ -768,31 +768,13 @@ console.log(new Intl.NumberFormat('ar-SA', options).format(number));
 // => .١٢٫٣٤ ر.س
 ```
 
-Example ()
-
-```js
-//
-```
-
-Example ()
-
-```js
-//
-```
-
-Example ()
-
-```js
-//
-```
-
----
+<!-- ---
 
 ### [``]()
 
 ```js
 //
-```
+``` -->
 
 ## Dates
 
