@@ -67,17 +67,17 @@ console.log(container.outerHTML);
 // => '<div><span>Hello world</span><p></p><span>Hello world</span></div>'
 ```
 
-## [`insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
+### [`insertAdjacentHTML()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML)
 
 The `insertAdjacentHTML()` method of the `Element` interface parses the specified text as HTML or XML and inserts the resulting nodes into the DOM tree at a specified position.
 
-### Syntax
+#### Syntax
 
 ```js
 insertAdjacentHTML('beforebegin' | 'afterbegin' | 'beforeend' | 'afterend', text);
 ```
 
-### Visualization of position names
+#### Visualization of position names
 
 ```html
 <!-- beforebegin -->
@@ -152,7 +152,7 @@ console.log(container.outerHTML);
 // => '<div><span>Hello world</span><p></p></div>'
 ```
 
-### Access and manipulate CSS variables
+### Accessing and manipulating CSS variables
 
 ```js
 // @ts-check
