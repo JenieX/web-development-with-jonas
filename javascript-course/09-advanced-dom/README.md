@@ -116,6 +116,40 @@ console.log(container.outerHTML);
 // => '<div><div data-user="jenie" data-year-of-birth="1992"></div></div>'
 ```
 
+### [`clientWidth `](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth)
+
+The `Element.clientWidth` property is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scroll-bars (if present).
+
+When `clientWidth` is used on the root element (the `<html>` element), (or on `<body>` if the document is in quirks mode), the viewport's width (excluding any scrollbar) is returned. **This is a special case of `clientWidth`**.
+
+Note: This property will round the value to an integer. If you need a fractional value, use `element.getBoundingClientRect()`.
+
+### [`clientHeight`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight)
+
+The `Element.clientHeight` read-only property is zero for elements with no CSS or inline layout boxes; otherwise, it's the inner height of an element in pixels. It includes padding but excludes borders, margins, and horizontal scroll-bars (if present).
+
+When `clientHeight` is used on the root element (the `<html>` element), (or on `<body>` if the document is in quirks mode), the viewport's height (excluding any scrollbar) is returned. **This is a special case of `clientHeight`**.
+
+### [`getBoundingClientRect()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
+
+The `Element.getBoundingClientRect()` method returns a `DOMRect` object providing information about the size of an element and its position relative to the viewport.
+
+```js
+// Old way
+window.scrollTo({
+  left: elementCoords.left + window.scrollX,
+  top: elementCoords.top + window.scrollY,
+  behavior: 'smooth',
+});
+
+// New way (See next section)
+element.scrollIntoView({ behavior: 'smooth' });
+```
+
+### [`scrollIntoView()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView)
+
+The `Element` interface's `scrollIntoView()` method scrolls the element's ancestor containers such that the element on which `scrollIntoView()` is called is visible to the user.
+
 ---
 
 ### [``]()
@@ -125,6 +159,18 @@ console.log(container.outerHTML);
 ```
 
 ## Window
+
+### [`scrollX `](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX)
+
+The read-only `scrollX` property of the `Window` interface returns the number of pixels that the document is currently scrolled horizontally.
+
+Note: The `pageXOffset` property is an alias for the `scrollX` property.
+
+### [`scrollY `](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
+
+The read-only `scrollY` property of the `Window` interface returns the number of pixels that the document is currently scrolled vertically.
+
+Note: The `pageYOffset` property is an alias for the `scrollY` property.
 
 ### [`getComputedStyle()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle)
 
