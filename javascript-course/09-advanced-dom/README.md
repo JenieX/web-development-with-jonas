@@ -116,7 +116,7 @@ console.log(container.outerHTML);
 // => '<div><div data-user="jenie" data-year-of-birth="1992"></div></div>'
 ```
 
-### [`clientWidth `](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth)
+### [`clientWidth`](https://developer.mozilla.org/en-US/docs/Web/API/Element/clientWidth)
 
 The `Element.clientWidth` property is zero for inline elements and elements with no CSS; otherwise, it's the inner width of an element in pixels. It includes padding but excludes borders, margins, and vertical scroll-bars (if present).
 
@@ -135,6 +135,8 @@ When `clientHeight` is used on the root element (the `<html>` element), (or on `
 The `Element.getBoundingClientRect()` method returns a `DOMRect` object providing information about the size of an element and its position relative to the viewport.
 
 ```js
+const elementCoords = element.getBoundingClientRect();
+
 // Old way
 window.scrollTo({
   left: elementCoords.left + window.scrollX,
@@ -160,13 +162,13 @@ The `Element` interface's `scrollIntoView()` method scrolls the element's ancest
 
 ## Window
 
-### [`scrollX `](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX)
+### [`scrollX`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX)
 
 The read-only `scrollX` property of the `Window` interface returns the number of pixels that the document is currently scrolled horizontally.
 
 Note: The `pageXOffset` property is an alias for the `scrollX` property.
 
-### [`scrollY `](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
+### [`scrollY`](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY)
 
 The read-only `scrollY` property of the `Window` interface returns the number of pixels that the document is currently scrolled vertically.
 
@@ -246,6 +248,16 @@ console.log(color);
 
 rootElement.style.setProperty('--color-primary', 'crimson');
 ```
+
+### [Event bubbling and capturing](https://stackoverflow.com/a/4616720)
+
+Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in an element inside another element, and both elements have registered a handle for that event. The event propagation mode determines in which order the elements receive the event.
+
+With bubbling (default), the event is first captured and handled by the innermost element and then propagated to outer elements.
+
+With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+Important: See the playground examples.
 
 ---
 
