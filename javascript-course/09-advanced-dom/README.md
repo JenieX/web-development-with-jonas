@@ -152,6 +152,42 @@ element.scrollIntoView({ behavior: 'smooth' });
 
 The `Element` interface's `scrollIntoView()` method scrolls the element's ancestor containers such that the element on which `scrollIntoView()` is called is visible to the user.
 
+### [`closest()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest)
+
+The `closest()` method of the `Element` interface traverses the element and its parents (heading toward the document root) until it finds a node that matches the specified CSS selector.
+
+#### Return value
+
+**Itself** or the closest ancestor `Element`, which matches the `selectors`. If there are no such element, `null`.
+
+```js
+// @ts-check
+'use strict';
+
+const container = document.createElement('div');
+const p = document.createElement('p');
+const span = document.createElement('span');
+
+span.textContent = 'Hello world';
+
+container.append(p);
+p.append(span);
+
+console.log(container.outerHTML);
+// => '<div><p><span>Hello world</span></p></div>'
+
+// ------------------------
+
+console.log(p.outerHTML);
+// => '<p><span>Hello world</span></p>'
+
+console.log(p.closest('p')?.outerHTML);
+// => '<p><span>Hello world</span></p>'
+
+console.log(p.closest('div')?.outerHTML);
+// => '<div><p><span>Hello world</span></p></div>'
+```
+
 ---
 
 ### [``]()
@@ -159,6 +195,16 @@ The `Element` interface's `scrollIntoView()` method scrolls the element's ancest
 ```js
 
 ```
+
+## addEventListener
+
+### [`mouseenter`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event)
+
+The `mouseenter` event is fired at an `Element` when a pointing device (usually a mouse) is initially moved so that its hot-spot is within the element at which the event was fired.
+
+### [`mouseleave `](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)
+
+The `mouseleave` event is fired at an `Element` when the cursor of a pointing device (usually a mouse) is moved out of it.
 
 ## Window
 
@@ -255,9 +301,11 @@ Event bubbling and capturing are two ways of event propagation in the HTML DOM A
 
 With bubbling (default), the event is first captured and handled by the innermost element and then propagated to outer elements.
 
-With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+With capturing, the event is first captured by the outermost element and propagated to the inner elements. **See the playground examples**.
 
-Important: See the playground examples.
+### Event delegation
+
+Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future. **See the playground example**.
 
 ---
 
