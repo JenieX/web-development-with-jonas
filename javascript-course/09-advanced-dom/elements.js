@@ -10,6 +10,7 @@ const section1 = asserted(document.querySelector('#section--1'));
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = asserted(document.querySelector('.operations__tab-container'));
 const tabsContent = document.querySelectorAll('.operations__content');
+const nav = asserted(document.querySelector('.nav'));
 
 export default {
   modal,
@@ -20,4 +21,5 @@ export default {
   tabs,
   tabsContainer,
   tabsContent,
+  nav,
 };

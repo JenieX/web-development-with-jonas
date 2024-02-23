@@ -73,3 +73,51 @@ import { asserted, closeModal, openModal } from './helpers.js';
     tabContent.classList.add('operations__content--active');
   });
 })();
+
+// Menu fade animation
+(() => {
+  // /** @type {(this: number, event: Event) => void} */
+  // const handleHover = function (event) {
+  //   const target = /** @type {HTMLElement} */ (event.target);
+
+  //   if (target.classList.contains('nav__link')) {
+  //     const elements = [
+  //       ...asserted(target.closest('.nav')?.querySelectorAll('.nav__link')),
+  //       asserted(target.closest('.nav')?.querySelector('img')),
+  //     ];
+
+  //     for (const element of elements) {
+  //       if (element !== target) {
+  //         // const e = /** @type {HTMLElement} */ (element);
+  //         /** @type {HTMLElement} */ (element).style.opacity = this.toString();
+  //       }
+  //     }
+  //   }
+  // };
+
+  // elements.nav.addEventListener('mouseover', handleHover.bind(0.5));
+  // elements.nav.addEventListener('mouseout', handleHover.bind(1));
+
+  /** @type {(opacity: number, event: Event) => void} */
+  const handleHover = (opacity, event) => {
+    const target = /** @type {HTMLElement} */ (event.target);
+
+    if (target.classList.contains('nav__link')) {
+      const elements = [
+        ...asserted(target.closest('.nav')?.querySelectorAll('.nav__link')),
+        asserted(target.closest('.nav')?.querySelector('img')),
+      ];
+
+      for (const element of elements) {
+        if (element !== target) {
+          // const e = /** @type {HTMLElement} */ (element);
+          /** @type {HTMLElement} */ (element).style.opacity = opacity.toString();
+        }
+      }
+    }
+  };
+
+  // The original event parameter will be pushed to be the second
+  elements.nav.addEventListener('mouseover', handleHover.bind(undefined, 0.5));
+  elements.nav.addEventListener('mouseout', handleHover.bind(undefined, 1));
+})();

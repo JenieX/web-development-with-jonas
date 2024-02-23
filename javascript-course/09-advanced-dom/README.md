@@ -198,6 +198,18 @@ console.log(p.closest('div')?.outerHTML);
 
 ## addEventListener
 
+### [`currentTarget`](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget)
+
+The `currentTarget` read-only property of the `Event` interface identifies the element to which the event handler has been attached.
+
+This will not always be the same as the element on which the event was fired, because the event may have fired on a descendant of the element with the handler, and then bubbled up to the element with the handler. The element on which the event was fired is given by `Event.target`.
+
+Hint: Usually, it is the element that `this` points to, and can be used in arrow functions instead of `this`.
+
+### [`target`](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)
+
+The read-only `target` property of the `Event` interface is a reference to the object onto which the event was dispatched. It is different from `Event.currentTarget` when the event handler is called during the bubbling or capturing phase of the event.
+
 ### [`mouseenter`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseenter_event)
 
 The `mouseenter` event is fired at an `Element` when a pointing device (usually a mouse) is initially moved so that its hot-spot is within the element at which the event was fired.
