@@ -202,9 +202,13 @@ console.log(p.closest('div')?.outerHTML);
 
 The `mouseenter` event is fired at an `Element` when a pointing device (usually a mouse) is initially moved so that its hot-spot is within the element at which the event was fired.
 
-### [`mouseleave `](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)
+`mouseenter` and `mouseover` are similar but differ in that `mouseenter` does not bubble and `mouseover` does. See the playground example.
+
+### [`mouseleave`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)
 
 The `mouseleave` event is fired at an `Element` when the cursor of a pointing device (usually a mouse) is moved out of it.
+
+`mouseleave` and `mouseout` are similar but differ in that `mouseleave` does not bubble and `mouseout` does. This means that `mouseleave` is fired when the pointer has exited the element and all of its descendants, whereas `mouseout` is fired when the pointer leaves the element or leaves one of the element's descendants (even if the pointer is still within the element). See the playground example.
 
 ## Window
 

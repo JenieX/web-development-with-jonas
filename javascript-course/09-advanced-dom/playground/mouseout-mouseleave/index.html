@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouseout-mouseleave</title>
+    <style>
+      :root {
+        --mouseout-text: 'mouseout: 0';
+        --mouseleave-text: 'mouseleave: 0';
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        height: 100vh;
+        background-color: #1f1f1f;
+        font-size: 1.8rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: sans-serif;
+        color: #ddd;
+      }
+
+      .container {
+        display: flex;
+        gap: 5rem;
+        background-color: rgb(20, 177, 220);
+        position: relative;
+      }
+
+      .container::before,
+      .container::after {
+        display: block;
+        position: absolute;
+      }
+
+      .container::before {
+        content: var(--mouseout-text);
+        transform: translateY(-100%);
+      }
+
+      .container::after {
+        content: var(--mouseleave-text);
+        bottom: 0;
+        transform: translateY(100%);
+      }
+
+      .item {
+        padding: 3rem;
+        background-color: rgb(20, 220, 90);
+      }
+
+      .circle {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: crimson;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 2.4rem;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">
+        <div class="circle circle--1">1</div>
+      </div>
+      <div class="item item--2">
+        <div class="circle circle--2">2</div>
+      </div>
+      <div class="item item--3">
+        <div class="circle circle--3">3</div>
+      </div>
+    </div>
+    <script>
+      const rootElement = document.documentElement;
+      let mouseoutCounter = 0;
+      let mouseleaveCounter = 0;
+
+      const container = document.querySelector('.container');
+
+      container.addEventListener('mouseout', (event) => {
+        mouseoutCounter += 1;
+
+        rootElement.style.setProperty(
+          '--mouseout-text',
+          `'mouseout: ${mouseoutCounter}'`,
+        );
+      });
+
+      container.addEventListener('mouseleave', (event) => {
+        mouseleaveCounter += 1;
+
+        rootElement.style.setProperty(
+          '--mouseleave-text',
+          `'mouseleave: ${mouseleaveCounter}'`,
+        );
+      });
+    </script>
+  </body>
+</html>

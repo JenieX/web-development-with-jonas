@@ -7,6 +7,9 @@ const overlay = asserted(document.querySelector('.overlay'));
 const btnCloseModal = asserted(document.querySelector('.btn--close-modal'));
 const btnScrollTo = asserted(document.querySelector('.btn--scroll-to'));
 const section1 = asserted(document.querySelector('#section--1'));
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = asserted(document.querySelector('.operations__tab-container'));
+const tabsContent = document.querySelectorAll('.operations__content');
 
 export default {
   modal,
@@ -14,4 +17,7 @@ export default {
   btnCloseModal,
   btnScrollTo,
   section1,
+  tabs,
+  tabsContainer,
+  tabsContent,
 };
