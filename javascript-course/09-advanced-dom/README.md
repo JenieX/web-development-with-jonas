@@ -240,6 +240,45 @@ Note: The `pageYOffset` property is an alias for the `scrollY` property.
 
 The Window.`getComputedStyle()` method returns an object containing the values of all CSS properties of an element, after applying active stylesheets and resolving any basic computation those values may contain.
 
+## Web APIs
+
+### [`Intersection Observer API`](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+
+Intersection Observer observes the “intersection” (i.e. the passing across) of an element through one of its ancestor elements or the area on screen where the page is visible (aka the viewport).
+
+#### Intersection observer options
+
+##### root
+
+The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. **Defaults to the browser viewport** if not specified or if `null`.
+
+##### rootMargin
+
+Margin around the root. Can have values similar to the CSS margin property. The values can be percentages. This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections. **Defaults to all zeros**.
+
+Note: `rootMargin` does not work if the `root` element is not an actual element on the page.
+
+##### threshold
+
+Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of `0.5`. A threshold of `0` (**default**) triggers the intersection when the first pixel of the target element intersects the root element. A threshold of `1` triggers when the entire target element is inside the root element.
+
+#### [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)
+
+The `IntersectionObserverEntry` interface of the Intersection Observer API describes the intersection between the target element and its root container at a specific moment of transition.
+
+##### [`isIntersecting`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting)
+
+##### [`intersectionRatio`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRatio)
+
+#### Read more
+
+- [An Explanation of How the Intersection Observer Watches](https://css-tricks.com/an-explanation-of-how-the-intersection-observer-watches/)
+- [A Few Functional Uses for Intersection Observer](https://css-tricks.com/a-few-functional-uses-for-intersection-observer-to-know-when-an-element-is-in-view/)
+
+```js
+
+```
+
 ## Tips and Tricks
 
 ### HTMLCollection is live

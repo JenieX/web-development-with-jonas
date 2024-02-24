@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>observer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        background-color: #1f1f1f;
+        font-size: 1.8rem;
+
+        display: flex;
+        justify-content: center;
+
+        font-family: sans-serif;
+        color: #ddd;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        position: relative;
+      }
+
+      .container::before,
+      .container::after {
+        display: block;
+        position: absolute;
+      }
+
+      .item {
+        padding: 3rem;
+        background-color: rgb(20, 177, 220);
+      }
+
+      .circle {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: #032027;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 2.4rem;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item--1">
+        <div class="circle circle--1">1</div>
+      </div>
+      <div class="item item--2">
+        <div class="circle circle--2">2</div>
+      </div>
+      <div class="item item--3">
+        <div class="circle circle--3">3</div>
+      </div>
+      <div class="item item--4">
+        <div class="circle circle--4">4</div>
+      </div>
+      <div class="item item--5">
+        <div class="circle circle--5">5</div>
+      </div>
+      <div class="item item--6">
+        <div class="circle circle--6">6</div>
+      </div>
+      <div class="item item--7">
+        <div class="circle circle--7">7</div>
+      </div>
+      <div class="item item--8">
+        <div class="circle circle--8">8</div>
+      </div>
+      <div class="item item--9">
+        <div class="circle circle--9">9</div>
+      </div>
+    </div>
+    <script>
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          console.log(entry);
+          // if (entry.isIntersecting) {
+          //   console.log('Element is in the viewport!');
+
+          //   // observer.unobserve(entry.target);
+          // }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1,
+
+        // Only Chrome supports this (https://stackoverflow.com/a/63182002)
+        // trackVisibility: true,
+        // delay: 100,
+      });
+
+      const element = document.querySelector('.item--7');
+      observer.observe(element);
+    </script>
+  </body>
+</html>
