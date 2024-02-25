@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>observer-test</title>
+    <title>observer-threshold-0</title>
     <style>
       * {
         margin: 0;
@@ -35,22 +35,21 @@
         position: relative;
       }
 
-      .container::before,
-      .container::after {
-        display: block;
-        position: absolute;
-      }
-
       .item {
         padding: 1rem;
         background-color: rgb(20, 177, 220);
+      }
+
+      .item--1 {
+        padding: 1rem;
+        background-color: crimson;
       }
 
       .circle {
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
-        background-color: #032027;
+        background-color: #1f1f1f;
 
         display: flex;
         justify-content: center;

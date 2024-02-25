@@ -248,17 +248,17 @@ Intersection Observer observes the “intersection” (i.e. the passing across) 
 
 #### Intersection observer options
 
-##### root
+##### `root`
 
 The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. **Defaults to the browser viewport** if not specified or if `null`.
 
-##### rootMargin
+##### `rootMargin`
 
 Margin around the root. Can have values similar to the CSS margin property. The values can be percentages. This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections. **Defaults to all zeros**.
 
 Note: `rootMargin` does not work if the `root` element is not an actual element on the page.
 
-##### threshold
+##### `threshold`
 
 Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of `0.5`. A threshold of `0` (**default**) triggers the intersection when the first pixel of the target element intersects the root element. A threshold of `1` triggers when the entire target element is inside the root element.
 
@@ -268,7 +268,11 @@ The `IntersectionObserverEntry` interface of the Intersection Observer API descr
 
 ##### [`isIntersecting`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/isIntersecting)
 
+The `isIntersecting` property is a Boolean value which is `true` if the target element intersects with the intersection observer's `root`. If this is `true`, then, the `IntersectionObserverEntry` describes a transition into a state of intersection; if it's `false`, then you know the transition is from intersecting to not-intersecting.
+
 ##### [`intersectionRatio`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/intersectionRatio)
+
+The `intersectionRatio` property tells you how much of the target element is currently visible within the `root`'s intersection ratio, as a value between `0` and `1`.
 
 #### Read more
 
