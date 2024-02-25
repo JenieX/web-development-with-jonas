@@ -256,8 +256,6 @@ The element that is used as the viewport for checking visibility of the target. 
 
 Margin around the root. Can have values similar to the CSS margin property. The values can be percentages. This set of values serves to grow or shrink each side of the root element's bounding box before computing intersections. **Defaults to all zeros**.
 
-Note: `rootMargin` does not work if the `root` element is not an actual element on the page.
-
 ##### `threshold`
 
 Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of `0.5`. A threshold of `0` (**default**) triggers the intersection when the first pixel of the target element intersects the root element. A threshold of `1` triggers when the entire target element is inside the root element.

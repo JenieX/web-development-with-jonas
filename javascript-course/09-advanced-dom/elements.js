@@ -11,6 +11,7 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = asserted(document.querySelector('.operations__tab-container'));
 const tabsContent = document.querySelectorAll('.operations__content');
 const nav = asserted(document.querySelector('.nav'));
+const header = asserted(document.querySelector('.header'));
 
 export default {
   modal,
@@ -22,4 +23,5 @@ export default {
   tabsContainer,
   tabsContent,
   nav,
+  header,
 };

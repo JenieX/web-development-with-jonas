@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>observer-threshold-0</title>
+    <title>observer-multiple</title>
     <style>
       * {
         margin: 0;
@@ -38,11 +38,6 @@
       .item {
         padding: 1rem;
         background-color: rgb(20, 177, 220);
-      }
-
-      .item--1 {
-        padding: 1rem;
-        background-color: crimson;
       }
 
       .circle {
@@ -100,27 +95,30 @@
        * ) => void}
        */
       function handleIntersection(entries, observer) {
-        entries.forEach(
-          ({ isIntersecting, intersectionRatio, intersectionRect }) => {
-            console.log({ isIntersecting, intersectionRatio });
-          },
-        );
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Element has entered the viewport
+            console.log('In view:', entry.target);
+            // Perform actions as needed
+          } else {
+            // Element has exited the viewport
+            console.log('Out of view:', entry.target);
+            // Perform actions as needed
+          }
+        });
       }
 
       const observer = new IntersectionObserver(handleIntersection, {
         // root: document.body,
-        // rootMargin: '0px',
+        // rootMargin: '10px',
         threshold: 0,
-
-        // Only Chrome supports this (https://stackoverflow.com/a/63182002)
-        // trackVisibility: true,
-        // delay: 100,
       });
 
-      const element = /** @type {HTMLElement} */ (
-        document.querySelector('.item--1')
-      );
-      observer.observe(element);
+      const elements = document.querySelectorAll('.item');
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
     </script>
   </body>
 </html>

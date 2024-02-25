@@ -35,12 +35,6 @@
         position: relative;
       }
 
-      .container::before,
-      .container::after {
-        display: block;
-        position: absolute;
-      }
-
       .item {
         padding: 1rem;
         background-color: rgb(20, 177, 220);
@@ -50,7 +44,7 @@
         width: 10rem;
         height: 10rem;
         border-radius: 50%;
-        background-color: #032027;
+        background-color: #1f1f1f;
 
         display: flex;
         justify-content: center;
@@ -91,20 +85,18 @@
         <div class="circle circle--9">9</div>
       </div>
     </div>
-    <script>
+    <!-- <script>
       function handleIntersection(entries, observer) {
         entries.forEach(
           ({ isIntersecting, intersectionRatio, intersectionRect }) => {
-            const { top, right, bottom, left, width, height } = intersectionRect;
-
             console.log({ isIntersecting, intersectionRatio });
           },
         );
       }
 
       const observer = new IntersectionObserver(handleIntersection, {
-        // root: document.body,
-        // rootMargin: '0px',
+        root: document.body,
+        // rootMargin: '10px',
         threshold: 0,
 
         // Only Chrome supports this (https://stackoverflow.com/a/63182002)
@@ -114,6 +106,41 @@
 
       const element = document.querySelector('.item--1');
       observer.observe(element);
+    </script> -->
+    <script>
+      // @ts-check
+
+      /**
+       * @type {(
+       *   entries: IntersectionObserverEntry[],
+       *   observer: IntersectionObserver,
+       * ) => void}
+       */
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Element has entered the viewport
+            console.log('In view:', entry.target);
+            // Perform actions as needed
+          } else {
+            // Element has exited the viewport
+            console.log('Out of view:', entry.target);
+            // Perform actions as needed
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        // root: document.body,
+        // rootMargin: '10px',
+        threshold: 0,
+      });
+
+      const elements = document.querySelectorAll('.item');
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
     </script>
   </body>
 </html>

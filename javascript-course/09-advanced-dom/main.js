@@ -121,3 +121,32 @@ import { asserted, closeModal, openModal } from './helpers.js';
   elements.nav.addEventListener('mouseover', handleHover.bind(undefined, 0.5));
   elements.nav.addEventListener('mouseout', handleHover.bind(undefined, 1));
 })();
+
+// Sticky navigation: Intersection Observer API
+(() => {
+  const { height: navHeight } = elements.nav.getBoundingClientRect();
+
+  /**
+   * @type {(
+   *   entries: IntersectionObserverEntry[],
+   *   observer: IntersectionObserver,
+   * ) => void}
+   */
+  const handleIntersection = ([{ isIntersecting, intersectionRatio }]) => {
+    console.log({ isIntersecting, intersectionRatio });
+
+    if (isIntersecting) {
+      elements.nav.classList.remove('sticky');
+    } else {
+      elements.nav.classList.add('sticky');
+    }
+  };
+
+  const headerObserver = new IntersectionObserver(handleIntersection, {
+    root: null,
+    threshold: 0,
+    rootMargin: `-${navHeight}px`,
+  });
+
+  headerObserver.observe(elements.header);
+})();

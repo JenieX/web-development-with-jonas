@@ -91,11 +91,17 @@
       </div>
     </div>
     <script>
+      // @ts-check
+
+      /**
+       * @type {(
+       *   entries: IntersectionObserverEntry[],
+       *   observer: IntersectionObserver,
+       * ) => void}
+       */
       function handleIntersection(entries, observer) {
         entries.forEach(
           ({ isIntersecting, intersectionRatio, intersectionRect }) => {
-            const { top, right, bottom, left, width, height } = intersectionRect;
-
             console.log({ isIntersecting, intersectionRatio });
           },
         );
@@ -111,7 +117,9 @@
         // delay: 100,
       });
 
-      const element = document.querySelector('.item--1');
+      const element = /** @type {HTMLElement} */ (
+        document.querySelector('.item--1')
+      );
       observer.observe(element);
     </script>
   </body>
