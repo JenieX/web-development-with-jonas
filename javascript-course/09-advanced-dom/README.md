@@ -260,6 +260,8 @@ Margin around the root. Can have values similar to the CSS margin property. The 
 
 Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. If you only want to detect when visibility passes the 50% mark, you can use a value of `0.5`. A threshold of `0` (**default**) triggers the intersection when the first pixel of the target element intersects the root element. A threshold of `1` triggers when the entire target element is inside the root element.
 
+Hint: ~A single value for `threshold` (not an array), will give a single entry inside `entries`.~ Seems to give multiple entries for multiple observed elements!
+
 #### [`IntersectionObserverEntry`](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry)
 
 The `IntersectionObserverEntry` interface of the Intersection Observer API describes the intersection between the target element and its root container at a specific moment of transition.

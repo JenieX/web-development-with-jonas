@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>observer-unobserve</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        background-color: #1f1f1f;
+        font-size: 1.8rem;
+
+        display: flex;
+        justify-content: center;
+
+        font-family: sans-serif;
+        color: #ddd;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        position: relative;
+      }
+
+      .item {
+        padding: 1rem;
+        background-color: rgb(20, 177, 220);
+      }
+
+      .loaded {
+        background-color: crimson;
+      }
+
+      .circle {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: #1f1f1f;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 2.4rem;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- (.item.item--$>.circle.circle--${$})*30 -->
+      <div class="item item--1">
+        <div class="circle circle--1">1</div>
+      </div>
+      <div class="item item--2">
+        <div class="circle circle--2">2</div>
+      </div>
+      <div class="item item--3">
+        <div class="circle circle--3">3</div>
+      </div>
+      <div class="item item--4">
+        <div class="circle circle--4">4</div>
+      </div>
+      <div class="item item--5">
+        <div class="circle circle--5">5</div>
+      </div>
+      <div class="item item--6">
+        <div class="circle circle--6">6</div>
+      </div>
+      <div class="item item--7">
+        <div class="circle circle--7">7</div>
+      </div>
+      <div class="item item--8">
+        <div class="circle circle--8">8</div>
+      </div>
+      <div class="item item--9">
+        <div class="circle circle--9">9</div>
+      </div>
+      <div class="item item--10">
+        <div class="circle circle--10">10</div>
+      </div>
+      <div class="item item--11">
+        <div class="circle circle--11">11</div>
+      </div>
+      <div class="item item--12">
+        <div class="circle circle--12">12</div>
+      </div>
+      <div class="item item--13">
+        <div class="circle circle--13">13</div>
+      </div>
+      <div class="item item--14">
+        <div class="circle circle--14">14</div>
+      </div>
+      <div class="item item--15">
+        <div class="circle circle--15">15</div>
+      </div>
+      <div class="item item--16">
+        <div class="circle circle--16">16</div>
+      </div>
+      <div class="item item--17">
+        <div class="circle circle--17">17</div>
+      </div>
+      <div class="item item--18">
+        <div class="circle circle--18">18</div>
+      </div>
+      <div class="item item--19">
+        <div class="circle circle--19">19</div>
+      </div>
+      <div class="item item--20">
+        <div class="circle circle--20">20</div>
+      </div>
+      <div class="item item--21">
+        <div class="circle circle--21">21</div>
+      </div>
+      <div class="item item--22">
+        <div class="circle circle--22">22</div>
+      </div>
+      <div class="item item--23">
+        <div class="circle circle--23">23</div>
+      </div>
+      <div class="item item--24">
+        <div class="circle circle--24">24</div>
+      </div>
+      <div class="item item--25">
+        <div class="circle circle--25">25</div>
+      </div>
+      <div class="item item--26">
+        <div class="circle circle--26">26</div>
+      </div>
+      <div class="item item--27">
+        <div class="circle circle--27">27</div>
+      </div>
+      <div class="item item--28">
+        <div class="circle circle--28">28</div>
+      </div>
+      <div class="item item--29">
+        <div class="circle circle--29">29</div>
+      </div>
+      <div class="item item--30">
+        <div class="circle circle--30">30</div>
+      </div>
+    </div>
+    <script>
+      // @ts-check
+
+      /**
+       * @type {(
+       *   entries: IntersectionObserverEntry[],
+       *   observer: IntersectionObserver,
+       * ) => void}
+       */
+      function handleIntersection(entries, observer) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = /** @type {HTMLElement} */ (entry.target);
+            console.log(target);
+            observer.unobserve(target);
+            setTimeout(() => {
+              target.classList.add('loaded');
+            }, 500);
+          } else {
+          }
+        });
+      }
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        // root: null,
+        // rootMargin: '10px',
+        threshold: 0,
+      });
+
+      const elements = document.querySelectorAll('.item');
+
+      elements.forEach((element) => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>

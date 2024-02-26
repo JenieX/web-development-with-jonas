@@ -133,7 +133,7 @@ import { asserted, closeModal, openModal } from './helpers.js';
    * ) => void}
    */
   const handleIntersection = ([{ isIntersecting, intersectionRatio }]) => {
-    console.log({ isIntersecting, intersectionRatio });
+    // console.log({ isIntersecting, intersectionRatio });
 
     if (isIntersecting) {
       elements.nav.classList.remove('sticky');
@@ -149,4 +149,69 @@ import { asserted, closeModal, openModal } from './helpers.js';
   });
 
   headerObserver.observe(elements.header);
+})();
+
+// Reveal sections
+(() => {
+  return;
+
+  /**
+   * @type {(
+   *   entries: IntersectionObserverEntry[],
+   *   observer: IntersectionObserver,
+   * ) => void}
+   */
+  const handleIntersection = (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const target = /** @type {HTMLElement} */ (entry.target);
+        console.log('In view:', target);
+        observer.unobserve(target);
+        target.classList.remove('section--hidden');
+      }
+    }
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, {
+    // root: null,
+    threshold: 0.15,
+  });
+
+  for (const section of elements.sections) {
+    observer.observe(section);
+    section.classList.add('section--hidden');
+  }
+})();
+
+(() => {
+  /**
+   * @type {(
+   *   entries: IntersectionObserverEntry[],
+   *   observer: IntersectionObserver,
+   * ) => void}
+   */
+  const handleIntersection = (entries, observer) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        const target = /** @type {HTMLImageElement} */ (entry.target);
+
+        target.addEventListener('load', () => target.classList.remove('lazy-img'));
+        setTimeout(() => {
+          target.src = asserted(target.dataset.src);
+        }, 1000);
+
+        observer.unobserve(target);
+      }
+    }
+  };
+
+  const imgObserver = new IntersectionObserver(handleIntersection, {
+    // root: null,
+    threshold: 0,
+    // rootMargin: '200px',
+  });
+
+  for (const element of document.querySelectorAll('img[data-src]')) {
+    imgObserver.observe(element);
+  }
 })();
