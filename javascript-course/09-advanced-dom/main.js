@@ -215,3 +215,27 @@ import { asserted, closeModal, openModal } from './helpers.js';
     imgObserver.observe(element);
   }
 })();
+
+(() => {
+  /* let firstSlidePosition = 0;
+
+  const getFirstSlidePositions = (modifier) => {
+    if (modifier > 0) {
+      firstSlidePosition -= 100;
+    } else {
+      firstSlidePosition += 100;
+    }
+
+    // Reset
+    if (firstSlidePosition < -200) {
+      firstSlidePosition = 0;
+    } else if (firstSlidePosition > 0) {
+      firstSlidePosition = -200;
+    }
+
+    console.log(firstSlidePosition);
+  };
+
+  getFirstSlidePositions(1);
+  getFirstSlidePositions(1); */
+})();
