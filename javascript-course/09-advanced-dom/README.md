@@ -188,14 +188,6 @@ console.log(p.closest('div')?.outerHTML);
 // => '<div><p><span>Hello world</span></p></div>'
 ```
 
----
-
-### [``]()
-
-```js
-
-```
-
 ## addEventListener
 
 ### [`currentTarget`](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget)
@@ -221,6 +213,43 @@ The `mouseenter` event is fired at an `Element` when a pointing device (usually 
 The `mouseleave` event is fired at an `Element` when the cursor of a pointing device (usually a mouse) is moved out of it.
 
 `mouseleave` and `mouseout` are similar but differ in that `mouseleave` does not bubble and `mouseout` does. This means that `mouseleave` is fired when the pointer has exited the element and all of its descendants, whereas `mouseout` is fired when the pointer leaves the element or leaves one of the element's descendants (even if the pointer is still within the element). See the playground example.
+
+### [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
+
+The `DOMContentLoaded` event fires when the HTML document has been completely parsed, and all deferred scripts (`<script defer src="…">` and `<script type="module">`) have downloaded and executed. It doesn't wait for other things like images, sub-frames, and async scripts to finish loading.
+
+`DOMContentLoaded` does not wait for stylesheets to load, however deferred scripts do wait for stylesheets, and the `DOMContentLoaded` event is queued after deferred scripts. Also, scripts which aren't deferred or async (e.g. `<script>`) will wait for already-parsed stylesheets to load.
+
+Hint: You can inspect the timing for this event in the Network tab of the DevTools.
+
+```ts
+/**
+ * Waits for the page to load.
+ *
+ * @param completely Whether or not to wait for resources to load as well.
+ */
+async function pageLoad(completely?: boolean): Promise<void> {
+  return new Promise((resolve) => {
+    if (document.readyState === 'complete') {
+      resolve();
+
+      return;
+    }
+
+    if (completely === true) {
+      window.addEventListener('load', () => resolve());
+
+      return;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => resolve());
+  });
+}
+```
+
+### [`load`](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
+
+The `load` event is fired when the whole page has loaded, including all dependent resources such as stylesheets, scripts, iframes, and images. This is in contrast to `DOMContentLoaded`, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.
 
 ## Window
 
@@ -278,10 +307,6 @@ The `intersectionRatio` property tells you how much of the target element is cur
 
 - [An Explanation of How the Intersection Observer Watches](https://css-tricks.com/an-explanation-of-how-the-intersection-observer-watches/)
 - [A Few Functional Uses for Intersection Observer](https://css-tricks.com/a-few-functional-uses-for-intersection-observer-to-know-when-an-element-is-in-view/)
-
-```js
-
-```
 
 ## Tips and Tricks
 
