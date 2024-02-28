@@ -241,8 +241,8 @@ import { asserted, closeModal, openModal } from './helpers.js';
 
   const slider = /** @type {HTMLElement} */ (document.querySelector('.slider'));
 
-  slider.innerHTML =
-    '<div class=slide><img src=./img/img-1.jpg></div><div class=slide><img src=./img/img-2.jpg></div><div class=slide><img src=./img/img-3.jpg></div><div class=slide><img src=./img/img-4.jpg></div><button class="slider__btn slider__btn--left">←</button> <button class="slider__btn slider__btn--right">→</button><div class=dots></div>';
+  // slider.innerHTML =
+    // '<div class=slide><img src=./img/img-1.jpg></div><div class=slide><img src=./img/img-2.jpg></div><div class=slide><img src=./img/img-3.jpg></div><div class=slide><img src=./img/img-4.jpg></div><button class="slider__btn slider__btn--left">←</button> <button class="slider__btn slider__btn--right">→</button><div class=dots></div>';
 
   const slides = [
     .../** @type {NodeListOf<HTMLElement>} */ (document.querySelectorAll('.slide')),
@@ -301,7 +301,7 @@ import { asserted, closeModal, openModal } from './helpers.js';
   goToSlide(currentSlide);
   activateDot(currentSlide);
 
-  const prevSlide = () => {
+  const nextSlide = () => {
     // currentSlide += 1;
 
     if (currentSlide === maxSlide - 1) {
@@ -314,7 +314,7 @@ import { asserted, closeModal, openModal } from './helpers.js';
     activateDot(currentSlide);
   };
 
-  const nextSlide = () => {
+  const prevSlide = () => {
     // currentSlide -= 1;
 
     if (currentSlide === 0) {
@@ -327,8 +327,8 @@ import { asserted, closeModal, openModal } from './helpers.js';
     activateDot(currentSlide);
   };
 
-  btnRight.addEventListener('click', prevSlide);
-  btnLeft.addEventListener('click', nextSlide);
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
 
   document.addEventListener('keydown', ({ key }) => {
     if (key === 'ArrowLeft') {
