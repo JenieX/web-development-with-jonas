@@ -4,6 +4,10 @@
 
 ### [`<script>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
 
+<img src="shots/defer-and-async-3.png?raw=true" width="700" >
+
+[Read more](https://gist.github.com/jakub-g/385ee6b41085303a53ad92c7c8afd7a6)
+
 Note: The `defer` attribute has no effect on module scripts — they defer by default.
 
 #### Attributes
