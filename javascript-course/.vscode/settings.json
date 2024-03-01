@@ -4,6 +4,7 @@
     "afterend",
     "beforebegin",
     "beforeend",
+    "beforeunload",
     "DDTHH",
     "trunc",
     "typeof",

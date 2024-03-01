@@ -1,5 +1,19 @@
 # Advanced-DOM
 
+## HTML
+
+### [`<script>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+
+Note: The `defer` attribute has no effect on module scripts — they defer by default.
+
+#### Attributes
+
+##### defer
+
+This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing `DOMContentLoaded`.
+
+Scripts with the `defer` attribute will prevent the `DOMContentLoaded` event from firing until the script has loaded and finished evaluating.
+
 ## Element
 
 ### [`after()`](https://developer.mozilla.org/en-US/docs/Web/API/Element/after)
@@ -216,9 +230,11 @@ The `mouseleave` event is fired at an `Element` when the cursor of a pointing de
 
 ### [`DOMContentLoaded`](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
 
+Note: The `defer` attribute has no effect on module scripts — they defer by default.
+
 The `DOMContentLoaded` event fires when the HTML document has been completely parsed, and all deferred scripts (`<script defer src="…">` and `<script type="module">`) have downloaded and executed. It doesn't wait for other things like images, sub-frames, and async scripts to finish loading.
 
-`DOMContentLoaded` does not wait for stylesheets to load, however deferred scripts do wait for stylesheets, and the `DOMContentLoaded` event is queued after deferred scripts. Also, scripts which aren't deferred or async (e.g. `<script>`) will wait for already-parsed stylesheets to load.
+`DOMContentLoaded` does not wait for stylesheets to load, however **deferred scripts do wait for stylesheets, and the `DOMContentLoaded` event is queued after deferred scripts**. Also, scripts which aren't deferred or async (e.g. `<script>`) will wait for already-parsed stylesheets to load.
 
 Hint: You can inspect the timing for this event in the Network tab of the DevTools.
 
@@ -250,6 +266,10 @@ async function pageLoad(completely?: boolean): Promise<void> {
 ### [`load`](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
 
 The `load` event is fired when the whole page has loaded, including all dependent resources such as stylesheets, scripts, iframes, and images. This is in contrast to `DOMContentLoaded`, which is fired as soon as the page DOM has been loaded, without waiting for resources to finish loading.
+
+### [`beforeunload`](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
+
+The `beforeunload` event is fired when the current window, contained document, and associated resources are about to be unloaded. The document is still visible and the event is still cancelable at this point.
 
 ## Window
 
@@ -394,3 +414,5 @@ Event delegation allows us to attach a single event listener, to a parent elemen
 ---
 
 <img src="shots/behind-the-scenes.png?raw=true" width="700" >
+<img src="shots/defer-and-async-1.png?raw=true" width="700" >
+<img src="shots/defer-and-async-2.png?raw=true" width="700" >
